@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devin Robinson — Builder, Investor, Educator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --charcoal: #1a1a1a;
+      --slate: #2d2d2d;
+      --mid: #666666;
+      --soft: #999999;
+      --light: #e8e8e8;
+      --cream: #f8f7f5;
+      --white: #ffffff;
+      --accent: #c45a3c;
+      --accent-dark: #a8432a;
+      --accent-glow: rgba(196, 90, 60, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(248, 247, 245, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+
+    nav .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    nav .logo span { color: var(--accent); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hero-text h1 .accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.15rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tags span {
+      padding: 0.4rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--slate);
+      letter-spacing: 0.02em;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 6px;
+      border: 1px solid var(--light);
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-wrapper {
+      width: 420px;
+      height: 520px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: -2rem;
+      left: -2rem;
+      background: var(--white);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .stat { text-align: center; }
+    .stat .number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .stat .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--soft);
+      font-weight: 500;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-narrative p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--slate);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-narrative .emphasis {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .about-details { padding-top: 0.5rem; }
+
+    .detail-block {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .detail-block:last-child { border-bottom: none; }
+
+    .detail-block h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--soft);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .detail-block p {
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-section {
+      background: var(--ink);
+      padding: 6rem 2rem;
+      max-width: none;
+      margin: 0;
+      color: var(--white);
+    }
+
+    .timeline-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline-section .section-label { color: var(--accent); }
+    .timeline-section .section-title { color: var(--white); }
+    .timeline-section .section-subtitle { color: rgba(255,255,255,0.5); }
+
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--ink);
+    }
+
+    .timeline-item.milestone::before {
+      width: 16px;
+      height: 16px;
+      left: -7px;
+      box-shadow: 0 0 0 4px rgba(196, 90, 60, 0.3);
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .timeline-metric {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(196, 90, 60, 0.15);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── WHAT I BUILD ── */
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .venture-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .venture-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .venture-card.featured {
+      grid-column: span 2;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .venture-card.featured .venture-type { color: var(--accent); }
+    .venture-card.featured .venture-name { color: var(--white); }
+    .venture-card.featured .venture-desc { color: rgba(255,255,255,0.6); }
+
+    .venture-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .venture-card.featured .venture-icon {
+      background: rgba(196, 90, 60, 0.2);
+    }
+
+    .venture-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .venture-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .venture-desc {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .venture-metric {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.8rem;
+      color: var(--soft);
+    }
+
+    .venture-card.featured .venture-metric {
+      border-top-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.4);
+    }
+
+    .venture-metric strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .venture-card.featured .venture-metric strong {
+      color: var(--accent);
+    }
+
+    /* ── EDUCATION / GIVING BACK ── */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .edu-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .edu-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--light);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .edu-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .edu-card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── VISION ── */
+    .vision-section {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      padding: 6rem 2rem;
+      max-width: none;
+      margin: 0;
+      text-align: center;
+    }
+
+    .vision-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .vision-section .section-label {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .vision-section h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-section p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .vision-section .btn-primary {
+      background: var(--white);
+      color: var(--accent);
+    }
+
+    .vision-section .btn-primary:hover {
+      background: var(--cream);
+      transform: translateY(-1px);
+    }
+
+    /* ── MEDIA / SOCIAL PROOF ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .media-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .media-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .media-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .media-card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT / FOOTER ── */
+    .footer-section {
+      background: var(--charcoal);
+      padding: 5rem 2rem 3rem;
+      max-width: none;
+      margin: 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.3);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 968px) {
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-text h1 { font-size: 2.8rem; }
+      .hero-visual { order: -1; }
+      .hero-image-wrapper { width: 100%; max-width: 400px; height: 420px; }
+      .hero-stats { left: 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .venture-card.featured { grid-column: span 1; }
+      .education-grid { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      nav ul { display: none; }
+      .cta-group { flex-direction: column; align-items: stretch; }
+      .hero-stats { flex-direction: column; gap: 1rem; }
+    }
+
+    /* ── CAIO BANNER ── */
+    .caio-banner {
+      padding: 5rem 2rem;
+      max-width: none;
+      margin: 0;
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .caio-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .caio-banner-text .section-label { margin-bottom: 0.75rem; }
+
+    .caio-banner-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .caio-banner-text h2 .accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .caio-banner-text p {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 460px;
+    }
+
+    .caio-banner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .caio-banner-link:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .caio-banner-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .caio-stat-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .caio-stat-card .num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .caio-stat-card .label {
+      font-size: 0.72rem;
+      color: var(--soft);
+      line-height: 1.35;
+    }
+
+    .caio-stat-card.highlight {
+      background: var(--ink);
+      grid-column: span 2;
+    }
+
+    .caio-stat-card.highlight .num { color: var(--white); }
+    .caio-stat-card.highlight .label { color: rgba(255,255,255,0.45); }
+
+    .caio-stat-card.highlight .versus {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 968px) {
+      .caio-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .caio-banner-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">DEVIN<span>.</span></div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#educate">Educate</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Builder. Investor.<br><span class="accent">Educator.</span></h1>
+        <p class="subtitle">
+          I build companies, raise capital, and teach others how to create
+          generational wealth through real estate and entrepreneurship.
+        </p>
+        <div class="hero-tags">
+          <span>Fund Manager</span>
+          <span>Real Estate Investor</span>
+          <span>CEO</span>
+          <span>Educator</span>
+          <span>Speaker</span>
+          <span>Father</span>
+        </div>
+        <div class="cta-group">
+          <a href="#contact" class="btn-primary">Let's Connect &rarr;</a>
+          <a href="#journey" class="btn-secondary">View My Journey</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="images/devin-headshot.jpg" alt="Devin Robinson — Builder, Investor, Educator">
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="number">16+</div>
+            <div class="label">Ventures Built</div>
+          </div>
+          <div class="stat">
+            <div class="number">$2M+</div>
+            <div class="label">Capital Raised</div>
+          </div>
+          <div class="stat">
+            <div class="number">25+</div>
+            <div class="label">Properties</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-up">
+    <div class="section-label">About</div>
+    <div class="section-title">The Short Version</div>
+    <div class="about-grid">
+      <div class="about-narrative">
+        <p>
+          I'm Devin Robinson — a father first, and a builder of everything else second.
+          Over the past decade I've started, scaled, crashed, and rebuilt 16 businesses
+          across real estate, technology, education, and finance.
+        </p>
+        <div class="emphasis">
+          "I don't just invest in real estate — I build the systems,
+          the teams, and the capital infrastructure to do it at scale."
+        </div>
+        <p>
+          I specialize in foreclosures and creative finance, and I've built
+          robust SOPs that consistently produce results. In 2023, I launched PF Capital —
+          a 506(b) real estate fund — and raised $2M in capital within 6 months,
+          with no prior fund-raising track record.
+        </p>
+        <p>
+          Today I'm focused on scaling our portfolio, deploying AI across our operations,
+          and teaching everything I've learned through courses, coaching, and community.
+        </p>
+      </div>
+      <div class="about-details">
+        <div class="detail-block">
+          <h4>Based In</h4>
+          <p>Charlotte, NC</p>
+        </div>
+        <div class="detail-block">
+          <h4>Current Focus</h4>
+          <p>Fund Flow OS, AI-Powered Operations</p>
+        </div>
+        <div class="detail-block">
+          <h4>Investment Thesis</h4>
+          <p>Distressed assets, creative finance, installment method acquisitions</p>
+        </div>
+        <div class="detail-block">
+          <h4>Superpower</h4>
+          <p>Turning chaos into systems — then teaching others to run them</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY TIMELINE -->
+  <div class="timeline-section" id="journey">
+    <div class="timeline-inner">
+      <div class="section-label">The Journey</div>
+      <div class="section-title">Built Through Failure & Persistence</div>
+      <p class="section-subtitle">Every milestone was earned. No shortcuts, no silver spoons.</p>
+
+      <div class="timeline">
+        <div class="timeline-item fade-up">
+          <div class="timeline-date">2013 – 2022</div>
+          <div class="timeline-title">16 Business Ventures</div>
+          <div class="timeline-desc">
+            Started, sold, crashed, and burned through 8 different industries
+            and 16 business ventures. Every failure was tuition.
+          </div>
+        </div>
+
+        <div class="timeline-item milestone fade-up">
+          <div class="timeline-date">April 2021</div>
+          <div class="timeline-title">Launched Wholesale Operation</div>
+          <div class="timeline-desc">
+            Hit the ground running — closed 70 deals in the first 6 months.
+          </div>
+          <div class="timeline-metric">$700K+ revenue in 6 months</div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-date">Nov 2021 – May 2022</div>
+          <div class="timeline-title">Crash, Burn, Rebuild</div>
+          <div class="timeline-desc">
+            The model broke. Laid off the entire staff and rebuilt
+            the business from zero. The hardest and most important chapter.
+          </div>
+        </div>
+
+        <div class="timeline-item milestone fade-up">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-title">Specialized in Foreclosures</div>
+          <div class="timeline-desc">
+            Built extremely robust SOPs for foreclosure acquisitions.
+            Finished the year averaging $70K per deal.
+          </div>
+          <div class="timeline-metric">$150K/month &middot; $600K on the year</div>
+        </div>
+
+        <div class="timeline-item milestone fade-up">
+          <div class="timeline-date">July 2023</div>
+          <div class="timeline-title">Started PF Capital</div>
+          <div class="timeline-desc">
+            Launched a 506(b) Real Estate fund and raised $2M in capital
+            within 6 months — with zero prior capital-raising experience.
+          </div>
+          <div class="timeline-metric">$2M raised in 6 months</div>
+        </div>
+
+        <div class="timeline-item milestone fade-up">
+          <div class="timeline-date">July – Dec 2023</div>
+          <div class="timeline-title">Portfolio Scale-Up</div>
+          <div class="timeline-desc">
+            Scaled operations and purchased 25 properties using creative finance
+            and the Installment Method to flip and hold.
+          </div>
+          <div class="timeline-metric">25 properties acquired</div>
+        </div>
+
+        <div class="timeline-item milestone fade-up">
+          <div class="timeline-date">2024 – Present</div>
+          <div class="timeline-title">AI + Education + Scale</div>
+          <div class="timeline-desc">
+            Deploying AI agents across deal sourcing, underwriting, and operations.
+            Building education programs to give back everything I've learned.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT I BUILD -->
+  <section id="ventures" class="fade-up">
+    <div class="section-label">What I Build</div>
+    <div class="section-title">Active Ventures & Focus Areas</div>
+    <p class="section-subtitle">
+      I operate at the intersection of real estate, technology, and education.
+    </p>
+
+    <div class="ventures-grid">
+      <div class="venture-card featured">
+        <div class="venture-icon">&#9670;</div>
+        <div class="venture-type">Fund Management</div>
+        <div class="venture-name">PF Capital</div>
+        <div class="venture-desc">
+          A 506(b) real estate fund focused on distressed property acquisitions
+          through foreclosure and creative finance strategies. Managing investor
+          capital and deploying it into high-yield real estate opportunities.
+        </div>
+        <div class="venture-metric">
+          <strong>$2M+</strong> capital raised &middot; <strong>25+</strong> properties in portfolio
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-icon">&#9733;</div>
+        <div class="venture-type">Education</div>
+        <div class="venture-name">REI Legacy Academy</div>
+        <div class="venture-desc">
+          Comprehensive real estate investing course — from wholesaling to
+          foreclosures to AI integration. Zero to 100.
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-icon">&#9881;</div>
+        <div class="venture-type">Method</div>
+        <div class="venture-name">The Installment Method</div>
+        <div class="venture-desc">
+          A proprietary approach to real estate: get your name on the title,
+          own the property, maintain multiple exit strategies with minimal capital.
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-icon">&#9879;</div>
+        <div class="venture-type">Technology</div>
+        <div class="venture-name">AI-Powered Operations</div>
+        <div class="venture-desc">
+          Building AI agents for deal sourcing, property underwriting,
+          lead management, and operational automation across our portfolio.
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-icon">&#9752;</div>
+        <div class="venture-type">Coaching</div>
+        <div class="venture-name">1-on-1 Advisory</div>
+        <div class="venture-desc">
+          Custom consulting for investors who want to add foreclosures,
+          creative finance, or fund management to their business.
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-icon">&#9883;</div>
+        <div class="venture-type">Media</div>
+        <div class="venture-name">Entre-Real Estate Podcast</div>
+        <div class="venture-desc">
+          Raw conversations about what it really takes to build
+          in real estate. Tips, failures, and the craziness in between.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATE -->
+  <section id="educate" class="fade-up">
+    <div class="section-label">Giving Back</div>
+    <div class="section-title">Why I Teach</div>
+    <p class="section-subtitle">
+      Everything I know was learned the hard way. I'm building the resources
+      I wish I had when I started.
+    </p>
+
+    <div class="education-grid">
+      <div class="edu-card">
+        <div class="edu-number">01</div>
+        <h3>Courses & Curriculum</h3>
+        <p>
+          From The Installment Method to the full REI Legacy Academy — structured
+          programs that take you from zero knowledge to executing deals with confidence.
+        </p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-number">02</div>
+        <h3>Community & Mentorship</h3>
+        <p>
+          A drama-free Facebook group, live workshops, and a community of
+          investors who hold each other accountable and share real numbers.
+        </p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-number">03</div>
+        <h3>Free Resources & Tools</h3>
+        <p>
+          Wholesale contracts, KPI trackers, foreclosure data videos,
+          underwriting spreadsheets, and process maps — all free to start.
+        </p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-number">04</div>
+        <h3>YouTube & Podcast</h3>
+        <p>
+          Unfiltered content on the Entre-Real Estate Podcast and YouTube —
+          tips, tricks, deal breakdowns, and honest conversations about building.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <div class="vision-section">
+    <div class="vision-inner">
+      <div class="section-label">Where I'm Going</div>
+      <h2>People Over Profit. Always.</h2>
+      <p>
+        My north star is generational wealth — not just for my family, but for
+        every person I teach, invest with, or partner alongside. I'm building
+        infrastructure that compounds: capital, knowledge, community, and opportunity.
+      </p>
+      <a href="#contact" class="btn-primary">Work With Me &rarr;</a>
+    </div>
+  </div>
+
+  <!-- CAIO BANNER -->
+  <div class="caio-banner fade-up">
+    <div class="caio-banner-inner">
+      <div class="caio-banner-text">
+        <div class="section-label">New Offering</div>
+        <h2>What's a <span class="accent">Fractional CAIO?</span></h2>
+        <p>
+          77% of companies say they need a Chief AI Officer &mdash; but most can't
+          justify the $350K+ salary. I embed in your business as your Fractional CAIO,
+          building AI systems, owning your tech roadmap, and driving strategy every month.
+          Same C-suite function. 10% of the cost.
+        </p>
+        <a href="fractional-caio.html" class="caio-banner-link">Learn How It Works &rarr;</a>
+      </div>
+      <div class="caio-banner-stats">
+        <div class="caio-stat-card">
+          <div class="num">77%</div>
+          <div class="label">of companies need<br>a CAIO</div>
+        </div>
+        <div class="caio-stat-card">
+          <div class="num">3x</div>
+          <div class="label">growth in CAIO roles<br>in 5 years</div>
+        </div>
+        <div class="caio-stat-card highlight">
+          <div class="num">$2,500/mo</div>
+          <div class="label">Your Fractional CAIO</div>
+          <div class="versus">vs. $350K+/yr full-time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIA / SPEAKING -->
+  <section class="fade-up">
+    <div class="section-label">Media & Speaking</div>
+    <div class="section-title">Get to Know Me</div>
+    <p class="section-subtitle">
+      I share openly about the wins and the losses. Here's where you can find me.
+    </p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <div class="media-type">Podcast</div>
+        <h3>Entre-Real Estate Podcast</h3>
+        <p>Blueprints for personal growth in REI. Candid conversations with real investors.</p>
+      </div>
+      <div class="media-card">
+        <div class="media-type">YouTube</div>
+        <h3>Real Life REI</h3>
+        <p>Deal breakdowns, market analysis, foreclosure tutorials, and behind-the-scenes operations.</p>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Community</div>
+        <h3>Free Facebook Group</h3>
+        <p>Growth workshops, Q&A sessions, and a supportive community of investors building together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Devin Robinson</h3>
+          <p>
+            Builder, investor, educator. Based in Charlotte, NC.
+            Always open to conversations about capital, partnerships,
+            and building things that matter.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:devin@devinrobinsonrei.com">devin@devinrobinsonrei.com</a>
+          <a href="tel:7046121041">(704) 612-1041</a>
+          <a>Charlotte, NC 28202</a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+          <a href="#ventures">Ventures</a>
+          <a href="#educate">Learn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Devin Robinson. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" title="Instagram">IG</a>
+          <a href="#" title="YouTube">YT</a>
+          <a href="#" title="Twitter">X</a>
+          <a href="#" title="TikTok">TT</a>
+          <a href="#" title="LinkedIn">LI</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL ANIMATIONS -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Smooth nav background on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 100) {
+        nav.style.boxShadow = '0 1px 12px rgba(0,0,0,0.06)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

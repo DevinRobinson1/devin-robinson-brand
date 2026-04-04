@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractional CAIO — Pricing &amp; Scope | Devin Robinson</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --charcoal: #1a1a1a;
+      --slate: #2d2d2d;
+      --mid: #666666;
+      --soft: #999999;
+      --light: #e8e8e8;
+      --cream: #f8f7f5;
+      --white: #ffffff;
+      --accent: #c45a3c;
+      --accent-dark: #a8432a;
+      --accent-glow: rgba(196, 90, 60, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── PRIVATE BANNER ── */
+    .private-banner {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .private-banner strong {
+      color: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-right a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--mid);
+      transition: color 0.2s;
+    }
+
+    .nav-right a:hover {
+      color: var(--ink);
+    }
+
+    .nav-right .cta {
+      padding: 0.55rem 1.25rem;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .nav-right .cta:hover {
+      background: var(--accent-dark);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 2rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--soft);
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 550px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── PRICING TIERS ── */
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tier {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .tier:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .tier.recommended {
+      border: 2px solid var(--accent);
+    }
+
+    .tier.recommended::before {
+      content: 'Recommended';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.4rem;
+    }
+
+    .tier.recommended {
+      padding-top: 3.25rem;
+    }
+
+    .tier-rev {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .tier-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.15rem;
+    }
+
+    .tier-price .unit {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--soft);
+    }
+
+    .tier-annual {
+      font-size: 0.75rem;
+      color: var(--soft);
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .tier-scope-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-items {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .tier-items li {
+      font-size: 0.82rem;
+      color: var(--slate);
+      padding: 0.35rem 0 0.35rem 1.15rem;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .tier-items li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .tier-items li.bold {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .tier-cta {
+      display: block;
+      text-align: center;
+      padding: 0.8rem;
+      background: var(--cream);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .tier-cta:hover {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .tier.recommended .tier-cta {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .tier.recommended .tier-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .comp-wrap {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comp-table thead th {
+      background: var(--cream);
+      padding: 0.85rem 1.25rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--soft);
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .comp-table thead th:first-child {
+      width: 30%;
+    }
+
+    .comp-table thead th.highlight {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+
+    .comp-table tbody td {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--slate);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .comp-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .comp-table tbody td.highlight {
+      background: rgba(196, 90, 60, 0.03);
+    }
+
+    .comp-table .check {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .comp-table .dash {
+      color: var(--light);
+    }
+
+    /* ── MARKET CONTEXT ── */
+    .market-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .market-item {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .market-item .num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .market-item .label {
+      font-size: 0.72rem;
+      color: var(--soft);
+      line-height: 1.35;
+    }
+
+    /* ── VALUE CALC ── */
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 14px;
+      padding: 2.25rem;
+    }
+
+    .value-card h3 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      font-size: 0.88rem;
+      color: var(--slate);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .value-row:last-child {
+      border-bottom: none;
+    }
+
+    .value-row .val {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .value-row .val.accent {
+      color: var(--accent);
+    }
+
+    .value-row .val.strike {
+      text-decoration: line-through;
+      color: var(--soft);
+    }
+
+    .value-total {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .value-total .val {
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    /* ── TERMS ── */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .term-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .term-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .term-card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .final-cta {
+      background: var(--ink);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      text-align: center;
+      color: var(--white);
+      margin: 3rem auto 4rem;
+      max-width: 1100px;
+    }
+
+    .final-cta h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .final-cta p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .final-cta .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .final-cta-sub {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      color: var(--soft);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 968px) {
+      .tiers {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .market-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .terms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .comp-table {
+        font-size: 0.78rem;
+      }
+
+      .final-cta {
+        margin: 2rem 1rem 3rem;
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tiers {
+        grid-template-columns: 1fr;
+      }
+
+      .market-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .private-banner {
+        display: none;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .tier:hover,
+      .market-item:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .final-cta {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRIVATE BANNER -->
+  <div class="private-banner">
+    <strong>Confidential</strong> &mdash; This pricing sheet is prepared for private distribution only
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">DEVIN<span>.</span></a>
+      <div class="nav-right">
+        <a href="fractional-caio.html">Public CAIO Page</a>
+        <a href="offerings.html">All Services</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Confidential Pricing Sheet</div>
+    <h1>Fractional <span class="accent">Chief AI Officer</span></h1>
+    <p>
+      Your AI leadership partner &mdash; embedded in your business, building systems,
+      and driving strategy every month. Pricing scales with your revenue and scope.
+    </p>
+    <div class="hero-note">Prepared by Devin Robinson &middot; AI in REI</div>
+  </section>
+
+  <!-- MARKET CONTEXT -->
+  <section class="section">
+    <div class="section-label">Why This Exists</div>
+    <div class="section-title">The CAIO Market in 2026</div>
+    <p class="section-sub">77% of companies say they need a Chief AI Officer. Here's what the market looks like.</p>
+
+    <div class="market-bar">
+      <div class="market-item">
+        <div class="num">77%</div>
+        <div class="label">of companies have a CAIO<br>or say they need one</div>
+      </div>
+      <div class="market-item">
+        <div class="num">$353K</div>
+        <div class="label">average full-time<br>CAIO salary</div>
+      </div>
+      <div class="market-item">
+        <div class="num">$650K+</div>
+        <div class="label">Fortune 500<br>total comp</div>
+      </div>
+      <div class="market-item">
+        <div class="num">3x</div>
+        <div class="label">growth in CAIO<br>positions (5 yrs)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TIERS -->
+  <section class="section">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Four Tiers, One Role</div>
+    <p class="section-sub">Your investment scales with your revenue. More complexity = more scope = more value
+      delivered. All tiers include a 3-month minimum.</p>
+
+    <div class="tiers">
+
+      <!-- ENTRY -->
+      <div class="tier">
+        <div class="tier-rev">Under $500K Revenue</div>
+        <div class="tier-name">Entry Retainer</div>
+        <div class="tier-price">$1,500 &ndash; $2,000<span class="unit">/mo</span></div>
+        <div class="tier-annual">$18,000 &ndash; $24,000 annually</div>
+        <div class="tier-scope-label">Scope Includes</div>
+        <ul class="tier-items">
+          <li class="bold">1 AI build per month</li>
+          <li>Monthly strategy call (45 min)</li>
+          <li>Async Slack access (business hours)</li>
+          <li>AI roadmap &amp; quarterly review</li>
+          <li>System maintenance &amp; optimization</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#next" class="tier-cta">Select This Tier</a>
+      </div>
+
+      <!-- GROWTH (Recommended) -->
+      <div class="tier recommended">
+        <div class="tier-rev">$500K &ndash; $1M Revenue</div>
+        <div class="tier-name">Growth CAIO</div>
+        <div class="tier-price">$2,500 &ndash; $3,500<span class="unit">/mo</span></div>
+        <div class="tier-annual">$30,000 &ndash; $42,000 annually</div>
+        <div class="tier-scope-label">Scope Includes</div>
+        <ul class="tier-items">
+          <li class="bold">1&ndash;2 AI builds per month</li>
+          <li>Monthly strategy call (60 min)</li>
+          <li>Priority Slack/Voxer access</li>
+          <li>Full AI roadmap ownership</li>
+          <li>System optimization &amp; upgrades</li>
+          <li>First look at new tools &amp; skills</li>
+          <li>Training documentation</li>
+        </ul>
+        <a href="#next" class="tier-cta">Select This Tier</a>
+      </div>
+
+      <!-- SCALE -->
+      <div class="tier">
+        <div class="tier-rev">$1M &ndash; $5M Revenue</div>
+        <div class="tier-name">Scale CAIO</div>
+        <div class="tier-price">$3,500 &ndash; $5,000<span class="unit">/mo</span></div>
+        <div class="tier-annual">$42,000 &ndash; $60,000 annually</div>
+        <div class="tier-scope-label">Scope Includes</div>
+        <ul class="tier-items">
+          <li class="bold">2&ndash;3 AI builds per month</li>
+          <li>Bi-weekly strategy calls (60 min)</li>
+          <li>Priority Slack/Voxer access</li>
+          <li>Team meeting attendance (monthly)</li>
+          <li>Full roadmap + execution ownership</li>
+          <li>Multi-channel system architecture</li>
+          <li>Team AI training sessions</li>
+          <li>Quarterly business reviews</li>
+        </ul>
+        <a href="#next" class="tier-cta">Select This Tier</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="tier">
+        <div class="tier-rev">$5M+ Revenue</div>
+        <div class="tier-name">Enterprise CAIO</div>
+        <div class="tier-price">$5,000 &ndash; $10,000<span class="unit">/mo</span></div>
+        <div class="tier-annual">$60,000 &ndash; $120,000 annually</div>
+        <div class="tier-scope-label">Scope Includes</div>
+        <ul class="tier-items">
+          <li class="bold">3+ AI builds per month</li>
+          <li>Weekly strategy calls</li>
+          <li>Full priority access (Slack/Voxer/Phone)</li>
+          <li>Team meeting attendance (weekly)</li>
+          <li>Full AI department ownership</li>
+          <li>Enterprise system architecture</li>
+          <li>Team training &amp; AI culture building</li>
+          <li>Quarterly business reviews</li>
+          <li>Vendor &amp; tool evaluation</li>
+          <li>$400K&ndash;$1M+ in projected labor savings</li>
+        </ul>
+        <a href="#next" class="tier-cta">Select This Tier</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURE COMPARISON -->
+  <section class="section">
+    <div class="section-label">Side by Side</div>
+    <div class="section-title">Full Feature Comparison</div>
+
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Entry</th>
+            <th class="highlight">Growth</th>
+            <th>Scale</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly AI Builds</td>
+            <td>1</td>
+            <td class="highlight">1&ndash;2</td>
+            <td>2&ndash;3</td>
+            <td>3+</td>
+          </tr>
+          <tr>
+            <td>Strategy Calls</td>
+            <td>Monthly (45 min)</td>
+            <td class="highlight">Monthly (60 min)</td>
+            <td>Bi-weekly (60 min)</td>
+            <td>Weekly</td>
+          </tr>
+          <tr>
+            <td>Slack/Voxer Access</td>
+            <td>Async (biz hours)</td>
+            <td class="highlight"><span class="check">Priority</span></td>
+            <td><span class="check">Priority</span></td>
+            <td><span class="check">Priority + Phone</span></td>
+          </tr>
+          <tr>
+            <td>AI Roadmap</td>
+            <td>Quarterly review</td>
+            <td class="highlight"><span class="check">Full ownership</span></td>
+            <td><span class="check">Full ownership</span></td>
+            <td><span class="check">Full ownership</span></td>
+          </tr>
+          <tr>
+            <td>System Optimization</td>
+            <td><span class="check">&checkmark;</span></td>
+            <td class="highlight"><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+          <tr>
+            <td>Team Meeting Attendance</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="dash">&mdash;</span></td>
+            <td>Monthly</td>
+            <td>Weekly</td>
+          </tr>
+          <tr>
+            <td>Team AI Training</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="dash">&mdash;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+          <tr>
+            <td>New Tools Early Access</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+          <tr>
+            <td>Vendor / Tool Evaluation</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="dash">&mdash;</span></td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+          <tr>
+            <td>Quarterly Business Review</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="dash">&mdash;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+          <tr>
+            <td>Training Documentation</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td class="highlight"><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+            <td><span class="check">&checkmark;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- VALUE PROPOSITION -->
+  <section class="section">
+    <div class="section-label">The Math</div>
+    <div class="section-title">Why This Is a No-Brainer</div>
+    <p class="section-sub">Compare the cost of a full-time CAIO versus what you invest here.</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <h3>Full-Time CAIO Cost</h3>
+        <div class="value-row"><span>Base salary (avg)</span><span class="val strike">$352,612</span></div>
+        <div class="value-row"><span>Benefits &amp; overhead (30%)</span><span class="val strike">$105,784</span></div>
+        <div class="value-row"><span>Recruiting fees (25%)</span><span class="val strike">$88,153</span></div>
+        <div class="value-row"><span>Onboarding &amp; ramp time</span><span class="val strike">3&ndash;6 months</span>
+        </div>
+        <div class="value-total"><span>Total Year 1</span><span class="val">$546,549+</span></div>
+      </div>
+      <div class="value-card">
+        <h3>Your Fractional CAIO (Growth Tier)</h3>
+        <div class="value-row"><span>Monthly retainer</span><span class="val">$2,500 &ndash; $3,500</span></div>
+        <div class="value-row"><span>Annual investment</span><span class="val">$30,000 &ndash; $42,000</span></div>
+        <div class="value-row"><span>Recruiting fees</span><span class="val accent">$0</span></div>
+        <div class="value-row"><span>Onboarding time</span><span class="val accent">Week 1</span></div>
+        <div class="value-total"><span>Total Year 1</span><span class="val" style="color:var(--accent)">$30K &ndash;
+            $42K</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S A BUILD -->
+  <section class="section">
+    <div class="section-label">What You're Getting</div>
+    <div class="section-title">What Counts as a "Build"?</div>
+    <p class="section-sub">Each build is a fully functional AI system deployed into your business. Not a prototype
+      &mdash; production-ready.</p>
+
+    <div class="terms-grid">
+      <div class="term-card">
+        <h3>Automations</h3>
+        <p>AI cold callers, follow-up sequences, SMS/email systems, lead scoring, drip campaigns, notification
+          workflows.</p>
+      </div>
+      <div class="term-card">
+        <h3>AI Agents</h3>
+        <p>Autonomous agents for deal sourcing, property analysis, investor communications, capital raising, portfolio
+          reporting.</p>
+      </div>
+      <div class="term-card">
+        <h3>Systems &amp; Tools</h3>
+        <p>Full CRMs, underwriting calculators, content engines, competitor scrapers, process maps, reporting
+          dashboards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS -->
+  <section class="section">
+    <div class="section-label">Terms</div>
+    <div class="section-title">Engagement Details</div>
+
+    <div class="terms-grid">
+      <div class="term-card">
+        <h3>Minimum Commitment</h3>
+        <p>3 months. AI strategy takes time to implement properly. After the initial period, engagement continues
+          month-to-month with 30 days notice to cancel.</p>
+      </div>
+      <div class="term-card">
+        <h3>Payment</h3>
+        <p>Monthly retainer, billed on the 1st. First month due upon signing. Accepted: ACH, wire, credit card. Net-0
+          terms.</p>
+      </div>
+      <div class="term-card">
+        <h3>Ownership</h3>
+        <p>Everything I build for you is yours. Full ownership, full source access, full documentation. If we part ways,
+          you keep every system.</p>
+      </div>
+      <div class="term-card">
+        <h3>Availability</h3>
+        <p>I cap at 5 active CAIO clients to ensure quality. When slots are full, there's a waitlist. Current
+          availability is shared during the application call.</p>
+      </div>
+      <div class="term-card">
+        <h3>Scope Changes</h3>
+        <p>Need to upgrade or downgrade tiers? Adjustments can be made at the start of any month with 15 days notice. No
+          penalties.</p>
+      </div>
+      <div class="term-card">
+        <h3>Confidentiality</h3>
+        <p>All client data, systems, and strategies are treated as confidential. I sign NDAs upon request. Your
+          competitive advantage stays yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div style="padding:0 2rem">
+    <div class="final-cta" id="next">
+      <h2>Ready to Move Forward?</h2>
+      <p>
+        Reply to the email or message that brought you here, or book
+        a call directly. I'll scope your tier and we can kick off in days.
+      </p>
+      <a href="#" class="btn">Book Your Strategy Call &rarr;</a>
+      <div class="final-cta-sub">devin@reilegacy.com &middot; (704) 612-1041</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Confidential &middot; Devin Robinson &middot; AI in REI</p>
+    <p style="font-size:0.72rem; color:var(--soft)">This document is not linked from any public page</p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Consulting Services | Devin Robinson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --charcoal: #1a1a1a;
+      --slate: #2d2d2d;
+      --mid: #666666;
+      --soft: #999999;
+      --light: #e8e8e8;
+      --cream: #f8f7f5;
+      --white: #ffffff;
+      --accent: #c45a3c;
+      --accent-dark: #a8432a;
+      --accent-glow: rgba(196, 90, 60, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(248, 247, 245, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+
+    nav ul a {
+      text-decoration: none; color: var(--mid); font-size: 0.85rem;
+      font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--ink); }
+
+    .nav-cta {
+      padding: 0.55rem 1.25rem; background: var(--ink); color: var(--white);
+      font-size: 0.78rem; font-weight: 600; text-decoration: none;
+      border-radius: 6px; transition: all 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 10rem 2rem 4rem; max-width: 800px; margin: 0 auto; text-align: center;
+    }
+
+    .hero-label {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.4rem; font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.03em; margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .accent {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      color: var(--accent); font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.1rem; color: var(--mid); max-width: 540px;
+      margin: 0 auto 2.5rem; line-height: 1.7;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2rem; background: var(--ink); color: var(--white);
+      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      border-radius: 6px; transition: all 0.2s; border: none; cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2rem; background: transparent; color: var(--ink);
+      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      border-radius: 6px; border: 1px solid var(--light);
+      transition: all 0.2s; cursor: pointer;
+    }
+
+    .btn-secondary:hover { border-color: var(--ink); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      max-width: 900px; margin: 0 auto; padding: 0 2rem 5rem;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+
+    .trust-stat { text-align: center; }
+
+    .trust-stat .num {
+      font-size: 2rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em;
+    }
+
+    .trust-stat .label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--soft); font-weight: 500; margin-top: 0.15rem;
+    }
+
+    /* ── SECTION ── */
+    .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem; color: var(--mid); max-width: 550px; line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ══════════════════════════════════════
+       OFFERINGS — BENTO GRID
+       ══════════════════════════════════════ */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(80px, auto);
+      gap: 1rem;
+    }
+
+    .bento-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 2.25rem; position: relative;
+      overflow: hidden; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit; cursor: pointer;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .bento-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent); transform: scaleX(0); transition: transform 0.4s ease;
+      transform-origin: left;
+    }
+
+    .bento-card:hover::after { transform: scaleX(1); }
+
+    /* Grid positions */
+    .bento-flagship { grid-column: span 8; grid-row: span 3; }
+    .bento-caio { grid-column: span 4; grid-row: span 3; }
+    .bento-intensive { grid-column: span 4; grid-row: span 2; }
+    .bento-workshop { grid-column: span 4; grid-row: span 2; }
+    .bento-community { grid-column: span 4; grid-row: span 2; }
+
+    /* Flagship dark */
+    .bento-flagship {
+      background: var(--ink); color: var(--white);
+    }
+
+    .bento-flagship::after { background: var(--accent); }
+
+    .bento-flagship .card-tag { color: #e8825f; background: rgba(196,90,60,0.2); }
+    .bento-flagship .card-title { color: var(--white); }
+    .bento-flagship .card-tagline { color: rgba(255,255,255,0.5); }
+    .bento-flagship .card-list li { color: rgba(255,255,255,0.6); }
+    .bento-flagship .card-list li::before { background: var(--accent); }
+    .bento-flagship .card-bottom { border-top-color: rgba(255,255,255,0.1); }
+    .bento-flagship .card-meta { color: rgba(255,255,255,0.35); }
+    .bento-flagship .card-price { color: var(--white); }
+    .bento-flagship .card-arrow { color: rgba(255,255,255,0.3); }
+    .bento-flagship:hover .card-arrow { color: var(--accent); }
+    .bento-flagship .card-col-label { color: rgba(255,255,255,0.3); }
+
+    /* CAIO accent border */
+    .bento-caio {
+      border: 2px solid var(--accent);
+      background: linear-gradient(165deg, var(--white) 60%, var(--accent-glow) 100%);
+    }
+
+    .bento-caio::after { height: 0; }
+
+    .bento-caio .card-price-highlight {
+      font-size: 2rem; font-weight: 900; color: var(--ink);
+      letter-spacing: -0.03em; line-height: 1;
+    }
+
+    .bento-caio .card-price-context {
+      font-size: 0.78rem; color: var(--soft); margin-top: 0.25rem;
+    }
+
+    .bento-caio .card-vs {
+      background: var(--cream); border-radius: 8px; padding: 0.75rem 1rem;
+      margin: 1rem 0; text-align: center;
+    }
+
+    .bento-caio .card-vs-label {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--soft);
+    }
+
+    .bento-caio .card-vs-price {
+      font-size: 0.9rem; font-weight: 800; color: var(--ink);
+      text-decoration: line-through; text-decoration-color: var(--accent);
+    }
+
+    .bento-caio .card-vs-note {
+      font-size: 0.72rem; color: var(--accent); font-weight: 600; margin-top: 0.2rem;
+    }
+
+    /* Card inner elements */
+    .card-tag {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+      background: var(--accent-glow); padding: 0.3rem 0.7rem;
+      border-radius: 4px; margin-bottom: 0.85rem; align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 1.5rem; font-weight: 800; color: var(--ink);
+      margin-bottom: 0.25rem; letter-spacing: -0.01em;
+    }
+
+    .card-tagline {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 0.92rem; color: var(--soft); line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-list { list-style: none; margin-bottom: auto; }
+
+    .card-list li {
+      font-size: 0.85rem; color: var(--slate); padding: 0.3rem 0 0.3rem 1.15rem;
+      position: relative; line-height: 1.45;
+    }
+
+    .card-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.6rem;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.5;
+    }
+
+    .card-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1rem;
+    }
+
+    .card-col-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--soft); margin-bottom: 0.5rem;
+    }
+
+    .card-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.06); margin-top: 1.25rem;
+    }
+
+    .card-meta { font-size: 0.75rem; color: var(--soft); }
+
+    .card-price { font-size: 1.1rem; font-weight: 800; color: var(--ink); }
+
+    .card-arrow {
+      position: absolute; top: 2rem; right: 2rem;
+      font-size: 1.2rem; color: var(--light); transition: all 0.3s;
+    }
+
+    .bento-card:hover .card-arrow {
+      color: var(--accent); transform: translate(3px, -3px);
+    }
+
+    /* ── WHO SECTION ── */
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+    .who-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 14px; padding: 2.5rem; transition: all 0.3s;
+    }
+
+    .who-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+
+    .who-card h3 {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+    }
+
+    .who-card p { font-size: 0.95rem; color: var(--mid); line-height: 1.7; }
+
+    /* ══════════════════════════════════════
+       QUIZ
+       ══════════════════════════════════════ */
+    .quiz-section {
+      padding: 6rem 2rem;
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .quiz-container { max-width: 640px; margin: 0 auto; text-align: center; }
+
+    .quiz-progress { display: flex; gap: 0.4rem; margin-bottom: 2.5rem; justify-content: center; }
+
+    .quiz-dot {
+      width: 32px; height: 4px; border-radius: 100px;
+      background: var(--light); transition: all 0.4s ease;
+    }
+
+    .quiz-dot.active { background: var(--accent); width: 48px; }
+    .quiz-dot.done { background: var(--ink); }
+
+    .quiz-question { display: none; animation: fadeIn 0.4s ease; }
+    .quiz-question.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .quiz-question h3 {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem;
+      letter-spacing: -0.01em; color: var(--ink);
+    }
+
+    .quiz-hint { font-size: 0.88rem; color: var(--soft); margin-bottom: 2rem; }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 0.65rem; text-align: left; }
+
+    .quiz-option {
+      background: var(--cream); border: 1.5px solid rgba(0,0,0,0.06);
+      border-radius: 10px; padding: 1rem 1.25rem; cursor: pointer;
+      transition: all 0.2s ease; display: flex; align-items: center; gap: 1rem;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--accent); background: var(--accent-glow);
+      transform: translateX(3px);
+    }
+
+    .quiz-option.selected {
+      border-color: var(--accent); background: var(--accent-glow);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .quiz-option-icon {
+      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .quiz-option-text h4 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.1rem; }
+    .quiz-option-text p { font-size: 0.78rem; color: var(--soft); line-height: 1.4; }
+
+    .quiz-nav {
+      display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;
+    }
+
+    .quiz-back {
+      background: none; border: none; color: var(--soft); font-size: 0.85rem;
+      cursor: pointer; padding: 0.5rem 0; transition: color 0.2s;
+    }
+
+    .quiz-back:hover { color: var(--ink); }
+
+    .quiz-next {
+      padding: 0.7rem 1.5rem; background: var(--ink); color: var(--white);
+      font-size: 0.82rem; font-weight: 600; border: none; border-radius: 6px;
+      cursor: pointer; opacity: 0.3; pointer-events: none; transition: all 0.2s;
+    }
+
+    .quiz-next.ready { opacity: 1; pointer-events: auto; }
+    .quiz-next.ready:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* ── QUIZ RESULT ── */
+    .quiz-result { display: none; text-align: center; animation: fadeIn 0.5s ease; }
+    .quiz-result.active { display: block; }
+
+    .result-icon {
+      width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 1.5rem;
+      display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+      background: var(--accent-glow); border: 1px solid rgba(196,90,60,0.15);
+    }
+
+    .result-match {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+    }
+
+    .quiz-result h3 { font-size: 1.6rem; font-weight: 800; color: var(--ink); margin-bottom: 0.5rem; }
+
+    .quiz-result > p {
+      font-size: 0.95rem; color: var(--mid); max-width: 460px;
+      margin: 0 auto 1.5rem; line-height: 1.7;
+    }
+
+    .result-features {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      justify-content: center; margin-bottom: 1.5rem;
+    }
+
+    .result-feat {
+      padding: 0.35rem 0.85rem; background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.06); border-radius: 100px;
+      font-size: 0.78rem; color: var(--slate); font-weight: 500;
+    }
+
+    .result-price { font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-bottom: 2rem; }
+
+    .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .quiz-restart {
+      background: none; border: 1px solid var(--light); color: var(--mid);
+      font-size: 0.82rem; font-weight: 500; padding: 0.7rem 1.5rem; border-radius: 6px;
+      cursor: pointer; transition: all 0.2s;
+    }
+
+    .quiz-restart:hover { border-color: var(--ink); color: var(--ink); }
+
+    .result-tier {
+      display: inline-block; padding: 0.4rem 1rem; background: var(--accent-glow);
+      border: 1px solid rgba(196,90,60,0.15); border-radius: 6px;
+      font-size: 0.78rem; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.04em; margin-bottom: 1.25rem;
+    }
+
+    .result-context {
+      font-size: 0.82rem; color: var(--soft); margin-top: 0.5rem; margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ── CTA ── */
+    .cta-section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+    .cta-box {
+      background: var(--ink); border-radius: 16px; padding: 4rem;
+      text-align: center; color: var(--white);
+    }
+
+    .cta-box h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .cta-box p { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+    .cta-box .btn-primary { background: var(--accent); }
+    .cta-box .btn-primary:hover { background: var(--accent-dark); }
+    .cta-contact { font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-top: 1rem; }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid rgba(0,0,0,0.06); padding: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .footer p { font-size: 0.78rem; color: var(--soft); }
+
+    .footer .motto {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      color: var(--accent); opacity: 0.6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 968px) {
+      .bento {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+      .bento-flagship, .bento-caio, .bento-intensive,
+      .bento-workshop, .bento-community {
+        grid-column: auto; grid-row: auto;
+      }
+      .card-cols { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      nav ul { display: none; }
+      .cta-box { padding: 2.5rem 1.5rem; }
+      .trust-bar { gap: 2rem; }
+    }
+
+    /* ── SCROLL ── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">DEVIN<span>.</span></a>
+    <ul>
+      <li><a href="#offerings">Services</a></li>
+      <li><a href="#quiz">Find Your Fit</a></li>
+      <li><a href="index.html">About</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">AI in Real Estate &middot; Consulting</div>
+  <h1>Custom AI Systems<br>for <span class="accent">Real Estate.</span></h1>
+  <p>
+    I build the automations, skills, and workflows that eliminate your
+    biggest bottlenecks &mdash; so you can scale without adding headcount.
+  </p>
+  <div class="hero-actions">
+    <a href="#quiz" class="btn-primary">Find Your Perfect Fit &rarr;</a>
+    <a href="#offerings" class="btn-secondary">Browse Services</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar fade-up">
+  <div class="trust-stat">
+    <div class="num">50+</div>
+    <div class="label">AI Systems Built</div>
+  </div>
+  <div class="trust-stat">
+    <div class="num">$2M+</div>
+    <div class="label">Capital Raised</div>
+  </div>
+  <div class="trust-stat">
+    <div class="num">16+</div>
+    <div class="label">Ventures Built</div>
+  </div>
+  <div class="trust-stat">
+    <div class="num">25+</div>
+    <div class="label">Properties</div>
+  </div>
+</div>
+
+<!-- OFFERINGS — BENTO GRID -->
+<section class="section" id="offerings">
+  <div class="section-label">Services</div>
+  <div class="section-title">What I Offer</div>
+  <p class="section-sub">If AI can solve it, I'll build it. Every engagement starts with understanding your business first.</p>
+
+  <div class="bento">
+
+    <!-- BUILD ANYTHING — Large left -->
+    <a href="#" class="bento-card bento-flagship fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">Flagship Offer</span>
+      <div class="card-title">Build Anything</div>
+      <div class="card-tagline">"Tell me your biggest problem. I'll build the AI that solves it."</div>
+
+      <div class="card-cols">
+        <div>
+          <div class="card-col-label">How It Works</div>
+          <ul class="card-list">
+            <li>30-min strategy call to find your #1 bottleneck</li>
+            <li>Custom AI solution scoped on the call</li>
+            <li>Built &amp; delivered in 2&ndash;3 weeks</li>
+            <li>Full walkthrough + training included</li>
+            <li>2 revision rounds to dial it in</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-col-label">What I've Built</div>
+          <ul class="card-list">
+            <li>Full-stack Wholesale CRMs</li>
+            <li>AI Cold Callers &amp; Follow-Up Systems</li>
+            <li>SMS &amp; Email Automation</li>
+            <li>Agentic Capital Raising Tools</li>
+            <li>Competitor Intelligence Scrapers</li>
+            <li>Go-To-Market Content Engines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <span class="card-meta">2&ndash;3 week delivery &middot; Includes training</span>
+        <span class="card-price">$2,500 &ndash; $5,000</span>
+      </div>
+    </a>
+
+    <!-- FRACTIONAL CAIO — Tall right -->
+    <a href="fractional-caio.html" class="bento-card bento-caio fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">Premium Retainer</span>
+      <div class="card-title">Fractional CAIO</div>
+      <div class="card-tagline">Your Chief AI Officer &mdash; at a fraction of the cost.</div>
+
+      <div class="card-price-highlight" style="font-size:1.5rem">Starting at $2,500<span style="font-size:0.5em;font-weight:500;color:var(--soft)">/mo</span></div>
+      <div class="card-price-context">vs. $350K+/yr for a full-time CAIO</div>
+
+      <div class="card-vs">
+        <div class="card-vs-label">Meta's CAIO Package</div>
+        <div class="card-vs-price">$1M+ base / year</div>
+        <div class="card-vs-note">You get this for 0.3% of that.</div>
+      </div>
+
+      <ul class="card-list" style="margin-top:0.5rem">
+        <li>1&ndash;2 new AI builds per month</li>
+        <li>Monthly strategy calls</li>
+        <li>Priority Slack/Voxer access</li>
+        <li>AI roadmap ownership</li>
+      </ul>
+
+      <div class="card-bottom">
+        <span class="card-meta">3-month min &middot; Custom pricing</span>
+        <span class="card-price" style="font-size:0.85rem">Learn More &amp; Apply &rarr;</span>
+      </div>
+    </a>
+
+    <!-- AI STRATEGY INTENSIVE -->
+    <a href="#" class="bento-card bento-intensive fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">Deep Dive</span>
+      <div class="card-title">AI Strategy Intensive</div>
+      <div class="card-tagline">"One day. A complete roadmap + live-built systems."</div>
+      <ul class="card-list">
+        <li>Full business audit &amp; opportunity mapping</li>
+        <li>2&ndash;3 live AI builds during the session</li>
+        <li>Written AI roadmap you can execute on</li>
+        <li>Virtual or in-person (6&ndash;8 hours)</li>
+      </ul>
+      <div class="card-bottom">
+        <span class="card-meta">Full day &middot; Virtual or In-Person</span>
+        <span class="card-price">$5,000</span>
+      </div>
+    </a>
+
+    <!-- AI WORKSHOP -->
+    <a href="#" class="bento-card bento-workshop fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">Live Event</span>
+      <div class="card-title">AI Workshop</div>
+      <div class="card-tagline">"Hands-on group training. Working systems &mdash; not theory."</div>
+      <ul class="card-list">
+        <li>Virtual (20&ndash;30 ppl) or In-Person (10&ndash;15)</li>
+        <li>2&ndash;3 hours live + recorded replay</li>
+        <li>Topics: Wholesalers, Funds, Ads, Content</li>
+        <li>Private &amp; corporate bookings available</li>
+      </ul>
+      <div class="card-bottom">
+        <span class="card-meta">Group format &middot; Recorded</span>
+        <span class="card-price">$497 &ndash; $10K</span>
+      </div>
+    </a>
+
+    <!-- COMMUNITY -->
+    <a href="#" class="bento-card bento-community fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">Community</span>
+      <div class="card-title">AI in REI Community</div>
+      <div class="card-tagline">"Every skill, template, and system I build &mdash; plus weekly training."</div>
+      <ul class="card-list">
+        <li>Full skills library &amp; prompt templates</li>
+        <li>Video tutorials &amp; walkthroughs</li>
+        <li>Weekly live Q&amp;A sessions</li>
+        <li>New skills dropped weekly from real builds</li>
+      </ul>
+      <div class="card-bottom">
+        <span class="card-meta">Self-paced &middot; Monthly</span>
+        <span class="card-price">$97 &ndash; $197/mo</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="section fade-up">
+  <div class="section-label">Who This Is For</div>
+  <div class="section-title">Built for Real Estate Operators</div>
+  <p class="section-sub">Whether you're doing deals or raising capital, there's an AI play for your business.</p>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <h3>For Operators</h3>
+      <p>
+        Wholesalers, flippers, builders, and developers who want to automate lead gen,
+        cold calling, property research, deal analysis, outreach, and reporting &mdash;
+        without hiring more people.
+      </p>
+    </div>
+    <div class="who-card">
+      <h3>For Capital Raisers</h3>
+      <p>
+        Fund managers and syndicators who want to automate investor comms, deal memos,
+        capital raising, LP onboarding, and portfolio reporting &mdash;
+        powered by AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-container">
+    <div class="section-label" style="text-align:center;">Find Your Fit</div>
+    <div class="section-title" style="text-align:center; margin-bottom:0.4rem;">Which Service Is Right for You?</div>
+    <p class="quiz-hint" style="text-align:center; margin-bottom:2.5rem;">Answer 5 quick questions. We'll match you to the perfect offering.</p>
+
+    <div class="quiz-progress" id="quizProgress">
+      <div class="quiz-dot active"></div>
+      <div class="quiz-dot"></div>
+      <div class="quiz-dot"></div>
+      <div class="quiz-dot"></div>
+      <div class="quiz-dot"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="quiz-question active" data-step="0">
+      <h3>What best describes your role?</h3>
+      <p class="quiz-hint">This helps us understand your day-to-day.</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-value="operator" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9881;</div>
+          <div class="quiz-option-text"><h4>REI Operator</h4><p>Wholesaler, flipper, builder, or developer doing deals</p></div>
+        </div>
+        <div class="quiz-option" data-value="fund-manager" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9670;</div>
+          <div class="quiz-option-text"><h4>Fund Manager / Syndicator</h4><p>Raising capital and managing investor relationships</p></div>
+        </div>
+        <div class="quiz-option" data-value="team-leader" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9733;</div>
+          <div class="quiz-option-text"><h4>Team / Company Leader</h4><p>Running a real estate company with a team</p></div>
+        </div>
+        <div class="quiz-option" data-value="new" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9752;</div>
+          <div class="quiz-option-text"><h4>Getting Started</h4><p>New to REI or AI and want to learn the ropes</p></div>
+        </div>
+      </div>
+      <div class="quiz-nav"><div></div><button class="quiz-next" onclick="nextQuestion()">Next &rarr;</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-question" data-step="1">
+      <h3>What's your biggest bottleneck?</h3>
+      <p class="quiz-hint">Pick the one that keeps you up at night.</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-value="lead-gen" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128269;</div>
+          <div class="quiz-option-text"><h4>Lead Generation &amp; Outreach</h4><p>Finding deals, cold calling, follow-ups, marketing</p></div>
+        </div>
+        <div class="quiz-option" data-value="operations" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9881;</div>
+          <div class="quiz-option-text"><h4>Operations &amp; Systems</h4><p>CRM, workflows, reporting, team coordination</p></div>
+        </div>
+        <div class="quiz-option" data-value="capital" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128176;</div>
+          <div class="quiz-option-text"><h4>Capital Raising &amp; Investor Relations</h4><p>LP comms, deal memos, onboarding, reporting</p></div>
+        </div>
+        <div class="quiz-option" data-value="dont-know" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#10067;</div>
+          <div class="quiz-option-text"><h4>I Don't Know Where to Start</h4><p>I know AI can help &mdash; I need someone to show me where</p></div>
+        </div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="prevQuestion()">&larr; Back</button><button class="quiz-next" onclick="nextQuestion()">Next &rarr;</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-question" data-step="2">
+      <h3>How do you prefer to work?</h3>
+      <p class="quiz-hint">There's no wrong answer.</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-value="done-for-me" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128296;</div>
+          <div class="quiz-option-text"><h4>Build It for Me</h4><p>Done-for-you solution I can plug in and run</p></div>
+        </div>
+        <div class="quiz-option" data-value="learn" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128218;</div>
+          <div class="quiz-option-text"><h4>Teach Me to Build It</h4><p>I want to learn the skills and implement myself</p></div>
+        </div>
+        <div class="quiz-option" data-value="ongoing" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128257;</div>
+          <div class="quiz-option-text"><h4>Ongoing Partnership</h4><p>Someone embedded in my business long-term</p></div>
+        </div>
+        <div class="quiz-option" data-value="explore" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#127758;</div>
+          <div class="quiz-option-text"><h4>Just Exploring</h4><p>Want to see what's possible before committing</p></div>
+        </div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="prevQuestion()">&larr; Back</button><button class="quiz-next" onclick="nextQuestion()">Next &rarr;</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-question" data-step="3">
+      <h3>What's your annual revenue?</h3>
+      <p class="quiz-hint">Helps us recommend the right investment level.</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-value="pre-revenue" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#127793;</div>
+          <div class="quiz-option-text"><h4>Pre-Revenue / Just Starting</h4><p>Still getting first deals or just launched</p></div>
+        </div>
+        <div class="quiz-option" data-value="under-500k" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128200;</div>
+          <div class="quiz-option-text"><h4>Under $500K</h4><p>Doing deals consistently, ready to scale</p></div>
+        </div>
+        <div class="quiz-option" data-value="500k-1m" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128640;</div>
+          <div class="quiz-option-text"><h4>$500K &ndash; $1M</h4><p>Established operation with growth potential</p></div>
+        </div>
+        <div class="quiz-option" data-value="1m-5m" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#127942;</div>
+          <div class="quiz-option-text"><h4>$1M &ndash; $5M</h4><p>Scaling with real complexity and team</p></div>
+        </div>
+        <div class="quiz-option" data-value="5m-plus" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128142;</div>
+          <div class="quiz-option-text"><h4>$5M+</h4><p>Enterprise-level, need a full AI department</p></div>
+        </div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="prevQuestion()">&larr; Back</button><button class="quiz-next" onclick="nextQuestion()">Next &rarr;</button></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-question" data-step="4">
+      <h3>How soon do you need results?</h3>
+      <p class="quiz-hint">We'll match the urgency to the right solution.</p>
+      <div class="quiz-options">
+        <div class="quiz-option" data-value="asap" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#9889;</div>
+          <div class="quiz-option-text"><h4>Yesterday</h4><p>Active problem costing me time and money right now</p></div>
+        </div>
+        <div class="quiz-option" data-value="this-month" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128197;</div>
+          <div class="quiz-option-text"><h4>This Month</h4><p>Want to get started soon and see results in weeks</p></div>
+        </div>
+        <div class="quiz-option" data-value="this-quarter" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128336;</div>
+          <div class="quiz-option-text"><h4>This Quarter</h4><p>Planning ahead, want to build strategically</p></div>
+        </div>
+        <div class="quiz-option" data-value="learning" onclick="selectOption(this)">
+          <div class="quiz-option-icon">&#128161;</div>
+          <div class="quiz-option-text"><h4>No Rush &mdash; Still Learning</h4><p>Just want to understand what AI can do</p></div>
+        </div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="prevQuestion()">&larr; Back</button><button class="quiz-next" onclick="showResult()">See My Result &rarr;</button></div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="quiz-result" id="result-build">
+      <div class="result-icon">&#128296;</div>
+      <div class="result-match">Best Match</div>
+      <h3>Build Anything</h3>
+      <p>You know your bottleneck and you want it solved. I'll build a custom AI system tailored to your specific problem and deliver it in 2&ndash;3 weeks with full training.</p>
+      <div class="result-features"><span class="result-feat">Custom AI build</span><span class="result-feat">2&ndash;3 week delivery</span><span class="result-feat">Training included</span><span class="result-feat">2 revision rounds</span></div>
+      <div class="result-price">$2,500 &ndash; $5,000</div>
+      <div class="result-actions"><a href="#contact" class="btn-primary">Book a Strategy Call &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+
+    <div class="quiz-result" id="result-intensive">
+      <div class="result-icon">&#127919;</div>
+      <div class="result-match">Best Match</div>
+      <h3>AI Strategy Intensive</h3>
+      <p>You know AI can help but aren't sure where to start. Let's spend a full day mapping your opportunities, building live systems, and creating your AI roadmap.</p>
+      <div class="result-features"><span class="result-feat">Full business audit</span><span class="result-feat">2&ndash;3 live builds</span><span class="result-feat">Written roadmap</span><span class="result-feat">6&ndash;8 hours</span></div>
+      <div class="result-price">$5,000</div>
+      <div class="result-actions"><a href="#contact" class="btn-primary">Book Your Intensive &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+
+    <div class="quiz-result" id="result-caio">
+      <div class="result-icon">&#9733;</div>
+      <div class="result-match">Best Match</div>
+      <h3>Fractional CAIO</h3>
+      <p>You need an embedded AI partner. I'll join your team as your Chief AI Officer &mdash; building systems, owning your roadmap, and driving strategy every month.</p>
+      <div class="result-features"><span class="result-feat">Monthly AI builds</span><span class="result-feat">Strategy calls</span><span class="result-feat">Priority access</span><span class="result-feat">Roadmap ownership</span></div>
+      <div class="result-price">Starting at $2,500/mo</div>
+      <div class="result-actions"><a href="fractional-caio.html" class="btn-primary">Learn More &amp; Apply &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+
+    <div class="quiz-result" id="result-community">
+      <div class="result-icon">&#127760;</div>
+      <div class="result-match">Best Match</div>
+      <h3>AI in REI Community</h3>
+      <p>Learn at your own pace with access to every tool, template, and system I build &mdash; plus weekly live training and Q&amp;A.</p>
+      <div class="result-features"><span class="result-feat">Full skills library</span><span class="result-feat">Weekly live Q&amp;A</span><span class="result-feat">New skills weekly</span><span class="result-feat">Video tutorials</span></div>
+      <div class="result-price">$97 &ndash; $197/mo</div>
+      <div class="result-actions"><a href="#contact" class="btn-primary">Join the Community &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+
+    <div class="quiz-result" id="result-workshop">
+      <div class="result-icon">&#128640;</div>
+      <div class="result-match">Best Match</div>
+      <h3>AI Workshop</h3>
+      <p>A hands-on group session where you and your team walk away with working AI systems &mdash; not theory.</p>
+      <div class="result-features"><span class="result-feat">Hands-on building</span><span class="result-feat">Group format</span><span class="result-feat">Recorded replay</span><span class="result-feat">Working systems</span></div>
+      <div class="result-price">$497 &ndash; $10,000</div>
+      <div class="result-actions"><a href="#contact" class="btn-primary">Book a Workshop &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-box">
+    <h2>Ready to put AI to work?</h2>
+    <p>Book a free 15-minute intro call. No pitch &mdash; just figuring out if I can help.</p>
+    <a href="#" class="btn-primary">Book a Call &rarr;</a>
+    <div class="cta-contact">devin@reilegacy.com</div>
+  </div>
+</section>
+
+<div class="footer">
+  <p>REI Legacy &middot; AI in REI &middot; Devin Robinson</p>
+  <p class="motto">To Great Success &amp; Greater Impact</p>
+</div>
+
+<script>
+  const answers = [null, null, null, null, null];
+  let currentStep = 0;
+
+  function selectOption(el) {
+    const parent = el.closest('.quiz-question');
+    parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[parseInt(parent.dataset.step)] = el.dataset.value;
+    parent.querySelector('.quiz-next').classList.add('ready');
+  }
+
+  function nextQuestion() {
+    if (answers[currentStep] === null) return;
+    const questions = document.querySelectorAll('.quiz-question');
+    const dots = document.querySelectorAll('.quiz-dot');
+    dots[currentStep].classList.remove('active');
+    dots[currentStep].classList.add('done');
+    questions[currentStep].classList.remove('active');
+    currentStep++;
+    if (currentStep < questions.length) {
+      questions[currentStep].classList.add('active');
+      dots[currentStep].classList.add('active');
+      questions[currentStep].style.animation = 'none';
+      questions[currentStep].offsetHeight;
+      questions[currentStep].style.animation = '';
+    }
+  }
+
+  function prevQuestion() {
+    if (currentStep === 0) return;
+    const questions = document.querySelectorAll('.quiz-question');
+    const dots = document.querySelectorAll('.quiz-dot');
+    dots[currentStep].classList.remove('active');
+    questions[currentStep].classList.remove('active');
+    currentStep--;
+    dots[currentStep].classList.remove('done');
+    dots[currentStep].classList.add('active');
+    questions[currentStep].classList.add('active');
+  }
+
+  function showResult() {
+    if (answers[currentStep] === null) return;
+    const dots = document.querySelectorAll('.quiz-dot');
+    dots[currentStep].classList.remove('active');
+    dots[currentStep].classList.add('done');
+    document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
+    const resultId = calculateResult();
+    document.getElementById(resultId).classList.add('active');
+  }
+
+  function calculateResult() {
+    const [role, pain, pref, revenue, timeline] = answers;
+    const isHighRev = revenue === '1m-5m' || revenue === '5m-plus';
+    const isMidRev = revenue === '500k-1m';
+
+    // CAIO routes
+    if (isHighRev && pref === 'ongoing') return 'result-caio';
+    if (isHighRev && pref === 'done-for-me' && timeline !== 'asap') return 'result-caio';
+    if (isMidRev && pref === 'ongoing') return 'result-caio';
+
+    // Build Anything
+    if (pref === 'done-for-me' && pain !== 'dont-know' && revenue !== 'pre-revenue') return 'result-build';
+    if (timeline === 'asap' && pref === 'done-for-me') return 'result-build';
+    if (timeline === 'asap' && revenue !== 'pre-revenue' && pain !== 'dont-know') return 'result-build';
+
+    // Strategy Intensive
+    if (pain === 'dont-know' && revenue !== 'pre-revenue' && pref !== 'learn') return 'result-intensive';
+    if (pref === 'explore' && (isMidRev || isHighRev)) return 'result-intensive';
+    if (pain === 'dont-know' && pref === 'done-for-me') return 'result-intensive';
+
+    // Workshop
+    if (role === 'team-leader' && pref === 'learn') return 'result-workshop';
+    if (role === 'team-leader' && pref === 'explore') return 'result-workshop';
+
+    // Community
+    if (pref === 'learn') return 'result-community';
+    if (revenue === 'pre-revenue') return 'result-community';
+    if (timeline === 'learning') return 'result-community';
+
+    // Fallback by revenue
+    if (isHighRev) return 'result-caio';
+    if (isMidRev) return 'result-build';
+    if (revenue === 'under-500k' && pref === 'ongoing') return 'result-caio';
+    return 'result-community';
+  }
+
+  function restartQuiz() {
+    answers.fill(null); currentStep = 0;
+    document.querySelectorAll('.quiz-result').forEach(r => r.classList.remove('active'));
+    document.querySelectorAll('.quiz-question').forEach((q, i) => {
+      q.classList.toggle('active', i === 0);
+      q.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      const btn = q.querySelector('.quiz-next');
+      if (btn) btn.classList.remove('ready');
+    });
+    document.querySelectorAll('.quiz-dot').forEach((d, i) => {
+      d.classList.remove('done'); d.classList.toggle('active', i === 0);
+    });
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+      window.scrollY > 100 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+  });
+</script>
+
+</body>
+</html>
