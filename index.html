@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devin Robinson - Builder, Investor, Educator</title>
-  <meta name="description" content="Devin Robinson builds companies, raises capital, and teaches others how to create generational wealth through real estate, AI, and entrepreneurship.">
-  <meta property="og:title" content="Devin Robinson - Builder, Investor, Educator">
-  <meta property="og:description" content="Builder of Fund Flow OS, PF Capital, and Fund Founders. Raising capital, deploying AI, and diversifying Wall Street.">
+  <title>Devin Robinson - Entrepreneur, Educator, AI Strategist</title>
+  <meta name="description" content="Devin Robinson helps real estate operators raise capital, scale funds, and deploy AI. Host of Funds on Fire. Founder of Fund Founders and Fund Flow OS.">
+  <meta property="og:title" content="Devin Robinson - Entrepreneur, Educator, AI Strategist">
+  <meta property="og:description" content="I help real estate operators raise capital, scale funds, and deploy AI across their business.">
   <meta property="og:image" content="images/db937bf8-9fef-414c-9065-8bba7bc37378.png">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <style>
     :root {
-      --ink: #111111;
+      --ink: #0a0a0a;
       --charcoal: #1a1a1a;
       --slate: #2d2d2d;
       --mid: #666666;
       --soft: #999999;
       --light: #e8e8e8;
       --cream: #f8f7f5;
+      --offwhite: #faf9f7;
       --white: #ffffff;
       --accent: #c45a3c;
       --accent-dark: #a8432a;
+      --accent-light: #e8785c;
       --accent-glow: rgba(196, 90, 60, 0.08);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,586 +44,615 @@
       content: '';
       position: fixed;
       inset: 0;
-      opacity: 0.022;
+      opacity: 0.018;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 9999;
     }
+
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(248, 247, 245, 0.92);
+      background: rgba(248, 247, 245, 0.95);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
+      transition: box-shadow 0.3s ease;
     }
-    nav .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0.9rem 2rem;
       display: flex; justify-content: space-between; align-items: center;
     }
-    nav .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
-    nav .logo span { color: var(--accent); }
-    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
     nav ul a {
-      text-decoration: none; color: var(--mid); font-size: 0.85rem; font-weight: 500;
-      letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; position: relative;
-    }
-    nav ul a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: var(--accent); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none; color: var(--mid); font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
     }
     nav ul a:hover { color: var(--ink); }
-    nav ul a:hover::after { width: 100%; }
     .nav-cta {
-      padding: 0.55rem 1.25rem; background: var(--accent); color: var(--white) !important;
-      border-radius: 6px; font-size: 0.8rem !important; font-weight: 600;
-      letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.2s ease;
+      padding: 0.5rem 1.2rem; background: var(--accent); color: var(--white) !important;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s, transform 0.2s;
     }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(196, 90, 60, 0.3); }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
     .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--ink); }
+
+    /* ── HERO ── */
     .hero {
       min-height: 100vh; display: flex; align-items: center;
-      padding: 8rem 2rem 4rem; max-width: 1200px; margin: 0 auto;
+      padding: 7rem 2rem 4rem; max-width: 1200px; margin: 0 auto;
     }
-    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
-    .hero-text h1 { font-size: 3.8rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: var(--ink); }
-    .hero-text h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .hero-text .subtitle { font-size: 1.15rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.25rem; max-width: 480px; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .hero-tags span {
-      padding: 0.4rem 1rem; background: var(--white); border: 1px solid var(--light);
-      border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: var(--slate);
-      letter-spacing: 0.02em; transition: all 0.3s ease;
+    .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; width: 100%; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.25rem;
     }
-    .hero-tags span:hover { border-color: var(--accent); color: var(--accent); }
-    .cta-group { display: flex; gap: 1rem; align-items: center; }
+    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.03em; margin-bottom: 1.5rem; color: var(--ink);
+    }
+    .hero-text h1 .accent {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      color: var(--accent); font-weight: 600;
+    }
+    .hero-text .subtitle {
+      font-size: 1.1rem; color: var(--mid); line-height: 1.7;
+      margin-bottom: 2rem; max-width: 520px;
+    }
+    .hero-email {
+      display: flex; gap: 0; margin-bottom: 1.5rem; max-width: 440px;
+    }
+    .hero-email input {
+      flex: 1; padding: 0.85rem 1.25rem; border: 1px solid var(--light);
+      border-right: none; border-radius: 6px 0 0 6px; font-size: 0.9rem;
+      font-family: inherit; background: var(--white); outline: none;
+      transition: border-color 0.2s;
+    }
+    .hero-email input:focus { border-color: var(--accent); }
+    .hero-email input::placeholder { color: var(--soft); }
+    .hero-email button {
+      padding: 0.85rem 1.5rem; background: var(--accent); color: var(--white);
+      border: none; border-radius: 0 6px 6px 0; font-size: 0.82rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .hero-email button:hover { background: var(--accent-dark); }
+    .hero-email-note { font-size: 0.72rem; color: var(--soft); margin-bottom: 2rem; }
+    .hero-ctas { display: flex; gap: 1rem; align-items: center; }
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem;
+      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem;
       background: var(--ink); color: var(--white); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; border-radius: 6px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.2s ease;
+      font-size: 0.85rem; font-weight: 600; border-radius: 6px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.2s;
     }
     .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 90, 60, 0.25); }
-    .btn-primary:active { transform: translateY(0); transition-duration: 0.1s; }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem;
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem;
       background: transparent; color: var(--ink); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; border-radius: 6px;
-      border: 1px solid var(--light); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.85rem; font-weight: 600; border-radius: 6px;
+      border: 1px solid var(--light); transition: all 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
     .hero-visual { position: relative; display: flex; justify-content: center; }
-    .hero-image-wrapper { width: 420px; height: 520px; border-radius: 16px; position: relative; overflow: hidden; }
-    .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hero-image-wrapper {
+      width: 100%; max-width: 440px; aspect-ratio: 3/4;
+      border-radius: 16px; overflow: hidden; position: relative;
+    }
+    .hero-image-wrapper img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
     .hero-image-wrapper:hover img { transform: scale(1.03); }
-    .hero-stats { position: absolute; bottom: -2rem; left: -2rem; background: var(--white); padding: 1.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); display: flex; gap: 2rem; }
-    .stat { text-align: center; }
-    .stat .number { font-size: 1.6rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .stat .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
-    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
-    .section-title { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--ink); }
-    .section-subtitle { font-size: 1.05rem; color: var(--mid); max-width: 600px; line-height: 1.7; margin-bottom: 3rem; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .about-narrative p { font-size: 1.05rem; line-height: 1.8; color: var(--slate); margin-bottom: 1.5rem; }
-    .about-narrative .emphasis { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--ink); line-height: 1.5; border-left: 3px solid var(--accent); padding-left: 1.5rem; margin: 2rem 0; }
-    .about-right { display: flex; flex-direction: column; gap: 2rem; }
-    .about-image { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .about-image:hover img { transform: scale(1.04); }
-    .detail-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .detail-block:last-child { border-bottom: none; margin-bottom: 0; }
-    .detail-block h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--soft); margin-bottom: 0.5rem; font-weight: 600; }
-    .detail-block p { font-size: 1rem; color: var(--ink); font-weight: 500; }
-    /* ── BRANDS BANNER ── */
-    .brands-banner {
-      max-width: none; margin: 0; padding: 3.5rem 2rem;
-      background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+    .hero-floating-card {
+      position: absolute; bottom: 1.5rem; left: -1.5rem;
+      background: var(--white); padding: 1rem 1.5rem; border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1); display: flex; gap: 1.5rem;
     }
-    .brands-banner-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    .hero-floating-card .stat { text-align: center; }
+    .hero-floating-card .stat .number { font-size: 1.3rem; font-weight: 800; color: var(--ink); }
+    .hero-floating-card .stat .label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof-bar {
+      max-width: none; margin: 0; padding: 2.5rem 2rem;
+      background: var(--ink); text-align: center;
     }
-    .brand-highlight {
-      display: flex; align-items: center; gap: 1.5rem;
-      padding: 1.5rem 2rem; background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
-      text-decoration: none; color: var(--white);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background 0.3s ease;
+    .proof-bar-inner { max-width: 1000px; margin: 0 auto; }
+    .proof-bar-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.35); font-weight: 500; margin-bottom: 1.5rem; }
+    .proof-logos {
+      display: flex; justify-content: center; align-items: center;
+      gap: 2.5rem; flex-wrap: wrap; opacity: 0.5;
     }
-    .brand-highlight:hover {
-      transform: translateY(-3px); border-color: rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.06);
-    }
-    .brand-highlight-logo {
-      width: 80px; height: 80px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .brand-highlight-logo img { width: 100%; height: 100%; object-fit: contain; padding: 0.5rem; }
-    .brand-highlight-text h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .brand-highlight-text p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
-    .brand-highlight-tag {
-      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--accent); font-weight: 600; margin-bottom: 0.35rem;
-    }
-    @media (max-width: 600px) {
-      .brands-banner-inner { grid-template-columns: 1fr; }
+    .proof-logos img { height: 28px; filter: brightness(0) invert(1); opacity: 0.7; }
+    .proof-logos span {
+      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      letter-spacing: 0.02em; white-space: nowrap;
     }
 
-    .photo-strip { max-width: none; margin: 0; overflow: hidden; background: var(--white); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .photo-strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .photo-strip-item { aspect-ratio: 16/10; overflow: hidden; position: relative; }
-    .photo-strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%); }
-    .photo-strip-item:hover img { transform: scale(1.06); filter: grayscale(0%); }
-    .photo-strip-item .photo-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 1.25rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: var(--white); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; opacity: 0; transform: translateY(8px); transition: opacity 0.3s ease, transform 0.3s ease; }
-    .photo-strip-item:hover .photo-caption { opacity: 1; transform: translateY(0); }
-    .timeline-section { background: var(--ink); padding: 6rem 2rem; max-width: none; margin: 0; color: var(--white); }
-    .timeline-inner { max-width: 1200px; margin: 0 auto; }
-    .timeline-section .section-label { color: var(--accent); }
-    .timeline-section .section-title { color: var(--white); }
-    .timeline-section .section-subtitle { color: rgba(255,255,255,0.5); }
-    .timeline-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .timeline { position: relative; padding: 2rem 0; }
-    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.1); }
-    .timeline-item { position: relative; padding-left: 3rem; margin-bottom: 3rem; }
-    .timeline-item::before { content: ''; position: absolute; left: -5px; top: 0.3rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--ink); }
-    .timeline-item.milestone::before { width: 16px; height: 16px; left: -7px; box-shadow: 0 0 0 4px rgba(196, 90, 60, 0.3); }
-    .timeline-date { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.35rem; }
-    .timeline-title { font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
-    .timeline-desc { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 500px; }
-    .timeline-metric { display: inline-block; margin-top: 0.5rem; padding: 0.3rem 0.8rem; background: rgba(196, 90, 60, 0.15); border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: var(--accent); }
-    .timeline-images { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 8rem; }
-    .timeline-img { border-radius: 12px; overflow: hidden; }
-    .timeline-img img { width: 100%; display: block; border-radius: 12px; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .timeline-img:hover img { transform: scale(1.03); }
-    .timeline-img-caption { margin-top: 0.5rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.35); }
-    .ventures-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .venture-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease; position: relative; }
-    .venture-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.12); }
-    .venture-card.featured { grid-column: span 2; background: var(--ink); color: var(--white); }
-    .venture-card-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
-    .venture-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .venture-card:hover .venture-card-image img { transform: scale(1.05); }
-    .venture-card-body { padding: 1.75rem; }
-    .venture-card.featured .venture-type { color: var(--accent); }
-    .venture-card.featured .venture-name { color: var(--white); }
-    .venture-card.featured .venture-desc { color: rgba(255,255,255,0.6); }
-    .venture-icon { width: 44px; height: 44px; background: var(--accent-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--accent); }
-    .venture-card.featured .venture-icon { background: rgba(196, 90, 60, 0.2); }
-    .venture-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.75; fill: none; }
-    .venture-type { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-    .venture-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
-    .venture-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
-    .venture-metric { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.8rem; color: var(--soft); }
-    .venture-card.featured .venture-metric { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
-    .venture-metric strong { color: var(--ink); font-weight: 700; }
-    .venture-card.featured .venture-metric strong { color: var(--accent); }
-    .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .edu-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; }
-    .edu-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-    .edu-card-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
-    .edu-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .edu-card:hover .edu-card-image img { transform: scale(1.05); }
-    .edu-card-body { padding: 2rem; }
-    .edu-number { font-size: 3rem; font-weight: 800; color: var(--light); line-height: 1; margin-bottom: 1rem; }
-    .edu-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
-    .edu-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
-    .vision-section { position: relative; padding: 6rem 2rem; max-width: none; margin: 0; text-align: center; overflow: hidden; }
+    /* ── 3 PILLARS ── */
+    .pillars { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .pillars-header { text-align: center; margin-bottom: 3.5rem; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pillar-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px;
+      overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+    }
+    .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .pillar-card-image { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
+    .pillar-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .pillar-card:hover .pillar-card-image img { transform: scale(1.05); }
+    .pillar-card-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .pillar-tag {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .pillar-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .pillar-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.65; flex: 1; }
+    .pillar-card .pillar-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+      margin-top: 1.25rem; transition: gap 0.2s;
+    }
+    .pillar-card:hover .pillar-link { gap: 0.6rem; }
+
+    /* ── SECTION UTILITIES ── */
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+    .section-title { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: var(--ink); }
+    .section-subtitle { font-size: 1.05rem; color: var(--mid); max-width: 560px; line-height: 1.7; }
+
+    /* ── PODCAST ── */
+    .podcast-section {
+      max-width: none; margin: 0; padding: 6rem 2rem;
+      background: var(--charcoal); color: var(--white);
+    }
+    .podcast-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .podcast-text .section-label { color: var(--accent); }
+    .podcast-text h2 { font-size: 2.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .podcast-text p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2rem; max-width: 460px; }
+    .podcast-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .podcast-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+      color: var(--white); font-size: 0.78rem; font-weight: 600;
+      text-decoration: none; transition: background 0.2s, border-color 0.2s;
+    }
+    .podcast-badge:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+    .podcast-badge svg { width: 18px; height: 18px; fill: currentColor; }
+    .podcast-appearances { margin-top: 2rem; }
+    .podcast-appearances h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .appearance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .appearance-card {
+      border-radius: 10px; overflow: hidden; aspect-ratio: 16/9;
+      position: relative;
+    }
+    .appearance-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); filter: brightness(0.9); }
+    .appearance-card:hover img { transform: scale(1.05); filter: brightness(1); }
+    .podcast-visual { display: flex; flex-direction: column; gap: 1rem; }
+    .podcast-hero-img { border-radius: 14px; overflow: hidden; aspect-ratio: 16/10; }
+    .podcast-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── PHOTO MOSAIC ── */
+    .photo-mosaic {
+      max-width: none; margin: 0; padding: 0; overflow: hidden;
+    }
+    .mosaic-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px;
+    }
+    .mosaic-item {
+      aspect-ratio: 1; overflow: hidden; position: relative;
+    }
+    .mosaic-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: grayscale(15%);
+    }
+    .mosaic-item:hover img { transform: scale(1.08); filter: grayscale(0%); }
+    .mosaic-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+    /* ── ABOUT ── */
+    .about-section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
+    .about-image { border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .about-image:hover img { transform: scale(1.03); }
+    .about-text h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15; }
+    .about-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .about-text p { font-size: 1rem; color: var(--mid); line-height: 1.8; margin-bottom: 1rem; }
+    .about-text .emphasis {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic;
+      color: var(--ink); line-height: 1.5; border-left: 3px solid var(--accent);
+      padding-left: 1.25rem; margin: 1.5rem 0;
+    }
+    .about-stats { display: flex; gap: 2.5rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.08); }
+    .about-stat .num { font-size: 1.5rem; font-weight: 900; color: var(--ink); }
+    .about-stat .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
+
+    /* ── CAIO SECTION ── */
+    .caio-section {
+      max-width: none; margin: 0; padding: 6rem 2rem;
+      background: var(--white); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .caio-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .caio-text h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15; }
+    .caio-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .caio-text p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; max-width: 460px; }
+    .caio-stats-row { display: flex; gap: 1rem; margin-bottom: 2rem; }
+    .caio-stat-pill {
+      padding: 0.6rem 1.25rem; background: var(--cream); border-radius: 8px;
+      text-align: center;
+    }
+    .caio-stat-pill .num { font-size: 1.2rem; font-weight: 900; color: var(--ink); }
+    .caio-stat-pill .lbl { font-size: 0.62rem; color: var(--soft); text-transform: uppercase; letter-spacing: 0.05em; }
+    .caio-visual { border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; }
+    .caio-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .caio-visual:hover img { transform: scale(1.03); }
+
+    /* ── VISION / CTA ── */
+    .vision-section {
+      position: relative; padding: 7rem 2rem; max-width: none; margin: 0;
+      text-align: center; overflow: hidden;
+    }
     .vision-bg { position: absolute; inset: 0; }
     .vision-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .vision-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(196, 90, 60, 0.92), rgba(168, 67, 42, 0.95)); }
-    .vision-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
-    .vision-section .section-label { color: rgba(255,255,255,0.7); }
-    .vision-section h2 { font-size: 2.4rem; font-weight: 700; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
-    .vision-section p { font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 2.5rem; }
-    .vision-section .btn-primary { background: var(--white); color: var(--accent); }
-    .vision-section .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .caio-banner { padding: 5rem 2rem; max-width: none; margin: 0; background: var(--white); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .caio-banner-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .caio-banner-text .section-label { margin-bottom: 0.75rem; }
-    .caio-banner-text h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15; }
-    .caio-banner-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .caio-banner-text p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; max-width: 460px; }
-    .caio-banner-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; background: var(--ink); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; border-radius: 6px; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.2s ease; }
-    .caio-banner-link:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 90, 60, 0.25); }
-    .caio-banner-visual { display: flex; flex-direction: column; gap: 1.5rem; }
-    .caio-image { border-radius: 12px; overflow: hidden; aspect-ratio: 16/10; }
-    .caio-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .caio-image:hover img { transform: scale(1.03); }
-    .caio-banner-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .caio-stat-card { background: var(--cream); border-radius: 12px; padding: 1.5rem; text-align: center; }
-    .caio-stat-card .num { font-size: 1.8rem; font-weight: 900; color: var(--ink); letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.35rem; }
-    .caio-stat-card .label { font-size: 0.72rem; color: var(--soft); line-height: 1.35; }
-    .caio-stat-card.highlight { background: var(--ink); grid-column: span 2; }
-    .caio-stat-card.highlight .num { color: var(--white); }
-    .caio-stat-card.highlight .label { color: rgba(255,255,255,0.45); }
-    .caio-stat-card.highlight .versus { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-top: 0.25rem; }
-    .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .media-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; }
-    .media-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-    .media-card-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
-    .media-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .media-card:hover .media-card-image img { transform: scale(1.05); }
-    .media-card-body { padding: 1.5rem; }
-    .media-type { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
-    .media-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink); }
-    .media-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
-    .footer-section { background: var(--charcoal); padding: 5rem 2rem 3rem; max-width: none; margin: 0; }
+    .vision-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.88), rgba(10,10,10,0.92)); }
+    .vision-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .vision-section .section-label { color: var(--accent); }
+    .vision-section h2 { font-size: 2.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .vision-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 2.5rem; }
+    .vision-email {
+      display: flex; gap: 0; max-width: 420px; margin: 0 auto 1rem;
+    }
+    .vision-email input {
+      flex: 1; padding: 0.85rem 1.25rem; border: 1px solid rgba(255,255,255,0.15);
+      border-right: none; border-radius: 6px 0 0 6px; font-size: 0.9rem;
+      font-family: inherit; background: rgba(255,255,255,0.08); color: var(--white); outline: none;
+    }
+    .vision-email input::placeholder { color: rgba(255,255,255,0.35); }
+    .vision-email button {
+      padding: 0.85rem 1.5rem; background: var(--accent); color: var(--white);
+      border: none; border-radius: 0 6px 6px 0; font-size: 0.82rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; white-space: nowrap; transition: background 0.2s;
+    }
+    .vision-email button:hover { background: var(--accent-light); }
+    .vision-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+    .vision-section .btn-primary { background: var(--accent); margin-top: 1rem; }
+    .vision-section .btn-primary:hover { background: var(--accent-light); }
+
+    /* ── FOOTER ── */
+    .footer-section { background: var(--ink); padding: 5rem 2rem 3rem; max-width: none; margin: 0; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
-    .footer-brand h3 { font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
-    .footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 360px; }
-    .footer-signoff { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1rem; margin-top: 1.25rem; }
-    .footer-col h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); font-weight: 600; margin-bottom: 1rem; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+    .footer-brand h3 { font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 300px; }
+    .footer-signoff { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 0.95rem; margin-top: 1rem; }
+    .footer-col h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); font-weight: 600; margin-bottom: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.55rem; transition: color 0.2s; }
     .footer-col a:hover { color: var(--white); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
-    .social-links { display: flex; gap: 0.75rem; }
-    .social-links a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+    .social-links { display: flex; gap: 0.6rem; }
+    .social-links a {
+      width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.45);
+      text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
     .social-links a:hover { background: var(--accent); color: var(--white); transform: translateY(-2px); }
-    .social-links a svg { width: 16px; height: 16px; fill: currentColor; }
+    .social-links a svg { width: 15px; height: 15px; fill: currentColor; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 968px) {
-      .hero-content { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-text h1 { font-size: 2.8rem; }
+      .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-visual { order: -1; }
-      .hero-image-wrapper { width: 100%; max-width: 400px; height: 420px; }
-      .hero-stats { left: 0; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .timeline-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .timeline-images { position: static; flex-direction: row; }
-      .timeline-images .timeline-img { flex: 1; }
-      .ventures-grid { grid-template-columns: 1fr; }
-      .venture-card.featured { grid-column: span 1; }
-      .education-grid { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .caio-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .photo-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .hero-image-wrapper { max-width: 350px; }
+      .hero-floating-card { left: 0; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .podcast-inner { grid-template-columns: 1fr; }
+      .podcast-visual { order: -1; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { max-width: 400px; }
+      .caio-inner { grid-template-columns: 1fr; }
+      .mosaic-grid { grid-template-columns: repeat(3, 1fr); }
+      .mosaic-item.wide { grid-column: span 1; aspect-ratio: 1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .hero-text h1 { font-size: 2.2rem; }
-      .section-title { font-size: 1.8rem; }
       nav ul { display: none; }
       .mobile-menu-btn { display: block; }
-      .cta-group { flex-direction: column; align-items: stretch; }
-      .hero-stats { flex-direction: column; gap: 1rem; }
-      .photo-strip-item:nth-child(3), .photo-strip-item:nth-child(4) { display: none; }
-      .timeline-images { flex-direction: column; }
+      .hero-email { flex-direction: column; }
+      .hero-email input { border-right: 1px solid var(--light); border-radius: 6px; }
+      .hero-email button { border-radius: 6px; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-floating-card { position: static; margin-top: 1rem; }
+      .about-stats { flex-direction: column; gap: 1rem; }
+      .caio-stats-row { flex-direction: column; }
+      .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
+      .appearance-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .vision-email { flex-direction: column; }
+      .vision-email input { border-right: 1px solid rgba(255,255,255,0.15); border-radius: 6px; }
+      .vision-email button { border-radius: 6px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <div class="logo">DEVIN<span>.</span></div>
+      <a href="/" class="logo">DEVIN<span>.</span></a>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#ventures">Ventures</a></li>
-        <li><a href="#educate">Educate</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="offerings.html">Services</a></li>
+        <li><a href="fractional-caio.html">AI Strategy</a></li>
         <li><a href="offerings.html" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Builder. Investor.<br><span class="accent">Educator.</span></h1>
-        <p class="subtitle">I build companies, raise capital, and teach others how to create generational wealth through real estate and entrepreneurship.</p>
-        <div class="hero-tags">
-          <span>Fund Manager</span>
-          <span>Real Estate Investor</span>
-          <span>CEO</span>
-          <span>Educator</span>
-          <span>Speaker</span>
-          <span>Father</span>
-        </div>
-        <div class="cta-group">
+        <div class="hero-eyebrow"><span class="dot"></span> Entrepreneur / Educator / AI Strategist</div>
+        <h1>I help operators raise capital<br>and scale with <span class="accent">AI.</span></h1>
+        <p class="subtitle">Host of the Funds on Fire podcast. Founder of Fund Founders and Fund Flow OS. Fractional Chief AI Officer. On a mission to diversify Wall Street.</p>
+        <form class="hero-email" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email for free resources">
+          <button type="submit">Get Access</button>
+        </form>
+        <p class="hero-email-note">Join 3,500+ operators. No spam, unsubscribe anytime.</p>
+        <div class="hero-ctas">
           <a href="offerings.html" class="btn-primary">Work With Me &rarr;</a>
-          <a href="#journey" class="btn-secondary">View My Journey</a>
+          <a href="#podcast" class="btn-ghost">Listen to the Podcast</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-image-wrapper">
-          <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson - Builder, Investor, Educator">
+          <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
         </div>
-        <div class="hero-stats">
-          <div class="stat"><div class="number">16+</div><div class="label">Ventures Built</div></div>
+        <div class="hero-floating-card">
           <div class="stat"><div class="number">$10M+</div><div class="label">Capital Raised</div></div>
           <div class="stat"><div class="number">300+</div><div class="label">Properties</div></div>
+          <div class="stat"><div class="number">16+</div><div class="label">Ventures</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" data-reveal>
-    <div class="section-label">About</div>
-    <div class="section-title">The Short Version</div>
-    <div class="about-grid">
-      <div class="about-narrative">
-        <p>I'm Devin Robinson -- a father first, and a builder of everything else second. Over the past decade I've started, scaled, crashed, and rebuilt 16 businesses across real estate, technology, education, and finance.</p>
-        <div class="emphasis">"I don't just invest in real estate -- I build the systems, the teams, and the capital infrastructure to do it at scale."</div>
-        <p>I specialize in foreclosures and creative finance, and I've built robust SOPs that consistently produce results. In 2023, I launched PF Capital -- a 506(b) real estate fund -- and raised over $10M in capital within 6 months, with no prior fund-raising track record.</p>
-        <p>Today I'm focused on scaling our portfolio, deploying AI across our operations, and teaching everything I've learned through courses, coaching, and community.</p>
-      </div>
-      <div class="about-right">
-        <div class="about-image" data-reveal>
-          <img src="images/ChatGPT Image Jan 2, 2026, 11_54_35 AM.png" alt="Devin Robinson - Culture is Capital">
-        </div>
-        <div class="about-details">
-          <div class="detail-block"><h4>Based In</h4><p>Charlotte, NC</p></div>
-          <div class="detail-block"><h4>Current Focus</h4><p>Fund Flow OS, AI-Powered Operations</p></div>
-          <div class="detail-block"><h4>Investment Thesis</h4><p>Distressed assets, creative finance, installment method acquisitions</p></div>
-          <div class="detail-block"><h4>Superpower</h4><p>Turning chaos into systems -- then teaching others to run them</p></div>
-        </div>
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar" data-reveal>
+    <div class="proof-bar-inner">
+      <div class="proof-bar-label">Featured On &amp; Partnered With</div>
+      <div class="proof-logos">
+        <span>Real Estate Disruptors</span>
+        <span>Collective Genius</span>
+        <span>Wholesale Hotline</span>
+        <span>DealMachine</span>
+        <span>Titanium Vault</span>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section data-reveal>
-    <div class="section-label">Media &amp; Speaking</div>
-    <div class="section-title">Get to Know Me</div>
-    <p class="section-subtitle">I share openly about the wins and the losses. Here's where you can find me.</p>
-    <div class="media-grid" data-stagger>
-      <div class="media-card">
-        <div class="media-card-image"><img src="images/FonF long.png" alt="Funds on Fire Podcast" loading="lazy" style="object-fit: contain; background: #132036; padding: 1rem;"></div>
-        <div class="media-card-body"><div class="media-type">Podcast</div><h3>Funds on Fire</h3><p>Deep dives on fund management, capital raising, and founder stories. Real conversations with real operators.</p></div>
-      </div>
-      <div class="media-card">
-        <div class="media-card-image"><img src="images/CGPremier2024Q2_MainRoom_web_178.JPG" alt="Devin at CG Premier" loading="lazy"></div>
-        <div class="media-card-body"><div class="media-type">Speaking</div><h3>Conference Panels &amp; Keynotes</h3><p>Real talk on capital raising, AI in real estate, and building from nothing. Available for speaking engagements.</p></div>
-      </div>
-      <div class="media-card">
-        <div class="media-card-image"><img src="images/FF - Horizontal Logo - Full Color.png" alt="Fund Founders" loading="lazy" style="object-fit: contain; background: var(--cream); padding: 1.5rem;"></div>
-        <div class="media-card-body"><div class="media-type">Community</div><h3>Fund Founders</h3><p>Education, coaching, and community for aspiring fund managers. Helping minorities and women launch investment funds.</p></div>
-      </div>
+  <!-- 3 PILLARS -->
+  <div class="pillars" data-reveal>
+    <div class="pillars-header">
+      <div class="section-label">What I Do</div>
+      <div class="section-title">Three Ways I Can Help You</div>
     </div>
-  </section>
-
-  <div class="brands-banner" data-reveal>
-    <div class="brands-banner-inner">
-      <a href="#" class="brand-highlight">
-        <div class="brand-highlight-logo" style="background: #132036;">
-          <img src="images/FF - Horizontal Logo - Full Color.png" alt="Fund Founders">
+    <div class="pillars-grid" data-stagger>
+      <a href="offerings.html" class="pillar-card">
+        <div class="pillar-card-image">
+          <img src="images/FF - Horizontal Logo - Full Color.png" alt="Fund Founders" loading="lazy" style="object-fit: contain; background: #132036; padding: 2rem;">
         </div>
-        <div class="brand-highlight-text">
-          <div class="brand-highlight-tag">Education &amp; Community</div>
+        <div class="pillar-card-body">
+          <div class="pillar-tag">Education &amp; Community</div>
           <h3>Fund Founders</h3>
-          <p>Helping minorities and women launch and manage investment funds. Coaching, community, and a podcast for aspiring fund managers.</p>
+          <p>Learn to launch and manage investment funds from scratch. Coaching, community, and resources for aspiring fund managers -- especially minorities and women.</p>
+          <span class="pillar-link">Learn More <span>&rarr;</span></span>
         </div>
       </a>
-      <a href="#" class="brand-highlight">
-        <div class="brand-highlight-logo" style="background: #132036;">
-          <img src="images/FonF long.png" alt="Funds on Fire Podcast">
+      <a href="offerings.html" class="pillar-card">
+        <div class="pillar-card-image">
+          <img src="images/08BB2B4E-5C48-4159-AF3B-968A87A937DB.PNG" alt="Fund Flow OS" loading="lazy">
         </div>
-        <div class="brand-highlight-text">
-          <div class="brand-highlight-tag">Podcast</div>
-          <h3>Funds on Fire</h3>
-          <p>Real conversations about fund management, capital raising, and what it takes to build from nothing. New episodes weekly.</p>
+        <div class="pillar-card-body">
+          <div class="pillar-tag">AI-Powered Software</div>
+          <h3>Fund Flow OS</h3>
+          <p>The AI platform that helps real estate operators raise capital, manage investors, and automate fund operations. Smart matching, pitch decks, investor portal.</p>
+          <span class="pillar-link">Learn More <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a href="fractional-caio.html" class="pillar-card">
+        <div class="pillar-card-image">
+          <img src="images/ChatGPT Image Oct 27, 2025, 09_27_51 AM.png" alt="Fractional CAIO" loading="lazy">
+        </div>
+        <div class="pillar-card-body">
+          <div class="pillar-tag">AI Strategy</div>
+          <h3>Fractional CAIO</h3>
+          <p>I embed in your business as your Chief AI Officer. AI systems, tech roadmap, and strategy every month. C-suite function at 10% of the cost.</p>
+          <span class="pillar-link">Learn More <span>&rarr;</span></span>
         </div>
       </a>
     </div>
   </div>
 
-  <div class="photo-strip" data-reveal>
-    <div class="photo-strip-inner">
-      <div class="photo-strip-item"><img src="images/IMG_4323.JPG" alt="Devin speaking on stage" loading="lazy"><div class="photo-caption">Speaking</div></div>
-      <div class="photo-strip-item"><img src="images/CGPremier2024Q2_MainRoom_web_178.JPG" alt="Devin on a panel discussion" loading="lazy"><div class="photo-caption">Panel Discussion</div></div>
-      <div class="photo-strip-item"><img src="images/ChatGPT Image Jan 2, 2026, 10_23_53 AM.png" alt="Devin networking at conference" loading="lazy"><div class="photo-caption">Networking</div></div>
-      <div class="photo-strip-item"><img src="images/New Episode Large copy.jpg" alt="Devin recording podcast" loading="lazy"><div class="photo-caption">Podcast Studio</div></div>
-    </div>
-  </div>
-
-  <div class="timeline-section" id="journey">
-    <div class="timeline-inner">
-      <div class="section-label">The Journey</div>
-      <div class="section-title">Built Through Failure &amp; Persistence</div>
-      <p class="section-subtitle">Every milestone was earned. No shortcuts, no silver spoons.</p>
-      <div class="timeline-layout">
-        <div class="timeline">
-          <div class="timeline-item" data-reveal><div class="timeline-date">2013 - 2022</div><div class="timeline-title">16 Business Ventures</div><div class="timeline-desc">Started, sold, crashed, and burned through 8 different industries and 16 business ventures. Every failure was tuition.</div></div>
-          <div class="timeline-item milestone" data-reveal><div class="timeline-date">April 2021</div><div class="timeline-title">Launched Wholesale Operation</div><div class="timeline-desc">Hit the ground running -- closed 70 deals in the first 6 months.</div><div class="timeline-metric">$700K+ revenue in 6 months</div></div>
-          <div class="timeline-item" data-reveal><div class="timeline-date">Nov 2021 - May 2022</div><div class="timeline-title">Crash, Burn, Rebuild</div><div class="timeline-desc">The model broke. Laid off the entire staff and rebuilt the business from zero. The hardest and most important chapter.</div></div>
-          <div class="timeline-item milestone" data-reveal><div class="timeline-date">2022</div><div class="timeline-title">Specialized in Foreclosures</div><div class="timeline-desc">Built extremely robust SOPs for foreclosure acquisitions. Finished the year averaging $70K per deal.</div><div class="timeline-metric">$150K/month &middot; $600K on the year</div></div>
-          <div class="timeline-item milestone" data-reveal><div class="timeline-date">July 2023</div><div class="timeline-title">Started PF Capital</div><div class="timeline-desc">Launched a 506(b) Real Estate fund and raised $2M in capital within 6 months -- with zero prior capital-raising experience.</div><div class="timeline-metric">$2M raised in 6 months</div></div>
-          <div class="timeline-item milestone" data-reveal><div class="timeline-date">July - Dec 2023</div><div class="timeline-title">Portfolio Scale-Up</div><div class="timeline-desc">Scaled operations and purchased 25 properties using creative finance and the Installment Method to flip and hold.</div><div class="timeline-metric">25 properties acquired</div></div>
-          <div class="timeline-item milestone" data-reveal><div class="timeline-date">2024 - Present</div><div class="timeline-title">AI + Education + Scale</div><div class="timeline-desc">Deploying AI agents across deal sourcing, underwriting, and operations. Building education programs to give back everything I've learned.</div></div>
+  <!-- PODCAST -->
+  <div class="podcast-section" id="podcast">
+    <div class="podcast-inner">
+      <div class="podcast-text">
+        <div class="section-label">The Podcast</div>
+        <h2>Funds on Fire</h2>
+        <p>Real conversations about raising capital, managing funds, and building businesses from nothing. No fluff, no gatekeeping -- just the playbook.</p>
+        <div class="podcast-badges">
+          <a href="#" class="podcast-badge">
+            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Apple Podcasts
+          </a>
+          <a href="#" class="podcast-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify
+          </a>
+          <a href="#" class="podcast-badge">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
         </div>
-        <div class="timeline-images">
-          <div class="timeline-img" data-reveal><img src="images/ChatGPT Image Jan 2, 2026, 10_34_08 AM.png" alt="Devin speaking at Collective Genius" loading="lazy"><div class="timeline-img-caption">Speaking at Collective Genius</div></div>
-          <div class="timeline-img" data-reveal><img src="images/IMG_2434.jpg" alt="Devin Robinson - Diversify Wall Street" loading="lazy"><div class="timeline-img-caption">#DiversifyWallStreet</div></div>
+        <div class="podcast-appearances">
+          <h4>Recent Guest Appearances</h4>
+          <div class="appearance-grid">
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (1).jpg" alt="Real Estate Disruptors with Steve Trang" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final).jpg" alt="DealMachine Podcast" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (2).jpg" alt="Titanium Vault Podcast" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/Screenshot 2026-04-05 at 9.17.16 AM.png" alt="Wholesale Hotline" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="podcast-visual">
+        <div class="podcast-hero-img">
+          <img src="images/New Episode Large copy.jpg" alt="Devin Robinson in the podcast studio" loading="lazy">
+        </div>
+        <div class="podcast-hero-img">
+          <img src="images/B4542C7B-B379-4894-A5BC-E11020B4BF09.JPG" alt="Devin on Real Estate Disruptors" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 
-  <section id="ventures" data-reveal>
-    <div class="section-label">What I Build</div>
-    <div class="section-title">Active Ventures &amp; Focus Areas</div>
-    <p class="section-subtitle">I operate at the intersection of real estate, technology, and education.</p>
-    <div class="ventures-grid" data-stagger>
-      <div class="venture-card featured">
-        <div class="venture-card-image"><img src="images/08BB2B4E-5C48-4159-AF3B-968A87A937DB.PNG" alt="Fund Flow OS" loading="lazy"></div>
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
-          <div class="venture-type">Technology / SaaS</div>
-          <div class="venture-name">Fund Flow OS</div>
-          <div class="venture-desc">AI-powered investor management and capital raising platform for real estate operators. The tool that's going to change how operators raise capital and manage funds.</div>
-          <div class="venture-metric"><strong>AI-Powered</strong> Smart matching, pitch deck builder, investor portal</div>
-        </div>
+  <!-- PHOTO MOSAIC -->
+  <div class="photo-mosaic">
+    <div class="mosaic-grid">
+      <div class="mosaic-item"><img src="images/CGPremier2025Q2_MAINSTAGE & CROWD_web_041.jpg" alt="Speaking on main stage" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/8F28A5AB-EE26-4B19-808D-6E239916D16D.JPG" alt="Networking with friends" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/CGPremier2024Q4_MainStage_web_629.JPEG" alt="Receiving award on stage" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/71E25DD1-4413-488A-9D0D-B97FE4B3F39F.JPG" alt="Signing documents - People Over Profit" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/IMG_7236.JPG" alt="Connecting with operators" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/EF887EED-150A-47A8-8469-6297EC1098C4.JPG" alt="Group photo at event" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/CGPremier2024Q2_MainRoom_web_373.JPG" alt="On stage panel discussion" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/315EA40F-9287-4B49-84FA-5E76C0A5AAF8.JPG" alt="Speaking on stage" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/94D67F62-70AC-4150-AF41-BC7CF15C5852.JPG" alt="Behind the scenes filming" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/IMG_3090_VSCO.JPG" alt="At Collective Genius" loading="lazy"></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about" data-reveal>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="images/12CE7A9D-9D3F-4BAE-886A-9446234625EF.JPG" alt="Devin Robinson speaking with passion" loading="lazy">
       </div>
-      <div class="venture-card">
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h0M2 9.5h20"></path></svg></div>
-          <div class="venture-type">Fund Management</div>
-          <div class="venture-name">PF Capital</div>
-          <div class="venture-desc">A 506(b) real estate fund focused on distressed property acquisitions through foreclosure and creative finance strategies.</div>
-          <div class="venture-metric"><strong>$10M+</strong> capital raised &middot; <strong>300+</strong> properties</div>
-        </div>
-      </div>
-      <div class="venture-card">
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-          <div class="venture-type">Education &amp; Community</div>
-          <div class="venture-name">Fund Founders</div>
-          <div class="venture-desc">Education platform and podcast helping minorities and women launch and manage investment funds from scratch.</div>
-        </div>
-      </div>
-      <div class="venture-card">
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-          <div class="venture-type">Education</div>
-          <div class="venture-name">REI Legacy Academy</div>
-          <div class="venture-desc">Comprehensive real estate investing course -- from wholesaling to foreclosures to AI integration. Zero to 100.</div>
-        </div>
-      </div>
-      <div class="venture-card">
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-          <div class="venture-type">Method</div>
-          <div class="venture-name">The Installment Method</div>
-          <div class="venture-desc">A proprietary approach to real estate: get your name on the title, own the property, maintain multiple exit strategies with minimal capital.</div>
-        </div>
-      </div>
-      <div class="venture-card">
-        <div class="venture-card-body">
-          <div class="venture-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg></div>
-          <div class="venture-type">Technology</div>
-          <div class="venture-name">AI-Powered Operations</div>
-          <div class="venture-desc">Building AI agents for deal sourcing, property underwriting, lead management, and operational automation across our portfolio.</div>
+      <div class="about-text">
+        <div class="section-label">My Story</div>
+        <h2>From broke to building<br><span class="accent">the infrastructure.</span></h2>
+        <p>I grew up in Englewood, LA. Single mom, three jobs, gangs on every corner. I've been bankrupt, laid off entire teams, and rebuilt from zero more than once.</p>
+        <div class="emphasis">"Your lived experience is your competitive advantage."</div>
+        <p>Today I run PF Capital (a 506(b) real estate fund), built Fund Flow OS from scratch, host the Funds on Fire podcast, and lead Fund Founders -- a community helping minorities and women launch investment funds.</p>
+        <p>I don't teach theory. I teach what I've done, what's working right now, and exactly how you can do it too.</p>
+        <div class="about-stats">
+          <div class="about-stat"><div class="num">$10M+</div><div class="lbl">Capital Raised</div></div>
+          <div class="about-stat"><div class="num">300+</div><div class="lbl">Properties</div></div>
+          <div class="about-stat"><div class="num">16+</div><div class="lbl">Ventures Built</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="educate" data-reveal>
-    <div class="section-label">Giving Back</div>
-    <div class="section-title">Why I Teach</div>
-    <p class="section-subtitle">Everything I know was learned the hard way. I'm building the resources I wish I had when I started.</p>
-    <div class="education-grid" data-stagger>
-      <div class="edu-card">
-        <div class="edu-card-image"><img src="images/ChatGPT Image Jan 2, 2026, 10_34_08 AM.png" alt="Devin teaching on stage" loading="lazy"></div>
-        <div class="edu-card-body"><div class="edu-number">01</div><h3>Courses &amp; Curriculum</h3><p>From The Installment Method to the full REI Legacy Academy -- structured programs that take you from zero knowledge to executing deals with confidence.</p></div>
+  <!-- FRACTIONAL CAIO -->
+  <div class="caio-section" data-reveal>
+    <div class="caio-inner">
+      <div class="caio-text">
+        <div class="section-label">AI Strategy</div>
+        <h2>Your business needs AI.<br>You don't need a <span class="accent">$350K hire.</span></h2>
+        <p>77% of companies say they need a Chief AI Officer. I embed in your business monthly -- building AI systems, owning your tech roadmap, and driving strategy. Same C-suite function at a fraction of the cost.</p>
+        <div class="caio-stats-row">
+          <div class="caio-stat-pill"><div class="num">77%</div><div class="lbl">Need a CAIO</div></div>
+          <div class="caio-stat-pill"><div class="num">$2,500</div><div class="lbl">/mo starting</div></div>
+          <div class="caio-stat-pill"><div class="num">10%</div><div class="lbl">of full-time cost</div></div>
+        </div>
+        <a href="fractional-caio.html" class="btn-primary">Learn How It Works &rarr;</a>
       </div>
-      <div class="edu-card">
-        <div class="edu-card-image"><img src="images/ChatGPT Image Jan 2, 2026, 11_54_35 AM.png" alt="Devin mentoring" loading="lazy"></div>
-        <div class="edu-card-body"><div class="edu-number">02</div><h3>Community &amp; Mentorship</h3><p>Live workshops and a community of investors who hold each other accountable and share real numbers.</p></div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-image"><img src="images/ChatGPT Image Oct 27, 2025, 09_27_51 AM.png" alt="AI meets human" loading="lazy"></div>
-        <div class="edu-card-body"><div class="edu-number">03</div><h3>AI Tools &amp; Resources</h3><p>AI isn't the destination -- it's the accelerator. Learn how to use AI tools to build avatars, write copy, create pitch decks, and prospect for investors.</p></div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-image"><img src="images/IMG_2434.jpg" alt="Devin Robinson - Diversify Wall Street" loading="lazy"></div>
-        <div class="edu-card-body"><div class="edu-number">04</div><h3>YouTube &amp; Podcast</h3><p>Unfiltered content on the Funds on Fire Podcast and YouTube -- tips, deal breakdowns, and honest conversations about building.</p></div>
+      <div class="caio-visual">
+        <img src="images/ChatGPT Image Oct 27, 2025, 09_27_51 AM.png" alt="Human meets AI" loading="lazy">
       </div>
     </div>
-  </section>
+  </div>
 
+  <!-- VISION / FINAL CTA -->
   <div class="vision-section">
     <div class="vision-bg"><img src="images/IMG_2434.jpg" alt="" loading="lazy"></div>
     <div class="vision-inner" data-reveal>
-      <div class="section-label">Where I'm Going</div>
-      <h2>People Over Profit. Always.</h2>
-      <p>Only 1.4% of $82 trillion in US assets under management is managed by minorities and women. I'm building infrastructure that compounds: capital, knowledge, community, and opportunity -- to change that number.</p>
+      <div class="section-label">#DiversifyWallStreet</div>
+      <h2>Only 1.4% of $82 trillion is managed by minorities and women.</h2>
+      <p>I'm building the infrastructure to change that number. Capital, knowledge, community, and opportunity -- compounding for the people who've been locked out.</p>
+      <form class="vision-email" onsubmit="return false;">
+        <input type="email" placeholder="Your email address">
+        <button type="submit">Join the Movement</button>
+      </form>
+      <p class="vision-note">Free resources, podcast drops, and behind-the-scenes updates.</p>
       <a href="offerings.html" class="btn-primary">Work With Me &rarr;</a>
     </div>
   </div>
 
-  <div class="caio-banner" data-reveal>
-    <div class="caio-banner-inner">
-      <div class="caio-banner-text">
-        <div class="section-label">New Offering</div>
-        <h2>What's a <span class="accent">Fractional CAIO?</span></h2>
-        <p>77% of companies say they need a Chief AI Officer -- but most can't justify the $350K+ salary. I embed in your business as your Fractional CAIO, building AI systems, owning your tech roadmap, and driving strategy every month. Same C-suite function. 10% of the cost.</p>
-        <a href="fractional-caio.html" class="caio-banner-link">Learn How It Works &rarr;</a>
-      </div>
-      <div class="caio-banner-visual">
-        <div class="caio-image"><img src="images/ChatGPT Image Oct 27, 2025, 09_27_51 AM.png" alt="Human meets AI - Fractional CAIO" loading="lazy"></div>
-        <div class="caio-banner-stats">
-          <div class="caio-stat-card"><div class="num">77%</div><div class="label">of companies need<br>a CAIO</div></div>
-          <div class="caio-stat-card"><div class="num">3x</div><div class="label">growth in CAIO roles<br>in 5 years</div></div>
-          <div class="caio-stat-card highlight"><div class="num">$2,500/mo</div><div class="label">Your Fractional CAIO</div><div class="versus">vs. $350K+/yr full-time</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-section" id="contact">
+  <!-- FOOTER -->
+  <div class="footer-section">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>Devin Robinson</h3>
-          <p>Builder, investor, educator. Based in Charlotte, NC. Always open to conversations about capital, partnerships, and building things that matter.</p>
+          <p>Entrepreneur, educator, AI strategist. Based in Charlotte, NC. Building the future of capital raising.</p>
           <div class="footer-signoff">To great success and greater impact.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Work With Me</h4>
+          <a href="offerings.html">All Services</a>
+          <a href="fractional-caio.html">Fractional CAIO</a>
+          <a href="offerings.html">Fund Founders</a>
+          <a href="offerings.html">Fund Flow OS</a>
+        </div>
+        <div class="footer-col">
+          <h4>Content</h4>
+          <a href="#podcast">Funds on Fire Podcast</a>
+          <a href="#">YouTube</a>
+          <a href="#">Blog</a>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
           <a href="mailto:devin@pfpsolutions.us">devin@pfpsolutions.us</a>
-          <a href="tel:7046121041">(704) 612-1041</a>
-          <span style="display:block;color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:0.6rem;">Charlotte, NC 28202</span>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="#about">About</a>
-          <a href="#journey">Journey</a>
-          <a href="#ventures">Ventures</a>
-          <a href="offerings.html">Work With Me</a>
-          <a href="#educate">Learn</a>
+          <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.55rem;">Charlotte, NC</span>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Devin Robinson. All rights reserved.</p>
         <div class="social-links">
-          <a href="#" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a href="#" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="#" title="X / Twitter" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="#" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- GSAP + LENIS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       gsap.registerPlugin(ScrollTrigger);
-
-      // Lenis smooth scroll - use GSAP ticker only (not both RAF and ticker)
       const lenis = new Lenis({ duration: 1.0, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add((time) => { lenis.raf(time * 1000); });
       gsap.ticker.lagSmoothing(0);
 
-      // Handle anchor link clicks with Lenis
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
           const target = document.querySelector(anchor.getAttribute('href'));
@@ -629,39 +660,40 @@
         });
       });
 
-      const heroTl = gsap.timeline({ delay: 0.2 });
-      heroTl.from('.hero-text h1', { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out' })
-        .from('.hero-text .subtitle', { opacity: 0, y: 30, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-        .from('.hero-tags span', { opacity: 0, y: 20, stagger: 0.06, duration: 0.4, ease: 'power2.out' }, '-=0.3')
-        .from('.cta-group', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.2')
-        .from('.hero-image-wrapper', { opacity: 0, scale: 0.92, duration: 0.9, ease: 'power3.out' }, '-=0.8')
-        .from('.hero-stats', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.3');
+      // Hero entrance
+      const tl = gsap.timeline({ delay: 0.15 });
+      tl.from('.hero-eyebrow', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' })
+        .from('.hero-text h1', { opacity: 0, y: 40, duration: 0.7, ease: 'power3.out' }, '-=0.3')
+        .from('.hero-text .subtitle', { opacity: 0, y: 25, duration: 0.5, ease: 'power3.out' }, '-=0.3')
+        .from('.hero-email', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+        .from('.hero-ctas', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+        .from('.hero-image-wrapper', { opacity: 0, scale: 0.93, duration: 0.8, ease: 'power3.out' }, '-=0.7')
+        .from('.hero-floating-card', { opacity: 0, y: 15, duration: 0.4, ease: 'power2.out' }, '-=0.2');
 
-      gsap.utils.toArray('[data-reveal]').forEach((el) => {
-        gsap.from(el, { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' } });
+      // Scroll reveals
+      gsap.utils.toArray('[data-reveal]').forEach(el => {
+        gsap.from(el, { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+        });
       });
 
-      gsap.utils.toArray('[data-stagger]').forEach((container) => {
-        gsap.from(container.children, { opacity: 0, y: 30, stagger: 0.12, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: container, start: 'top 80%' } });
+      // Stagger
+      gsap.utils.toArray('[data-stagger]').forEach(container => {
+        gsap.from(container.children, { opacity: 0, y: 30, stagger: 0.15, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: container, start: 'top 80%' }
+        });
       });
 
-      gsap.utils.toArray('.photo-strip-item img').forEach((img) => {
-        gsap.fromTo(img, { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
+      // Mosaic parallax
+      gsap.utils.toArray('.mosaic-item img').forEach(img => {
+        gsap.fromTo(img, { scale: 1.15 }, { scale: 1, ease: 'none',
+          scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.3 }
+        });
       });
 
-      gsap.utils.toArray('.stat .number').forEach((el) => {
-        const text = el.textContent;
-        const numMatch = text.match(/[\d.]+/);
-        if (numMatch) {
-          const target = parseFloat(numMatch[0]);
-          const prefix = text.slice(0, text.indexOf(numMatch[0]));
-          const suffix = text.slice(text.indexOf(numMatch[0]) + numMatch[0].length);
-          gsap.to({ val: 0 }, { val: target, duration: 1.5, delay: 0.8, ease: 'power2.out', onUpdate: function() { el.textContent = prefix + Math.floor(this.targets()[0].val) + suffix; } });
-        }
-      });
-
+      // Nav shadow
       window.addEventListener('scroll', () => {
-        document.querySelector('nav').style.boxShadow = window.scrollY > 100 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        document.querySelector('nav').style.boxShadow = window.scrollY > 50 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
       });
     });
   </script>
