@@ -273,6 +273,90 @@
     .about-stat .num { font-size: 1.5rem; font-weight: 900; color: var(--ink); }
     .about-stat .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
 
+    /* ── TIMELINE ── */
+    .timeline-section {
+      max-width: none; margin: 0; padding: 6rem 2rem;
+      background: var(--charcoal); color: var(--white);
+    }
+    .timeline-inner { max-width: 1200px; margin: 0 auto; }
+    .timeline-section .section-label { color: var(--accent); }
+    .timeline-section .section-title { color: var(--white); margin-bottom: 0.5rem; }
+    .timeline-section .section-subtitle { color: rgba(255,255,255,0.45); margin-bottom: 3rem; }
+    .timeline-counter {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 2.5rem;
+      padding: 0.5rem 1rem; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+    }
+    .timeline-counter strong { color: var(--accent); font-weight: 800; font-size: 1rem; }
+    .tl-grid {
+      display: grid; grid-template-columns: 1fr 3px 1fr; gap: 0;
+      position: relative;
+    }
+    .tl-line {
+      background: rgba(255,255,255,0.08); position: relative;
+    }
+    .tl-line::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+    }
+    .tl-line::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+    }
+    .tl-left, .tl-right { display: flex; flex-direction: column; gap: 0; }
+    .tl-item {
+      padding: 1.5rem; position: relative;
+    }
+    .tl-left .tl-item { text-align: right; padding-right: 2.5rem; }
+    .tl-right .tl-item { padding-left: 2.5rem; }
+    .tl-item::before {
+      content: ''; position: absolute; top: 2rem;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--charcoal); border: 2px solid rgba(255,255,255,0.15);
+      z-index: 1;
+    }
+    .tl-left .tl-item::before { right: -7px; }
+    .tl-right .tl-item::before { left: -7px; }
+    .tl-item.highlight::before {
+      border-color: var(--accent); background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(196, 90, 60, 0.25);
+    }
+    .tl-year {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem;
+    }
+    .tl-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+    .tl-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.55; }
+    .tl-tag {
+      display: inline-block; margin-top: 0.4rem; padding: 0.15rem 0.6rem;
+      border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+    }
+    .tl-tag.success { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .tl-tag.validating { background: rgba(196,90,60,0.2); color: var(--accent-light); }
+    .tl-tag.lesson { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); }
+
+    /* Timeline mobile */
+    .tl-mobile { display: none; }
+    .tl-mobile .tl-m-item {
+      padding-left: 2rem; border-left: 2px solid rgba(255,255,255,0.1);
+      margin-bottom: 2rem; position: relative;
+    }
+    .tl-mobile .tl-m-item::before {
+      content: ''; position: absolute; left: -6px; top: 0.25rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--charcoal); border: 2px solid rgba(255,255,255,0.2);
+    }
+    .tl-mobile .tl-m-item.highlight::before {
+      border-color: var(--accent); background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(196, 90, 60, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .tl-grid { display: none; }
+      .tl-mobile { display: block; }
+    }
+
     /* ── CAIO SECTION ── */
     .caio-section {
       max-width: none; margin: 0; padding: 6rem 2rem;
@@ -561,11 +645,76 @@
         <div class="about-stats">
           <div class="about-stat"><div class="num">$10M+</div><div class="lbl">Capital Raised</div></div>
           <div class="about-stat"><div class="num">300+</div><div class="lbl">Properties</div></div>
-          <div class="about-stat"><div class="num">16+</div><div class="lbl">Ventures Built</div></div>
+          <div class="about-stat"><div class="num">4 yrs</div><div class="lbl">300+ Houses</div></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- TIMELINE -->
+  <div class="timeline-section">
+    <div class="timeline-inner">
+      <div class="section-label">The Journey</div>
+      <div class="section-title">Built Different. Built From Nothing.</div>
+      <p class="section-subtitle">From photographing weddings to raising millions and building AI-powered fintech. Here's the arc.</p>
+
+      <!-- Desktop timeline -->
+      <div class="tl-grid">
+        <div class="tl-left">
+          <div class="tl-item" data-reveal>
+            <div class="tl-year">2013 - 2020</div>
+            <div class="tl-title">Anchor &amp; Veil Photography</div>
+            <div class="tl-desc">Built a wedding photography company from nothing into a 7-state operation. $750K/year revenue, team of 15 photographers, shot in 30+ countries. Sold the company in 2023.</div>
+            <span class="tl-tag success">$1M+ Revenue</span>
+          </div>
+          <div class="tl-item highlight" data-reveal>
+            <div class="tl-year">2023</div>
+            <div class="tl-title">PF Capital -- The Fund</div>
+            <div class="tl-desc">Launched a 506(b) real estate investment fund. Raised millions in capital to buy, flip, build, and sell properties. 300+ houses in 4 years across multiple strategies.</div>
+            <span class="tl-tag validating">$10M+ Raised</span>
+          </div>
+          <div class="tl-item highlight" data-reveal>
+            <div class="tl-year">2025</div>
+            <div class="tl-title">Fund Flow OS</div>
+            <div class="tl-desc">Built an AI-powered capital raising platform from scratch. Investor matching, pitch deck builder, investor portal. Found co-founders through YC. This will be the biggest thing I build.</div>
+            <span class="tl-tag validating">Building Now</span>
+          </div>
+        </div>
+
+        <div class="tl-line"></div>
+
+        <div class="tl-right">
+          <div class="tl-item" data-reveal>
+            <div class="tl-year">2021</div>
+            <div class="tl-title">Pivoted to Real Estate</div>
+            <div class="tl-desc">COVID crushed the wedding industry. Pivoted to real estate wholesaling and closed 70 deals in the first 6 months. Specialized in foreclosures and creative finance.</div>
+            <span class="tl-tag success">70 Deals in 6 Months</span>
+          </div>
+          <div class="tl-item highlight" data-reveal>
+            <div class="tl-year">2024</div>
+            <div class="tl-title">Fund Founders</div>
+            <div class="tl-desc">Co-founded with SEC attorney Seth. On a mission to help minorities and women launch and manage investment funds. Coaching, community, and the Funds on Fire podcast.</div>
+            <span class="tl-tag validating">Growing</span>
+          </div>
+          <div class="tl-item highlight" data-reveal>
+            <div class="tl-year">Now</div>
+            <div class="tl-title">Fractional CAIO + Content</div>
+            <div class="tl-desc">Embedding as Chief AI Officer in businesses. Hosting Funds on Fire. Father of 3 adopted kids. Building in public, every single day.</div>
+            <span class="tl-tag validating">Right Now</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile timeline -->
+      <div class="tl-mobile">
+        <div class="tl-m-item"><div class="tl-year">2013-2020</div><div class="tl-title">Anchor &amp; Veil Photography</div><div class="tl-desc">$750K/year, 15 photographers, 7 states, 30+ countries. Sold in 2023.</div><span class="tl-tag success">$1M+ Revenue</span></div>
+        <div class="tl-m-item"><div class="tl-year">2021</div><div class="tl-title">Pivoted to Real Estate</div><div class="tl-desc">70 deals in 6 months. Specialized in foreclosures and creative finance.</div><span class="tl-tag success">70 Deals</span></div>
+        <div class="tl-m-item highlight"><div class="tl-year">2023</div><div class="tl-title">PF Capital -- The Fund</div><div class="tl-desc">Raised millions. 300+ houses in 4 years. Buy, flip, build, sell.</div><span class="tl-tag validating">$10M+ Raised</span></div>
+        <div class="tl-m-item highlight"><div class="tl-year">2024</div><div class="tl-title">Fund Founders</div><div class="tl-desc">Helping minorities and women launch investment funds.</div><span class="tl-tag validating">Growing</span></div>
+        <div class="tl-m-item highlight"><div class="tl-year">2025</div><div class="tl-title">Fund Flow OS + Fractional CAIO</div><div class="tl-desc">AI platform for capital raising. Chief AI Officer for hire. Funds on Fire podcast.</div><span class="tl-tag validating">Right Now</span></div>
+      </div>
+    </div>
+  </div>
 
   <!-- FRACTIONAL CAIO -->
   <div class="caio-section" data-reveal>
