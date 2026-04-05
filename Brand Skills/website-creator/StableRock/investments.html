@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Opportunities — StableRock Collective</title>
+  <meta name="description" content="Access institutional-quality investment funds designed for accredited investors seeking consistent yield and capital preservation. StableRock Fixed Income Fund and High Income Fund.">
+  <meta property="og:title" content="Investment Opportunities — StableRock Collective">
+  <meta property="og:description" content="Institutional-quality funds for accredited investors seeking consistent yield and capital preservation.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #2C3830;
+      --bg-secondary: #F8F5F0;
+      --bg-tertiary: #344038;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-cream: #F8F5F0;
+      --bg-cream-dark: #EDE8E0;
+      --bg-white: #FFFFFF;
+      --text-primary: #F5F1EB;
+      --text-dark: #2A2A2A;
+      --text-dark-secondary: #5A5550;
+      --text-secondary: #B0AAA2;
+      --text-muted: #7A756E;
+      --gold: #B49B57;
+      --gold-light: #D4BA7A;
+      --gold-dark: #8A7640;
+      --gold-glow: rgba(180, 155, 87, 0.15);
+      --border: rgba(180, 155, 87, 0.15);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(44, 56, 48, 0.1);
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container: 1200px;
+      --section-pad: clamp(5rem, 12vh, 9rem);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Film grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text-dark-secondary);
+      font-weight: 300;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Light text in dark sections */
+    .page-hero .body-lg,
+    .testimonials-section .body-lg,
+    .cta-section .body-lg,
+    .footer .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .page-hero .display-lg,
+    .page-hero .display-xl,
+    .testimonials-section .display-lg,
+    .cta-section .display-lg,
+    .footer .display-lg {
+      color: var(--text-primary);
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: block;
+      margin: 1.5rem 0;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      padding: 0.75rem 0;
+      background: rgba(248, 245, 240, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav.scrolled .nav-logo-text,
+    .nav.scrolled .nav-toggle span {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-toggle span {
+      background: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a {
+      color: var(--text-dark-secondary);
+    }
+
+    .nav.scrolled .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav.scrolled .nav-cta {
+      color: var(--gold) !important;
+    }
+
+    .nav.scrolled .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--bg-white) !important;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold) !important;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: #FFFFFF !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(180, 155, 87, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       PAGE HERO
+       ============================================ */
+    .page-hero {
+      position: relative;
+      padding: 12rem 0 6rem;
+      text-align: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('images/hero-mountain.jpg') center center / cover no-repeat;
+    }
+
+    .page-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 56, 48, 0.75);
+    }
+
+    @keyframes heroGlow {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(180, 155, 87, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 60%, rgba(180, 155, 87, 0.06) 0%, transparent 60%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-hero-label {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      display: block;
+    }
+
+    .page-hero-title {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+    }
+
+    .page-hero-subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    /* ============================================
+       SECTION HEADER
+       ============================================ */
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header .label {
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .section-header .display-lg {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Dark text for section headers in light sections */
+    .funds-section .section-header .display-lg,
+    .process-section .section-header .display-lg,
+    .why-section .section-header .display-lg {
+      color: var(--text-dark);
+    }
+
+    .funds-section .section-header .body-lg,
+    .process-section .section-header .body-lg,
+    .why-section .section-header .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    /* ============================================
+       FUND CARDS SECTION
+       ============================================ */
+    .funds-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .funds-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 25% 50%, rgba(180, 155, 87, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 75% 50%, rgba(180, 155, 87, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .funds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fund-featured-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s var(--ease-out);
+      color: var(--text-dark);
+    }
+
+    .fund-featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      border-color: rgba(180, 155, 87, 0.3);
+    }
+
+    .fund-featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+    }
+
+    .fund-card-inner {
+      padding: 2.5rem;
+    }
+
+    .fund-card-header {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .fund-card-header .label {
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .fund-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    .fund-card-header p {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+    }
+
+    /* Fund stats grid */
+    .fund-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .fund-stat-item {
+      text-align: center;
+      padding: 1.25rem 0.75rem;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+    }
+
+    .fund-stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+      color: var(--gold);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .fund-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dark-secondary);
+      margin-top: 0.35rem;
+    }
+
+    /* Fund detail rows */
+    .fund-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .fund-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .fund-detail-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .fund-detail-label {
+      font-size: 0.85rem;
+      color: var(--text-dark-secondary);
+    }
+
+    .fund-detail-value {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .fund-detail-value.highlight {
+      color: var(--gold);
+    }
+
+    /* Fund philosophy / benefits */
+    .fund-section-title {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    .fund-benefits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .fund-benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.5;
+    }
+
+    .fund-benefits-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.5rem;
+    }
+
+    .fund-card-cta {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ============================================
+       INVESTMENT PROCESS
+       ============================================ */
+    .process-section {
+      padding: var(--section-pad) 0;
+      position: relative;
+      background: var(--bg-white);
+      color: var(--text-dark);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    /* Connecting line */
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 1rem);
+      right: calc(12.5% + 1rem);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold), var(--gold-dark));
+      opacity: 0.4;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .process-step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--gold);
+      background: var(--bg-white);
+      position: relative;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .process-step:hover .process-step-number {
+      background: var(--gold-glow);
+      box-shadow: 0 0 30px rgba(180, 155, 87, 0.15);
+    }
+
+    .process-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       WHY STABLEROCK
+       ============================================ */
+    .why-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .why-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+      color: var(--text-dark);
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(180, 155, 87, 0.3);
+      background: var(--bg-white);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .why-card:hover::before {
+      opacity: 1;
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.75rem;
+      color: var(--gold);
+      font-size: 1.2rem;
+      transition: all 0.4s ease;
+    }
+
+    .why-card:hover .why-icon {
+      border-color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+    }
+
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================
+       TESTIMONIALS
+       ============================================ */
+    .testimonials-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .testimonial-block {
+      opacity: 0;
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .testimonial-quote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gold);
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2.5rem;
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonials-section .testimonial-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .testimonial-attribution {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================
+       CTA SECTION
+       ============================================ */
+    .cta-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        url('images/abstract-financial.jpg') center center / cover no-repeat;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(180, 155, 87, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .cta-inner .display-lg {
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-inner .body-lg {
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 5rem 0 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .funds-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 2rem;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(44, 56, 48, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+
+      .funds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fund-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">SR</div>
+        <span class="nav-logo-text">StableRock Collective</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="investments.html" class="active">Investments</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="label page-hero-label">Accredited Investor Opportunities</span>
+        <h1 class="display-xl page-hero-title">Investment<br>Opportunities</h1>
+        <p class="body-lg page-hero-subtitle">Access institutional-quality funds designed for accredited investors seeking consistent yield and capital preservation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FUND CARDS
+       ============================================ -->
+  <section class="funds-section" id="funds">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Featured Funds</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Two Paths to Consistent Returns</h2>
+        <p class="body-lg">Each fund is designed to generate passive income while preserving capital through disciplined, asset-backed strategies.</p>
+      </div>
+
+      <div class="funds-grid">
+
+        <!-- FUND 1: Fixed Income Fund -->
+        <div class="fund-featured-card">
+          <div class="fund-card-inner">
+            <div class="fund-card-header">
+              <span class="label">Real Estate-Backed Debt</span>
+              <h3>StableRock Fixed Income Fund</h3>
+              <p>Diversified, real estate-backed debt investments designed to deliver consistent monthly income with downside protection.</p>
+            </div>
+
+            <div class="fund-stats-grid">
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">12%</div>
+                <div class="fund-stat-label">Annual Yield</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">1%</div>
+                <div class="fund-stat-label">Monthly Distribution</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">$50K</div>
+                <div class="fund-stat-label">Minimum Investment</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">6 Yr</div>
+                <div class="fund-stat-label">Track Record</div>
+              </div>
+            </div>
+
+            <div class="fund-details">
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Fund Type</span>
+                <span class="fund-detail-value">Real Estate-Backed Debt</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Annual Yield</span>
+                <span class="fund-detail-value highlight">12%</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Monthly Distribution</span>
+                <span class="fund-detail-value">1%</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Minimum Investment</span>
+                <span class="fund-detail-value">$50,000</span>
+              </div>
+            </div>
+
+            <div class="fund-section-title">Investment Philosophy</div>
+            <ul class="fund-benefits-list">
+              <li>Diversification across multiple properties and regions</li>
+              <li>Targeted investments in high-potential projects secured by tangible assets</li>
+              <li>Conservative leverage approach to protect capital</li>
+              <li>Transparent communication and reporting at every stage</li>
+            </ul>
+
+            <div class="fund-section-title">Key Benefits</div>
+            <ul class="fund-benefits-list">
+              <li>12% annual yield with monthly cash distributions</li>
+              <li>Passive income backed by a 6+ year track record</li>
+              <li>Value-adding property enhancements increase collateral value</li>
+              <li>Monthly cash distributions deposited directly to your account</li>
+              <li>Low $50K minimum makes institutional-quality investing accessible</li>
+              <li>Risk reduction through debt-focused strategy with real asset backing</li>
+            </ul>
+
+            <a href="index.html#contact" class="btn-primary fund-card-cta">Request Fund Details &rarr;</a>
+          </div>
+        </div>
+
+        <!-- FUND 2: High Income Fund -->
+        <div class="fund-featured-card">
+          <div class="fund-card-inner">
+            <div class="fund-card-header">
+              <span class="label">Revenue-Based Funding</span>
+              <h3>StableRock High Income Fund</h3>
+              <p>Short-term, high-impact investments in revenue-based funding across all 50 states, secured by business revenue, equipment, inventory, and personal guarantees.</p>
+            </div>
+
+            <div class="fund-stats-grid">
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">15%</div>
+                <div class="fund-stat-label">Annual Return</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">1.25%</div>
+                <div class="fund-stat-label">Monthly Distribution</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">$50M</div>
+                <div class="fund-stat-label">Target Fund Size</div>
+              </div>
+              <div class="fund-stat-item">
+                <div class="fund-stat-number">~6 Mo</div>
+                <div class="fund-stat-label">Avg Loan Duration</div>
+              </div>
+            </div>
+
+            <div class="fund-details">
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Fund Type</span>
+                <span class="fund-detail-value">Revenue-Based Funding</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Annual Return</span>
+                <span class="fund-detail-value highlight">15%</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Monthly Distribution</span>
+                <span class="fund-detail-value">1.25%</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Minimum Investment</span>
+                <span class="fund-detail-value">$50,000</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Track Record</span>
+                <span class="fund-detail-value">6 Years</span>
+              </div>
+              <div class="fund-detail-row">
+                <span class="fund-detail-label">Geographic Reach</span>
+                <span class="fund-detail-value">All 50 States</span>
+              </div>
+            </div>
+
+            <div class="fund-section-title">Collateral &amp; Security</div>
+            <ul class="fund-benefits-list">
+              <li>Business revenue streams as primary collateral</li>
+              <li>Equipment and inventory securing each investment</li>
+              <li>Personal guarantees from business principals</li>
+              <li>UCC-1 filings providing legal priority on assets</li>
+            </ul>
+
+            <div class="fund-section-title">Fund Highlights</div>
+            <ul class="fund-benefits-list">
+              <li>15% target annual return with monthly distributions</li>
+              <li>Short-term duration (~6 months) reduces long-term risk exposure</li>
+              <li>$50,000,000 target fund size enabling broad diversification</li>
+              <li>High-impact investments in revenue-generating businesses</li>
+              <li>6-year track record of disciplined underwriting</li>
+              <li>Nationwide reach across all 50 states</li>
+            </ul>
+
+            <a href="index.html#contact" class="btn-primary fund-card-cta">Request Fund Details &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INVESTMENT PROCESS
+       ============================================ -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">How It Works</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Your Investment Journey</h2>
+        <p class="body-lg">A straightforward process designed to get you from interest to returns with confidence.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <h3>Sign Up</h3>
+          <p>Create your investor account and complete the accreditation verification process.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">2</div>
+          <h3>Schedule a Call</h3>
+          <p>Discuss your investment goals with our team and find the right fund for your portfolio.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">3</div>
+          <h3>Start Investing</h3>
+          <p>Complete your subscription agreement and fund your account to begin earning returns.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">4</div>
+          <h3>Watch Growth</h3>
+          <p>Monitor your returns and distributions through the secure investor portal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY STABLEROCK
+       ============================================ -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Our Approach</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Why StableRock</h2>
+        <p class="body-lg">Four pillars that define how we protect and grow your capital.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Diversification</h3>
+          <p>Capital deployed across multiple properties and regions to minimize concentration risk and maximize stability.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Targeted Investments</h3>
+          <p>High-potential projects carefully selected and secured by tangible, real-world assets with proven value.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Conservative Leverage</h3>
+          <p>Disciplined approach to leverage that prioritizes capital preservation while still generating attractive returns.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Transparent Communication</h3>
+          <p>Regular, detailed reporting and open lines of communication so you always know where your capital stands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS
+       ============================================ -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Investor Testimonials</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">What Our Investors Say</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-block">
+          <div class="testimonial-quote">
+            "I have gotten to know Tim professionally first and then personally and we share core values on customer service and personal responsibility. His dedication to his clients and community is evident in everything he does."
+          </div>
+          <div class="testimonial-attribution">
+            <div class="testimonial-avatar">EW</div>
+            <div>
+              <div class="testimonial-name">Eric Warfel</div>
+              <div class="testimonial-role">Real Estate Investor</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <p class="testimonial-text">"Their strategic approach to real estate investment management has been exceptional. The team at StableRock consistently delivers results while maintaining the highest level of professionalism."</p>
+            <div class="testimonial-attribution">
+              <div class="testimonial-avatar">SR</div>
+              <div>
+                <div class="testimonial-name">Sophia R.</div>
+                <div class="testimonial-role">Real Estate Investment Fund Investor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="label">Get Started</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Ready to Start Your Investment Journey?</h2>
+        <p class="body-lg">Connect with our team to explore which fund aligns with your investment goals, or access your portfolio through the investor portal.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn-primary">Schedule a Call &rarr;</a>
+          <a href="https://investor.avestorinc.com/stablerock" target="_blank" rel="noopener noreferrer" class="btn-secondary">Investor Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">SR</div>
+            <span class="nav-logo-text">StableRock Collective</span>
+          </a>
+          <p>Expert guidance to grow assets, preserve wealth, and craft enduring legacies. We are your rock.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Private Investments</a></li>
+            <li><a href="index.html#services">Business Lending</a></li>
+            <li><a href="index.html#services">Consulting</a></li>
+            <li><a href="index.html#services">Family Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Debt Fund eBook</a></li>
+            <li><a href="#">Wealth eBook</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:717-659-1188">717-659-1188</a></li>
+            <li><a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a></li>
+            <li><a href="#">PO Box 338<br>Saddle River, NJ 07458</a></li>
+            <li><a href="https://investor.avestorinc.com/stablerock" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.7rem;">Investor Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StableRock Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>StableRock Collective offers a broad range of real estate and wealth management services but does not directly provide legal, tax, or insurance advice. All investments involve risk. Past performance is not indicative of future results. Offerings are available to accredited investors only. Please review all offering documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT — ANIMATIONS
+       ============================================ -->
+  <script>
+    // ============================================
+    // Lenis Smooth Scroll
+    // ============================================
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect Lenis to GSAP
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // ============================================
+    // Navigation
+    // ============================================
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ============================================
+    // GSAP ScrollTrigger Registration
+    // ============================================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================
+    // Page Hero Animations
+    // ============================================
+    const heroTl = gsap.timeline({ delay: 0.3 });
+
+    heroTl
+      .fromTo('.page-hero-label', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      })
+      .fromTo('.page-hero-title', {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .fromTo('.page-hero-subtitle', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.6');
+
+    // ============================================
+    // Fund Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.fund-featured-card', {
+      opacity: 0,
+      y: 60
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.funds-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Process Steps — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.process-step', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.process-steps',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Why Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.why-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.why-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Testimonials
+    // ============================================
+    gsap.fromTo('.testimonial-block', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.testimonials-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // CTA Section
+    // ============================================
+    gsap.fromTo('.cta-inner', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.cta-section',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Parallax on page hero background
+    // ============================================
+    gsap.to('.page-hero-bg', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.page-hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+
+    // ============================================
+    // Gold rule animations
+    // ============================================
+    gsap.utils.toArray('.gold-rule').forEach(rule => {
+      gsap.fromTo(rule, {
+        scaleX: 0,
+        transformOrigin: 'left center'
+      }, {
+        scaleX: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: rule,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // ============================================
+    // Section headers fade in
+    // ============================================
+    gsap.utils.toArray('.section-header').forEach(header => {
+      gsap.fromTo(header, {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 80%',
+        }
+      });
+    });
+  </script>
+</body>
+</html>

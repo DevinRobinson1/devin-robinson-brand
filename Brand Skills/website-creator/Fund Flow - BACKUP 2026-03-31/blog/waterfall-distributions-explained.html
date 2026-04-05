@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waterfall Distributions Explained: A Plain-English Guide for Fund Managers — Fund Flow OS</title>
+  <meta name="description" content="Waterfall distributions explained in plain English. Learn the 4 tiers — Return of Capital, Preferred Return, GP Catch-Up, and Carried Interest — with real number examples for real estate fund managers.">
+  <meta name="keywords" content="waterfall distributions explained, real estate waterfall structure, preferred return, carried interest, GP catch-up, fund distribution waterfall">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       BLOG ARTICLE — Page-specific styles
+       ============================================ */
+
+    .article-hero {
+      padding: 10rem 0 3rem;
+      text-align: center;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      max-width: 720px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark, #1a7a3a);
+      border: 1px solid var(--green-border);
+      border-radius: var(--r-xl);
+      padding: 0.25rem 0.875rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      color: var(--ink-40);
+      font-size: 0.875rem;
+      font-family: var(--sans);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-hero .article-desc {
+      font-size: 1.0625rem;
+      color: var(--ink-60);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-container h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    .article-container h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .article-container p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink-80, rgba(26,26,26,0.8));
+      margin-bottom: 1.25rem;
+    }
+
+    .article-container ul,
+    .article-container ol {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink-80, rgba(26,26,26,0.8));
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-container li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-container blockquote {
+      border-left: 3px solid var(--green);
+      background: var(--green-light);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .article-container blockquote p {
+      margin-bottom: 0;
+    }
+
+    .answer-capsule {
+      background: var(--green-light);
+      border: 1px solid var(--green-border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .answer-capsule-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-dark, #1a7a3a);
+      font-family: var(--sans);
+      margin-bottom: 0.5rem;
+    }
+
+    .answer-capsule p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .article-cta {
+      background: var(--navy);
+      border-radius: var(--r-lg);
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta h2 {
+      color: var(--white);
+      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-cta p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .article-cta .btn {
+      background: var(--green);
+      color: var(--navy);
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: var(--r-md);
+      text-decoration: none;
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    .article-cta .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .example-box {
+      background: var(--ink-05);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .example-box h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-60);
+      font-family: var(--sans);
+      margin-bottom: 0.75rem;
+    }
+
+    .example-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .example-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--ink-10);
+    }
+
+    .related-articles h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .related-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .related-card .related-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--green-dark, #1a7a3a);
+      margin-bottom: 0.5rem;
+      font-family: var(--sans);
+    }
+
+    .related-card h3 {
+      font-size: 1rem;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Featured & inline images */
+    .article-featured-img {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .article-featured-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-inline-img {
+      margin: 2rem 0;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .article-inline-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .article-hero { padding: 8rem 1.5rem 2rem; }
+      .article-container { padding: 0 1.5rem 3rem; }
+      .article-cta { padding: 2rem 1.5rem; }
+      .example-box { padding: 1.25rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#platform">Platform</a></li>
+      <li><a href="../index.html#audience">Solutions</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blog.html">Blog &amp; Resources</a></li>
+      <li><a href="../demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <span class="article-tag reveal">Fund Management</span>
+    <h1 class="reveal">Waterfall Distributions Explained: A Plain-English Guide for Fund Managers</h1>
+    <p class="article-meta reveal">Devin Robinson &middot; March 5, 2026 &middot; 11 min read</p>
+    <p class="article-desc reveal">Waterfall distributions don't have to feel like you need a finance PhD. Here's exactly how the money flows — with real numbers — so you can structure your fund with confidence.</p>
+    <div class="article-featured-img"><img src="images/waterfall-distributions-featured.png" alt="Waterfall distribution structure explained"></div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+
+  <div class="answer-capsule reveal">
+    <div class="answer-capsule-label">Quick Answer</div>
+    <p>A <strong>waterfall distribution</strong> is the order in which profits from a real estate fund or syndication get split between investors (LPs) and the fund manager (GP). The standard 4-tier structure is: (1) Return of Capital, (2) Preferred Return (typically 6-10%), (3) GP Catch-Up (where the GP receives a larger share until they reach their target split), and (4) Carried Interest (typically 20% to the GP). The waterfall ensures investors get paid first before the GP earns their promote.</p>
+  </div>
+
+  <p class="reveal">I'm going to be real with you. The first time someone explained waterfall distributions to me, I nodded along like I understood while my brain was doing backflips trying to follow the math. It took me building my own fund — and messing up the first distribution calculation — to truly internalize how this works.</p>
+
+  <p class="reveal">So I'm going to explain this the way I wish someone had explained it to me. No jargon for the sake of jargon. Real numbers. Real scenarios. And I'll show you exactly how we automate the entire calculation inside Fund Flow OS so you never have to sweat a distribution day again.</p>
+
+  <h2 class="reveal">What Is a Waterfall Distribution?</h2>
+
+  <p class="reveal">Think of a waterfall. Water flows over the first ledge, fills up the first pool, then spills over to the next pool, and the next, and so on. <strong>A waterfall distribution works exactly the same way — but with money.</strong></p>
+
+  <p class="reveal">When your real estate fund generates profits — whether from rental income, a property sale, a refinance, or any other cash event — that money doesn't just get split 50/50. It flows through a predefined series of "tiers" (the pools in our waterfall analogy). Each tier has rules about who gets paid, how much, and what happens when that tier is "full."</p>
+
+  <p class="reveal">The purpose? <strong>To align incentives.</strong> Investors (Limited Partners or LPs) want to know they'll get their money back plus a return before the fund manager (General Partner or GP) earns the big payday. The GP wants to be rewarded for outperformance. The waterfall structure makes both parties happy by defining the rules upfront.</p>
+
+  <h2 class="reveal">Why This Matters for Your Fund</h2>
+
+  <p class="reveal">If you're launching a real estate fund or syndication, your waterfall structure is one of the first things sophisticated investors will scrutinize. Get it wrong, and you either:</p>
+
+  <ul class="reveal">
+    <li><strong>Scare off investors</strong> by being too GP-friendly (investors feel like the deck is stacked against them)</li>
+    <li><strong>Leave money on the table</strong> by being too LP-friendly (you don't earn enough to make the fund worth managing)</li>
+    <li><strong>Create a legal nightmare</strong> by having ambiguous distribution language in your operating agreement</li>
+  </ul>
+
+  <p class="reveal">Your waterfall goes in your Private Placement Memorandum (PPM) and Operating Agreement. It's a binding legal commitment. You need to understand it cold before you put pen to paper.</p>
+
+  <h2 class="reveal">The 4 Tiers of a Standard Waterfall</h2>
+
+  <p class="reveal">Most real estate fund waterfalls follow this 4-tier structure. The specifics (percentages, hurdle rates) vary, but the framework is nearly universal.</p>
+
+  <h3 class="reveal">Tier 1: Return of Capital</h3>
+
+  <p class="reveal"><strong>What it means:</strong> Before anyone earns a profit, investors get their original investment back. Every dollar of distributable cash flows to LPs until they've received 100% of their contributed capital.</p>
+
+  <p class="reveal"><strong>Why it exists:</strong> This is the most basic investor protection. It says, "You'll get your money back before I make a dime on the promote." It builds trust and is non-negotiable for any credible fund.</p>
+
+  <h3 class="reveal">Tier 2: Preferred Return (the "Pref")</h3>
+
+  <p class="reveal"><strong>What it means:</strong> After capital is returned, investors receive a guaranteed annual return on their investment — typically <strong>6% to 10%</strong> in real estate funds. This is calculated on contributed capital, usually as a cumulative, compounding return. If the fund doesn't generate enough to pay the pref in a given year, it accrues (rolls forward) to the next period.</p>
+
+  <p class="reveal"><strong>Why it exists:</strong> The preferred return sets the minimum performance bar. It tells investors: "I have to earn you at least 8% (or whatever the pref is) before I start sharing in the profits." <strong>The pref is the GP's motivation to outperform.</strong></p>
+
+  <blockquote class="reveal">
+    <p>"The preferred return is the most important number in your fund structure. Set it too low and investors walk. Set it too high and you'll never earn your carry. Know your market."</p>
+  </blockquote>
+
+  <h3 class="reveal">Tier 3: GP Catch-Up</h3>
+
+  <p class="reveal"><strong>What it means:</strong> Once LPs have received their capital back plus the preferred return, the GP receives a disproportionate share of subsequent profits until the GP's total distributions equal their target percentage of total profits. With a standard 20% carry and full catch-up, the GP receives 100% of distributions in this tier until they've "caught up."</p>
+
+  <p class="reveal"><strong>Why it exists:</strong> Without the catch-up, the GP would fall behind because the LPs received all the early profits. The catch-up ensures that once the hurdle is cleared, the GP quickly gets to their target share of total profits.</p>
+
+  <p class="reveal"><strong>Important detail:</strong> Not all waterfalls include a full catch-up. Some use a 50/50 catch-up (GP gets 50% of this tier instead of 100%) or skip it entirely. The catch-up clause can significantly impact GP economics.</p>
+
+  <h3 class="reveal">Tier 4: Carried Interest (the "Promote")</h3>
+
+  <p class="reveal"><strong>What it means:</strong> After the catch-up, all remaining profits are split according to the agreed-upon ratio — most commonly <strong>80/20</strong> (80% to LPs, 20% to the GP). The GP's 20% is called "carried interest" or "the promote." This is the GP's primary compensation for managing the fund and generating returns.</p>
+
+  <p class="reveal"><strong>Why it exists:</strong> Carried interest aligns the GP's upside with performance. The GP only earns the promote after investors are fully taken care of. It's the carrot that drives fund managers to maximize returns.</p>
+
+  <h2 class="reveal">Real Number Example: $10M Fund Walkthrough</h2>
+
+  <p class="reveal">Let's make this concrete. Here's a real estate fund with the following terms:</p>
+
+  <div class="example-box reveal">
+    <h4>Fund Parameters</h4>
+    <p><strong>Total capital raised:</strong> $10,000,000 (all from LPs)</p>
+    <p><strong>Preferred return:</strong> 8% per year (cumulative)</p>
+    <p><strong>GP catch-up:</strong> 100% to GP until 20/80 split is achieved</p>
+    <p><strong>Carried interest:</strong> 20% GP / 80% LP</p>
+    <p><strong>Hold period:</strong> 3 years</p>
+    <p><strong>Total profit at exit:</strong> $4,000,000 (40% total return)</p>
+  </div>
+
+  <p class="reveal">At exit after 3 years, the fund has $14,000,000 to distribute ($10M capital + $4M profit). Here's how the waterfall flows:</p>
+
+  <h3 class="reveal">Tier 1: Return of Capital</h3>
+
+  <div class="example-box reveal">
+    <h4>Calculation</h4>
+    <p>LPs receive their $10,000,000 back.</p>
+    <p><strong>Remaining to distribute:</strong> $4,000,000</p>
+  </div>
+
+  <h3 class="reveal">Tier 2: Preferred Return</h3>
+
+  <div class="example-box reveal">
+    <h4>Calculation</h4>
+    <p>8% annual pref on $10M over 3 years (simple interest for this example):</p>
+    <p>$10,000,000 x 8% x 3 years = <strong>$2,400,000 to LPs</strong></p>
+    <p><strong>Remaining to distribute:</strong> $1,600,000</p>
+  </div>
+
+  <h3 class="reveal">Tier 3: GP Catch-Up</h3>
+
+  <div class="example-box reveal">
+    <h4>Calculation</h4>
+    <p>At this point, LPs have received $2,400,000 in profits. For a 20/80 split of total profits, the GP needs to have received 20% of total profits distributed so far.</p>
+    <p>Target: GP should have 20% of all profits. If the GP receives $X in the catch-up, we need:</p>
+    <p>$X / ($2,400,000 + $X) = 20%</p>
+    <p>Solving: $X = $600,000</p>
+    <p><strong>GP receives $600,000</strong> (100% of this tier until caught up)</p>
+    <p><strong>Remaining to distribute:</strong> $1,000,000</p>
+  </div>
+
+  <h3 class="reveal">Tier 4: Carried Interest (80/20 Split)</h3>
+
+  <div class="example-box reveal">
+    <h4>Calculation</h4>
+    <p>Remaining $1,000,000 split 80/20:</p>
+    <p>LPs receive: $1,000,000 x 80% = <strong>$800,000</strong></p>
+    <p>GP receives: $1,000,000 x 20% = <strong>$200,000</strong></p>
+  </div>
+
+  <h3 class="reveal">Final Tally</h3>
+
+  <div class="example-box reveal">
+    <h4>Total Distributions</h4>
+    <p><strong>LPs receive:</strong> $10,000,000 (capital) + $2,400,000 (pref) + $800,000 (carry split) = <strong>$13,200,000</strong></p>
+    <p><strong>GP receives:</strong> $600,000 (catch-up) + $200,000 (carry split) = <strong>$800,000</strong></p>
+    <p><strong>GP's share of total profit:</strong> $800,000 / $4,000,000 = <strong>20%</strong></p>
+    <p><strong>LP's total return:</strong> 32% over 3 years (~9.7% annualized)</p>
+  </div>
+
+  <p class="reveal">See how the math works? The waterfall ensures LPs get their 8% pref first, and the GP only earns their 20% carry on profits above and beyond that hurdle. <strong>Both sides win when the fund performs.</strong></p>
+
+  <h2 class="reveal">American vs. European Waterfall: What's the Difference?</h2>
+
+  <p class="reveal">This is a critical distinction that trips up a lot of first-time fund managers.</p>
+
+  <h3 class="reveal">American Waterfall (Deal-by-Deal)</h3>
+
+  <p class="reveal">The GP can earn carried interest on each individual deal as it exits, <strong>before the entire fund has returned all capital.</strong> If Deal 1 makes a 30% return and Deal 2 loses 10%, the GP already got paid on Deal 1's profits even though the fund overall hasn't fully returned capital.</p>
+
+  <p class="reveal"><strong>GP-friendly.</strong> The GP gets paid faster but takes the risk of a "clawback" — if later deals underperform, the GP may have to return some of the carry they already received.</p>
+
+  <h3 class="reveal">European Waterfall (Whole-Fund)</h3>
+
+  <p class="reveal">The GP cannot earn any carried interest until <strong>all invested capital across all deals has been returned to LPs,</strong> plus the preferred return on the entire fund. Only then does the GP start earning carry.</p>
+
+  <p class="reveal"><strong>LP-friendly.</strong> Investors are fully protected, but the GP may wait years before seeing any promote. This is the more common structure for institutional-quality funds.</p>
+
+  <blockquote class="reveal">
+    <p>"If you're raising from sophisticated LPs, expect them to push for a European waterfall. If you're raising from high-net-worth individuals who want to see deal-level returns, an American waterfall can work. Know your investor base."</p>
+  </blockquote>
+
+  <h2 class="reveal">How Fund Flow Automates Waterfall Calculations</h2>
+
+  <p class="reveal">Here's the thing about waterfall math — it's not hard in theory. It's hard in practice. When you have 47 investors with different contribution amounts, different commitment dates, some who invested in tranche 1 and some in tranche 2, with a pro-rata allocation based on capital account balances... the Excel spreadsheet becomes a monster.</p>
+
+  <p class="reveal">I've seen fund managers spend 20-40 hours per quarter on distribution calculations alone. And the terrifying part? <strong>One formula error means one investor gets overpaid and another gets underpaid.</strong> That's not just an accounting issue — it's a relationship-ending, potentially litigation-triggering mistake.</p>
+
+  <p class="reveal">Inside <a href="../deals-funds.html">Deals & Funds</a> on Fund Flow OS, you set your waterfall structure once — pref rate, catch-up percentage, carry split, American or European. When it's time to distribute, the system:</p>
+
+  <ol class="reveal">
+    <li><strong>Pulls each investor's capital account</strong> including contribution history, prior distributions, and accrued but unpaid pref</li>
+    <li><strong>Calculates the waterfall tier by tier</strong> for the entire fund, then allocates pro-rata to each investor</li>
+    <li><strong>Generates distribution notices</strong> personalized to each LP showing exactly what they're receiving and why</li>
+    <li><strong>Sends K-1 data</strong> to your <a href="../fund-admin.html">Fund Administration</a> team for tax reporting</li>
+    <li><strong>Creates an audit trail</strong> so you can show any investor (or regulator) exactly how their distribution was calculated</li>
+  </ol>
+
+  <p class="reveal">What used to take 20 hours takes 20 minutes. And the math is right every time.</p>
+
+  <h2 class="reveal">Common Mistakes to Avoid</h2>
+
+  <h3 class="reveal">1. Not Defining Your Waterfall Clearly Enough</h3>
+
+  <p class="reveal">Your Operating Agreement needs to spell out every detail: Is the pref simple or compounding? Is it calculated on committed or contributed capital? What's the catch-up ratio? What triggers a clawback? <strong>Ambiguity in your waterfall language is a lawsuit waiting to happen.</strong></p>
+
+  <h3 class="reveal">2. Forgetting the Accrued Pref</h3>
+
+  <p class="reveal">If your fund doesn't distribute enough in Year 1 to cover the full preferred return, that unpaid amount accrues. Many first-time GPs forget to track this accrual, leading to incorrect calculations in Year 2 and beyond.</p>
+
+  <h3 class="reveal">3. Using the Wrong Waterfall for Your Investor Base</h3>
+
+  <p class="reveal">Family offices and institutional investors almost always want a European waterfall. High-net-worth individuals often prefer American because they see returns sooner. Matching your structure to your investor base is critical for fundraising success.</p>
+
+  <h3 class="reveal">4. Manually Calculating Distributions in Spreadsheets</h3>
+
+  <p class="reveal">I know this sounds self-serving since I built a platform that automates this, but I've seen the horror stories. A $15M fund where the GP miscalculated distributions by $47,000 across 30 investors. It took two weeks and a forensic accountant to untangle. The relationship damage was worse than the financial error. <strong>Automate your waterfall calculations.</strong> Period.</p>
+
+  <h3 class="reveal">5. Setting the Pref Too High to Attract Investors</h3>
+
+  <p class="reveal">I've seen new fund managers offer a 12% pref to compete. The problem? If your fund returns 14%, you're only earning carry on the 2% above the hurdle. After management fees, you're basically working for free. <strong>An 8% pref with a standard 20% carry is the market standard for a reason.</strong> It works for both sides.</p>
+
+  <h2 class="reveal">The Bottom Line</h2>
+
+  <p class="reveal">Waterfall distributions aren't complicated once you break them down tier by tier. The key is understanding the logic: investors get taken care of first (capital back, then pref), and the GP earns their promote for outperformance. The structure aligns incentives and builds trust.</p>
+
+  <p class="reveal">If you're launching your first fund, start with the market standard: 8% pref, 100% GP catch-up, 20/80 carry split, European waterfall. You can get creative later when you have a track record. Right now, <strong>the best waterfall is the one your investors understand and trust.</strong></p>
+
+  <!-- CTA -->
+  <div class="article-cta reveal">
+    <h2>Automate Your Waterfall Distributions</h2>
+    <p>Fund Flow OS calculates distributions, generates investor notices, and maintains a complete audit trail — so you never sweat distribution day again.</p>
+    <a href="https://fundflowos.com/register" class="btn">Start Free &rarr;</a>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div class="related-articles">
+    <h2 class="reveal">Related Articles</h2>
+    <div class="related-grid">
+      <a href="ai-investor-relations-real-estate.html" class="related-card reveal">
+        <div class="related-tag">AI & Technology</div>
+        <h3>How AI Is Replacing the $150K Investor Relations Coordinator</h3>
+      </a>
+      <a href="real-estate-syndication-guide-beginners.html" class="related-card reveal">
+        <div class="related-tag">Capital Raising</div>
+        <h3>Real Estate Syndication for Beginners: How to Launch Your First Deal</h3>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="../index.html#platform">Private Lender Database</a>
+        <a href="../index.html#platform">Flow AI Employee</a>
+        <a href="../index.html#platform">Flow Guard Compliance</a>
+        <a href="../index.html#platform">Investor CRM</a>
+        <a href="../index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../index.html#audience">Flippers & Builders</a>
+        <a href="../index.html#audience">Syndicators</a>
+        <a href="../index.html#audience">Private Lenders</a>
+        <a href="../index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="../syndications.html">7-Day Syndications</a>
+        <a href="../fund-admin.html">Fund Administration</a>
+        <a href="../flow-launch.html">Flow Launch (DFY)</a>
+        <a href="../fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../help.html">Help Center</a>
+        <a href="../podcast.html">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GigaCrete — The Future of Permanence</title>
+  <meta name="description" content="GigaCrete: Next-generation green building materials. EPS foam panel systems with PlasterMax and StuccoMax engineered coatings. Zero wood. Zero rot. Total strength.">
+  <meta property="og:title" content="GigaCrete — The Future of Permanence">
+  <meta property="og:description" content="Proprietary building technology for architects and developers. Faster, stronger, sustainable.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts — DM Sans for premium feel + Instrument Serif for editorial contrast -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ══════════════════════════════════════════
+       DESIGN SYSTEM — Light Earth & Stone
+       ══════════════════════════════════════════ */
+    :root {
+      /* Backgrounds — warm whites & creams */
+      --bg-primary: #faf8f5;
+      --bg-cream: #f4f0ea;
+      --bg-warm: #ede8e0;
+      --bg-dark: #1c1917;
+      --bg-dark-warm: #292524;
+
+      /* Text */
+      --text-primary: #1c1917;
+      --text-secondary: #57534e;
+      --text-tertiary: #a8a29e;
+      --text-light: #d6d3d1;
+      --text-on-dark: #faf8f5;
+
+      /* Earth Accents */
+      --accent: #b45d2b;
+      --accent-hover: #9a4f24;
+      --accent-light: #d4855a;
+      --accent-dim: rgba(180, 93, 43, 0.08);
+      --accent-glow: rgba(180, 93, 43, 0.15);
+      --sandstone: #c2ad8d;
+      --clay: #a0694a;
+      --stone: #8c8278;
+
+      /* Borders & Surfaces */
+      --border: rgba(28, 25, 23, 0.08);
+      --border-hover: rgba(28, 25, 23, 0.15);
+      --surface-glass: rgba(255, 255, 255, 0.7);
+
+      /* Typography */
+      --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --letter-wide: 0.12em;
+      --letter-wider: 0.2em;
+
+      /* Spacing */
+      --section-padding: clamp(6rem, 14vh, 12rem);
+      --container: 1200px;
+      --container-wide: 1400px;
+      --container-narrow: 800px;
+
+      /* Animation */
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    /* ══════════ RESET ══════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: var(--font-sans); }
+
+    /* ══════════ CUSTOM CURSOR ══════════ */
+    .cursor-dot {
+      position: fixed;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: transform 0.1s;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--accent-light);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: width 0.3s var(--ease), height 0.3s var(--ease),
+                  border-color 0.3s ease, background 0.3s ease;
+    }
+    .cursor-ring.expanded {
+      width: 56px; height: 56px;
+      background: rgba(180, 93, 43, 0.06);
+      border-color: var(--accent);
+    }
+    @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+
+    /* ══════════ NAVIGATION ══════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.25rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.5s ease;
+    }
+    .nav.scrolled {
+      background: rgba(250, 248, 245, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 3rem;
+    }
+    /* When over dark sections */
+    .nav.on-dark .nav-logo,
+    .nav.on-dark .nav-links a { color: var(--text-on-dark); }
+    .nav.on-dark .nav-toggle span { background: var(--text-on-dark); }
+
+    .nav-logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: var(--letter-wide);
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .nav-logo .logo-mark {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s var(--ease);
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta-btn {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      padding: 0.7rem 1.75rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s var(--ease);
+    }
+    .nav-cta-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .nav-toggle span {
+      width: 22px; height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; inset: 0;
+        flex-direction: column;
+        justify-content: center; align-items: center;
+        gap: 2rem;
+        background: rgba(250, 248, 245, 0.98);
+        backdrop-filter: blur(30px);
+        transform: translateX(100%);
+        transition: transform 0.5s var(--ease);
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { font-size: 1rem; color: var(--text-primary); }
+    }
+
+    /* ══════════ HERO ══════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: var(--bg-primary);
+      overflow: hidden;
+      padding: 8rem 3rem 6rem;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      opacity: 0;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      opacity: 0;
+    }
+    .hero-title .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 0 3rem;
+      opacity: 0;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: flex-start;
+      align-items: center;
+      opacity: 0;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s var(--ease);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+    .btn-primary svg { transition: transform 0.3s ease; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .btn-ghost:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* Decorative line */
+    .hero-line {
+      position: absolute;
+      bottom: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+    }
+    .hero-line span {
+      font-size: 0.6rem;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+    .hero-line-bar {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: linePulse 2.5s ease-in-out infinite;
+    }
+    @keyframes linePulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 7rem 1.5rem 5rem; }
+      .hero-cta-group { flex-direction: column; justify-content: center; }
+      .hero-subtitle { margin: 0 auto 3rem; }
+    }
+
+    /* ══════════ CERTIFICATION BANNER ══════════ */
+    .cert-banner {
+      background: var(--bg-cream);
+      padding: 0;
+      overflow: hidden;
+    }
+    .cert-inner {
+      max-width: var(--container-wide);
+      margin: 0 auto;
+    }
+    .cert-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ══════════ DIVIDER ══════════ */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ══════════ STATS STRIP ══════════ */
+    .stats-strip {
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 4.5rem 3rem;
+    }
+    .stats-inner {
+      max-width: var(--container-wide);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .stat {
+      text-align: center;
+      opacity: 0;
+    }
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-light);
+      opacity: 0.6;
+    }
+    @media (max-width: 768px) {
+      .stats-strip { padding: 3rem 1.5rem; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+    }
+
+    /* ══════════ SCROLLMATION — THE BUILD ══════════ */
+    .scrollmation {
+      position: relative;
+      height: 500vh;
+    }
+    .scrollmation-sticky {
+      position: sticky;
+      top: 0; height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg-dark);
+      transition: background 0.8s ease;
+    }
+
+    /* Stage text overlays */
+    .stage-text {
+      position: absolute;
+      z-index: 10;
+      max-width: 400px;
+      padding: 0 2rem;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .stage-text.pos-left { left: 6%; top: 50%; transform: translateY(-50%); text-align: left; }
+    .stage-text.pos-right { right: 6%; top: 50%; transform: translateY(-50%); text-align: right; }
+    .stage-text.pos-center { left: 50%; top: 14%; transform: translateX(-50%); text-align: center; max-width: 550px; }
+
+    .stage-num {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .stage-text h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-on-dark);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .stage-text p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      opacity: 0.7;
+    }
+
+    /* Progress dots */
+    .build-progress {
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 10;
+    }
+    .bp-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .bp-dot.active {
+      background: var(--accent-light);
+      border-color: var(--accent-light);
+      box-shadow: 0 0 12px rgba(212, 133, 90, 0.4);
+    }
+    .bp-dot .bp-label {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
+    .bp-dot.active .bp-label {
+      opacity: 1;
+      color: var(--accent-light);
+    }
+
+    /* ── 3D House ── */
+    .house-viewport {
+      width: 520px;
+      height: 420px;
+      perspective: 1200px;
+      position: relative;
+    }
+    .house-model {
+      width: 100%; height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(12deg) rotateY(-20deg);
+    }
+
+    /* Ground */
+    .h-ground {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%) rotateX(90deg) translateZ(-8px);
+      width: 460px; height: 460px;
+      background-image:
+        linear-gradient(rgba(212, 133, 90, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 133, 90, 0.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0;
+    }
+
+    /* Foundation */
+    .h-foundation {
+      position: absolute;
+      bottom: 18px; left: 50%;
+      transform: translateX(-50%);
+      width: 380px; height: 14px;
+      background: linear-gradient(135deg, #4a4540, #3a3530);
+      border: 1px solid rgba(212, 133, 90, 0.2);
+      opacity: 0;
+    }
+
+    /* Steel frame */
+    .h-frame {
+      position: absolute;
+      background: linear-gradient(180deg, #c0b8ae, #9a928a);
+      opacity: 0;
+    }
+    .hf-l  { bottom: 32px; left: calc(50% - 190px); width: 5px; height: 220px; transform: translateX(-80px); }
+    .hf-r  { bottom: 32px; right: calc(50% - 190px); width: 5px; height: 220px; transform: translateX(80px); }
+    .hf-t  { bottom: 248px; left: 50%; transform: translateX(-50%); width: 380px; height: 5px; }
+    .hf-ml { bottom: 32px; left: calc(50% - 63px); width: 5px; height: 220px; transform: translateY(40px); }
+    .hf-mr { bottom: 32px; right: calc(50% - 63px); width: 5px; height: 220px; transform: translateY(40px); }
+    .hf-mid { bottom: 140px; left: 50%; transform: translateX(-50%); width: 380px; height: 3px; }
+
+    /* Foam panels */
+    .h-foam {
+      position: absolute;
+      background: linear-gradient(135deg, rgba(230, 220, 200, 0.18), rgba(210, 195, 170, 0.08));
+      border: 1px solid rgba(230, 220, 200, 0.2);
+      opacity: 0;
+    }
+    .hfm-lb { bottom: 35px; left: calc(50% - 187px); width: 127px; height: 105px; transform: scale(0.85) translateX(-25px); }
+    .hfm-lt { bottom: 142px; left: calc(50% - 187px); width: 127px; height: 108px; transform: scale(0.85) translateX(-25px); }
+    .hfm-cb { bottom: 35px; left: calc(50% - 58px); width: 116px; height: 105px; transform: scale(0.85) translateY(18px); }
+    .hfm-ct { bottom: 142px; left: calc(50% - 58px); width: 116px; height: 108px; transform: scale(0.85) translateY(-18px); }
+    .hfm-rb { bottom: 35px; right: calc(50% - 187px); width: 127px; height: 105px; transform: scale(0.85) translateX(25px); }
+    .hfm-rt { bottom: 142px; right: calc(50% - 187px); width: 127px; height: 108px; transform: scale(0.85) translateX(25px); }
+
+    /* Stucco coating */
+    .h-coating {
+      position: absolute;
+      bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      width: 384px; height: 222px;
+      background: linear-gradient(180deg, #e8dfd2 0%, #ddd3c3 40%, #d4c9b6 100%);
+      opacity: 0;
+      clip-path: inset(100% 0 0 0);
+    }
+    .h-coating-tex {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence baseFrequency='0.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.06'/%3E%3C/svg%3E");
+    }
+
+    /* Roof */
+    .h-roof {
+      position: absolute;
+      bottom: 250px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 210px solid transparent;
+      border-right: 210px solid transparent;
+      border-bottom: 70px solid #3a3530;
+      opacity: 0;
+    }
+
+    /* Windows */
+    .h-window {
+      position: absolute;
+      background: rgba(180, 160, 130, 0.15);
+      border: 1px solid rgba(180, 160, 130, 0.3);
+      opacity: 0;
+    }
+    .hw-1 { bottom: 160px; left: calc(50% - 152px); width: 52px; height: 60px; }
+    .hw-2 { bottom: 160px; right: calc(50% - 152px); width: 52px; height: 60px; }
+    .hw-3 { bottom: 68px; left: calc(50% - 24px); width: 44px; height: 68px; border-radius: 22px 22px 0 0; }
+
+    /* Warm glow for reveal */
+    .h-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 55%, rgba(212, 148, 90, 0.15) 0%, transparent 55%);
+      opacity: 0;
+    }
+    .h-label {
+      position: absolute;
+      bottom: -28px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent-light);
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .house-viewport { width: 300px; height: 260px; perspective: 800px; }
+      .h-foundation { width: 230px; }
+      .hf-l { left: calc(50% - 115px); height: 170px; }
+      .hf-r { right: calc(50% - 115px); height: 170px; }
+      .hf-t { width: 230px; bottom: 198px; }
+      .hf-ml { left: calc(50% - 38px); height: 170px; }
+      .hf-mr { right: calc(50% - 38px); height: 170px; }
+      .hf-mid { width: 230px; bottom: 115px; }
+      .h-coating { width: 234px; height: 170px; }
+      .h-roof { border-left-width: 130px; border-right-width: 130px; border-bottom-width: 50px; bottom: 200px; }
+      .stage-text.pos-left, .stage-text.pos-right {
+        left: 50%; right: auto; transform: translateX(-50%);
+        text-align: center; bottom: 6%; top: auto;
+      }
+      .build-progress { display: none; }
+      .h-foam { display: none; }
+    }
+
+    /* ══════════ INTRO SECTION ══════════ */
+    .intro {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-primary);
+    }
+    .intro-inner {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro-img {
+      max-width: var(--container-narrow);
+      margin: 3rem auto 0;
+    }
+    .intro-img img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+    }
+
+    .section-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .section-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ══════════ MATERIALS ══════════ */
+    .materials {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-cream);
+    }
+    .materials-grid {
+      max-width: var(--container);
+      margin: 4rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .mat-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s ease, box-shadow 0.4s var(--ease);
+    }
+    .mat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease);
+    }
+    .mat-card:hover { border-color: var(--border-hover); box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
+    .mat-card:hover::before { transform: scaleX(1); }
+
+    .mat-icon {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+    .mat-icon svg {
+      width: 32px; height: 32px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.2;
+    }
+    .mat-name {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .mat-type {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .mat-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .mat-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .spec-val {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+    .spec-lbl {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 768px) {
+      .materials { padding: var(--section-padding) 1.5rem; }
+      .materials-grid { grid-template-columns: 1fr; }
+      .mat-card { padding: 2rem; }
+    }
+
+    /* ══════════ CASE STUDIES ══════════ */
+    .cases {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-primary);
+    }
+    .cases-grid {
+      max-width: var(--container-wide);
+      margin: 4rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .case-card {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.4s var(--ease);
+      background: white;
+      opacity: 0;
+    }
+    .case-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+
+    .case-img {
+      width: 100%; height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-img-fill {
+      width: 100%; height: 100%;
+      transition: transform 0.6s var(--ease);
+    }
+    .case-card:hover .case-img-fill { transform: scale(1.04); }
+
+    .case-img-fill.schools-bg {
+      background: linear-gradient(135deg, #e8dfd2, #d4c9b6);
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(180,93,43,0.04) 18px, rgba(180,93,43,0.04) 36px);
+    }
+    .case-img-fill.military-bg {
+      background: linear-gradient(135deg, #d6d0c8, #c2b9ac);
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 14px, rgba(60,55,50,0.04) 14px, rgba(60,55,50,0.04) 28px);
+    }
+    .case-img-fill.luxury-bg {
+      background: linear-gradient(135deg, #e0d5c5, #d2c4ae);
+      background-image: radial-gradient(circle at 35% 45%, rgba(180,93,43,0.08) 0%, transparent 50%);
+    }
+
+    .case-body {
+      padding: 1.75rem 2rem 2rem;
+    }
+    .case-type {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .case-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .case-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .case-metrics {
+      display: flex;
+      gap: 1.75rem;
+    }
+    .case-metric-val {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      display: block;
+    }
+    .case-metric-lbl {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 768px) {
+      .cases { padding: var(--section-padding) 1.5rem; }
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════ WHY GIGACRETE — ADVANTAGES ══════════ */
+    .advantages {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-cream);
+    }
+    .adv-grid {
+      max-width: var(--container);
+      margin: 4rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .adv-card {
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      margin: -0.5px; /* overlap borders */
+      text-align: center;
+      transition: background 0.3s ease;
+      opacity: 0;
+    }
+    .adv-card:hover { background: white; }
+
+    .adv-icon {
+      width: 48px; height: 48px;
+      margin: 0 auto 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: border-color 0.3s ease;
+    }
+    .adv-card:hover .adv-icon { border-color: var(--accent); }
+    .adv-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .adv-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .adv-card p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    @media (max-width: 768px) {
+      .advantages { padding: var(--section-padding) 1.5rem; }
+      .adv-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════ QUOTE / BRAND STATEMENT ══════════ */
+    .brand-quote {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-dark);
+      text-align: center;
+    }
+    .brand-quote blockquote {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-on-dark);
+      line-height: 1.35;
+      opacity: 0;
+    }
+    .brand-quote blockquote .q-accent {
+      color: var(--accent-light);
+    }
+    .brand-quote cite {
+      display: block;
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-light);
+      opacity: 0.5;
+    }
+
+    /* ══════════ CTA ══════════ */
+    .cta-section {
+      padding: var(--section-padding) 3rem;
+      background: var(--bg-primary);
+    }
+    .cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-form {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: left;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .form-field {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      background: white;
+      border: 1px solid var(--border);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-field::placeholder { color: var(--text-tertiary); }
+    .form-field:focus { border-color: var(--accent); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-submit { align-self: center; margin-top: 0.5rem; }
+
+    @media (max-width: 768px) {
+      .cta-section { padding: var(--section-padding) 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════ FOOTER ══════════ */
+    .footer {
+      padding: 4rem 3rem 2rem;
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+    }
+    .footer-grid {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo-img {
+      height: 45px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      filter: brightness(0) invert(1);
+    }
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      opacity: 0.6;
+    }
+    .footer-col h4 {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: var(--letter-wider);
+      text-transform: uppercase;
+      color: var(--text-light);
+      opacity: 0.4;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+    .footer-col a:hover { opacity: 1; }
+
+    .footer-bottom {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      opacity: 0.35;
+    }
+    @media (max-width: 768px) {
+      .footer { padding: 3rem 1.5rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ══════════ NAV LOGO IMAGE ══════════ */
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+    .nav.on-dark .nav-logo-img {
+      filter: brightness(0) invert(1);
+    }
+    @media (max-width: 768px) {
+      .nav-logo-img { height: 28px; }
+    }
+
+    /* ══════════ HERO IMAGE ══════════ */
+    .hero-image-wrap {
+      position: absolute;
+      right: -5%;
+      bottom: 0;
+      width: 55%;
+      height: 90%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 30%, transparent 90%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 30%, transparent 90%);
+    }
+    .hero-content {
+      text-align: left;
+      max-width: 550px;
+      margin-left: 3rem;
+    }
+    @media (max-width: 1024px) {
+      .hero-image-wrap {
+        width: 100%;
+        height: 100%;
+        right: 0;
+        opacity: 0.15;
+      }
+      .hero-image {
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+      .hero-content { text-align: center; margin-left: 0; max-width: 700px; }
+    }
+
+    /* ══════════ MATERIAL PRODUCT IMAGES ══════════ */
+    .mat-product-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mat-product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .mat-card:hover .mat-product-img img {
+      transform: scale(1.04);
+    }
+
+    /* ══════════ CASE STUDY IMAGES ══════════ */
+    .case-img img.case-img-fill {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .case-card:hover .case-img img.case-img-fill {
+      transform: scale(1.04);
+    }
+
+    /* ══════════ GALLERY STRIP ══════════ */
+    .gallery-strip {
+      padding: 3rem 0;
+      background: var(--bg-primary);
+      overflow: hidden;
+    }
+    .gallery-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+    .gallery-track {
+      display: flex;
+      gap: 1rem;
+      animation: marqueeScroll 40s linear infinite;
+      width: max-content;
+    }
+    .gallery-track img {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      transition: opacity 0.3s ease;
+    }
+    .gallery-track img:hover {
+      opacity: 0.8;
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 768px) {
+      .gallery-track img { width: 240px; height: 160px; }
+    }
+
+    /* ══════════ REVEAL UTILITY ══════════ */
+    .reveal { opacity: 0; transform: translateY(30px); }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════ NAVIGATION ═══════ -->
+  <nav class="nav" id="mainNav">
+    <a href="#" class="nav-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/c332ee0c-ae6a-455f-97e1-4700e64d4cfd/Untitled+design+%2844%29.png?format=300w" alt="GigaCrete" class="nav-logo-img">
+    </a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#build">The Build</a></li>
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#contact"><button class="nav-cta-btn">Build Different</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="hero">
+    <div class="hero-image-wrap">
+      <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537369409178-ZH40AFGXGJNGFTZVAMCP/229b3be86268016f-front%281%29.jpg?format=2500w" alt="GigaCrete finished home exterior" class="hero-image">
+    </div>
+    <div class="hero-content">
+      <span class="hero-tag" id="heroTag">Next-Generation Building Technology</span>
+      <h1 class="hero-title" id="heroTitle">
+        The Future of<br><span class="accent">Permanence.</span>
+      </h1>
+      <p class="hero-subtitle" id="heroSub">
+        A building system engineered to outlast wood, outperform concrete, and resist everything nature can deliver. Green without compromise.
+      </p>
+      <div class="hero-cta-group" id="heroCta">
+        <a href="#contact" class="btn-primary">
+          Request Specifications
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#build" class="btn-ghost">Watch The Build</a>
+      </div>
+    </div>
+    <div class="hero-line" id="heroLine">
+      <span>Scroll</span>
+      <div class="hero-line-bar"></div>
+    </div>
+  </section>
+
+  <!-- ═══════ CERTIFICATION BANNER ═══════ -->
+  <div class="cert-banner">
+    <div class="cert-inner">
+      <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1563863937520-F8Y2D393BD3UFI7UHQGF/miami-dade.jpg?format=1500w" alt="Miami-Dade County Product Approval" class="cert-img" loading="lazy">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ STATS ═══════ -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-value">4-Hour</div>
+        <div class="stat-label">Fire Rating</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">8,500+</div>
+        <div class="stat-label">PSI Compressive Strength</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">R-60</div>
+        <div class="stat-label">Thermal Insulation</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">1 Day</div>
+        <div class="stat-label">Wall Erection</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ INTRO ═══════ -->
+  <section class="intro">
+    <div class="intro-inner reveal">
+      <span class="section-tag">The GigaHouse System</span>
+      <h2 class="section-title">Zero Wood. Zero Rot.<br>Total Strength.</h2>
+      <p class="section-desc">A super-insulated steel-framed building system using patented GigaPanels, PlasterMax interior coating, and StuccoMax exterior coating. Walls go up in minutes. A house can be erected in a single day.</p>
+    </div>
+    <div class="intro-img reveal">
+      <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/550aa2e6-03b0-4851-a39e-03dd860bfdb0/Untitled+design+%2841%29.png?format=1500w" alt="GigaHouse building system diagram" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ═══════ SCROLLMATION ═══════ -->
+  <section class="scrollmation" id="build">
+    <div class="scrollmation-sticky">
+
+      <div class="build-progress">
+        <div class="bp-dot active" data-stage="1"><span class="bp-label">Foundation</span></div>
+        <div class="bp-dot" data-stage="2"><span class="bp-label">Skeleton</span></div>
+        <div class="bp-dot" data-stage="3"><span class="bp-label">Core</span></div>
+        <div class="bp-dot" data-stage="4"><span class="bp-label">Armor</span></div>
+        <div class="bp-dot" data-stage="5"><span class="bp-label">Reveal</span></div>
+      </div>
+
+      <div class="stage-text pos-left" id="st1">
+        <span class="stage-num">01 &mdash; Foundation</span>
+        <h2>Precision Begins Below.</h2>
+        <p>Every GigaCrete structure starts with an engineered foundation grid &mdash; the geometric backbone of permanence.</p>
+      </div>
+      <div class="stage-text pos-right" id="st2">
+        <span class="stage-num">02 &mdash; The Skeleton</span>
+        <h2>Steel-Reinforced Framework.</h2>
+        <p>ICC-approved galvanized steel studs &mdash; the most recycled material on Earth &mdash; lock into place, creating a skeleton that flexes without breaking.</p>
+      </div>
+      <div class="stage-text pos-left" id="st3">
+        <span class="stage-num">03 &mdash; The Core</span>
+        <h2>EPS Foam Insulation Panels.</h2>
+        <p>High-density expanded polystyrene panels slot into the steel frame, creating a continuous thermal envelope from R-24 up to R-60.</p>
+      </div>
+      <div class="stage-text pos-right" id="st4">
+        <span class="stage-num">04 &mdash; The Armor</span>
+        <h2>PlasterMax &amp; StuccoMax.</h2>
+        <p>Proprietary ceramic coatings sweep over the foam, transforming lightweight panels into a monolithic, fireproof, waterproof surface.</p>
+      </div>
+      <div class="stage-text pos-center" id="st5">
+        <span class="stage-num">05 &mdash; The Reveal</span>
+        <h2>Built to Outlast Everything.</h2>
+        <p>Fireproof. Hurricane-proof. Termite-proof. Mold-proof. No Portland cement. No wood. Built in a fraction of the time.</p>
+      </div>
+
+      <div class="house-viewport" id="houseViewport">
+        <div class="house-model" id="houseModel">
+          <div class="h-ground" id="hGround"></div>
+          <div class="h-foundation" id="hFoundation"></div>
+          <div class="h-frame hf-l" id="hfL"></div>
+          <div class="h-frame hf-r" id="hfR"></div>
+          <div class="h-frame hf-t" id="hfT"></div>
+          <div class="h-frame hf-ml" id="hfML"></div>
+          <div class="h-frame hf-mr" id="hfMR"></div>
+          <div class="h-frame hf-mid" id="hfMid"></div>
+          <div class="h-foam hfm-lb" id="fmLB"></div>
+          <div class="h-foam hfm-lt" id="fmLT"></div>
+          <div class="h-foam hfm-cb" id="fmCB"></div>
+          <div class="h-foam hfm-ct" id="fmCT"></div>
+          <div class="h-foam hfm-rb" id="fmRB"></div>
+          <div class="h-foam hfm-rt" id="fmRT"></div>
+          <div class="h-coating" id="hCoating"><div class="h-coating-tex"></div></div>
+          <div class="h-roof" id="hRoof"></div>
+          <div class="h-window hw-1" id="hW1"></div>
+          <div class="h-window hw-2" id="hW2"></div>
+          <div class="h-window hw-3" id="hW3"></div>
+          <div class="h-glow" id="hGlow"></div>
+          <div class="h-label" id="hLabel">GigaCrete Building System&trade;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ MATERIALS ═══════ -->
+  <section class="materials" id="materials">
+    <div class="intro-inner reveal">
+      <span class="section-tag">Engineered Coatings</span>
+      <h2 class="section-title">Materials That<br>Defy Destruction.</h2>
+      <p class="section-desc">Two proprietary coatings that transform lightweight foam into impenetrable architectural surfaces. No Portland cement. No jobsite sand.</p>
+    </div>
+
+    <div class="materials-grid">
+      <div class="mat-card reveal">
+        <div class="mat-product-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/aeedd9a8-5e9b-41fd-9fde-5dcb5cc02be2/PlasterMax.png?format=750w" alt="PlasterMax interior coating" loading="lazy">
+        </div>
+        <span class="mat-type">Interior Veneer Plaster</span>
+        <h3 class="mat-name">PlasterMax&trade;</h3>
+        <p class="mat-desc">Ultra-high-performance abuse-resistant interior plaster for architectural and industrial applications. Exceeds USEPA and California VOC standards. Single-coat application at 3/16" thickness with fiberglass mesh.</p>
+        <div class="mat-specs">
+          <div class="spec">
+            <span class="spec-val">8,500+</span>
+            <span class="spec-lbl">PSI Strength</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">4-Hour</span>
+            <span class="spec-lbl">Fire Rating</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">Class A</span>
+            <span class="spec-lbl">ASTM E-84</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">Zero</span>
+            <span class="spec-lbl">VOC Emissions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mat-card reveal">
+        <div class="mat-product-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/2512e69d-6342-40d1-997a-e745abc3ce51/PlasterMax+%281%29.png?format=750w" alt="StuccoMax exterior coating" loading="lazy">
+        </div>
+        <span class="mat-type">Exterior Waterproof Stucco</span>
+        <h3 class="mat-name">StuccoMax&trade;</h3>
+        <p class="mat-desc">True one-coat waterproof stucco that adheres directly to EPS foam, CMU block, DensGlass, and concrete. Silica-free. Cures in freezing temps. Hand or machine applicable from bags mixed on site.</p>
+        <div class="mat-specs">
+          <div class="spec">
+            <span class="spec-val">3,500+</span>
+            <span class="spec-lbl">PSI Strength</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">Zero</span>
+            <span class="spec-lbl">Water Absorption</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">Silica</span>
+            <span class="spec-lbl">Free Formula</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">1-Day</span>
+            <span class="spec-lbl">Application</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CASE STUDIES ═══════ -->
+  <section class="cases" id="projects">
+    <div class="intro-inner reveal">
+      <span class="section-tag">Tested for the Extreme</span>
+      <h2 class="section-title">Built Where Failure<br>Isn&rsquo;t an Option.</h2>
+      <p class="section-desc">From military installations to luxury estates, GigaCrete systems protect what matters most.</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368682696-5YO7JEIYBC0GNNOISEQN/completed+Carls+Jr+project.jpg?format=1000w" alt="Commercial GigaCrete project" class="case-img-fill" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-type">Education</div>
+          <h3 class="case-title">K-12 School Complexes</h3>
+          <p class="case-desc">Fire-rated wall systems protecting students across multiple school districts in hurricane and wildfire zones.</p>
+          <div class="case-metrics">
+            <div><span class="case-metric-val">12</span><span class="case-metric-lbl">Campuses</span></div>
+            <div><span class="case-metric-val">4-Hr</span><span class="case-metric-lbl">Fire Rating</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537369605450-AGR8EJNFMDMYZRXCJM7V/DSC01166.jpg?format=1000w" alt="BallistiCrete military testing" class="case-img-fill" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-type">Defense</div>
+          <h3 class="case-title">Military Installations</h3>
+          <p class="case-desc">Blast-resistant and fireproof building envelopes for DOD facilities requiring the highest structural integrity.</p>
+          <div class="case-metrics">
+            <div><span class="case-metric-val">DOD</span><span class="case-metric-lbl">Certified</span></div>
+            <div><span class="case-metric-val">Blast</span><span class="case-metric-lbl">Resistant</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-img"><img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368945421-AY131DMMBK1OVJ3J1H14/7d6af97f40c2bbc3-30CrescentKitchen.jpg?format=1000w" alt="Luxury interior with PlasterMax" class="case-img-fill" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-type">Residential</div>
+          <h3 class="case-title">Luxury Custom Estates</h3>
+          <p class="case-desc">Architect-specified GigaCrete systems for high-end residential where aesthetics and performance are non-negotiable.</p>
+          <div class="case-metrics">
+            <div><span class="case-metric-val">Custom</span><span class="case-metric-lbl">Finishes</span></div>
+            <div><span class="case-metric-val">Zero</span><span class="case-metric-lbl">Maintenance</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ADVANTAGES ═══════ -->
+  <section class="advantages" id="advantages">
+    <div class="intro-inner reveal">
+      <span class="section-tag">Why GigaCrete</span>
+      <h2 class="section-title">20th Century<br>Construction Is Over.</h2>
+    </div>
+
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg></div>
+        <h3>Fireproof</h3>
+        <p>4-hour fire rating. Class A classification. Your structure stands while wood frames turn to ash.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66l4.24-4.24"/></svg></div>
+        <h3>Hurricane-Proof</h3>
+        <p>Engineered for seismic zone 4 and hurricane-force winds. Impact resistant where conventional fails.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Built in a Day</h3>
+        <p>Walls go up in minutes. No wood framing, no drywall, no paint. A small house erected in one day.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Mold &amp; Mildew Proof</h3>
+        <p>Inorganic ceramic coatings with zero organic food source and zero moisture penetration. Mold cannot grow.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <h3>Termite-Proof</h3>
+        <p>No wood means no food. Zero organic materials in the building envelope. Permanent structural integrity.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5.5 7.5L12 3l6.5 4.5M5.5 12L12 8.5 18.5 12M5.5 16.5L12 13l6.5 3.5"/></svg></div>
+        <h3>Green &amp; Sustainable</h3>
+        <p>No Portland cement. Reduced carbon footprint. Zero pollutant emissions. HVAC downsized 60% from superior insulation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PHOTO GALLERY STRIP ═══════ -->
+  <section class="gallery-strip">
+    <div class="gallery-marquee" id="galleryMarquee">
+      <div class="gallery-track">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368028817-L604VEVME54JL1RWGMBF/003A6124.jpg?format=750w" alt="GigaCrete custom home" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1541020969148-7UDWFQ1UKZT894PECT4M/Carribean+GigaHouse.jpg?format=750w" alt="Caribbean GigaHouse" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368947338-UGRC4708OZTSDTRTC1S5/09bf4e343ee7d321-30CrescentMasterBed.jpg?format=750w" alt="PlasterMax master bedroom" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368093891-3D9M83DGID0Q7BS8QSH0/Hudgeons+Colorado+home+1.jpg?format=750w" alt="Hudgeons Colorado home" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537369475639-O0WQT2WRJQC91IFSPWMV/Symphony+Park+Bridge+1.jpg?format=750w" alt="Symphony Park Bridge StuccoMax" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368030411-JG56WNA2ZP4X0187O23D/003A6173.jpg?format=750w" alt="GigaCrete construction" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368094674-WOAM509VLLH8DUI346EJ/Hudgeons+Colorado+home+2.jpg?format=750w" alt="Colorado home exterior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1541021077974-ENJM3FXBV5HZOMOVT3QE/IMG_4135.jpg?format=750w" alt="GigaHouse construction" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368100594-G3C65K27WO7G5UM06RED/Wang+house+7.jpg?format=750w" alt="Wang house interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1568065339995-TMHMTPCAGS44VDEQ1CT3/Carls%2BJr%2B2.jpg?format=750w" alt="Commercial StuccoMax application" loading="lazy">
+        <!-- Duplicate set for seamless loop -->
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368028817-L604VEVME54JL1RWGMBF/003A6124.jpg?format=750w" alt="GigaCrete custom home" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1541020969148-7UDWFQ1UKZT894PECT4M/Carribean+GigaHouse.jpg?format=750w" alt="Caribbean GigaHouse" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368947338-UGRC4708OZTSDTRTC1S5/09bf4e343ee7d321-30CrescentMasterBed.jpg?format=750w" alt="PlasterMax master bedroom" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368093891-3D9M83DGID0Q7BS8QSH0/Hudgeons+Colorado+home+1.jpg?format=750w" alt="Hudgeons Colorado home" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537369475639-O0WQT2WRJQC91IFSPWMV/Symphony+Park+Bridge+1.jpg?format=750w" alt="Symphony Park Bridge StuccoMax" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368030411-JG56WNA2ZP4X0187O23D/003A6173.jpg?format=750w" alt="GigaCrete construction" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368094674-WOAM509VLLH8DUI346EJ/Hudgeons+Colorado+home+2.jpg?format=750w" alt="Colorado home exterior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1541021077974-ENJM3FXBV5HZOMOVT3QE/IMG_4135.jpg?format=750w" alt="GigaHouse construction" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1537368100594-G3C65K27WO7G5UM06RED/Wang+house+7.jpg?format=750w" alt="Wang house interior" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/1568065339995-TMHMTPCAGS44VDEQ1CT3/Carls%2BJr%2B2.jpg?format=750w" alt="Commercial StuccoMax application" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ BRAND QUOTE ═══════ -->
+  <section class="brand-quote">
+    <blockquote id="brandQuote">
+      &ldquo;Going <span class="q-accent">green</span> without compromising performance, cost, or simplicity.&rdquo;
+      <cite>GigaCrete</cite>
+    </blockquote>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="cta-section" id="contact">
+    <div class="cta-inner reveal">
+      <span class="section-tag">For Architects &amp; Developers</span>
+      <h2 class="section-title">Build Different.</h2>
+      <p class="section-desc">Request specifications, schedule a materials consultation, or discuss your next project with our engineering team.</p>
+
+      <form class="cta-form" onsubmit="return false;">
+        <div class="form-row">
+          <input type="text" class="form-field" placeholder="First Name" required>
+          <input type="text" class="form-field" placeholder="Last Name" required>
+        </div>
+        <input type="email" class="form-field" placeholder="Email Address" required>
+        <input type="text" class="form-field" placeholder="Company / Firm">
+        <select class="form-field" style="color: var(--text-tertiary);">
+          <option value="">Project Type</option>
+          <option>Residential &mdash; Single Family</option>
+          <option>Residential &mdash; Multi-Family</option>
+          <option>Commercial</option>
+          <option>Institutional (Schools / Government)</option>
+          <option>Military / Defense</option>
+          <option>Affordable Housing</option>
+          <option>Disaster Relief</option>
+          <option>Other</option>
+        </select>
+        <textarea class="form-field form-textarea" placeholder="Tell us about your project..."></textarea>
+        <button type="submit" class="btn-primary form-submit">
+          Request Specifications
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b7338c685ede1797295e1ef/481eee42-1506-46e9-b742-53c814de894f/MAIN+LOGO.jpg?format=500w" alt="GigaCrete" class="footer-logo-img">
+        <p>Next-generation green building materials that push the building envelope on performance and sustainability.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">GigaHouse System</a></li>
+          <li><a href="#">PlasterMax&trade;</a></li>
+          <li><a href="#">StuccoMax&trade;</a></li>
+          <li><a href="#">BallistiCrete</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Technical Data</a></li>
+          <li><a href="#">Installation Guide</a></li>
+          <li><a href="#">Miami-Dade Approval</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GigaCrete Inc. All rights reserved.</p>
+      <p>Engineered in the USA</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════
+       JAVASCRIPT
+       ═══════════════════════════════ -->
+  <script>
+    // ── Lenis ──
+    const lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // ── Custom Cursor ──
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, dx = 0, dy = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+      dx += (mx - dx) * 0.15; dy += (my - dy) * 0.15;
+      rx += (mx - rx) * 0.08; ry += (my - ry) * 0.08;
+      dot.style.transform = `translate(${dx - 3}px, ${dy - 3}px)`;
+      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document.querySelectorAll('a, button, .mat-card, .case-card, .adv-card').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
+    });
+
+    // ── Nav scroll ──
+    const nav = document.getElementById('mainNav');
+    ScrollTrigger.create({ start: 80, onUpdate: (s) => nav.classList.toggle('scrolled', s.scroll() > 80) });
+
+    // Nav dark-section detection
+    ScrollTrigger.create({
+      trigger: '.scrollmation-sticky',
+      start: 'top top',
+      end: 'bottom top',
+      onToggle: (self) => nav.classList.toggle('on-dark', self.isActive),
+    });
+    ScrollTrigger.create({
+      trigger: '.stats-strip',
+      start: 'top top',
+      end: 'bottom top',
+      onToggle: (self) => { if (self.isActive) nav.classList.add('on-dark'); },
+      onLeave: () => nav.classList.remove('on-dark'),
+      onLeaveBack: () => nav.classList.remove('on-dark'),
+    });
+
+    // Mobile nav
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('navLinks').classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+    // ── Hero entrance ──
+    const htl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    htl.to('#heroTag', { opacity: 1, duration: 0.8 }, 0.2)
+       .from('#heroTag', { y: 15 }, 0.2)
+       .to('#heroTitle', { opacity: 1, duration: 1.2 }, 0.4)
+       .from('#heroTitle', { y: 40 }, 0.4)
+       .to('#heroSub', { opacity: 1, duration: 0.9 }, 0.7)
+       .from('#heroSub', { y: 15 }, 0.7)
+       .to('#heroCta', { opacity: 1, duration: 0.8 }, 0.95)
+       .from('#heroCta', { y: 15 }, 0.95)
+       .to('#heroLine', { opacity: 1, duration: 0.6 }, 1.3);
+
+    // ── Stats ──
+    document.querySelectorAll('.stat').forEach((s, i) => {
+      gsap.to(s, { opacity: 1, y: 0, duration: 0.7, delay: i * 0.12,
+        scrollTrigger: { trigger: s, start: 'top 85%' } });
+      gsap.set(s, { y: 25 });
+    });
+
+    // ══════════ SCROLLMATION ══════════
+    const bpDots = document.querySelectorAll('.bp-dot');
+    const btl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.scrollmation',
+        start: 'top top', end: 'bottom bottom',
+        scrub: 0.8,
+        onUpdate: (self) => {
+          const stage = Math.ceil(self.progress * 5) || 1;
+          bpDots.forEach(d => d.classList.toggle('active', parseInt(d.dataset.stage) <= stage));
+        }
+      }
+    });
+
+    // Stage 1 — Foundation
+    btl.to('#hGround', { opacity: 1, duration: 0.08 }, 0)
+       .to('#st1', { opacity: 1, duration: 0.04 }, 0.02)
+       .to('#hFoundation', { opacity: 1, duration: 0.06 }, 0.06)
+       .to('#st1', { opacity: 0, duration: 0.03 }, 0.16);
+
+    // Stage 2 — Steel
+    btl.to('#st2', { opacity: 1, duration: 0.04 }, 0.2)
+       .to('#hfL', { opacity: 1, x: 0, duration: 0.06, ease: 'back.out(1.2)' }, 0.22)
+       .to('#hfR', { opacity: 1, x: 0, duration: 0.06, ease: 'back.out(1.2)' }, 0.24)
+       .to('#hfML', { opacity: 1, y: 0, duration: 0.05 }, 0.27)
+       .to('#hfMR', { opacity: 1, y: 0, duration: 0.05 }, 0.28)
+       .to('#hfT', { opacity: 1, duration: 0.05 }, 0.30)
+       .to('#hfMid', { opacity: 1, duration: 0.05 }, 0.32)
+       .to('#st2', { opacity: 0, duration: 0.03 }, 0.36);
+
+    // Stage 3 — Foam
+    btl.to('#st3', { opacity: 1, duration: 0.04 }, 0.4)
+       .to('#fmLB', { opacity: 0.85, scale: 1, x: 0, duration: 0.04 }, 0.42)
+       .to('#fmRB', { opacity: 0.85, scale: 1, x: 0, duration: 0.04 }, 0.44)
+       .to('#fmCB', { opacity: 0.85, scale: 1, y: 0, duration: 0.04 }, 0.46)
+       .to('#fmLT', { opacity: 0.85, scale: 1, x: 0, duration: 0.04 }, 0.48)
+       .to('#fmRT', { opacity: 0.85, scale: 1, x: 0, duration: 0.04 }, 0.50)
+       .to('#fmCT', { opacity: 0.85, scale: 1, y: 0, duration: 0.04 }, 0.52)
+       .to('#st3', { opacity: 0, duration: 0.03 }, 0.56);
+
+    // Stage 4 — Coating
+    btl.to('#st4', { opacity: 1, duration: 0.04 }, 0.6)
+       .to('#hCoating', { opacity: 1, clipPath: 'inset(0% 0 0 0)', duration: 0.12, ease: 'power2.inOut' }, 0.62)
+       .to('.h-foam', { opacity: 0, duration: 0.06 }, 0.68)
+       .to('#st4', { opacity: 0, duration: 0.03 }, 0.76);
+
+    // Stage 5 — Reveal
+    btl.to('#st5', { opacity: 1, duration: 0.04 }, 0.8)
+       .to('#hRoof', { opacity: 1, duration: 0.06, ease: 'back.out(1.5)' }, 0.82)
+       .to('#hW1', { opacity: 1, duration: 0.04 }, 0.85)
+       .to('#hW2', { opacity: 1, duration: 0.04 }, 0.86)
+       .to('#hW3', { opacity: 1, duration: 0.04 }, 0.87)
+       .to('#hGlow', { opacity: 1, duration: 0.06 }, 0.88)
+       .to('#hLabel', { opacity: 1, duration: 0.04 }, 0.90)
+       .to('.scrollmation-sticky', {
+         background: 'linear-gradient(180deg, #1c1917 0%, #2a2318 50%, #1c1917 100%)',
+         duration: 0.1
+       }, 0.85)
+       .to('#houseModel', { rotateY: -12, rotateX: 8, duration: 0.15, ease: 'power2.out' }, 0.85);
+
+    // ── Section Reveals ──
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 82%' } });
+    });
+
+    // ── Case Cards ──
+    gsap.utils.toArray('.case-card').forEach((c, i) => {
+      gsap.to(c, { opacity: 1, y: 0, duration: 0.8, delay: i * 0.15, ease: 'power2.out',
+        scrollTrigger: { trigger: c, start: 'top 82%' } });
+      gsap.set(c, { y: 35 });
+    });
+
+    // ── Advantage Cards ──
+    gsap.utils.toArray('.adv-card').forEach((c, i) => {
+      gsap.to(c, { opacity: 1, y: 0, duration: 0.7, delay: i * 0.08, ease: 'power2.out',
+        scrollTrigger: { trigger: c, start: 'top 85%' } });
+      gsap.set(c, { y: 25 });
+    });
+
+    // ── Brand Quote ──
+    gsap.to('#brandQuote', { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: '#brandQuote', start: 'top 75%' } });
+    gsap.set('#brandQuote', { y: 30 });
+
+    // ── Parallax titles ──
+    gsap.utils.toArray('.section-title').forEach(t => {
+      gsap.to(t, { y: -20, ease: 'none',
+        scrollTrigger: { trigger: t, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
+    });
+
+    // ── Smooth scroll links ──
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -60 });
+      });
+    });
+
+    // ── Reduced motion ──
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.globalTimeline.timeScale(0);
+    }
+  </script>
+</body>
+</html>

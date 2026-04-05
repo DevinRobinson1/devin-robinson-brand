@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Is Replacing the $150K Investor Relations Coordinator — Fund Flow OS</title>
+  <meta name="description" content="AI investor relations for real estate is transforming how fund managers communicate with LPs. Learn how AI handles drafting, follow-ups, compliance tracking, and engagement scoring at a fraction of the cost.">
+  <meta name="keywords" content="AI investor relations real estate, AI IR coordinator, investor relations automation, real estate fund management AI">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       BLOG ARTICLE — Page-specific styles
+       ============================================ */
+
+    .article-hero {
+      padding: 10rem 0 3rem;
+      text-align: center;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      max-width: 720px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark, #1a7a3a);
+      border: 1px solid var(--green-border);
+      border-radius: var(--r-xl);
+      padding: 0.25rem 0.875rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      color: var(--ink-40);
+      font-size: 0.875rem;
+      font-family: var(--sans);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-hero .article-desc {
+      font-size: 1.0625rem;
+      color: var(--ink-60);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .article-container h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    .article-container h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .article-container p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink-80, rgba(26,26,26,0.8));
+      margin-bottom: 1.25rem;
+    }
+
+    .article-container ul,
+    .article-container ol {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink-80, rgba(26,26,26,0.8));
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-container li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-container blockquote {
+      border-left: 3px solid var(--green);
+      background: var(--green-light);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .article-container blockquote p {
+      margin-bottom: 0;
+    }
+
+    .answer-capsule {
+      background: var(--green-light);
+      border: 1px solid var(--green-border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .answer-capsule-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green-dark, #1a7a3a);
+      font-family: var(--sans);
+      margin-bottom: 0.5rem;
+    }
+
+    .answer-capsule p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .article-cta {
+      background: var(--navy);
+      border-radius: var(--r-lg);
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta h2 {
+      color: var(--white);
+      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-cta p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .article-cta .btn {
+      background: var(--green);
+      color: var(--navy);
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: var(--r-md);
+      text-decoration: none;
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    .article-cta .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--ink-10);
+    }
+
+    .related-articles h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .related-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .related-card .related-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--green-dark, #1a7a3a);
+      margin-bottom: 0.5rem;
+      font-family: var(--sans);
+    }
+
+    .related-card h3 {
+      font-size: 1rem;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Featured & inline images */
+    .article-featured-img {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .article-featured-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-inline-img {
+      margin: 2rem 0;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .article-inline-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .article-hero { padding: 8rem 1.5rem 2rem; }
+      .article-container { padding: 0 1.5rem 3rem; }
+      .article-cta { padding: 2rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#platform">Platform</a></li>
+      <li><a href="../index.html#audience">Solutions</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blog.html">Blog &amp; Resources</a></li>
+      <li><a href="../demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <span class="article-tag reveal">AI & Technology</span>
+    <h1 class="reveal">How AI Is Replacing the $150K Investor Relations Coordinator</h1>
+    <p class="article-meta reveal">Devin Robinson &middot; March 10, 2026 &middot; 9 min read</p>
+    <p class="article-desc reveal">The real cost of investor relations isn't the salary. It's the deals you lose while your IR person is buried in email. Here's how AI changes the math completely.</p>
+    <div class="article-featured-img"><img src="images/ai-investor-relations-featured.png" alt="AI-powered investor relations for real estate"></div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+
+  <div class="answer-capsule reveal">
+    <div class="answer-capsule-label">Quick Answer</div>
+    <p><strong>AI investor relations tools for real estate</strong> can handle investor communications, follow-up scheduling, compliance tracking, and engagement scoring for as little as $97/month — replacing $60K-$150K/year IR coordinator roles. The key is a "suggest-then-approve" model where AI drafts and you confirm, building toward full autonomy as trust grows.</p>
+  </div>
+
+  <p class="reveal">Let me tell you something that's going to sting if you're running a real estate fund right now. You're either paying someone $60K to $150K a year to manage investor relations — or you're doing it yourself at 2am between deal reviews and site visits. Neither option is sustainable. I know because I've been on both sides.</p>
+
+  <p class="reveal">When I launched PF Capital, my first real estate investment fund, I was the IR coordinator. I was drafting quarterly updates at midnight. I was responding to LP emails during property inspections. I was manually tracking who opened what email, who needed a follow-up call, and who was about to ghost because I hadn't touched base in three weeks.</p>
+
+  <p class="reveal">That's the reality for most operators raising between $1M and $50M. You're too small to justify a full-time IR hire, but too big to handle everything yourself without something falling through the cracks.</p>
+
+  <h2 class="reveal">The IR Coordinator Problem Nobody Talks About</h2>
+
+  <p class="reveal"><strong>The cost isn't just the salary.</strong> An entry-level IR coordinator in real estate private equity runs $60K-$80K. A senior one with fund experience? $120K-$150K all-in with benefits. But that's just the line item. The real costs are hidden:</p>
+
+  <ul class="reveal">
+    <li><strong>Ramp time:</strong> It takes 3-6 months before a new IR hire understands your fund, your investors, and your communication style well enough to represent you.</li>
+    <li><strong>Burnout and turnover:</strong> IR coordinators burn out fast. The role is relentless — every investor thinks their email should be answered first. Average tenure is 18-24 months, then you're recruiting again.</li>
+    <li><strong>Inconsistency:</strong> When your IR person is sick, on vacation, or just having a bad day, your investors feel it. Communication quality swings wildly.</li>
+    <li><strong>Scalability ceiling:</strong> One person can manage relationships with maybe 50-75 investors effectively. Beyond that, things start slipping. Missed follow-ups. Late reports. Investors feeling like a number instead of a partner.</li>
+  </ul>
+
+  <p class="reveal">I watched this play out in real time. We had an investor ready to commit $250K to our second fund. My IR process at the time was a spreadsheet, a Gmail account, and good intentions. The follow-up email went out two days late. By then, they'd committed to another fund. <strong>A quarter million dollars lost because of a two-day delay.</strong></p>
+
+  <h2 class="reveal">What AI Can Actually Do for Investor Relations Today</h2>
+
+  <p class="reveal">Let's kill the hype and talk about what's real. I'm not talking about some future sci-fi scenario. I'm talking about what <strong>AI investor relations tools</strong> can do right now, today, for real estate operators:</p>
+
+  <h3 class="reveal">1. Draft Investor Communications</h3>
+
+  <p class="reveal">AI can draft quarterly update emails, capital call notices, distribution letters, and ad-hoc investor responses in your voice. Not generic corporate speak — your actual tone, your style, referencing the specific deal details and performance metrics that matter to each investor. You review it, tweak a sentence if needed, and hit send. What used to take 4 hours takes 15 minutes.</p>
+
+  <h3 class="reveal">2. Schedule and Execute Follow-Ups</h3>
+
+  <p class="reveal">This is where the money is. AI tracks every investor interaction — emails opened, documents viewed, meetings attended — and automatically schedules follow-ups at the optimal time. <strong>No more investors falling through the cracks.</strong> If someone opened your pitch deck three times but hasn't responded, AI flags that and drafts a follow-up. If an LP hasn't heard from you in 30 days, AI triggers a check-in.</p>
+
+  <h3 class="reveal">3. Track Compliance in Real Time</h3>
+
+  <p class="reveal">Here's one that keeps fund managers up at night. SEC reporting deadlines, accreditation verification expiration dates, Reg D filing requirements — AI monitors all of it. It flags when an investor's accreditation is about to expire. It reminds you when a Form D amendment is due. It catches when a communication might cross the line into general solicitation if you're running a 506(b). This alone is worth the cost of admission.</p>
+
+  <h3 class="reveal">4. Score Investor Engagement</h3>
+
+  <p class="reveal">Not all investors are equal. Some are ready to re-up in your next fund. Some are cold and need warming. AI assigns engagement scores based on behavior — email opens, portal logins, document downloads, meeting attendance, response times. You see a dashboard that tells you exactly who's hot, who's warm, and who needs attention. No more guessing.</p>
+
+  <h2 class="reveal">How Flow AI Handles This: Three Roles in One</h2>
+
+  <p class="reveal">When we built <a href="../flow-ai.html">Flow AI</a> inside Fund Flow OS, we didn't build a chatbot. We built three AI employees that work together:</p>
+
+  <h3 class="reveal">The Chief of Staff</h3>
+
+  <p class="reveal">This role manages your daily priorities. It reviews your investor pipeline every morning and tells you: "Here are the 5 conversations that need your attention today. Here are the 3 follow-ups that are overdue. Here's an investor who just viewed your offering docs for the fourth time — you should call them." It's the strategic layer that makes sure nothing important gets buried.</p>
+
+  <h3 class="reveal">The IR Manager</h3>
+
+  <p class="reveal">This is your communication engine. It drafts every investor email, prepares quarterly reports with your fund's actual performance data, personalizes messages based on each investor's history and preferences, and manages the cadence of touchpoints. It knows that Investor A prefers detailed financial breakdowns while Investor B wants the 3-bullet executive summary.</p>
+
+  <h3 class="reveal">The Compliance Guard</h3>
+
+  <p class="reveal">Powered by <a href="../flow-guard.html">Flow Guard</a>, this role scans every outgoing communication for compliance issues before it reaches an investor. It checks for inadvertent promises of returns, verifies accreditation status is current, ensures proper disclosures are included, and maintains an audit trail of every investor interaction. Think of it as a compliance officer who never sleeps and never misses a detail.</p>
+
+  <h2 class="reveal">Real Workflow: What This Looks Like in Practice</h2>
+
+  <p class="reveal">Here's an actual workflow from a Fund Flow OS user managing a $12M multifamily fund with 43 investors:</p>
+
+  <p class="reveal"><strong>Monday morning, 7:00 AM.</strong> Flow AI sends a daily briefing: 2 investors need follow-ups (one viewed the Q4 report but didn't acknowledge it, one has an accreditation expiring in 30 days). 1 new lead from the <a href="../investor-crm.html">Investor CRM</a> scored at 87/100 and is ready for outreach. A quarterly distribution is due Friday.</p>
+
+  <p class="reveal"><strong>7:15 AM.</strong> The operator reviews 3 draft emails Flow AI prepared overnight. One follow-up, one accreditation renewal reminder, one personalized intro to the new lead. Total review time: 8 minutes. Total edits: changed one sentence in the intro email.</p>
+
+  <p class="reveal"><strong>7:23 AM.</strong> All three emails sent. The distribution calculation is already prepared with the exact waterfall amounts for each investor. The operator reviews the numbers, approves with one click, and the distribution notices go out automatically on Friday.</p>
+
+  <p class="reveal"><strong>Total time spent on IR that morning: 23 minutes.</strong> Without AI, that same work would've taken 3-4 hours.</p>
+
+  <h2 class="reveal">The Trust Ladder: From Suggest-Then-Approve to Fully Autonomous</h2>
+
+  <p class="reveal">I'm not going to pretend that you should hand over all investor communications to AI on day one. That's irresponsible, and honestly, it would scare your investors. Here's how the trust builds:</p>
+
+  <ol class="reveal">
+    <li><strong>Level 1 — Suggest and Wait:</strong> AI drafts everything. You review and approve every single message before it goes out. This is where you start. It takes 2-4 weeks to calibrate the AI to your voice and verify it understands your fund's nuances.</li>
+    <li><strong>Level 2 — Suggest and Auto-Send (Routine):</strong> After you've approved 50+ messages and the AI has learned your patterns, you let it auto-send routine communications — meeting confirmations, document delivery receipts, standard check-ins. You still review anything substantive.</li>
+    <li><strong>Level 3 — Full Autonomy (with guardrails):</strong> AI handles 80% of investor communications autonomously. It flags exceptions for your review — anything involving commitments, legal questions, unhappy investors, or compliance edge cases. You spend 15 minutes a day on IR instead of 3 hours.</li>
+  </ol>
+
+  <blockquote class="reveal">
+    <p>"The goal isn't to remove the human from investor relations. It's to remove the grunt work so the human can focus on the relationships that actually move capital."</p>
+  </blockquote>
+
+  <h2 class="reveal">The ROI Math: $97/Month vs. $150K/Year</h2>
+
+  <p class="reveal">Let's do the math. And I'm going to be conservative here.</p>
+
+  <p class="reveal"><strong>Traditional IR coordinator (mid-level):</strong></p>
+  <ul class="reveal">
+    <li>Base salary: $80,000</li>
+    <li>Benefits (health, 401k match, PTO): $16,000</li>
+    <li>Software tools (CRM, email, compliance): $6,000/year</li>
+    <li>Training and ramp time: $8,000 (estimated productivity loss)</li>
+    <li><strong>Total year-one cost: ~$110,000</strong></li>
+  </ul>
+
+  <p class="reveal"><strong>Fund Flow OS with Flow AI:</strong></p>
+  <ul class="reveal">
+    <li>Platform subscription: $97-$297/month ($1,164-$3,564/year)</li>
+    <li>Includes CRM, AI communications, compliance monitoring, distribution automation</li>
+    <li>No ramp time — learns your voice from existing emails in 48 hours</li>
+    <li><strong>Total year-one cost: ~$1,164-$3,564</strong></li>
+  </ul>
+
+  <p class="reveal"><strong>That's a 96-97% cost reduction.</strong> Even if you hire a part-time analyst at $30K to supplement the AI for high-touch investor meetings, you're still saving $75K+ per year. For a fund manager running a $5M-$20M fund, that savings goes straight to your bottom line — or gets reinvested into raising more capital.</p>
+
+  <h2 class="reveal">Who Should (and Shouldn't) Use AI for Investor Relations</h2>
+
+  <h3 class="reveal">AI IR Is Built For:</h3>
+
+  <ul class="reveal">
+    <li><strong>Emerging fund managers</strong> raising their first $1M-$10M fund who can't afford a full-time IR hire</li>
+    <li><strong>Solo operators</strong> running syndications who are drowning in investor emails</li>
+    <li><strong>Growing funds</strong> that have 30-100+ investors and need to scale communication without scaling headcount</li>
+    <li><strong>Fund managers who value consistency</strong> — every investor gets the same quality of communication, every time</li>
+  </ul>
+
+  <h3 class="reveal">Think Twice If:</h3>
+
+  <ul class="reveal">
+    <li><strong>Your investors are primarily institutions</strong> (pension funds, endowments) that expect dedicated human IR contacts and in-person meetings — AI augments but can't replace that relationship level yet</li>
+    <li><strong>You're managing $500M+</strong> and have the budget for a full IR team — at that scale, AI is a force multiplier for your team, not a replacement</li>
+    <li><strong>Your fund strategy is highly complex</strong> (multi-strategy, international) and requires nuanced investor discussions that go beyond standard LP communications</li>
+  </ul>
+
+  <p class="reveal">For the vast majority of real estate operators — the ones raising $1M to $50M, managing 10 to 200 investors, running syndications or small funds — <strong>AI investor relations isn't just a nice-to-have anymore. It's a competitive advantage that's becoming table stakes.</strong></p>
+
+  <h2 class="reveal">The Bottom Line</h2>
+
+  <p class="reveal">I built Fund Flow OS because I was tired of watching good operators lose capital to bad systems. The IR coordinator model worked in a world where raising $10M meant you had 10 investors and a Rolodex. Today's operators are managing 50, 100, 200+ investors across multiple funds and deals. The old model doesn't scale.</p>
+
+  <p class="reveal">AI does. And the operators who figure that out first are going to raise more capital, faster, with fewer headaches and lower costs than everyone else.</p>
+
+  <p class="reveal">That's not a prediction. That's what's already happening on our platform.</p>
+
+  <!-- CTA -->
+  <div class="article-cta reveal">
+    <h2>Ready to Replace Your IR Bottleneck?</h2>
+    <p>Start your free trial of Fund Flow OS and let Flow AI handle your investor communications — starting today.</p>
+    <a href="https://fundflowos.com/register" class="btn">Start Free &rarr;</a>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div class="related-articles">
+    <h2 class="reveal">Related Articles</h2>
+    <div class="related-grid">
+      <a href="waterfall-distributions-explained.html" class="related-card reveal">
+        <div class="related-tag">Fund Management</div>
+        <h3>Waterfall Distributions Explained: A Plain-English Guide for Fund Managers</h3>
+      </a>
+      <a href="real-estate-syndication-guide-beginners.html" class="related-card reveal">
+        <div class="related-tag">Capital Raising</div>
+        <h3>Real Estate Syndication for Beginners: How to Launch Your First Deal</h3>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="../index.html#platform">Private Lender Database</a>
+        <a href="../index.html#platform">Flow AI Employee</a>
+        <a href="../index.html#platform">Flow Guard Compliance</a>
+        <a href="../index.html#platform">Investor CRM</a>
+        <a href="../index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../index.html#audience">Flippers & Builders</a>
+        <a href="../index.html#audience">Syndicators</a>
+        <a href="../index.html#audience">Private Lenders</a>
+        <a href="../index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="../syndications.html">7-Day Syndications</a>
+        <a href="../fund-admin.html">Fund Administration</a>
+        <a href="../flow-launch.html">Flow Launch (DFY)</a>
+        <a href="../fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../help.html">Help Center</a>
+        <a href="../podcast.html">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+</body>
+</html>

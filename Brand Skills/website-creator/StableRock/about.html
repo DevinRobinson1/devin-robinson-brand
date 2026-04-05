@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — StableRock Collective</title>
+  <meta name="description" content="Meet the StableRock Collective team. Learn about our vision, mission, and core values driving exceptional wealth management for accredited investors.">
+  <meta property="og:title" content="About Us — StableRock Collective">
+  <meta property="og:description" content="Empowering success in real estate and wealth management.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #2C3830;
+      --bg-secondary: #F8F5F0;
+      --bg-tertiary: #344038;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-cream: #F8F5F0;
+      --bg-cream-dark: #EDE8E0;
+      --bg-white: #FFFFFF;
+      --text-primary: #F5F1EB;
+      --text-dark: #2A2A2A;
+      --text-dark-secondary: #5A5550;
+      --text-secondary: #B0AAA2;
+      --text-muted: #7A756E;
+      --gold: #B49B57;
+      --gold-light: #D4BA7A;
+      --gold-dark: #8A7640;
+      --gold-glow: rgba(180, 155, 87, 0.15);
+      --border: rgba(180, 155, 87, 0.12);
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --border-light: rgba(44, 56, 48, 0.1);
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container: 1200px;
+      --section-pad: clamp(5rem, 12vh, 9rem);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Film grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text-dark-secondary);
+      font-weight: 300;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: block;
+      margin: 1.5rem 0;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      padding: 0.75rem 0;
+      background: rgba(248, 245, 240, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav.scrolled .nav-logo-text {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a {
+      color: var(--text-dark-secondary);
+    }
+
+    .nav.scrolled .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a.active-link {
+      color: var(--gold);
+    }
+
+    .nav.scrolled .nav-toggle span {
+      background: var(--text-dark);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active-link {
+      color: var(--gold);
+    }
+
+    .nav-links a.active-link::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold) !important;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--bg-primary) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(180, 155, 87, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       PAGE HERO
+       ============================================ */
+    .page-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 6rem;
+      background: url('images/hero-mountain.jpg') center center / cover no-repeat;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, rgba(44, 56, 48, 0.75) 0%, rgba(44, 56, 48, 0.85) 100%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .page-hero-label {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      color: var(--gold);
+    }
+
+    .page-hero-title {
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      color: var(--text-primary);
+    }
+
+    .page-hero-subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0;
+      color: var(--text-secondary);
+    }
+
+    /* ============================================
+       VISION & MISSION
+       ============================================ */
+    .vision-mission {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    .vm-card {
+      opacity: 0;
+      background: var(--bg-white);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .vm-card .display-md {
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .vm-card .body-lg {
+      margin-top: 0.5rem;
+      color: var(--text-dark-secondary);
+    }
+
+    .vm-card .label {
+      color: var(--gold);
+    }
+
+    /* ============================================
+       CORE VALUES
+       ============================================ */
+    .values-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-white);
+    }
+
+    .values-section .section-header .display-lg {
+      color: var(--text-dark);
+    }
+
+    .values-section .section-header .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .values-grid .value-card:last-child {
+      grid-column: 2;
+    }
+
+    .value-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 2rem 1.75rem;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      background: var(--bg-cream-dark);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .value-card:hover::before {
+      opacity: 1;
+    }
+
+    .value-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-dot-lg {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .value-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .value-card p {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       TEAM SECTION
+       ============================================ */
+    .team-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+    }
+
+    .team-section .section-header .display-lg {
+      color: var(--text-dark);
+    }
+
+    .team-section .section-header .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .team-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      background: var(--bg-white);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .team-card:hover::before {
+      opacity: 1;
+    }
+
+    .team-card-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-cream);
+      border: 1.5px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      transition: border-color 0.4s ease;
+    }
+
+    .team-card:hover .team-card-avatar {
+      border-color: var(--gold);
+    }
+
+    .team-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      color: var(--text-dark);
+    }
+
+    .team-card-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .team-card p {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       CONTACT SECTION
+       ============================================ */
+    .contact-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .contact-section .display-lg {
+      color: var(--text-primary);
+    }
+
+    .contact-section .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .contact-section .section-header .display-lg {
+      color: var(--text-primary);
+    }
+
+    .contact-section .contact-item {
+      color: var(--text-secondary);
+    }
+
+    .contact-section .contact-item a {
+      color: var(--text-secondary);
+    }
+
+    .contact-inner {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .contact-inner .display-lg {
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2.5rem 0;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold);
+    }
+
+    /* ============================================
+       SECTION HEADER (reusable)
+       ============================================ */
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-header .label {
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .section-header .display-lg {
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 5rem 0 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       SVG ICONS (inline)
+       ============================================ */
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid .value-card:last-child {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(44, 56, 48, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid .value-card:last-child {
+        grid-column: auto;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-details {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">SR</div>
+        <span class="nav-logo-text">StableRock Collective</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html" class="active-link">About</a></li>
+        <li><a href="investments.html">Investments</a></li>
+        <li><a href="blog.html">Resources</a></li>
+        <li><a href="#contact" class="nav-cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <span class="label page-hero-label">About StableRock Collective</span>
+      <h1 class="display-xl page-hero-title">About Us</h1>
+      <p class="body-lg page-hero-subtitle">Empowering Success in Real Estate and Wealth Management</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       VISION & MISSION
+       ============================================ -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="vm-grid">
+        <div class="vm-card">
+          <span class="label">Our Vision</span>
+          <span class="gold-rule"></span>
+          <h2 class="display-md">Where We&rsquo;re Going</h2>
+          <p class="body-lg">To be the premier Private Capital &amp; MFO Collective, empowering families and accredited investors to achieve financial independence, preserve wealth across generations, and make meaningful contributions to their communities through strategic partnerships and co-investment opportunities.</p>
+        </div>
+        <div class="vm-card">
+          <span class="label">Our Mission</span>
+          <span class="gold-rule"></span>
+          <h2 class="display-md">What Drives Us</h2>
+          <p class="body-lg">StableRock Collective is committed to delivering exceptional wealth management services that are personalized, innovative, and focused on long-term success. We strive to build lasting relationships with our clients by understanding their unique needs and providing tailored solutions that encompass wealth management through private real estate and alternative investments, real estate and business lending, real estate and business consulting, and multifamily office services.</p>
+          <p class="body-lg" style="margin-top: 1rem;">Our mission is to guide our clients on a journey of financial growth, security, and legacy-building, with integrity, transparency, and unwavering dedication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CORE VALUES
+       ============================================ -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What We Stand For</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Our Core Values</h2>
+        <p class="body-lg">The principles that guide every decision, relationship, and outcome at StableRock Collective.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Integrity</h3>
+          </div>
+          <p>We uphold the highest ethical standards in all our dealings, ensuring that trust and honesty are the foundation of our relationships with clients, partners, and our community.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Excellence</h3>
+          </div>
+          <p>We are committed to delivering the highest quality of service, striving for excellence in every aspect of our work.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Client-Centricity</h3>
+          </div>
+          <p>Our clients are at the heart of everything we do.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Innovation</h3>
+          </div>
+          <p>We embrace innovative thinking and cutting-edge strategies to provide our clients with forward-looking solutions.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Collaboration</h3>
+          </div>
+          <p>We believe in the power of teamwork and collaboration, both within our firm and with our clients.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Legacy</h3>
+          </div>
+          <p>We are dedicated to helping our clients build and preserve their legacies.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-header">
+            <span class="value-dot-lg"></span>
+            <h3>Community</h3>
+          </div>
+          <p>We are deeply committed to making a positive impact on the communities we serve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TEAM
+       ============================================ -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Leadership</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Meet the Team</h2>
+        <p class="body-lg">Decades of combined experience in real estate, finance, and wealth management &mdash; unified by a commitment to client success.</p>
+      </div>
+      <div class="team-office-image" style="margin-top: 3rem; margin-bottom: 2rem; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.08);">
+        <img src="images/team-office.jpg" alt="StableRock Collective team in the office" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-card-avatar">TB</div>
+          <h3>Timothy Barley</h3>
+          <span class="team-card-title">Founder &amp; CEO</span>
+          <p>13 years in wealth advisory and 8 years of real estate investing. Background in construction estimation and engineering management from York College of PA. Former CDO for a major marketing firm and CEO/CFO/managing partner for a resort through COVID. Dedicated father of two.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">EW</div>
+          <h3>Eric Warfel</h3>
+          <span class="team-card-title">CFO &amp; Chief Lending Officer</span>
+          <p>26 years of commercial banking experience with titles including Director of Commercial Lending and Market President. Millersville University graduate who left corporate banking in 2019 to pursue alternative and private lending.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">AB</div>
+          <h3>Anthony Bertelli</h3>
+          <span class="team-card-title">Chief Development Officer</span>
+          <p>Over 20 years in business operations, real estate investing, and healthcare executive leadership. Proven track record in national-level revenue generation. Based in Northern New Jersey.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">CL</div>
+          <h3>Colton Loomis</h3>
+          <span class="team-card-title">CFO</span>
+          <p>Founder of Loomis Creative. Finance degree with background in insurance, financial research, and SaaS startups. QuickBooks certified. Former Division 1 lacrosse player. Based in Hoboken, NJ.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">EN</div>
+          <h3>Eugene Nilus</h3>
+          <span class="team-card-title">Chief Lending Officer</span>
+          <p>26+ years in tech, residential, commercial, and alternative investment banking. Founder and CEO of Y2 Lending. Published author and host of The Shift podcast. Based in California.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">BD</div>
+          <h3>Billy Daniels</h3>
+          <span class="team-card-title">Client Services Advisor</span>
+          <p>Sales professional and customer service expert dedicated to ensuring every client interaction exceeds expectations and drives meaningful results.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-avatar">MM</div>
+          <h3>Melissa Miller</h3>
+          <span class="team-card-title">CMO &amp; Chief Cultural Officer</span>
+          <p>Nearly two decades of expertise in graphic design, marketing, non-profit leadership, and event execution. Brings creative vision and cultural strategy to everything StableRock does.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT
+       ============================================ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-inner" style="opacity: 0;">
+        <span class="label">Get In Touch</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Connect With<br>StableRock Collective</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:717-659-1188">717-659-1188</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>PO Box 338, Saddle River, NJ 07458</span>
+          </div>
+        </div>
+        <a href="#" class="btn-primary">Schedule a Call &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">SR</div>
+            <span class="nav-logo-text">StableRock Collective</span>
+          </a>
+          <p>Expert guidance to grow assets, preserve wealth, and craft enduring legacies. We are your rock.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="investments.html">Private Investments</a></li>
+            <li><a href="investments.html">Business Lending</a></li>
+            <li><a href="investments.html">Consulting</a></li>
+            <li><a href="investments.html">Family Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Debt Fund eBook</a></li>
+            <li><a href="#">Wealth eBook</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:717-659-1188">717-659-1188</a></li>
+            <li><a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a></li>
+            <li><a href="#">PO Box 338<br>Saddle River, NJ 07458</a></li>
+            <li><a href="#" class="btn-secondary" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.7rem;">Investor Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StableRock Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>StableRock Collective offers a broad range of real estate and wealth management services but does not directly provide legal, tax, or insurance advice. All investments involve risk. Past performance is not indicative of future results. Offerings are available to accredited investors only. Please review all offering documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT — ANIMATIONS
+       ============================================ -->
+  <script>
+    // ============================================
+    // Lenis Smooth Scroll
+    // ============================================
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect Lenis to GSAP
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // ============================================
+    // Navigation
+    // ============================================
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ============================================
+    // GSAP ScrollTrigger Registration
+    // ============================================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================
+    // Page Hero Animations
+    // ============================================
+    const heroTl = gsap.timeline({ delay: 0.3 });
+
+    heroTl
+      .fromTo('.page-hero-label', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      })
+      .fromTo('.page-hero-title', {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .fromTo('.page-hero-subtitle', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.6');
+
+    // ============================================
+    // Vision & Mission
+    // ============================================
+    gsap.fromTo('.vm-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.vision-mission',
+        start: 'top 70%',
+      }
+    });
+
+    // ============================================
+    // Core Values — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.value-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.values-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Team Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.team-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.team-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Contact Section
+    // ============================================
+    gsap.fromTo('.contact-inner', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.contact-section',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Section Headers — Fade Up
+    // ============================================
+    gsap.utils.toArray('.section-header').forEach(header => {
+      gsap.fromTo(header, {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 80%',
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

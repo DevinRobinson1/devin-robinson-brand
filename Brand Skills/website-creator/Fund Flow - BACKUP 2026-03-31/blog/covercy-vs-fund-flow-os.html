@@ -1,0 +1,1019 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covercy vs Fund Flow OS: Banking Integration vs AI-Powered Capital Raising</title>
+<meta name="description" content="Covercy vs Fund Flow OS: a full feature, pricing, and AI comparison for real estate fund managers. Banking-embedded distributions vs autonomous investor outreach. Find out which fits your stage.">
+<meta property="og:title" content="Covercy vs Fund Flow OS: Banking Integration vs AI-Powered Capital Raising">
+<meta property="og:description" content="Full feature, pricing, and AI comparison for real estate fund managers. Banking-embedded distributions vs autonomous investor outreach.">
+<meta property="og:image" content="hero.jpg">
+<meta property="og:type" content="article">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #132036;
+    --neo-green: #6CDA9A;
+    --iris: #7887EA;
+    --off-white: #F2F1EC;
+    --light-gray: #E2E6E7;
+    --text-body: #374151;
+    --text-muted: #6B7280;
+    --max-width: 780px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: #fff;
+    color: var(--text-body);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* HERO */
+  .hero {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(19,32,54,0.25) 0%, rgba(19,32,54,0.55) 100%);
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HEADER AREA */
+  .post-header {
+    background: var(--navy);
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  .post-category {
+    display: inline-block;
+    background: var(--neo-green);
+    color: var(--navy);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .post-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(26px, 4vw, 38px);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+
+  .post-header h1 span { color: var(--neo-green); }
+
+  .post-meta {
+    font-size: 13px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .post-meta span { display: flex; align-items: center; gap: 5px; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--off-white);
+    border-left: 4px solid var(--neo-green);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin: 40px 0 32px;
+  }
+
+  .tldr-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neo-green);
+    margin-bottom: 8px;
+  }
+
+  .tldr p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.6;
+  }
+
+  /* BODY TYPOGRAPHY */
+  .post-body {
+    padding: 16px 0 48px;
+  }
+
+  .post-body p {
+    margin-bottom: 20px;
+    color: var(--text-body);
+  }
+
+  .post-body h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 48px 0 16px;
+    line-height: 1.25;
+  }
+
+  .post-body h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 28px 0 10px;
+  }
+
+  .post-body strong { color: var(--navy); font-weight: 700; }
+
+  .post-body a {
+    color: var(--iris);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .post-body a:hover { color: var(--neo-green); }
+
+  /* ANSWER CAPSULE */
+  .answer-capsule {
+    background: linear-gradient(135deg, rgba(108,218,154,0.08) 0%, rgba(120,135,234,0.06) 100%);
+    border: 1px solid rgba(108,218,154,0.3);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 0 0 24px;
+  }
+
+  .answer-capsule p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* LISTS */
+  .post-body ul, .post-body ol {
+    margin: 0 0 20px 20px;
+  }
+
+  .post-body li {
+    margin-bottom: 8px;
+    color: var(--text-body);
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .comparison-table thead th {
+    background: var(--navy);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .comparison-table thead th:not(:first-child) { text-align: center; }
+
+  .comparison-table tbody tr:nth-child(odd) { background: #F9FAFB; }
+  .comparison-table tbody tr:nth-child(even) { background: #fff; }
+
+  .comparison-table tbody tr:hover { background: #EFF6FF; }
+
+  .comparison-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 14px;
+  }
+
+  .comparison-table td:not(:first-child) { text-align: center; }
+
+  .check-yes { color: #16A34A; font-weight: 900; font-size: 16px; }
+  .check-no { color: #DC2626; font-weight: 900; font-size: 16px; }
+  .check-partial { color: #D97706; font-size: 12px; font-weight: 700; }
+
+  /* INFOGRAPHIC EMBED */
+  .infographic-wrap {
+    background: #F0F4F8;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 32px 0;
+  }
+
+  .infographic-wrap iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
+
+  .infographic-caption {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 12px 16px 16px;
+    font-style: italic;
+  }
+
+  /* CTA BOX */
+  .cta-box {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .cta-box .cta-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neo-green);
+    margin-bottom: 10px;
+  }
+
+  .cta-box h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  .cta-box h3 span { color: var(--neo-green); }
+
+  .cta-box p {
+    font-size: 15px;
+    color: #94A3B8;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--neo-green);
+    color: var(--navy);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .cta-btn:hover { opacity: 0.88; color: var(--navy); }
+
+  .cta-secondary {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* VERDICT BOX */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  @media (max-width: 600px) {
+    .verdict-grid { grid-template-columns: 1fr; }
+  }
+
+  .verdict-card {
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .verdict-covercy {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+  }
+
+  .verdict-ffo {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+  }
+
+  .verdict-card .verdict-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .verdict-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .verdict-card ul {
+    margin: 0;
+    padding-left: 16px;
+  }
+
+  .verdict-card li {
+    font-size: 13px;
+    color: var(--text-body);
+    margin-bottom: 6px;
+  }
+
+  /* AUTHOR BIO */
+  .author-bio {
+    border-top: 2px solid var(--light-gray);
+    padding-top: 32px;
+    margin-top: 48px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--neo-green);
+    flex-shrink: 0;
+  }
+
+  .author-info h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .author-info p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--off-white);
+    border-radius: 20px;
+    padding: 40px 44px;
+    margin: 48px 0;
+  }
+
+  .faq-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--light-gray);
+    padding: 20px 0;
+  }
+
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .faq-item h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .faq-item p {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* SIGN OFF */
+  .sign-off {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    font-style: italic;
+    text-align: center;
+    margin: 32px 0 0;
+  }
+
+  /* INLINE SOFT CTA */
+  .soft-cta {
+    background: rgba(108,218,154,0.1);
+    border: 1px solid rgba(108,218,154,0.35);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 24px 0;
+    font-size: 14px;
+    color: var(--navy);
+  }
+
+  .soft-cta a { color: var(--iris); font-weight: 700; }
+
+  /* SECTION IMAGES */
+  .section-img-wrap {
+    margin: 32px -24px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 780px) {
+    .section-img-wrap {
+      margin: 32px 0;
+    }
+  }
+
+  .section-img-wrap img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .section-img-caption {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 8px 16px;
+    font-style: italic;
+    background: #F9FAFB;
+  }
+
+  /* SECTION LABEL */
+  .section-tag {
+    display: inline-block;
+    background: rgba(120,135,234,0.12);
+    color: var(--iris);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  /* Nav clearance */
+  .post-header, .hero { margin-top: 0; }
+  body { padding-top: 0; }
+</style>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#platform">Platform</a></li>
+      <li><a href="../index.html#audience">Solutions</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blog.html">Blog &amp; Resources</a></li>
+      <li><a href="../demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<div class="hero">
+  <img src="covercy-vs-fund-flow-os/hero.jpg" alt="Real estate investor reviewing banking and investment management dashboard on laptop in modern office with financial charts visible">
+  <div class="hero-overlay"></div>
+</div>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <span class="post-category">Platform Comparison</span>
+  <h1>Covercy vs <span>Fund Flow OS</span>: Banking Integration vs AI-Powered Capital Raising</h1>
+  <div class="post-meta">
+    <span>By Devin Robinson</span>
+    <span>March 29, 2026</span>
+    <span>11 min read</span>
+  </div>
+</div>
+
+<!-- TL;DR -->
+<div class="container">
+  <div class="tldr">
+    <p class="tldr-label">TL;DR</p>
+    <p>Covercy is a banking-embedded investment management platform that puts FDIC-insured LP checking accounts inside your software and lets you distribute capital through zero-fee ACH without leaving the platform. Fund Flow OS is an AI-native operating system that finds new investors, builds compliant relationships, and scales your capital base from the first private lender call to $100M AUM. Covercy manages money beautifully. Fund Flow OS grows your capital base aggressively. They solve different halves of the same equation.</p>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="container">
+<div class="post-body">
+
+<p>Managing capital and raising capital are two different jobs. Most platforms pick one. The one you choose shapes everything about how you operate.</p>
+
+<p>Covercy built something genuinely unique: banking infrastructure baked directly into the investment management layer. LP checking accounts, zero-fee ACH distributions, and investor portals all under one roof. It's a serious piece of engineering and it solves a real pain point for operators who spend too much time moving money between systems.</p>
+
+<p>Fund Flow OS solves a different problem. The platform answers the question every growing operator eventually faces: where does the next dollar of capital come from? Flow AI does autonomous outreach. Flow Guard tracks every investor relationship as SEC-compliant documentation. A database of 9 million county-verified private lender records gives you a path to capital you haven't tapped yet.</p>
+
+<p>This breakdown covers features, pricing, AI capabilities, compliance, and the core strategic question: which half of the capital equation is actually your bottleneck right now.</p>
+
+<!-- SECTION 1 -->
+<h2>What Is Covercy?</h2>
+
+<div class="answer-capsule">
+  <p>Covercy is a banking-embedded real estate investment management platform. Its defining feature is FDIC-insured LP checking accounts built directly inside the platform, allowing GPs to execute zero-fee ACH distributions to investors without leaving the software. Covercy also includes eSignatures, automated waterfalls, investor portals, K-1 matching, a fundraising pipeline, AI content generation for marketing copy, and Yardi/Rent Manager integrations. Pricing starts at $398/month for two legal entities and scales per entity added.</p>
+</div>
+
+<p>Covercy's banking-embedded architecture is the differentiator that no other investor management platform has matched. The idea is simple and powerful: instead of moving money out of your platform into a bank and then back into another system to process distributions, Covercy holds LP funds in FDIC-insured checking accounts within the platform itself. That eliminates a step that causes real operational friction for operators running multiple distributions per quarter.</p>
+
+<p>The platform covers the full post-capital-raise workflow:</p>
+
+<ul>
+  <li><strong>LP checking accounts:</strong> FDIC-insured accounts inside the platform where LP capital sits until deployed</li>
+  <li><strong>Zero-fee ACH distributions:</strong> Distribute directly to investors without third-party payment processing fees</li>
+  <li><strong>Investor portal:</strong> Clean LP-facing portal for position visibility, documents, and updates</li>
+  <li><strong>Automated waterfalls:</strong> IRR calculations, preferred return tracking, and equity multiple distributions</li>
+  <li><strong>K-1 matching:</strong> Automated tax document distribution at year-end</li>
+  <li><strong>eSignatures:</strong> Subscription document signing built in</li>
+  <li><strong>Fundraising pipeline:</strong> Interactive pitch deck and investor accreditation workflow</li>
+  <li><strong>Yardi and Rent Manager integration:</strong> For operators already running property management software</li>
+</ul>
+
+<div class="section-img-wrap">
+  <img src="covercy-vs-fund-flow-os/section-covercy.jpg" alt="Real estate fund manager reviewing banking-embedded investment management dashboard with LP account balances and distribution tracking">
+  <p class="section-img-caption">Covercy's banking-embedded architecture keeps LP funds and distributions inside one platform, eliminating the need for separate banking integrations.</p>
+</div>
+
+<p>The entity-based pricing model is worth understanding before you get deep into evaluation. Covercy's Standard plan is $480/month for two legal entities. That works out to $240 per entity per month. If you manage four funds or SPVs, you're at $960/month. Seven entities puts you at $1,680/month or more. For operators running a single fund, that's manageable. For operators building a multi-entity structure, the math changes fast.</p>
+
+<p>Covercy's AI content generator is worth naming accurately: it produces marketing copy and investor communication drafts. It is not an autonomous outreach agent. It does not send emails, track investor relationships, or log compliance evidence. That distinction matters a great deal when you're comparing platforms on the basis of "AI features."</p>
+
+<!-- SECTION 2 -->
+<h2>What Is Fund Flow OS?</h2>
+
+<div class="answer-capsule">
+  <p>Fund Flow OS is an AI-native capital raising and fund management operating system built for real estate operators. It combines Flow AI for autonomous investor outreach, Flow Guard for 506(b) and 506(c) compliance tracking, and a Private Lender Database of 9 million county-verified records. Pricing starts free with no credit card required and scales to $97/month (Starter), $297/month (Pro), and $497/month (Fund Admin, Year 1). No annual contracts at any tier.</p>
+</div>
+
+<p>I built Fund Flow OS because I lived the problem. After closing 70 deals in six months and building PF Capital, I had a growing pipeline of private lenders and zero real system to manage the compliance, outreach, and investor relationships that came with it. Every platform I tested solved one piece. None of them answered the question every operator eventually faces: how do I find the next investor, and how do I do it without crossing an SEC line?</p>
+
+<p>Fund Flow OS is built around three capabilities that most investor management platforms skip entirely:</p>
+
+<p><strong>Flow AI</strong> is your autonomous outreach employee. It drafts messages in your voice, sends them, tracks responses, and surfaces exactly who needs follow-up today. Most CRMs give you a contact list and leave the work to you. Flow AI does the work.</p>
+
+<p><strong>Flow Guard</strong> is the compliance engine built with our co-founder Seth, an SEC attorney. For 506(b) raises, you need documented proof of a pre-existing substantive relationship with every investor before presenting deal-specific information. Flow Guard timestamps every touchpoint, assigns Red/Yellow/Green relationship status, and keeps your compliance documentation audit-ready. If the SEC ever asks, your legal defense is already built.</p>
+
+<p><strong>The Private Lender Database</strong> gives you access to 9 million county-verified private lender records across the United States. If you've maxed out your existing network and need to find new capital sources, this is the only investor management platform with that built in natively.</p>
+
+<div class="section-img-wrap">
+  <img src="covercy-vs-fund-flow-os/section-ffo.jpg" alt="AI-powered investor outreach interface showing Fund Flow OS automation dashboard with compliance tracking and investor pipeline management">
+  <p class="section-img-caption">Fund Flow OS combines investor management, Flow AI autonomous outreach, and Flow Guard compliance tracking in one operating system built for capital raising.</p>
+</div>
+
+<div class="soft-cta">
+  Try Fund Flow OS free at <a href="https://fundflowos.com" target="_blank" rel="noopener">fundflowos.com</a>. No credit card. No annual contract. See what Flow AI does with your first outreach sequence.
+</div>
+
+<!-- SECTION 3 - FEATURE TABLE -->
+<h2>Covercy vs Fund Flow OS: Feature Breakdown</h2>
+
+<div class="answer-capsule">
+  <p>Covercy and Fund Flow OS share core investor management capabilities including investor portals, automated distributions, waterfall calculations, eSignatures, and KYC verification. Covercy leads on banking-embedded LP accounts, K-1 automation, and Yardi/Rent Manager integrations. Fund Flow OS leads on AI autonomous outreach, workflow automations, API/Zapier integration, 506(b)/506(c) compliance tracking, and the Private Lender Database for capital sourcing. Covercy has no free tier; Fund Flow OS starts free permanently.</p>
+</div>
+
+</div><!-- close post-body for infographic -->
+</div><!-- close container for infographic -->
+
+<!-- FEATURE MATRIX INFOGRAPHIC -->
+<div style="background: #F0F4F8; padding: 24px 0 8px;">
+  <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+    <iframe src="covercy-vs-fund-flow-os/feature-matrix.html" height="920" scrolling="no" style="width:100%; border:none; display:block; border-radius:16px; overflow:hidden;"></iframe>
+    <p style="font-size:13px; color:#6B7280; text-align:center; padding:12px 0 8px; font-style:italic;">Feature comparison: Covercy vs Fund Flow OS across 16 capabilities.</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="post-body">
+
+<p>The critical differences come down to which side of the capital equation each platform was built to solve:</p>
+
+<p><strong>Where Covercy leads:</strong> Banking-embedded FDIC-insured LP accounts is a genuinely unique capability. Zero-fee ACH distributions within the platform removes friction for operators running frequent distributions. Automated K-1 matching and Yardi/Rent Manager integrations serve operators already embedded in those ecosystems.</p>
+
+<p><strong>Where Fund Flow OS leads:</strong> Flow AI for autonomous outreach, Flow Guard for built-in 506(b)/506(c) compliance tracking, the Private Lender Database for sourcing new capital, full API/Zapier integration, workflow automations, and month-to-month pricing with no entity-based scaling. Covercy has none of these.</p>
+
+<p>The feature gap in the AI and compliance categories is not cosmetic. It reflects a fundamental difference in what each platform was designed to do. More on that in the sections below.</p>
+
+<!-- SECTION 4 - PRICING -->
+<h2>How Does Covercy Pricing Compare to Fund Flow OS?</h2>
+
+<div class="answer-capsule">
+  <p>Covercy's Fundraising Starter plan begins at $398/month for two entities ($199/entity/month). Their Standard plan, the most popular, is $480/month for two entities. The Professional plan is $688/month for two entities. Every tier is entity-based, meaning costs multiply as you add legal entities. Fund Flow OS starts free permanently, with paid tiers at $97/month (Starter), $297/month (Pro), and $497/month (Fund Admin, Year 1). Fund Flow OS pricing is flat, not entity-based, and requires no annual contract.</p>
+</div>
+
+</div>
+</div>
+
+<!-- PRICING INFOGRAPHIC -->
+<div style="background: #F0F4F8; padding: 24px 0 8px;">
+  <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+    <iframe src="covercy-vs-fund-flow-os/pricing-infographic.html" height="720" scrolling="no" style="width:100%; border:none; display:block; border-radius:16px; overflow:hidden;"></iframe>
+    <p style="font-size:13px; color:#6B7280; text-align:center; padding:12px 0 8px; font-style:italic;">Pricing breakdown: Covercy vs Fund Flow OS. Every tier, every fee, side by side.</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="post-body">
+
+<p>There are two pricing dynamics worth working through clearly before you make a decision.</p>
+
+<p><strong>The entity pricing trap.</strong> Covercy's Standard plan is $480/month for two entities. That sounds reasonable until you're running multiple funds or SPVs. Add a third entity and you're at approximately $720/month. Four entities: approximately $960/month. Seven entities: $1,680/month or more. For operators building a multi-fund structure, Covercy's costs scale in a way that Fund Flow OS's flat pricing does not. Fund Flow OS Pro at $297/month covers unlimited entities.</p>
+
+<p><strong>What's included at the price point.</strong> Covercy Standard at $480/month for two entities gives you investor portal, distributions, waterfalls, and K-1 matching. Fund Flow OS Pro at $297/month gives you all of that plus Flow AI autonomous outreach and Flow Guard compliance documentation. The AI and compliance layers are not add-ons. They're built in and available from the $97/month Starter tier.</p>
+
+<p>The annual math: Covercy Standard for two entities costs $5,760 per year. Fund Flow OS Pro costs $3,564 per year with no entity limits, no annual lock-in, and Flow AI included. If you add entities at Covercy, that gap widens considerably.</p>
+
+<p>On the free side, Fund Flow OS offers a permanent free tier with no expiration. There is no trial clock. You start free, use the product, and upgrade when you're genuinely ready. Covercy has no free tier at any level.</p>
+
+<!-- SECTION 5 -->
+<h2>The Banking vs AI Question: What Problem Are You Actually Solving?</h2>
+
+<div class="answer-capsule">
+  <p>Covercy and Fund Flow OS answer two different strategic questions. Covercy answers: how do I manage and distribute the capital I've already raised as efficiently as possible? Fund Flow OS answers: how do I find new capital, build legally compliant relationships, and grow my investor base while managing the relationships I already have? Operators who need both will eventually need both platforms or will choose based on which problem is more urgent right now.</p>
+</div>
+
+<p>This is the honest framing that most comparison articles avoid.</p>
+
+<p>Covercy's banking integration is a real innovation. FDIC-insured LP checking accounts inside your investor management platform means LP capital moves from commitment to deployment to distribution without touching a separate banking system. For operators managing multiple funds with regular distributions, that is a meaningful operational improvement. The zero-fee ACH removes a friction point that adds up over time.</p>
+
+<p>But integrated banking is not the same as capital formation. Covercy assumes you have investors. It does not help you find them, build compliant relationships with them, or document those relationships for SEC purposes. If your primary constraint is distributing to your existing LP base efficiently, Covercy is built for that. If your primary constraint is growing your LP base, Covercy does not have the tools to solve that problem.</p>
+
+<p>Fund Flow OS starts from the opposite assumption. The platform is designed for operators who are actively building their capital base, not just managing it. Flow AI handles the outreach and follow-up so you're not manually writing 50 investor emails per week. Flow Guard keeps you legally protected as you build those relationships. The Private Lender Database gives you a place to go when your existing network is tapped.</p>
+
+<p>For more on building a compliant investor pipeline from scratch, see the <a href="https://pfpsolutions.us" target="_blank" rel="noopener">Raise Smart guide</a> on fundflowos.com. It maps the full investor relationship lifecycle from first contact to closed commitment.</p>
+
+<!-- SECTION 6 -->
+<h2>The AI and Compliance Gap</h2>
+
+<div class="answer-capsule">
+  <p>Covercy's AI feature is a content generator for marketing copy and investor communications. It does not perform autonomous outreach, track investor relationship status, or create compliance documentation. Fund Flow OS includes Flow AI for autonomous outreach and Flow Guard for 506(b)/506(c) compliance tracking. For operators raising capital under a Regulation D exemption, the compliance gap between the two platforms is significant.</p>
+</div>
+
+<p>Let's be precise about what "AI" means in each platform, because the term is doing very different work in each case.</p>
+
+<p>Covercy's AI content generator helps you write marketing copy, investor updates, and deal communications faster. It is a writing aid. You still decide who to contact, when to contact them, how to follow up, and what to say. The AI produces a draft. You do the work.</p>
+
+<p>Fund Flow OS's Flow AI is an autonomous agent. It identifies who to reach out to based on relationship status and engagement signals, drafts the outreach in your voice, sends it, tracks the response, and logs everything automatically. It runs sequences across your entire pipeline simultaneously. That is not a writing tool. That is an employee replacement for a task that most operators are doing manually right now.</p>
+
+<div class="section-img-wrap">
+  <img src="covercy-vs-fund-flow-os/section-ai.jpg" alt="Split comparison showing manual investor outreach workflow on one side versus AI-automated pipeline with compliance tracking on the other">
+  <p class="section-img-caption">Flow AI runs autonomous outreach sequences across your entire investor pipeline. Covercy's AI generates content drafts. These are fundamentally different tools solving different problems.</p>
+</div>
+
+<p>The compliance gap is even more significant for operators raising under 506(b).</p>
+
+<p>Under <a href="https://www.sec.gov/smallbusiness/exemptofferings/rule506b" target="_blank" rel="noopener">SEC Rule 506(b)</a>, you cannot use general solicitation, and you must demonstrate a pre-existing substantive relationship with each investor before presenting deal-specific information. That relationship must be documented. If you ever face an SEC inquiry, you need to show exactly when each touchpoint happened, what was communicated, and what stage the relationship was in when deal information was shared.</p>
+
+<p>Covercy does not track any of this. There is no compliance layer, no relationship status tracking, and no documentation infrastructure for Regulation D purposes.</p>
+
+<p>Flow Guard in Fund Flow OS was built specifically for this requirement. Every investor interaction is timestamped and logged. Relationship status is tracked with a Red/Yellow/Green system that reflects SEC relationship standards. Your compliance documentation is built automatically as you operate. Our co-founder Seth, an SEC attorney, designed the compliance architecture. The legal logic is baked into the product, not bolted on afterward.</p>
+
+<p>For a deeper look at how 506(b) and 506(c) differ and what compliance actually requires, see our breakdown at <a href="https://pfpsolutions.us" target="_blank" rel="noopener">pfpsolutions.us</a>.</p>
+
+<!-- SECTION 7 - VERDICT -->
+<h2>Who Should Choose Covercy?</h2>
+
+<p>Covercy is solving a real problem and solving it well. If your situation matches the profile below, it deserves serious consideration.</p>
+
+<div class="section-img-wrap">
+  <img src="covercy-vs-fund-flow-os/section-verdict.jpg" alt="Real estate fund manager at a desk comparing two software platforms before making a final platform decision">
+  <p class="section-img-caption">The right platform is determined by which constraint is actually limiting your operation right now: capital distribution efficiency or capital base growth.</p>
+</div>
+
+<div class="verdict-grid">
+  <div class="verdict-card verdict-covercy">
+    <div class="verdict-icon">🏦</div>
+    <h4>Covercy is the right call if...</h4>
+    <ul>
+      <li>You want FDIC-insured LP checking accounts embedded in your platform and zero-fee ACH distributions are your number one operational priority</li>
+      <li>You have an established LP base and your primary job is managing and distributing to existing investors</li>
+      <li>You're running two entities or fewer, keeping the per-entity pricing manageable</li>
+      <li>You use Yardi or Rent Manager and want native integration with your property management stack</li>
+      <li>Your investors expect institutional-grade distribution infrastructure and you want the banking layer inside your investment platform</li>
+    </ul>
+  </div>
+  <div class="verdict-card verdict-ffo">
+    <div class="verdict-icon">⚡</div>
+    <h4>Fund Flow OS is the right call if...</h4>
+    <ul>
+      <li>You need to actively grow your investor base, not just manage the one you already have</li>
+      <li>You want AI handling outreach and follow-up instead of writing 50 investor emails manually each week</li>
+      <li>You're raising under 506(b) or 506(c) and want compliance documentation built into every investor interaction from day one</li>
+      <li>You're building a multi-entity structure and don't want pricing that multiplies with every new fund or SPV</li>
+      <li>You want month-to-month flexibility with no annual contract lock-in at any tier</li>
+    </ul>
+  </div>
+</div>
+
+<p>Covercy's banking-embedded model is genuinely differentiated. No other investor management platform has FDIC-insured LP accounts and zero-fee ACH built in. If that operational problem is your current bottleneck, Covercy built the right solution for it. The platform has a clean investor-facing UI and the entity structure works well for operators running a small number of clearly defined funds.</p>
+
+<p>The limitation is that Covercy manages capital. It does not grow your capital base. For operators at an earlier stage, or operators in growth mode who need their next $5M to $50M, the toolset is incomplete.</p>
+
+<p>For a deeper comparison of Fund Flow OS against other platforms in this space, see our breakdown of <a href="https://pfpsolutions.us/blog/cashflow-portal-vs-fund-flow-os" target="_blank" rel="noopener">Cash Flow Portal vs Fund Flow OS</a> and our full <a href="https://pfpsolutions.us" target="_blank" rel="noopener">real estate investment management software</a> guide at pfpsolutions.us.</p>
+
+</div>
+</div>
+
+<!-- PRIMARY CTA BOX -->
+<div class="container">
+  <div class="cta-box">
+    <p class="cta-eyebrow">Try It Free</p>
+    <h3>See What <span>Flow AI</span> Does With Your First Sequence</h3>
+    <p>No credit card. No annual contract. Start on the free tier and see exactly what an AI operating system does that an investor portal cannot.</p>
+    <a href="https://fundflowos.com" target="_blank" rel="noopener" class="cta-btn">Start Free on Fund Flow OS</a>
+    <p class="cta-secondary">Free tier, no time limit. Upgrade when you're ready.</p>
+  </div>
+</div>
+
+<!-- CONCLUSION -->
+<div class="container">
+<div class="post-body">
+
+<h2>The Bottom Line</h2>
+
+<p>Covercy and Fund Flow OS are not competing for the same operator at the same moment in their journey.</p>
+
+<p>Covercy built banking infrastructure for investment managers. If LP capital sitting in FDIC-insured accounts inside your platform and distributing via zero-fee ACH without a separate banking integration is the operational improvement you need most right now, Covercy is the only platform that does that.</p>
+
+<p>Fund Flow OS is the operating system for operators building their capital base. Flow AI finds investors and does the outreach. Flow Guard keeps every relationship legally documented. The Private Lender Database gives you 9 million records to work from when your network is tapped. Flat pricing means you can scale to multiple entities without your software bill scaling with you.</p>
+
+<p>If you're in growth mode and the question keeping you up at night is "where does the next million come from," Fund Flow OS is built for that specific problem. Start free, run one outreach sequence with Flow AI, and see what the difference looks like in practice.</p>
+
+<p class="sign-off">To great success and greater impact.</p>
+
+<!-- AUTHOR BIO -->
+<div class="author-bio">
+  <div class="author-avatar">DR</div>
+  <div class="author-info">
+    <h4>Devin Robinson</h4>
+    <p>Founder of Fund Flow OS and Fund Founders. After closing 70 deals in 6 months and building PF Capital, Devin built Fund Flow OS to solve the investor management and compliance problems he lived firsthand. Based in Charlotte, NC. Foster and adoptive dad of three. Mission: <strong>#DiversifyWallStreet</strong>.</p>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="container">
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Is Covercy free?</h3>
+      <p>Covercy does not offer a free tier. Their entry-level Fundraising Starter plan begins at $398/month for two legal entities. There is no trial period listed publicly. Fund Flow OS, by contrast, offers a permanent free tier with no expiration date, no credit card required, and includes 100 contacts, 5 deals, 5 loans, and 10 lender search credits.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the difference between Covercy and Fund Flow OS?</h3>
+      <p>Covercy is a banking-embedded investment management platform with a unique feature: FDIC-insured LP checking accounts inside the software, enabling zero-fee ACH distributions. Fund Flow OS is an AI-native operating system that includes Flow AI for autonomous investor outreach, Flow Guard for 506(b) and 506(c) compliance tracking, and a Private Lender Database of 9 million records. Covercy excels at managing and distributing to existing investors. Fund Flow OS excels at finding, nurturing, and compliantly building new investor relationships.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does Covercy have AI features?</h3>
+      <p>Covercy includes an AI content generator that helps write marketing copy and investor communications. It does not include autonomous investor outreach, automated follow-up sequences, relationship compliance tracking, or an AI agent that operates independently. Fund Flow OS includes Flow AI, which autonomously drafts, sends, tracks, and logs investor outreach across your full pipeline, and Flow Guard, which documents every investor relationship for SEC compliance.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does Covercy's per-entity pricing work?</h3>
+      <p>Covercy charges per legal entity. The Standard plan is $480/month for two entities, which works out to $240 per entity per month. Adding a third entity brings the cost to approximately $720/month. Four entities: approximately $960/month. Fund Flow OS uses flat pricing. The Pro plan at $297/month covers unlimited entities with no per-entity scaling. For operators managing multiple funds or SPVs, this pricing difference compounds significantly.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Which investor portal software is best for real estate fund managers?</h3>
+      <p>The best investor portal software depends on your current constraint. If your primary need is distributing to an existing LP base efficiently, Covercy's banking-embedded architecture is a genuine differentiator. If your primary need is growing your investor base, maintaining 506(b)/506(c) compliance, and having AI handle outreach at scale, Fund Flow OS is built for that specific problem. Both platforms include investor portals, waterfalls, and eSignatures. The difference is in what happens before and around the management layer.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can Fund Flow OS replace Covercy?</h3>
+      <p>For most real estate operators, Fund Flow OS covers the core investor management functionality including portals, distributions, waterfalls, and document signing, while adding Flow AI, Flow Guard compliance, and capital sourcing that Covercy does not offer. The one capability Covercy has that Fund Flow OS does not is FDIC-insured LP checking accounts embedded in the platform. Operators who require that specific banking infrastructure should evaluate both platforms. Fund Flow OS's free tier makes it easy to compare with no financial commitment.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JSON-LD SCHEMAS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Covercy free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Covercy does not offer a free tier. Their entry-level Fundraising Starter plan begins at $398/month for two legal entities. Fund Flow OS offers a permanent free tier with no expiration date, no credit card required, and includes 100 contacts, 5 deals, 5 loans, and 10 lender search credits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Covercy and Fund Flow OS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Covercy is a banking-embedded investment management platform with FDIC-insured LP checking accounts inside the software, enabling zero-fee ACH distributions. Fund Flow OS is an AI-native operating system that includes Flow AI for autonomous investor outreach, Flow Guard for 506(b) and 506(c) compliance tracking, and a Private Lender Database of 9 million records. Covercy excels at managing existing investors. Fund Flow OS excels at finding and compliantly building new investor relationships."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Covercy have AI features?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Covercy includes an AI content generator for marketing copy. It does not include autonomous investor outreach, automated follow-up sequences, or relationship compliance tracking. Fund Flow OS includes Flow AI for autonomous outreach and Flow Guard for SEC compliance documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Covercy's per-entity pricing work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Covercy charges per legal entity. Standard is $480/month for two entities ($240/entity/month). Adding entities multiplies costs. Fund Flow OS uses flat pricing: Pro at $297/month covers unlimited entities with no per-entity scaling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which investor portal software is best for real estate fund managers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your primary need is distributing to existing LPs efficiently, Covercy's banking-embedded architecture is a genuine differentiator. If your primary need is growing your investor base, 506(b)/506(c) compliance, and AI-powered outreach, Fund Flow OS is built for that. Both include investor portals, waterfalls, and eSignatures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Fund Flow OS replace Covercy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fund Flow OS covers core investor management including portals, distributions, waterfalls, and document signing, plus adds Flow AI, Flow Guard compliance, and capital sourcing. The one capability Covercy has that Fund Flow OS does not is FDIC-insured LP checking accounts embedded in the platform. Fund Flow OS's free tier makes it easy to compare with no commitment."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Covercy vs Fund Flow OS: Banking Integration vs AI-Powered Capital Raising",
+  "author": {
+    "@type": "Person",
+    "name": "Devin Robinson",
+    "url": "https://pfpsolutions.us/about",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Fund Flow OS"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/devinrobinson",
+      "https://www.youtube.com/@devinrobinson1",
+      "https://www.instagram.com/devin.robinson1"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PFP Solutions",
+    "url": "https://pfpsolutions.us"
+  },
+  "datePublished": "2026-03-29",
+  "dateModified": "2026-03-29",
+  "description": "Covercy vs Fund Flow OS: a full feature, pricing, and AI comparison for real estate fund managers. Banking-embedded distributions vs autonomous investor outreach.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pfpsolutions.us/blog/covercy-vs-fund-flow-os"
+  },
+  "keywords": ["Covercy vs Fund Flow OS", "Covercy alternative", "Covercy pricing", "real estate investment management software", "investor portal software"]
+}
+</script>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><img src="../logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="../lender-database.html">Private Lender Database</a>
+        <a href="../flow-ai.html">Flow AI Employee</a>
+        <a href="../flow-guard.html">Flow Guard Compliance</a>
+        <a href="../investor-crm.html">Investor CRM</a>
+        <a href="../deals-funds.html">Deals &amp; Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../flippers.html">Flippers &amp; Builders</a>
+        <a href="../syndicators.html">Syndicators</a>
+        <a href="../private-lenders.html">Private Lenders</a>
+        <a href="../fund-managers.html">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="../syndications.html">7-Day Syndications</a>
+        <a href="../fund-admin.html">Fund Administration</a>
+        <a href="../flow-launch.html">Flow Launch (DFY)</a>
+        <a href="../fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../help.html">Help Center</a>
+        <a href="../podcast.html">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../shared.js"></script>
+</body>
+</html>

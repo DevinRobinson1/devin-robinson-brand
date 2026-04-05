@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund Flow OS — The Autonomous Operating System for Real Estate Private Capital</title>
+  <meta name="description" content="Stop losing $50K+ per raise to missed follow-ups. Fund Flow OS finds new capital, automates investor outreach, and handles compliance — so you can focus on closing deals.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/">
+  <meta property="og:title" content="Fund Flow OS — The Autonomous Operating System for Real Estate Private Capital">
+  <meta property="og:description" content="Stop losing $50K+ per raise to missed follow-ups. Fund Flow OS finds new capital, automates investor outreach, and handles compliance — so you can focus on closing deals.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:creator" content="@devinrobinson">
+  <meta name="twitter:title" content="Fund Flow OS — Raise Capital. Manage Investors. Run Your Fund with AI.">
+  <meta name="twitter:description" content="Stop losing $50K+ per raise to missed follow-ups. 9M private lender records, Flow AI follow-ups, SEC compliance — built for real estate operators.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Fund Flow OS",
+    "url": "https://fundflowos.com",
+    "description": "AI-powered investor management and capital raising platform for real estate operators. Find private lenders, automate follow-ups, manage compliance, launch syndications, and run fund administration — all in one platform.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "97",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "297",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Shomail Malik" },
+        "reviewBody": "This is amazing, dude. It's so slick and clean. I would love for my people to hear all about this. This is phenomenal.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Phil Blackwood" },
+        "reviewBody": "This is a genius idea! I love how it's going to help us organize our deals, loans, and investor relationships. Game-changer for our business.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Casey Gregersen" },
+        "reviewBody": "Really impressive! I can see how this would be super helpful for anyone raising capital. I love the smart matching and investor portal features.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fund Flow OS",
+      "url": "https://fundflowos.com",
+      "logo": "https://fundflowos.com/logo-color.png",
+      "sameAs": [
+        "https://twitter.com/devinrobinson",
+        "https://www.linkedin.com/in/devinrobinson",
+        "https://www.youtube.com/@devin.robinson1"
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#audience">Solutions</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="blog.html">Blog & Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO — Mosey-style animated hero
+     ============================================ -->
+<section class="hero" id="hero">
+  <!-- Top row: headline left, description right -->
+  <div class="container hero-top">
+    <div class="hero-headline">
+      <h1>Stop losing capital<br>to missed follow-ups.</h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-desc">You have great deals — but capital keeps slipping away. Investors go cold. Follow-ups fall through the cracks. And every missed commitment costs you more than a year of software. Fund Flow OS finds new capital, follows up automatically, and handles compliance — so you can finally run your raise like a professional&nbsp;operation.</p>
+      <p class="hero-stakes">One missed $100K investor = 28 years of Fund Flow subscription.</p>
+      <div class="hero-ctas">
+        <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Free <span class="arrow">&rarr;</span></a>
+        <a href="demo.html" class="btn btn-outline btn-lg">Try the live demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated illustration area -->
+  <div class="hero-animation" id="heroAnimation">
+    <!-- SVG flowing lines -->
+    <svg class="hero-lines" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <!-- Left flowing curves -->
+      <path class="flow-line flow-line-1" d="M-20 80 C150 80, 200 200, 350 220 S500 300, 600 260" stroke="rgba(108,218,154,0.15)" stroke-width="1.5" fill="none"/>
+      <path class="flow-line flow-line-2" d="M-20 180 C100 180, 250 100, 400 160 S550 260, 600 260" stroke="rgba(108,218,154,0.10)" stroke-width="1.5" fill="none"/>
+      <path class="flow-line flow-line-3" d="M-20 320 C180 320, 280 380, 400 340 S520 240, 600 260" stroke="rgba(108,218,154,0.12)" stroke-width="1.5" fill="none"/>
+
+      <!-- Right flowing curves -->
+      <path class="flow-line flow-line-4" d="M600 260 C680 220, 800 140, 950 160 S1100 80, 1220 100" stroke="rgba(120,135,234,0.12)" stroke-width="1.5" fill="none"/>
+      <path class="flow-line flow-line-5" d="M600 260 C700 300, 820 360, 950 340 S1100 400, 1220 380" stroke="rgba(120,135,234,0.08)" stroke-width="1.5" fill="none"/>
+      <path class="flow-line flow-line-6" d="M600 260 C720 260, 850 220, 1000 250 S1120 280, 1220 260" stroke="rgba(108,218,154,0.10)" stroke-width="1.5" fill="none"/>
+
+      <!-- Dashed connector lines to cards -->
+      <path class="connector-line" d="M600 260 L320 120" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <path class="connector-line" d="M600 260 L200 300" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <path class="connector-line" d="M600 260 L380 430" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <path class="connector-line" d="M600 260 L880 100" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <path class="connector-line" d="M600 260 L950 300" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <path class="connector-line" d="M600 260 L830 430" stroke="rgba(26,26,26,0.12)" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+
+      <!-- Traveling dots on paths -->
+      <circle class="travel-dot travel-dot-1" r="3.5" fill="#6CDA9A">
+        <animateMotion dur="4s" repeatCount="indefinite" path="M-20 80 C150 80, 200 200, 350 220 S500 300, 600 260"/>
+      </circle>
+      <circle class="travel-dot travel-dot-2" r="3" fill="#6CDA9A" opacity="0.6">
+        <animateMotion dur="5s" repeatCount="indefinite" path="M-20 320 C180 320, 280 380, 400 340 S520 240, 600 260"/>
+      </circle>
+      <circle class="travel-dot travel-dot-3" r="3.5" fill="#7887EA">
+        <animateMotion dur="4.5s" repeatCount="indefinite" path="M600 260 C680 220, 800 140, 950 160 S1100 80, 1220 100"/>
+      </circle>
+      <circle class="travel-dot travel-dot-4" r="3" fill="#7887EA" opacity="0.6">
+        <animateMotion dur="5.5s" repeatCount="indefinite" path="M600 260 C720 260, 850 220, 1000 250 S1120 280, 1220 260"/>
+      </circle>
+
+      <!-- Center node -->
+      <circle cx="600" cy="260" r="32" fill="rgba(108,218,154,0.08)" stroke="rgba(108,218,154,0.2)" stroke-width="1"/>
+      <circle cx="600" cy="260" r="18" fill="rgba(108,218,154,0.12)" stroke="rgba(108,218,154,0.3)" stroke-width="1"/>
+      <circle cx="600" cy="260" r="6" fill="#6CDA9A"/>
+
+      <!-- Small endpoint dots -->
+      <circle cx="320" cy="120" r="4" fill="#6CDA9A" opacity="0.5"/>
+      <circle cx="200" cy="300" r="4" fill="#6CDA9A" opacity="0.5"/>
+      <circle cx="380" cy="430" r="4" fill="#6CDA9A" opacity="0.5"/>
+      <circle cx="880" cy="100" r="4" fill="#7887EA" opacity="0.5"/>
+      <circle cx="950" cy="300" r="4" fill="#7887EA" opacity="0.5"/>
+      <circle cx="830" cy="430" r="4" fill="#7887EA" opacity="0.5"/>
+    </svg>
+
+    <!-- Center building illustrations — Mosey-style detailed scenes -->
+    <div class="hero-building-wrap">
+      <!-- Phase 1: Residential neighborhood scene -->
+      <div class="hero-building active" data-building="find">
+        <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="building-svg">
+          <!-- Orbit rings -->
+          <circle cx="210" cy="195" r="190" stroke="rgba(19,32,54,0.07)" stroke-width="1.5" stroke-dasharray="6 10"/>
+          <circle cx="210" cy="195" r="145" stroke="rgba(19,32,54,0.05)" stroke-width="1.5" stroke-dasharray="4 12"/>
+          <!-- Ground -->
+          <line x1="30" y1="310" x2="390" y2="310" stroke="rgba(19,32,54,0.15)" stroke-width="1.5"/>
+
+          <!-- === MAIN HOUSE — solid fills like Mosey === -->
+          <!-- House body -->
+          <rect x="130" y="185" width="160" height="125" rx="3" fill="#132036" opacity="0.85"/>
+          <!-- Garage wing -->
+          <rect x="270" y="218" width="60" height="92" rx="3" fill="#132036" opacity="0.7"/>
+          <rect x="278" y="238" width="44" height="55" rx="2" fill="#1a2d4a" opacity="0.9"/>
+          <line x1="300" y1="240" x2="300" y2="291" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <!-- Roof — solid -->
+          <path d="M118 190 L210 100 L300 190" fill="#132036" stroke="#132036" stroke-width="2" stroke-linejoin="round"/>
+          <!-- Chimney -->
+          <rect x="245" y="118" width="24" height="55" rx="2" fill="#132036"/>
+          <rect x="241" y="112" width="32" height="9" rx="2" fill="#1a2d4a"/>
+          <!-- Smoke wisps -->
+          <path d="M257 108 Q260 98 264 102 Q268 94 272 100" stroke="rgba(19,32,54,0.2)" stroke-width="1.2" fill="none"/>
+          <!-- Front door -->
+          <rect x="188" y="250" width="44" height="60" rx="4" fill="#1a2d4a"/>
+          <rect x="195" y="257" width="30" height="18" rx="2" fill="rgba(108,218,154,0.2)"/>
+          <circle cx="224" cy="283" r="3" fill="rgba(108,218,154,0.5)"/>
+          <!-- Door step -->
+          <rect x="182" y="305" width="56" height="6" rx="2" fill="#132036" opacity="0.5"/>
+          <!-- Windows — lit greenish -->
+          <rect x="142" y="205" width="36" height="32" rx="3" fill="rgba(108,218,154,0.25)" stroke="rgba(19,32,54,0.3)" stroke-width="0.5"/>
+          <line x1="160" y1="205" x2="160" y2="237" stroke="#132036" stroke-width="1.5"/>
+          <line x1="142" y1="221" x2="178" y2="221" stroke="#132036" stroke-width="1.5"/>
+          <rect x="244" y="205" width="36" height="32" rx="3" fill="rgba(108,218,154,0.25)" stroke="rgba(19,32,54,0.3)" stroke-width="0.5"/>
+          <line x1="262" y1="205" x2="262" y2="237" stroke="#132036" stroke-width="1.5"/>
+          <line x1="244" y1="221" x2="280" y2="221" stroke="#132036" stroke-width="1.5"/>
+          <!-- Attic window -->
+          <circle cx="210" cy="155" r="18" fill="rgba(108,218,154,0.2)" stroke="rgba(19,32,54,0.3)" stroke-width="0.5"/>
+          <line x1="210" y1="137" x2="210" y2="173" stroke="#132036" stroke-width="1.2"/>
+          <line x1="192" y1="155" x2="228" y2="155" stroke="#132036" stroke-width="1.2"/>
+
+          <!-- Tree left — solid Mosey-style -->
+          <rect x="56" y="258" width="10" height="52" rx="5" fill="#132036" opacity="0.75"/>
+          <circle cx="61" cy="234" r="28" fill="#132036" opacity="0.65"/>
+          <circle cx="48" cy="248" r="20" fill="#132036" opacity="0.5"/>
+          <circle cx="76" cy="246" r="17" fill="#132036" opacity="0.5"/>
+          <!-- Bird -->
+          <path d="M96 178 Q100 172 104 178 Q108 172 112 178" stroke="#132036" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <!-- Bush right -->
+          <ellipse cx="350" cy="298" rx="26" ry="16" fill="#132036" opacity="0.45"/>
+          <ellipse cx="370" cy="302" rx="18" ry="11" fill="#132036" opacity="0.35"/>
+          <!-- Fence -->
+          <g opacity="0.55">
+            <line x1="30" y1="302" x2="108" y2="302" stroke="#132036" stroke-width="1.5"/>
+            <line x1="40" y1="288" x2="40" y2="310" stroke="#132036" stroke-width="1.5"/>
+            <line x1="58" y1="288" x2="58" y2="310" stroke="#132036" stroke-width="1.5"/>
+            <line x1="76" y1="288" x2="76" y2="310" stroke="#132036" stroke-width="1.5"/>
+            <line x1="94" y1="288" x2="94" y2="310" stroke="#132036" stroke-width="1.5"/>
+          </g>
+          <!-- Walkway -->
+          <ellipse cx="210" cy="322" rx="10" ry="4" fill="#132036" opacity="0.15"/>
+          <ellipse cx="206" cy="338" rx="9" ry="3.5" fill="#132036" opacity="0.12"/>
+          <!-- Sun -->
+          <circle cx="355" cy="90" r="16" fill="rgba(108,218,154,0.1)" stroke="rgba(19,32,54,0.08)" stroke-width="1"/>
+          <!-- Label -->
+          <text x="210" y="380" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="rgba(19,32,54,0.3)">Single Family</text>
+        </svg>
+      </div>
+
+      <!-- Phase 2: Urban skyline scene — solid fills -->
+      <div class="hero-building" data-building="raise">
+        <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="building-svg">
+          <!-- Orbit rings -->
+          <circle cx="210" cy="195" r="190" stroke="rgba(19,32,54,0.07)" stroke-width="1.5" stroke-dasharray="6 10"/>
+          <circle cx="210" cy="195" r="145" stroke="rgba(19,32,54,0.05)" stroke-width="1.5" stroke-dasharray="4 12"/>
+          <!-- Ground -->
+          <line x1="30" y1="312" x2="390" y2="312" stroke="rgba(19,32,54,0.15)" stroke-width="1.5"/>
+
+          <!-- Background building left -->
+          <rect x="55" y="175" width="55" height="137" rx="3" fill="#132036" opacity="0.4"/>
+          <rect x="63" y="185" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="78" y="185" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="93" y="185" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="63" y="200" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="78" y="200" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="93" y="200" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="63" y="215" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="78" y="215" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+
+          <!-- MAIN TOWER — tallest -->
+          <rect x="110" y="80" width="80" height="232" rx="3" fill="#132036" opacity="0.88"/>
+          <!-- Cornice -->
+          <rect x="106" y="73" width="88" height="12" rx="3" fill="#132036" opacity="0.95"/>
+          <!-- Penthouse -->
+          <rect x="135" y="55" width="34" height="22" rx="2" fill="#132036" opacity="0.75"/>
+          <!-- Antenna -->
+          <line x1="152" y1="55" x2="152" y2="35" stroke="#132036" stroke-width="2" opacity="0.6"/>
+          <circle cx="152" cy="33" r="3" fill="#6CDA9A" opacity="0.6"/>
+          <!-- Tower windows 6 rows -->
+          <rect x="120" y="95" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="138" y="95" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="156" y="95" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="174" y="95" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="120" y="118" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="138" y="118" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="156" y="118" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="174" y="118" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="120" y="141" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="138" y="141" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="156" y="141" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="174" y="141" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="120" y="164" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="138" y="164" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="156" y="164" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="174" y="164" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="120" y="187" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="138" y="187" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="156" y="187" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="174" y="187" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="120" y="210" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.2)"/>
+          <rect x="138" y="210" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <rect x="156" y="210" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.18)"/>
+          <rect x="174" y="210" width="14" height="12" rx="1.5" fill="rgba(108,218,154,0.25)"/>
+          <!-- Entrance -->
+          <rect x="134" y="278" width="36" height="34" rx="3" fill="#1a2d4a"/>
+          <rect x="134" y="272" width="36" height="10" rx="2" fill="#132036" opacity="0.6"/>
+
+          <!-- RIGHT BUILDING — mid-height -->
+          <rect x="195" y="135" width="70" height="177" rx="3" fill="#132036" opacity="0.78"/>
+          <rect x="191" y="128" width="78" height="12" rx="3" fill="#132036" opacity="0.85"/>
+          <!-- Right windows -->
+          <rect x="203" y="148" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="219" y="148" width="12" height="10" rx="1" fill="rgba(108,218,154,0.18)"/>
+          <rect x="235" y="148" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="251" y="148" width="12" height="10" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="203" y="168" width="12" height="10" rx="1" fill="rgba(108,218,154,0.18)"/>
+          <rect x="219" y="168" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="235" y="168" width="12" height="10" rx="1" fill="rgba(108,218,154,0.18)"/>
+          <rect x="251" y="168" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="203" y="188" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="219" y="188" width="12" height="10" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="235" y="188" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="251" y="188" width="12" height="10" rx="1" fill="rgba(108,218,154,0.18)"/>
+          <rect x="203" y="208" width="12" height="10" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="219" y="208" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+          <rect x="235" y="208" width="12" height="10" rx="1" fill="rgba(108,218,154,0.18)"/>
+          <rect x="251" y="208" width="12" height="10" rx="1" fill="rgba(108,218,154,0.22)"/>
+
+          <!-- FAR RIGHT shorter building -->
+          <rect x="270" y="200" width="55" height="112" rx="3" fill="#132036" opacity="0.6"/>
+          <rect x="278" y="212" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="293" y="212" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="308" y="212" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="278" y="230" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="293" y="230" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="308" y="230" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+          <rect x="278" y="248" width="10" height="9" rx="1" fill="rgba(108,218,154,0.15)"/>
+          <rect x="293" y="248" width="10" height="9" rx="1" fill="rgba(108,218,154,0.12)"/>
+
+          <!-- Background sliver -->
+          <rect x="330" y="240" width="30" height="72" rx="2" fill="#132036" opacity="0.35"/>
+
+          <!-- Tree -->
+          <rect x="365" y="272" width="8" height="40" rx="4" fill="#132036" opacity="0.55"/>
+          <circle cx="369" cy="252" r="22" fill="#132036" opacity="0.45"/>
+          <circle cx="358" cy="264" r="14" fill="#132036" opacity="0.35"/>
+          <!-- Bird -->
+          <path d="M80 120 Q84 114 88 120 Q92 114 96 120" stroke="#132036" stroke-width="1.5" fill="none" opacity="0.35"/>
+          <path d="M340 95 Q343 90 346 95 Q349 90 352 95" stroke="#132036" stroke-width="1.2" fill="none" opacity="0.25"/>
+          <!-- Label -->
+          <text x="210" y="380" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="rgba(19,32,54,0.3)">Multifamily</text>
+        </svg>
+      </div>
+
+      <!-- Phase 3: Multi-Asset Portfolio — Mosey-style clusters with solid fills -->
+      <div class="hero-building" data-building="manage">
+        <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg" class="building-svg">
+          <!-- Connecting lines -->
+          <path d="M130 110 C170 140, 200 145, 220 160" fill="none" stroke="rgba(19,32,54,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M310 110 C280 140, 250 145, 230 160" fill="none" stroke="rgba(19,32,54,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M100 280 C140 260, 170 240, 200 220" fill="none" stroke="rgba(19,32,54,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M340 280 C310 260, 270 240, 240 220" fill="none" stroke="rgba(19,32,54,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <path d="M220 215 L220 290" fill="none" stroke="rgba(19,32,54,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+          <!-- Traveling dots -->
+          <circle r="3.5" fill="#132036" opacity="0.35"><animate attributeName="cx" values="130;220" dur="3s" repeatCount="indefinite"/><animate attributeName="cy" values="110;160" dur="3s" repeatCount="indefinite"/></circle>
+          <circle r="3.5" fill="#132036" opacity="0.35"><animate attributeName="cx" values="310;230" dur="3.5s" repeatCount="indefinite"/><animate attributeName="cy" values="110;160" dur="3.5s" repeatCount="indefinite"/></circle>
+          <circle r="3" fill="#6CDA9A" opacity="0.5"><animate attributeName="cx" values="100;200" dur="4s" repeatCount="indefinite"/><animate attributeName="cy" values="280;220" dur="4s" repeatCount="indefinite"/></circle>
+          <circle r="3" fill="#6CDA9A" opacity="0.5"><animate attributeName="cx" values="340;240" dur="3.8s" repeatCount="indefinite"/><animate attributeName="cy" values="280;220" dur="3.8s" repeatCount="indefinite"/></circle>
+
+          <!-- TOP-LEFT: Hotel cluster — solid -->
+          <g>
+            <circle cx="90" cy="80" r="62" fill="rgba(19,32,54,0.02)" stroke="rgba(19,32,54,0.08)" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <!-- Main hotel -->
+            <rect x="58" y="55" width="50" height="48" rx="2" fill="#132036" opacity="0.8"/>
+            <path d="M54 57 L112 57" stroke="#132036" stroke-width="2.5"/>
+            <rect x="56" y="48" width="52" height="10" rx="2" fill="#132036" opacity="0.65"/>
+            <!-- Windows -->
+            <rect x="64" y="62" width="10" height="9" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="78" y="62" width="10" height="9" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="92" y="62" width="10" height="9" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="64" y="76" width="10" height="9" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="78" y="76" width="10" height="9" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="92" y="76" width="10" height="9" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="77" y="92" width="14" height="11" rx="2" fill="#1a2d4a"/>
+            <!-- Wing -->
+            <rect x="108" y="66" width="26" height="37" rx="2" fill="#132036" opacity="0.6"/>
+            <rect x="113" y="73" width="7" height="6" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="122" y="73" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="113" y="85" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="122" y="85" width="7" height="6" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <!-- Flag -->
+            <line x1="82" y1="48" x2="82" y2="38" stroke="#132036" stroke-width="1.5"/>
+            <rect x="82" y="38" width="10" height="6" rx="1" fill="#6CDA9A" opacity="0.5"/>
+            <text x="90" y="120" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(19,32,54,0.4)" text-anchor="middle">Hotel</text>
+          </g>
+
+          <!-- TOP-RIGHT: Commercial tower — solid -->
+          <g>
+            <circle cx="350" cy="80" r="62" fill="rgba(19,32,54,0.02)" stroke="rgba(19,32,54,0.08)" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <!-- Main tower -->
+            <rect x="330" y="30" width="36" height="74" rx="2" fill="#132036" opacity="0.85"/>
+            <rect x="334" y="24" width="28" height="9" rx="2" fill="#132036" opacity="0.7"/>
+            <!-- Spire -->
+            <rect x="344" y="14" width="8" height="14" rx="1" fill="#132036" opacity="0.55"/>
+            <circle cx="348" cy="12" r="3" fill="#6CDA9A" opacity="0.4"/>
+            <!-- Windows -->
+            <rect x="336" y="40" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="350" y="40" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="336" y="54" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="350" y="54" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="336" y="68" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="350" y="68" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="336" y="82" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="350" y="82" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="336" y="96" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="350" y="96" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <!-- Side building -->
+            <rect x="366" y="55" width="26" height="49" rx="2" fill="#132036" opacity="0.6"/>
+            <rect x="371" y="62" width="7" height="6" rx="1" fill="rgba(108,218,154,0.18)"/>
+            <rect x="380" y="62" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="371" y="74" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="380" y="74" width="7" height="6" rx="1" fill="rgba(108,218,154,0.18)"/>
+            <rect x="371" y="86" width="7" height="6" rx="1" fill="rgba(108,218,154,0.18)"/>
+            <text x="350" y="120" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(19,32,54,0.4)" text-anchor="middle">Commercial</text>
+          </g>
+
+          <!-- CENTER: Fund Flow Hub -->
+          <g>
+            <circle cx="220" cy="195" r="38" fill="rgba(108,218,154,0.08)" stroke="rgba(108,218,154,0.3)" stroke-width="2"/>
+            <circle cx="220" cy="195" r="26" fill="rgba(108,218,154,0.15)" stroke="rgba(108,218,154,0.45)" stroke-width="1.5"/>
+            <circle cx="220" cy="195" r="10" fill="#6CDA9A"/>
+          </g>
+
+          <!-- BOTTOM-LEFT: Vacation/A-frame — solid -->
+          <g>
+            <circle cx="80" cy="320" r="62" fill="rgba(19,32,54,0.02)" stroke="rgba(19,32,54,0.08)" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <!-- A-frame -->
+            <path d="M48 350 L80 285 L112 350" fill="#132036" opacity="0.8" stroke="#132036" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="71" y="318" width="18" height="32" rx="2" fill="#1a2d4a"/>
+            <circle cx="80" cy="306" r="8" fill="rgba(108,218,154,0.25)"/>
+            <line x1="43" y1="350" x2="117" y2="350" stroke="#132036" stroke-width="2"/>
+            <rect x="40" y="350" width="80" height="7" rx="2" fill="#132036" opacity="0.4"/>
+            <!-- Palm tree -->
+            <rect x="122" y="312" width="5" height="38" rx="2.5" fill="#132036" opacity="0.65"/>
+            <path d="M112 312 Q125 298 138 312" stroke="#132036" stroke-width="2" fill="none" opacity="0.5"/>
+            <path d="M114 306 Q125 293 136 306" stroke="#132036" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M116 300 Q125 289 134 300" stroke="#132036" stroke-width="1.2" fill="none" opacity="0.3"/>
+            <!-- Waves -->
+            <path d="M38 364 Q50 358 62 364 Q74 370 86 364 Q98 358 110 364" stroke="rgba(19,32,54,0.2)" stroke-width="1.5" fill="none"/>
+            <!-- Surfboard -->
+            <ellipse cx="42" cy="330" rx="3" ry="18" fill="#132036" opacity="0.35" transform="rotate(-10 42 330)"/>
+            <text x="80" y="384" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(19,32,54,0.4)" text-anchor="middle">Vacation</text>
+          </g>
+
+          <!-- BOTTOM-CENTER: Development — solid -->
+          <g>
+            <circle cx="220" cy="345" r="57" fill="rgba(19,32,54,0.02)" stroke="rgba(19,32,54,0.08)" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <!-- Building frame -->
+            <rect x="196" y="308" width="48" height="52" rx="2" fill="#132036" opacity="0.5" stroke="#132036" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <!-- Crane -->
+            <line x1="214" y1="304" x2="214" y2="268" stroke="#132036" stroke-width="2.5"/>
+            <line x1="214" y1="268" x2="254" y2="268" stroke="#132036" stroke-width="2"/>
+            <line x1="254" y1="268" x2="254" y2="282" stroke="rgba(19,32,54,0.5)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="214" y1="282" x2="254" y2="268" stroke="rgba(19,32,54,0.3)" stroke-width="1.2"/>
+            <!-- Beams -->
+            <line x1="200" y1="322" x2="240" y2="322" stroke="rgba(19,32,54,0.3)" stroke-width="1.2"/>
+            <line x1="200" y1="336" x2="240" y2="336" stroke="rgba(19,32,54,0.3)" stroke-width="1.2"/>
+            <line x1="200" y1="350" x2="240" y2="350" stroke="rgba(19,32,54,0.3)" stroke-width="1.2"/>
+            <line x1="208" y1="308" x2="208" y2="360" stroke="rgba(19,32,54,0.2)" stroke-width="1"/>
+            <line x1="220" y1="308" x2="220" y2="360" stroke="rgba(19,32,54,0.2)" stroke-width="1"/>
+            <line x1="232" y1="308" x2="232" y2="360" stroke="rgba(19,32,54,0.2)" stroke-width="1"/>
+            <!-- Cone -->
+            <path d="M188 360 L192 346 L196 360" fill="#132036" opacity="0.5"/>
+            <text x="220" y="386" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(19,32,54,0.4)" text-anchor="middle">Development</text>
+          </g>
+
+          <!-- BOTTOM-RIGHT: Multifamily — solid -->
+          <g>
+            <circle cx="360" cy="320" r="62" fill="rgba(19,32,54,0.02)" stroke="rgba(19,32,54,0.08)" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <!-- Main building -->
+            <rect x="328" y="278" width="52" height="64" rx="2" fill="#132036" opacity="0.8"/>
+            <rect x="324" y="272" width="60" height="9" rx="2" fill="#132036" opacity="0.7"/>
+            <!-- Windows -->
+            <rect x="334" y="286" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="348" y="286" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="362" y="286" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="334" y="300" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="348" y="300" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="362" y="300" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="334" y="314" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="348" y="314" width="10" height="8" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="362" y="314" width="10" height="8" rx="1" fill="rgba(108,218,154,0.25)"/>
+            <rect x="346" y="328" width="16" height="14" rx="2" fill="#1a2d4a"/>
+            <!-- Side building -->
+            <rect x="380" y="296" width="28" height="46" rx="2" fill="#132036" opacity="0.6"/>
+            <rect x="385" y="304" width="7" height="6" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <rect x="394" y="304" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="385" y="316" width="7" height="6" rx="1" fill="rgba(108,218,154,0.15)"/>
+            <rect x="394" y="316" width="7" height="6" rx="1" fill="rgba(108,218,154,0.2)"/>
+            <!-- Tree -->
+            <rect x="316" y="325" width="5" height="17" rx="2.5" fill="#132036" opacity="0.55"/>
+            <circle cx="318" cy="316" r="12" fill="#132036" opacity="0.45"/>
+            <text x="360" y="362" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(19,32,54,0.4)" text-anchor="middle">Multifamily</text>
+          </g>
+
+          <!-- Label -->
+          <text x="220" y="430" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="rgba(19,32,54,0.3)">Diversified Portfolio</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Floating UI Cards — Phase 1: Find Capital -->
+    <div class="hero-cards hero-cards-phase active" data-phase="find">
+      <div class="hero-card hero-card-1" style="top:8%;left:12%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <div>
+          <strong>9M Lender Records</strong>
+          <span>County-verified private lenders</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-2" style="top:42%;left:2%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <div>
+          <strong>New Lender Found</strong>
+          <span>TX · $2.1M avg · Bridge loans</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-3" style="bottom:8%;left:16%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </span>
+        <div>
+          <strong>Enriched Contact</strong>
+          <span>Phone + email verified</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-4" style="top:6%;right:10%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <div>
+          <strong>Flow AI Outreach Sent</strong>
+          <span>"Hi Mark, I have a deal in Austin..."</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-5" style="top:44%;right:2%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <div>
+          <strong>Interested — Replied</strong>
+          <span>"Send me the details on that deal"</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-6" style="bottom:6%;right:14%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <div>
+          <strong>$500K Committed</strong>
+          <span>Mark Sullivan · Bridge Fund I</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating UI Cards — Phase 2: Raise & Close -->
+    <div class="hero-cards hero-cards-phase" data-phase="raise">
+      <div class="hero-card hero-card-1" style="top:8%;left:12%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </span>
+        <div>
+          <strong>Flow AI Daily Action</strong>
+          <span>Contact 12 investors today</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-2" style="top:42%;left:2%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+        <div>
+          <strong>Sub Docs Signed</strong>
+          <span>Sarah Chen · $250K committed</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-3" style="bottom:8%;left:16%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </span>
+        <div>
+          <strong>Wire Received</strong>
+          <span>$250,000 · Chase Bank</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-4" style="top:6%;right:10%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </span>
+        <div>
+          <strong>Raise Progress</strong>
+          <span>$1.8M of $2.5M (72%)</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-5" style="top:44%;right:2%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <div>
+          <strong>Follow-up Sent</strong>
+          <span>Auto re-engagement to 6 investors</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-6" style="bottom:6%;right:14%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <div>
+          <strong>506(b) Verified</strong>
+          <span>Flow Guard — Green status</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating UI Cards — Phase 3: Manage & Scale -->
+    <div class="hero-cards hero-cards-phase" data-phase="manage">
+      <div class="hero-card hero-card-1" style="top:8%;left:12%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
+        <div>
+          <strong>Q1 Report Generated</strong>
+          <span>Investor update ready to send</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-2" style="top:42%;left:2%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <div>
+          <strong>Distributions Sent</strong>
+          <span>$340K to 28 investors</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-3" style="bottom:8%;left:16%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </span>
+        <div>
+          <strong>Fund II Launched</strong>
+          <span>7-Day Syndication complete</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-4" style="top:6%;right:10%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <div>
+          <strong>Investor Portal Live</strong>
+          <span>White-labeled for your brand</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-5" style="top:44%;right:2%">
+        <span class="hero-card-icon hero-card-icon-coral">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <div>
+          <strong>AI Learning Patterns</strong>
+          <span>87% approval rate this month</span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-6" style="bottom:6%;right:14%">
+        <span class="hero-card-icon hero-card-icon-green">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </span>
+        <div>
+          <strong>AUM: $12.4M</strong>
+          <span>+180% since launch</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase tabs (auto-cycling like Mosey) -->
+  <div class="hero-phase-tabs">
+    <div class="hero-phase-tabs-inner">
+      <button class="hero-phase-btn active" data-phase="find">
+        <span class="hero-phase-label">Find Capital</span>
+        <span class="hero-phase-progress"><span class="hero-phase-bar"></span></span>
+      </button>
+      <button class="hero-phase-btn" data-phase="raise">
+        <span class="hero-phase-label">Raise & Close</span>
+        <span class="hero-phase-progress"><span class="hero-phase-bar"></span></span>
+      </button>
+      <button class="hero-phase-btn" data-phase="manage">
+        <span class="hero-phase-label">Manage & Scale</span>
+        <span class="hero-phase-progress"><span class="hero-phase-bar"></span></span>
+      </button>
+    </div>
+  </div>
+
+  <p class="hero-tagline">Harvey + Carta for real estate private capital — from your first flip to your final fund.</p>
+</section>
+
+<!-- ============================================
+     TRUST BAR
+     ============================================ -->
+<section class="trust-bar">
+  <div class="container">
+    <p class="trust-label">Too big for spreadsheets. Too small for enterprise platforms. Built for the operators in between.</p>
+    <div class="trust-logos reveal">
+      <div class="trust-logo-card"><span>0% Churn</span></div>
+      <div class="trust-logo-card"><span>$125M+ Managed by Users</span></div>
+      <div class="trust-logo-card"><span>9M Lender Records</span></div>
+      <div class="trust-logo-card"><span>96:1 LTV:CAC</span></div>
+      <div class="trust-logo-card"><span>Zero Paid Ads</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     THREE BLEEDING NECK PROBLEMS
+     ============================================ -->
+<section class="problems-section" id="problems">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">The problem</p>
+      <h2>Three problems killing<br>your capital raise</h2>
+      <p class="section-sub">You're not losing because your deals are bad. You're losing because you don't have the same tools the big guys have. Until now.</p>
+    </div>
+    <div class="problems-grid stagger-parent reveal">
+      <div class="problem-card problem-card-primary stagger-child">
+        <div class="problem-number">01</div>
+        <h3>You can't find new capital</h3>
+        <p>"I need $800K in 14 days. I've tapped out my network and I don't know where to look." The external problem is the capital gap. The internal one is the feeling that you don't belong in rooms where money moves.</p>
+        <div class="problem-solution">
+          <strong>Fund Flow:</strong> 9 million county-verified private lender records. Search, enrich, reach out, close capital — in minutes.
+        </div>
+      </div>
+      <div class="problem-card stagger-child">
+        <div class="problem-number">02</div>
+        <h3>Investors are slipping away</h3>
+        <p>"I know they were interested — I just never followed up in time." You're not disorganized. You're under-tooled. Enterprise IR teams cost $60K–$150K/year. You don't have that. Yet.</p>
+        <div class="problem-solution">
+          <strong>Fund Flow:</strong> Flow AI tells you who to contact today, drafts messages in your voice, and follows up automatically.
+        </div>
+      </div>
+      <div class="problem-card stagger-child">
+        <div class="problem-number">03</div>
+        <h3>The system wasn't built for you</h3>
+        <p>"I want to launch my first syndication but I've been quoted $15K–$30K and 6 months by attorneys." Professional fund infrastructure was gatekept behind enterprise budgets. That's not a you problem — it's an industry problem we're fixing.</p>
+        <div class="problem-solution">
+          <strong>Fund Flow:</strong> 7-Day Syndication — SEC attorney-reviewed PPM, OA, and Sub Docs for $6,500.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     GUIDE EMPATHY — StoryBrand beat 3
+     ============================================ -->
+<section class="guide-section reveal">
+  <div class="container">
+    <div class="guide-inner">
+      <div class="guide-text">
+        <p class="overline">Why we built this</p>
+        <h2>We know what it's like to have great deals and no system to raise around them.</h2>
+        <p>Fund Flow OS was built by operators who lived this problem. The enterprise tools — Juniper Square, Yardi, Agora — they're built for funds with $40K/year budgets and full-time IR teams. The spreadsheet crowd is flying blind. The 250,000+ operators in between? Nobody built anything for them.</p>
+        <p>That changes here. Professional-grade capital raising infrastructure — AI, compliance, lender data, fund admin — for the price of a software subscription. This is what Wall Street access should look like for everyone.</p>
+      </div>
+      <div class="guide-credentials">
+        <div class="guide-cred-item">
+          <div class="guide-cred-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>SEC-attorney reviewed</strong>
+            <span>Every syndication document reviewed by our embedded securities attorney</span>
+          </div>
+        </div>
+        <div class="guide-cred-item">
+          <div class="guide-cred-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <strong>9M verified lender records</strong>
+            <span>Every private lender who's ever written a check — county-verified</span>
+          </div>
+        </div>
+        <div class="guide-cred-item">
+          <div class="guide-cred-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <strong>0% churn since launch</strong>
+            <span>Operators who use Fund Flow don't leave — because leaving means losing your compliance history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PLATFORM TABS
+     ============================================ -->
+<section class="platform-section" id="platform">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Platform</p>
+      <h2>The autonomous operating<br>system for private capital</h2>
+      <p class="section-sub">We don't help you manage investor relationships — we DO it for you. Flow AI replaces the $60K–$150K/year staff you'd hire to do this work.</p>
+      <a href="demo.html" class="btn btn-coral btn-lg" style="margin-top: 1.5rem;">Try the interactive demo <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+
+  <div class="tab-nav" id="tabNav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-tab="lenderdb">Private Lender Database</button>
+      <button class="tab-btn" data-tab="flowai">Flow AI Employee</button>
+      <button class="tab-btn" data-tab="flowguard">Flow Guard</button>
+      <button class="tab-btn" data-tab="crm">Investor CRM</button>
+      <button class="tab-btn" data-tab="deals">Deals & Funds</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tab-panels" id="platformPanels">
+
+      <!-- Private Lender Database -->
+      <div class="tab-panel active" id="panel-lenderdb">
+        <div class="feature-grid reveal">
+          <div class="feature-text">
+            <h3 class="feature-title">Find capital you didn't know existed</h3>
+            <p class="feature-desc">9 million county-verified private lender records — every private lender in the US who's written a check. Search by state, loan amount, property type, and recency. Enrich with verified phone and email. Reach out with Flow AI.</p>
+            <ul class="feature-bullets">
+              <li>34x cheaper than skip-traced alternatives</li>
+              <li>Deal history, loan amounts, property types, geography</li>
+              <li>Flow AI suggests outreach based on your deal details</li>
+              <li>Credits baked into every paid plan — no second buying decision</li>
+            </ul>
+          </div>
+          <div class="feature-img-wrap reveal-right">
+            <img src="screenshots/contacts.png" alt="Fund Flow OS Private Lender Database — 9M verified private lender records" class="feature-screenshot">
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow AI Employee -->
+      <div class="tab-panel" id="panel-flowai">
+        <div class="feature-grid reverse reveal">
+          <div class="feature-img-wrap reveal-left">
+            <img src="screenshots/ai.png" alt="Flow AI — the autonomous employee that raises capital while you close deals" class="feature-screenshot">
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">An AI employee that actually does the work</h3>
+            <p class="feature-desc">Most "AI-powered" platforms suggest what you should do. Flow DOES it. Daily action list, automated sequences, AI-drafted messages in your voice, and smart investor-to-deal matching.</p>
+            <ul class="feature-bullets">
+              <li>Tells you exactly who to contact TODAY and why</li>
+              <li>Drafts messages in your voice — StoryBrand, Hormozi, and 6+ styles</li>
+              <li>Follows up automatically if no response</li>
+              <li>Human-in-the-loop approvals — you're always in control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flow Guard -->
+      <div class="tab-panel" id="panel-flowguard">
+        <div class="feature-grid reveal">
+          <div class="feature-text">
+            <h3 class="feature-title">Never get caught off-guard by an SEC question again</h3>
+            <p class="feature-desc">Flow Guard is the compliance engine that tracks every relationship for 506(b) and 506(c). Red, Yellow, Green status for each contact. Blocks risky communications and builds evidence trails automatically.</p>
+            <ul class="feature-bullets">
+              <li>Red: No relationship — educational content only</li>
+              <li>Yellow: Relationship building — general strategy allowed</li>
+              <li>Green: Substantive relationship — cleared for deal-specific info</li>
+              <li>Leaving = losing your entire compliance history and legal defense</li>
+            </ul>
+          </div>
+          <div class="feature-img-wrap reveal-right">
+            <img src="screenshots/communication.png" alt="Flow Guard — 506(b) and 506(c) compliance engine with relationship tracking" class="feature-screenshot">
+          </div>
+        </div>
+      </div>
+
+      <!-- Investor CRM -->
+      <div class="tab-panel" id="panel-crm">
+        <div class="feature-grid reverse reveal">
+          <div class="feature-img-wrap reveal-left">
+            <img src="screenshots/contacts.png" alt="Fund Flow OS Investor CRM — pipeline tracking built for capital raisers" class="feature-screenshot">
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">Pipeline tracking built for capital raisers</h3>
+            <p class="feature-desc">Not another generic CRM. Contact management, pipeline stages, tagging, and segmentation — all built for operators who raise capital. See who's warm, who needs a nudge, and who's ready to write a check.</p>
+            <ul class="feature-bullets">
+              <li>Multi-channel outreach — SMS, WhatsApp, Email (all 10DLC compliant)</li>
+              <li>Engagement scoring — investors scored against deal readiness</li>
+              <li>Templates for deal announcements, quarterly updates, K-1 distributions</li>
+              <li>Bring your own Twilio or use ours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deals & Funds -->
+      <div class="tab-panel" id="panel-deals">
+        <div class="feature-grid reveal">
+          <div class="feature-text">
+            <h3 class="feature-title">From your first flip to your final fund</h3>
+            <p class="feature-desc">Track acquisitions, manage fund structures, service loans, and run investor reporting — all from one dashboard. Debt funds, equity funds, open-end, closed-end, syndications.</p>
+            <ul class="feature-bullets">
+              <li>Deal pipeline with real property data and raise progress</li>
+              <li>Full loan servicing — principal, rates, amortization, late payments</li>
+              <li>Investor portal — white-labeled for your brand</li>
+              <li>Fund administration — distributions, waterfalls, reporting</li>
+            </ul>
+          </div>
+          <div class="feature-img-wrap reveal-right">
+            <img src="screenshots/deals.png" alt="Fund Flow OS Deals — manage property acquisitions, funds, and capital raises" class="feature-screenshot">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STATS
+     ============================================ -->
+<section class="stats-section reveal">
+  <div class="container">
+    <div class="stats-header">
+      <p class="overline">Why operators switch</p>
+      <h2>The math isn't close</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number count-up">90%</div>
+        <div class="stat-label">cheaper than Juniper Square ($40K–$100K/yr)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number count-up">$6,500</div>
+        <div class="stat-label">7-day syndication vs. $30K and 6 months</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number count-up">9M</div>
+        <div class="stat-label">verified private lender records</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number count-up">$3,564</div>
+        <div class="stat-label">/yr replaces $60K IR coordinator</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONVERGENCE
+     ============================================ -->
+<section class="convergence-section reveal">
+  <div class="container">
+    <div class="convergence-inner">
+      <div class="convergence-big">Everything you need</div>
+      <p class="convergence-sub">Private Lender Database. Flow AI Employee. Flow Guard Compliance. Investor CRM. Deal Management. Fund Tracking. Loan Servicing. 7-Day Syndications. Fund Administration. Investor Portal. Reporting. Landing&nbsp;Pages.</p>
+      <p class="convergence-cta-text">One platform. One subscription.</p>
+    </div>
+  </div>
+  <div class="convergence-art" aria-hidden="true">
+    <svg viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="100" r="80" stroke="rgba(108,218,154,0.1)" stroke-width="1"/>
+      <circle cx="300" cy="100" r="50" stroke="rgba(108,218,154,0.06)" stroke-width="1"/>
+      <circle cx="300" cy="100" r="20" fill="rgba(108,218,154,0.04)"/>
+      <line x1="120" y1="100" x2="220" y2="100" stroke="rgba(108,218,154,0.08)" stroke-width="1"/>
+      <line x1="380" y1="100" x2="480" y2="100" stroke="rgba(108,218,154,0.08)" stroke-width="1"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============================================
+     WHO IT'S FOR — ICP-driven
+     ============================================ -->
+<section class="audience-section" id="audience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Solutions</p>
+      <h2>Built for operators<br>who raise capital</h2>
+      <p class="section-sub">Too big for spreadsheets. Too small for enterprise platforms. That's 250K+ operators — and we built this for you.</p>
+    </div>
+  </div>
+
+  <div class="audience-tabs" id="audienceTabNav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-audience-tab="flippers">Flippers & Builders</button>
+      <button class="tab-btn" data-audience-tab="syndicators">Syndicators</button>
+      <button class="tab-btn" data-audience-tab="lenders">Private Lenders</button>
+      <button class="tab-btn" data-audience-tab="fund-managers">Fund Managers</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tab-panels" id="audiencePanels">
+
+      <!-- Primary ICP: Graduating Operator (80%) -->
+      <div class="tab-panel active" id="audience-flippers">
+        <div class="audience-grid">
+          <div class="audience-cards stagger-parent reveal">
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">01</div>
+              <h4>Find lenders you've never met</h4>
+              <p>You've tapped out your network and need $800K in 14 days. Search our database of 9M verified private lenders — filter by state, loan amount, property type. Enrich and reach out in minutes.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">02</div>
+              <h4>Flow AI does the follow-up</h4>
+              <p>Import your contacts. Flow tells you who to call today to close your raise. Drafts messages in your voice. Follows up if no response. You never lose another investor to a missed email.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">03</div>
+              <h4>Graduate when you're ready</h4>
+              <p>Start with lender data and the CRM. When you're ready to launch your first fund, we handle the 7-Day Syndication ($6,500) and fund administration. One platform, every stage.</p>
+            </div>
+          </div>
+          <div class="audience-img-wrap">
+            <img src="screenshots/funds.png" alt="Fund Flow OS for fix & flip operators — find lenders and manage capital" class="feature-screenshot">
+          </div>
+        </div>
+      </div>
+
+      <!-- Syndicators -->
+      <div class="tab-panel" id="audience-syndicators">
+        <div class="audience-grid reverse">
+          <div class="audience-img-wrap">
+            <img src="screenshots/syndications.png" alt="Fund Flow OS 7-Day Syndication — PPM, OA, Sub Docs for $6,500" class="feature-screenshot">
+          </div>
+          <div class="audience-cards stagger-parent reveal">
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">01</div>
+              <h4>Launch in 7 days for $6,500</h4>
+              <p>Stop paying $15K–$30K and waiting 6 months. Our guided wizard generates SEC attorney-reviewed PPM, Operating Agreement, and Subscription Agreements from your deal data.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">02</div>
+              <h4>Investor onboarding on autopilot</h4>
+              <p>Send subscription docs, collect e-signatures, track commitments, manage communications. Deal room landing pages capture leads and convert interest into committed capital.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">03</div>
+              <h4>Compliance you can prove</h4>
+              <p>Flow Guard tracks every interaction for 506(b) compliance. Red/Yellow/Green relationship status. Blocks risky communications. Builds the evidence trail that protects you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Lenders -->
+      <div class="tab-panel" id="audience-lenders">
+        <div class="audience-grid">
+          <div class="audience-cards stagger-parent reveal">
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">01</div>
+              <h4>Full loan servicing</h4>
+              <p>Track every loan — principal, rates, maturity dates, late payments, term progress. Active portfolio views with real-time alerts. Generate 1099-INT at year end.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">02</div>
+              <h4>Promissory notes and payoffs</h4>
+              <p>Generate and e-sign promissory notes, LIEN payoffs, and loan documents directly in the platform. 21 templates included.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">03</div>
+              <h4>Scale your lending operation</h4>
+              <p>Flow AI automates borrower communication. Manage your entire portfolio from one dashboard instead of juggling spreadsheets and manual tracking.</p>
+            </div>
+          </div>
+          <div class="audience-img-wrap">
+            <img src="screenshots/loans.png" alt="Fund Flow OS Loans — private loan tracking with amortization" class="feature-screenshot">
+          </div>
+        </div>
+      </div>
+
+      <!-- Fund Managers -->
+      <div class="tab-panel" id="audience-fund-managers">
+        <div class="audience-grid reverse">
+          <div class="audience-img-wrap">
+            <img src="screenshots/reports.png" alt="Fund Flow OS Reports — deal analytics, financing, and capital distribution" class="feature-screenshot">
+          </div>
+          <div class="audience-cards stagger-parent reveal">
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">01</div>
+              <h4>Manage multiple fund vehicles</h4>
+              <p>Debt funds, equity funds, open-end, closed-end — create and track any structure. Capital raised vs. targets across your entire portfolio.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">02</div>
+              <h4>Fund administration built in</h4>
+              <p>Distributions, waterfall calculations, investor reporting, white-labeled investor portal. $500/mo Year 1 flat fee — not $40K+/yr like Juniper Square.</p>
+            </div>
+            <div class="audience-card stagger-child">
+              <div class="audience-card-num">03</div>
+              <h4>AI-powered investor relations</h4>
+              <p>Flow AI handles quarterly updates, K-1 distributions, deal announcements, and re-engagement campaigns. Replace a $60K IR coordinator for $3,564/yr.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     HOW IT WORKS — Teal section
+     ============================================ -->
+<section class="steps-section" id="steps">
+  <div class="container">
+    <div class="section-header section-header-light reveal">
+      <p class="overline overline-light">How it works</p>
+      <h2>Three steps to running<br>a professional operation</h2>
+      <p class="section-sub section-sub-light">No implementation team. No six-month rollout. Most operators are raising capital in their first session.</p>
+    </div>
+    <div class="steps-grid reveal stagger-parent">
+      <div class="step-card stagger-child">
+        <div class="step-number">01</div>
+        <h3>Find capital you didn't know existed</h3>
+        <p>Search 9M county-verified private lenders — or import your existing contacts. Fund Flow maps your entire network and tells you exactly where new capital is hiding.</p>
+      </div>
+      <div class="step-card stagger-child">
+        <div class="step-number">02</div>
+        <h3>Flow AI does the work you don't have time for</h3>
+        <p>Wake up to a daily action list. Flow tells you who to call, drafts the message in your voice, sends it, and follows up automatically. You stop missing investors. You stop leaving money on the table.</p>
+      </div>
+      <div class="step-card stagger-child">
+        <div class="step-number">03</div>
+        <h3>Watch your raise close — then do it again</h3>
+        <p>Track commitments in real time. Launch your syndication in 7 days for $6,500. Run fund admin, investor reporting, and distributions from the same dashboard. This is what a professional fund operation looks like.</p>
+      </div>
+    </div>
+    <div class="steps-success reveal">
+      <p class="steps-success-quote">"Wake up. Flow AI ran 12 follow-ups overnight. Three investors replied. Your raise is at 78%. Your compliance log is clean. Your fund launches in 7 days." — This is what winning looks like on Fund Flow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS — Carousel
+     ============================================ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Testimonials</p>
+      <h2>Operators trust Fund Flow</h2>
+      <p class="section-sub">Real operators. Real results. Zero churn since launch.</p>
+    </div>
+
+    <div class="testimonials-carousel reveal">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <!-- Testimonial 1 — Shomail Malik -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-v2">
+            <svg class="testimonial-quote-icon" width="36" height="36" viewBox="0 0 48 48" fill="none">
+              <path d="M14 28c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C14.7 11.8 11 8 11 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2zm20 0c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C34.7 11.8 31 8 31 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2z" fill="rgba(108,218,154,0.15)"/>
+            </svg>
+            <p class="testimonial-quote">This is amazing, dude. It's so slick and clean. I would love for my people to hear all about this. This is phenomenal.</p>
+            <div class="testimonial-author-v2">
+              <img class="testimonial-avatar-v2 testimonial-avatar-photo" src="images/testimonials/shomail.png" alt="Shomail Malik" loading="lazy">
+              <div>
+                <strong>Shomail Malik</strong>
+                <span>Apex Capital &middot; $75M+ raised &middot; Halal RE Fund</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 — Phil Blackwood -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-v2">
+            <svg class="testimonial-quote-icon" width="36" height="36" viewBox="0 0 48 48" fill="none">
+              <path d="M14 28c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C14.7 11.8 11 8 11 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2zm20 0c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C34.7 11.8 31 8 31 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2z" fill="rgba(108,218,154,0.15)"/>
+            </svg>
+            <p class="testimonial-quote">This is a genius idea! I love how it's going to help us organize our deals, loans, and investor relationships. Game-changer for our business.</p>
+            <div class="testimonial-author-v2">
+              <img class="testimonial-avatar-v2 testimonial-avatar-photo" src="images/testimonials/phil.png" alt="Phil Blackwood" loading="lazy">
+              <div>
+                <strong>Phil Blackwood</strong>
+                <span>Faster Homes &middot; Largest private homebuyers in St. Louis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 — Casey Gregersen -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-v2">
+            <svg class="testimonial-quote-icon" width="36" height="36" viewBox="0 0 48 48" fill="none">
+              <path d="M14 28c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C14.7 11.8 11 8 11 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2zm20 0c-3.3 0-6-2.7-6-6s2.7-6 6-6c.7 0 1.3.1 2 .3C34.7 11.8 31 8 31 8s8-1 11 5c2 4 2 9 0 13-1.3 2.7-4 4-8 4v-2z" fill="rgba(108,218,154,0.15)"/>
+            </svg>
+            <p class="testimonial-quote">Really impressive! I can see how this would be super helpful for anyone raising capital. I love the smart matching and investor portal features.</p>
+            <div class="testimonial-author-v2">
+              <img class="testimonial-avatar-v2 testimonial-avatar-photo" src="images/testimonials/casey.jpg" alt="Casey Gregersen" loading="lazy">
+              <div>
+                <strong>Casey Gregersen</strong>
+                <span>Longhorn Capital &middot; $50M+ portfolio &middot; Multi-state</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="testimonials-controls">
+        <span class="testimonials-counter"><span id="testimonialCurrent">01</span> / <span id="testimonialTotal">03</span></span>
+        <div class="testimonials-arrows">
+          <button class="testimonial-arrow testimonial-prev" id="testimonialPrev" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="testimonial-arrow testimonial-next" id="testimonialNext" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     COMPETITIVE COMPARISON
+     ============================================ -->
+<section class="compare-section reveal">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">Why Fund Flow</p>
+      <h2>Traditional CRM vs.<br>the autonomous employee</h2>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-card compare-old">
+        <h4>Traditional CRM</h4>
+        <ul class="compare-list">
+          <li class="compare-bad">Shows you a list of contacts</li>
+          <li class="compare-bad">You write the message</li>
+          <li class="compare-bad">You click send</li>
+          <li class="compare-bad">You remember to follow up</li>
+          <li class="compare-bad">You track compliance manually</li>
+          <li class="compare-bad">No lender data — just your existing network</li>
+        </ul>
+      </div>
+      <div class="compare-card compare-new">
+        <h4>Flow AI — The Autonomous Employee</h4>
+        <ul class="compare-list">
+          <li class="compare-good">Tells you exactly who to contact TODAY and why</li>
+          <li class="compare-good">Drafts the message in your voice</li>
+          <li class="compare-good">Sends it for you (with approval or fully autonomous)</li>
+          <li class="compare-good">Follows up automatically if no response</li>
+          <li class="compare-good">Flow Guard blocks risky messages and logs everything</li>
+          <li class="compare-good">9M private lenders — find new capital in minutes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRICING — Tabbed: Flippers & Builders / Funds & Syndications
+     ============================================ -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Pricing</p>
+      <h2>Simple, transparent pricing</h2>
+      <p class="section-sub">Start free. Upgrade when the pain is real. Data credits included in every paid plan.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="pricing-toggle reveal">
+      <div class="pricing-toggle-inner">
+        <button class="pricing-toggle-btn active" data-pricing-tab="flippers">Flippers &amp; Builders</button>
+        <button class="pricing-toggle-btn" data-pricing-tab="funds">Funds &amp; Syndications</button>
+      </div>
+    </div>
+
+    <!-- Tab 1: Flippers & Builders -->
+    <div class="pricing-tab-panel active" id="pricing-flippers">
+      <div class="pricing-grid reveal stagger-parent">
+        <div class="pricing-card stagger-child">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price"><span class="price-currency">$</span>0<span class="price-period">/mo</span></div>
+          <p class="pricing-desc">See if Fund Flow fits. 100 contacts, 5 deals, 5 loans. 10 lender search credits.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-outline btn-block">Start Free</a>
+          <ul class="pricing-features">
+            <li>100 contacts, 5 deals, 5 loans</li>
+            <li>10 lender search credits (search only)</li>
+            <li>Basic deal pipeline</li>
+            <li>Document templates</li>
+          </ul>
+        </div>
+        <div class="pricing-card pricing-card-featured stagger-child">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price"><span class="price-currency">$</span>97<span class="price-period">/mo</span></div>
+          <p class="pricing-desc">For operators actively raising capital. Unlimited contacts, Flow AI, and compliance.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-coral btn-block">Start Free</a>
+          <ul class="pricing-features">
+            <li>Unlimited contacts</li>
+            <li>100 data credits (75 lender + 25 professional)</li>
+            <li>Flow AI outreach + message drafting</li>
+            <li>Email, SMS, WhatsApp (10DLC)</li>
+            <li>Flow Guard compliance engine</li>
+            <li>Doc signing + automations</li>
+          </ul>
+        </div>
+        <div class="pricing-card stagger-child">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price"><span class="price-currency">$</span>297<span class="price-period">/mo</span></div>
+          <p class="pricing-desc">For scaling operators. 5x AI power, full automation, and priority support.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-outline btn-block">Start Free</a>
+          <ul class="pricing-features">
+            <li>Everything in Starter</li>
+            <li>500 data credits (300 lender + 200 professional)</li>
+            <li>5x AI messages</li>
+            <li>Advanced automations + workflows</li>
+            <li>API / Zapier integrations</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Funds & Syndications -->
+    <div class="pricing-tab-panel" id="pricing-funds">
+      <div class="pricing-grid reveal stagger-parent">
+        <div class="pricing-card stagger-child">
+          <div class="pricing-tier">Small Syndication</div>
+          <div class="pricing-price"><span class="price-currency">$</span>397<span class="price-period">/mo</span></div>
+          <p class="pricing-desc">For syndications under $5M. Full platform access, investor portal, distributions, and compliance.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-outline btn-block">Get Started</a>
+          <ul class="pricing-features">
+            <li>Full platform access</li>
+            <li>Investor portal (branded)</li>
+            <li>Distributions engine + waterfall calculator</li>
+            <li>Compliance tracking</li>
+            <li>Onboarding session</li>
+            <li>Small one-time setup fee</li>
+          </ul>
+        </div>
+        <div class="pricing-card pricing-card-featured stagger-child">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Fund Admin</div>
+          <div class="pricing-price"><span class="price-currency">$</span>500<span class="price-period">/mo</span></div>
+          <p class="pricing-desc">For fund launches under $5M. Flat Year 1 fee — transitions to declining AUM-based pricing as you grow.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-coral btn-block">Get Started</a>
+          <ul class="pricing-features">
+            <li>Everything in Small Syndication</li>
+            <li>Custom portal branding</li>
+            <li>Flow AI outreach + IR automation</li>
+            <li>K-1 tracking + tax doc management</li>
+            <li>Capital call automation</li>
+            <li>Year 2+: declining AUM-based pricing</li>
+          </ul>
+        </div>
+        <div class="pricing-card stagger-child">
+          <div class="pricing-tier">Growth &amp; Migration</div>
+          <div class="pricing-price"><span class="price-currency">$</span>750<span class="price-period">/mo+</span></div>
+          <p class="pricing-desc">For funds $5M+ or migrating from another platform. Scales with your fund, not against it.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-outline btn-block">Talk to Us</a>
+          <ul class="pricing-features">
+            <li>Everything in Fund Admin</li>
+            <li>Priority support + strategy reviews</li>
+            <li>Multi-fund dashboard</li>
+            <li>Dedicated account manager ($30M+)</li>
+            <li>Full migration support if switching</li>
+            <li>Pricing scales down as AUM grows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-anchors reveal">
+      <p class="pricing-anchor-text">
+        <strong>One missed $100K investor = 28 years of Fund Flow subscription.</strong>
+        <br>Juniper Square: $40K–$100K/yr. Part-time IR coordinator: $40K–$60K/yr. Traditional fund admin: 40–50 bps. We start at $97/mo with AI built in.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ADD-ON SERVICES
+     ============================================ -->
+<section class="addons-section">
+  <div class="container">
+    <div class="addons-grid reveal stagger-parent">
+      <div class="addon-card stagger-child">
+        <div class="addon-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>7-Day Syndications</h4>
+        <p>SEC attorney-reviewed PPM, Operating Agreement, and Subscription Agreements. $6,500 flat. Not $30K.</p>
+        <span class="addon-price">$6,500</span>
+      </div>
+      <div class="addon-card stagger-child">
+        <div class="addon-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h4>Fund Administration</h4>
+        <p>Distributions, waterfall calculations, investor reporting. $500–$1,500/mo Year 1 flat fee. AUM-based Year 2+.</p>
+        <span class="addon-price">From $500/mo</span>
+      </div>
+      <div class="addon-card stagger-child">
+        <div class="addon-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h4>Flow Launch</h4>
+        <p>Done-for-you investor acquisition system. Lead magnets, VSL funnels, email nurture, engagement scoring.</p>
+        <span class="addon-price">From $4,997</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>What makes Fund Flow different from a regular CRM?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>A CRM shows you a list of contacts. Fund Flow OS tells you exactly who to contact today, drafts messages in your voice, sends them automatically, follows up if no response, and blocks risky messages for compliance. Plus, we have 9 million verified private lender records — no other CRM helps you FIND new capital.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>What is the Private Lender Database?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>9 million county-verified private lender records — every person who's written a private lending check in the US. Search by state, loan amount, property type, and recency. Enrich with verified phone and email using data credits. Then reach out via Flow AI with messages tailored to your deal. It's 34x cheaper than skip-traced alternatives.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>How does Flow AI work?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Flow AI serves three roles: Chief of Staff (daily action list — what to do today to move capital), IR Manager (maintains every investor relationship at scale via automated sequences), and Compliance Guard (506(b)/506(c) tracking). It starts with suggest-and-approve, and can progress to fully autonomous sequences as you build trust.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>What is the 7-Day Syndication?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>A guided wizard that generates your PPM, Operating Agreement, and Subscription Agreements from your deal data — all SEC attorney-reviewed by our embedded securities attorney. $6,500 flat fee, 7 days. Traditional firms charge $15K–$30K and take months. Your entire fund launches and lives inside Fund Flow OS.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>What is Flow Guard?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Flow Guard is our compliance engine for 506(b) and 506(c) fundraising. Every contact gets a Red (no relationship), Yellow (building), or Green (substantive) status. Flow AI automatically restricts what can be sent based on status. It logs every interaction and builds the evidence trail that protects you if the SEC ever asks. Leaving Fund Flow means losing that entire compliance history.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger">
+          <span>Can I import my existing contacts and deals?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Upload CSV files with your existing investor contacts, deal information, and loan data. Fund Flow organizes everything into the right categories automatically. If you're migrating from Juniper Square, InvestNext, or Agora, we handle full data migration — investor records, distributions, compliance timelines. Most users are fully set up in hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA BANNER
+     ============================================ -->
+<section class="cta-section">
+  <div class="cta-banner reveal">
+    <div class="cta-content">
+      <h2>Find capital. Close deals.<br>Scale your fund.</h2>
+      <p>Every day without Fund Flow is another investor falling through the cracks. Start free. See the difference in your first session.</p>
+      <div class="cta-buttons">
+        <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Free <span class="arrow">&rarr;</span></a>
+        <a href="demo.html" class="btn btn-outline-light btn-lg">Try the live demo</a>
+      </div>
+    </div>
+    <div class="cta-visual">
+      <img src="screenshots/deals.png" alt="Fund Flow OS deal management platform">
+    </div>
+    <div class="cta-decoration" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="180" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="60" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MISSION
+     ============================================ -->
+<section class="mission-section reveal">
+  <div class="container">
+    <p class="mission-tag">#DiversifyWallStreet</p>
+    <p class="mission-text">98.6% of assets under management in the US are not managed by women or minorities. We're building the infrastructure to change that — powering the next generation of capital raisers with AI that works as hard as they&nbsp;do.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="lender-database.html">Private Lender Database</a>
+        <a href="flow-ai.html">Flow AI Employee</a>
+        <a href="flow-guard.html">Flow Guard Compliance</a>
+        <a href="investor-crm.html">Investor CRM</a>
+        <a href="deals-funds.html">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="flippers.html">Flippers & Builders</a>
+        <a href="syndicators.html">Syndicators</a>
+        <a href="private-lenders.html">Private Lenders</a>
+        <a href="fund-managers.html">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="syndications.html">7-Day Syndications</a>
+        <a href="fund-admin.html">Fund Administration</a>
+        <a href="flow-launch.html">Flow Launch (DFY)</a>
+        <a href="fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="help.html">Help Center</a>
+        <a href="podcast.html">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-text">
+        <h4>AI in REI Newsletter</h4>
+        <p>Weekly insights on AI for real estate operators. No fluff.</p>
+      </div>
+      <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="Your email address" class="footer-newsletter-input">
+        <button type="submit" class="btn btn-coral">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

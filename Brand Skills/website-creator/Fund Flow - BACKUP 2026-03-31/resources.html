@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Fund Flow OS</title>
+  <meta name="description" content="Guides, blog posts, podcast episodes, and education for real estate operators raising private capital and managing funds.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/resources.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/resources.html">
+  <meta property="og:title" content="Resources - Fund Flow OS">
+  <meta property="og:description" content="Tools, guides, and resources for real estate operators raising capital and managing funds.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:title" content="Resources - Fund Flow OS">
+  <meta name="twitter:description" content="Tools, guides, and resources for real estate operators raising capital and managing funds.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .page-hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+    }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.0625rem; color: var(--ink-60); max-width: 520px; margin: 0 auto; }
+
+    /* Featured resource */
+    .featured-resource {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-xl);
+      padding: 3rem;
+      margin-bottom: 4rem;
+    }
+    .featured-visual {
+      background: var(--ink-05);
+      border-radius: var(--r-lg);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-visual span { font-size: 0.8125rem; color: var(--ink-40); font-weight: 450; }
+    .featured-resource h3 { font-size: 1.5rem; font-family: var(--serif); font-weight: 300; margin-bottom: 0.75rem; }
+    .featured-resource p { font-size: 1rem; margin-bottom: 1.5rem; }
+
+    /* Blog grid */
+    .blog-section { padding: 4rem 0 6rem; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .blog-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .blog-thumb {
+      height: 180px;
+      background: var(--ink-05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-thumb span { font-size: 0.75rem; color: var(--ink-40); }
+    .blog-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .blog-card h3 { font-size: 1.0625rem; margin-bottom: 0.5rem; line-height: 1.35; }
+    .blog-card p { font-size: 0.875rem; flex: 1; }
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--ink-05);
+      font-size: 0.8125rem;
+      color: var(--ink-40);
+    }
+    .blog-read { color: var(--ink); font-weight: 550; }
+
+    /* Podcast */
+    .podcast-section {
+      padding: 6rem 0;
+      background: var(--ink-05);
+    }
+    .podcast-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .podcast-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      text-decoration: none;
+      transition: box-shadow 0.3s var(--ease);
+    }
+    .podcast-card:hover { box-shadow: var(--shadow-md); }
+    .podcast-art {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--r-md);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .podcast-art svg { width: 24px; height: 24px; color: var(--green); }
+    .podcast-ep {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--ink-40);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .podcast-card h3 { font-size: 0.9375rem; margin: 0.125rem 0; color: var(--ink); }
+    .podcast-card p { font-size: 0.8125rem; margin: 0; color: var(--ink-60); }
+
+    /* Newsletter */
+    .newsletter-section {
+      text-align: center;
+      padding: 6rem 0;
+    }
+    .newsletter-form {
+      display: flex;
+      max-width: 440px;
+      margin: 1.5rem auto 0;
+      gap: 0.5rem;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--ink-20);
+      border-radius: var(--r-sm);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input::placeholder { color: var(--ink-40); }
+    .newsletter-input:focus { border-color: var(--green); }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 7rem 0 3rem; }
+      .featured-resource { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .podcast-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#audience">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">Resources</p>
+    <h1 class="reveal">Learn. Build. Raise.</h1>
+    <p class="reveal">Guides, insights, and education for real estate operators who refuse to accept the status quo.</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section>
+  <div class="container">
+    <div class="featured-resource reveal">
+      <div class="featured-visual"><span>Guide cover</span></div>
+      <div>
+        <p class="overline">Featured guide</p>
+        <h3>The Complete Guide to Raising Private Capital for Real Estate</h3>
+        <p>SEC compliance, accreditation, pitch decks, investor outreach, fund structuring. Written for operators, by operators.</p>
+        <a href="#" class="btn btn-coral">Read the guide <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Blog</p>
+      <h2>Latest insights</h2>
+    </div>
+    <div class="blog-grid reveal">
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">Capital Raising</div>
+          <h3>How to Raise Your First $1M in Private Capital</h3>
+          <p>A step-by-step playbook for real estate operators raising their first round.</p>
+          <div class="blog-meta"><span>Mar 15, 2026</span><span class="blog-read">8 min read</span></div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">AI &amp; Technology</div>
+          <h3>Why AI Replaces IR Staff, Not Spreadsheets</h3>
+          <p>How autonomous AI agents are replacing $60K-$150K hires in capital raising operations.</p>
+          <div class="blog-meta"><span>Mar 8, 2026</span><span class="blog-read">6 min read</span></div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">Compliance</div>
+          <h3>506(b) vs. 506(c): Which SEC Exemption Is Right?</h3>
+          <p>Breaking down Reg D exemptions and which one makes sense for your raise.</p>
+          <div class="blog-meta"><span>Mar 1, 2026</span><span class="blog-read">10 min read</span></div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">Fund Management</div>
+          <h3>Waterfall Distributions Explained in Plain English</h3>
+          <p>Preferred returns, catch-up provisions, and profit splits for fund managers.</p>
+          <div class="blog-meta"><span>Feb 22, 2026</span><span class="blog-read">12 min read</span></div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">Capital Raising</div>
+          <h3>Building Your Investor Pipeline from Zero</h3>
+          <p>How to find, qualify, and nurture investor relationships from scratch.</p>
+          <div class="blog-meta"><span>Feb 15, 2026</span><span class="blog-read">7 min read</span></div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-thumb"><span>Article image</span></div>
+        <div class="blog-body">
+          <div class="blog-tag">Private Lenders</div>
+          <h3>9 Million Lenders: How to Use the Database</h3>
+          <p>Search, enrich, and reach out to verified private lenders who have funded deals.</p>
+          <div class="blog-meta"><span>Feb 8, 2026</span><span class="blog-read">9 min read</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="podcast-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Podcast</p>
+      <h2>Funds on Fire</h2>
+      <p class="section-sub">Deep dives on fund management, capital raising, AI, and operator stories.</p>
+    </div>
+    <div class="podcast-grid reveal">
+      <a href="#" class="podcast-card">
+        <div class="podcast-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div>
+          <span class="podcast-ep">Episode 24</span>
+          <h3>From 0 to $32M AUM</h3>
+          <p>Chris Price on building Boost Capital Group.</p>
+        </div>
+      </a>
+      <a href="#" class="podcast-card">
+        <div class="podcast-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div>
+          <span class="podcast-ep">Episode 23</span>
+          <h3>AI-Powered Capital Raising</h3>
+          <p>How Flow AI agents are changing the game.</p>
+        </div>
+      </a>
+      <a href="#" class="podcast-card">
+        <div class="podcast-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div>
+          <span class="podcast-ep">Episode 22</span>
+          <h3>SEC Compliance Without Anxiety</h3>
+          <p>506(b) and 506(c) with a securities attorney.</p>
+        </div>
+      </a>
+      <a href="#" class="podcast-card">
+        <div class="podcast-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div>
+          <span class="podcast-ep">Episode 21</span>
+          <h3>Building in Public as a Fund Manager</h3>
+          <p>Transparency as an unfair advantage.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <p class="overline reveal">Newsletter</p>
+    <h2 class="reveal">AI in REI</h2>
+    <p class="reveal" style="max-width: 420px; margin: 0.5rem auto 0;">Weekly insights on AI adoption for real estate operators. No fluff, no gatekeeping.</p>
+    <form class="newsletter-form reveal" onsubmit="event.preventDefault();">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button type="submit" class="btn btn-coral">Subscribe <span class="arrow">&rarr;</span></button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html#platform">Private Lender Database</a>
+        <a href="index.html#platform">Flow AI Employee</a>
+        <a href="index.html#platform">Flow Guard Compliance</a>
+        <a href="index.html#platform">Investor CRM</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="index.html#audience">Flippers & Builders</a>
+        <a href="index.html#audience">Syndicators</a>
+        <a href="index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">7-Day Syndications</a>
+        <a href="#">Fund Administration</a>
+        <a href="#">Flow Launch (DFY)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="resources.html">Blog</a>
+        <a href="#">Fund Founders Podcast</a>
+        <a href="about.html">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

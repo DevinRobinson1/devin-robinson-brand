@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StableRock Collective — Institutional Private Investment & Family Office Services</title>
+  <meta name="description" content="StableRock Collective is a family office providing private investment funds, real estate ventures, business lending, and multi-family office services to accredited investors.">
+  <meta property="og:title" content="StableRock Collective — We Are Your Rock">
+  <meta property="og:description" content="Expert guidance to grow assets, preserve wealth, and craft enduring legacies.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Dark greens — hero, dark sections */
+      --bg-primary: #2C3830;
+      --bg-secondary: #F8F5F0;
+      --bg-tertiary: #344038;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      /* Light palette — body, alternating sections */
+      --bg-cream: #F8F5F0;
+      --bg-cream-dark: #EDE8E0;
+      --bg-white: #FFFFFF;
+      /* Text */
+      --text-primary: #F5F1EB;
+      --text-dark: #2A2A2A;
+      --text-dark-secondary: #5A5550;
+      --text-secondary: #B0AAA2;
+      --text-muted: #7A756E;
+      /* Gold accent */
+      --gold: #B49B57;
+      --gold-light: #D4BA7A;
+      --gold-dark: #8A7640;
+      --gold-glow: rgba(180, 155, 87, 0.15);
+      /* Borders */
+      --border: rgba(180, 155, 87, 0.15);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(44, 56, 48, 0.1);
+      /* System */
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container: 1200px;
+      --section-pad: clamp(5rem, 12vh, 9rem);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Film grain overlay — subtle warmth */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.018;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* ============================================
+       LIGHT SECTION OVERRIDES
+       ============================================ */
+    .section-light {
+      background: var(--bg-cream);
+      color: var(--text-dark);
+    }
+
+    .section-light .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .section-light .body-sm {
+      color: var(--text-dark-secondary);
+    }
+
+    .section-white {
+      background: var(--bg-white);
+      color: var(--text-dark);
+    }
+
+    .section-white .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .section-dark {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .section-dark .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .section-dark .label {
+      color: var(--gold);
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: block;
+      margin: 1.5rem 0;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      padding: 0.75rem 0;
+      background: rgba(248, 245, 240, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav.scrolled .nav-logo-text,
+    .nav.scrolled .nav-links a {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a:hover {
+      color: var(--bg-primary);
+    }
+
+    .nav.scrolled .nav-cta {
+      color: var(--gold-dark) !important;
+      border-color: var(--gold-dark);
+    }
+
+    .nav.scrolled .nav-cta:hover {
+      background: var(--gold) !important;
+      color: white !important;
+    }
+
+    .nav.scrolled .nav-toggle span {
+      background: var(--text-dark);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold) !important;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--bg-primary) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('images/hero-mountain.jpg') center center / cover no-repeat;
+    }
+
+    /* Dark overlay for text legibility + warm color grade */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(44, 56, 48, 0.55) 0%, rgba(44, 56, 48, 0.4) 40%, rgba(44, 56, 48, 0.7) 100%),
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(180, 155, 87, 0.08) 0%, transparent 60%);
+    }
+
+    /* Subtle vignette */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 50%, rgba(44, 56, 48, 0.4) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+
+    .hero-label {
+      margin-bottom: 2rem;
+      opacity: 0;
+    }
+
+    .hero-title {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      opacity: 0;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      opacity: 0;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(180, 155, 87, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+    }
+
+    .hero-scroll span {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* ============================================
+       CREDIBILITY BAR
+       ============================================ */
+    .credibility {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .credibility::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/gold-marble-texture.jpg') center center / cover no-repeat;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .cred-item {
+      padding: 1rem;
+      opacity: 0;
+    }
+
+    .cred-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .cred-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ============================================
+       ABOUT
+       ============================================ */
+    .about {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+    }
+
+    .about .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .about .value-item {
+      color: var(--text-dark-secondary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .about-left {
+      opacity: 0;
+    }
+
+    .about-right {
+      opacity: 0;
+    }
+
+    .about-right p {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .value-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       SERVICES
+       ============================================ */
+    .services {
+      padding: var(--section-pad) 0;
+      background: var(--bg-white);
+      color: var(--text-dark);
+    }
+
+    .services .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header .label {
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .section-header .display-lg {
+      margin-bottom: 1.25rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      background: var(--bg-white);
+      box-shadow: 0 20px 60px rgba(44, 56, 48, 0.08);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      color: var(--gold-dark);
+      font-size: 1.2rem;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      border-color: var(--gold);
+      background: var(--gold-glow);
+      color: var(--gold);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+    }
+
+    .service-card h3 {
+      color: var(--text-dark);
+    }
+
+    .service-card .learn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap 0.3s ease;
+    }
+
+    .service-card:hover .learn-more {
+      gap: 0.75rem;
+    }
+
+    /* ============================================
+       FUND FEATURE
+       ============================================ */
+    .fund {
+      padding: var(--section-pad) 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .fund .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .fund-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/aerial-realestate.jpg') center center / cover no-repeat;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .fund-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .fund-content {
+      opacity: 0;
+    }
+
+    .fund-content .display-lg {
+      margin-bottom: 1.25rem;
+    }
+
+    .fund-content .body-lg {
+      margin-bottom: 2.5rem;
+    }
+
+    .fund-highlights {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .fund-stat {
+      text-align: left;
+    }
+
+    .fund-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .fund-stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .fund-card {
+      background: var(--bg-tertiary);
+      border: 1px solid rgba(180, 155, 87, 0.2);
+      border-radius: 8px;
+      padding: 3rem;
+      position: relative;
+      opacity: 0;
+    }
+
+    .fund-card-stat-label {
+      color: var(--text-secondary) !important;
+    }
+
+    .fund-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .fund-card-header {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .fund-card-header .label {
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .fund-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    .fund-card-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .fund-card-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .fund-card-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .fund-card-stat-value {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+    }
+
+    .fund-card-stat-value.highlight {
+      color: var(--gold);
+    }
+
+    /* ============================================
+       TEAM
+       ============================================ */
+    .team {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+    }
+
+    .team .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .team .team-quote {
+      color: var(--text-dark);
+    }
+
+    .team .team-attribution-role {
+      color: var(--text-dark-secondary);
+    }
+
+    .team .testimonial-text {
+      color: var(--text-dark-secondary);
+    }
+
+    .team .team-attribution-avatar {
+      background: var(--bg-cream-dark);
+      border-color: var(--border-light);
+    }
+
+    .team .testimonial-card {
+      background: var(--bg-white);
+      border-color: var(--border-light);
+    }
+
+    .team .testimonial-stars {
+      color: var(--gold);
+    }
+
+    .team-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .team-left {
+      opacity: 0;
+    }
+
+    .team-right {
+      opacity: 0;
+    }
+
+    .team-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .team-quote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gold);
+    }
+
+    .team-attribution {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .team-attribution-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .team-attribution-name {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .team-attribution-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ============================================
+       RESOURCES
+       ============================================ */
+    .resources {
+      padding: var(--section-pad) 0;
+      background: var(--bg-white);
+      color: var(--text-dark);
+    }
+
+    .resources .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .resource-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 48px rgba(44, 56, 48, 0.08);
+    }
+
+    .resource-img {
+      height: 200px;
+      background: var(--bg-cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resource-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out);
+    }
+
+    .resource-card:hover .resource-img img {
+      transform: scale(1.05);
+    }
+
+    .resource-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(248, 245, 240, 0.3));
+      z-index: 1;
+    }
+
+    .resource-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      border: 1px solid var(--border-light);
+    }
+
+    .resource-body {
+      padding: 1.75rem;
+    }
+
+    .resource-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .resource-card:hover .resource-body h3 {
+      color: var(--gold-dark);
+    }
+
+    .resource-body p {
+      font-size: 0.85rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+    }
+
+    .resource-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.75rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .resource-date {
+      font-size: 0.75rem;
+      color: var(--text-dark-secondary);
+    }
+
+    .resource-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.3s ease;
+    }
+
+    .resource-card:hover .resource-link {
+      gap: 0.6rem;
+    }
+
+    /* ============================================
+       NEWSLETTER
+       ============================================ */
+    .newsletter {
+      padding: var(--section-pad) 0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/abstract-financial.jpg') center center / cover no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .newsletter .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .newsletter-inner {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.9rem 1.25rem;
+      background: var(--bg-tertiary);
+      border: 1px solid rgba(180, 155, 87, 0.2);
+      border-radius: 2px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--gold);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 5rem 0 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       SVG ICONS (inline)
+       ============================================ */
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .credibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(44, 56, 48, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+
+      .about-grid,
+      .fund-inner,
+      .team-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .fund-highlights {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">SR</div>
+        <span class="nav-logo-text">StableRock Collective</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="investments.html">Investments</a></li>
+        <li><a href="blog.html">Resources</a></li>
+        <li><a href="#contact" class="nav-cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="label hero-label">Private Investment &middot; Family Office &middot; Wealth Advisory</span>
+      <h1 class="display-xl hero-title">Stable Strategies.<br><em>Dynamic</em> Futures.</h1>
+      <p class="body-lg hero-subtitle">Expert guidance to grow assets, preserve wealth, and craft enduring legacies for accredited investors and families.</p>
+      <div class="hero-ctas">
+        <a href="#fund" class="btn-primary">Explore Investments &rarr;</a>
+        <a href="#contact" class="btn-secondary">Schedule a Call</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CREDIBILITY BAR
+       ============================================ -->
+  <section class="credibility" id="credibility">
+    <div class="container">
+      <div class="credibility-grid">
+        <div class="cred-item">
+          <div class="cred-number" data-count="150" data-suffix="M+">$0</div>
+          <div class="cred-label">Assets Under Management</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-number" data-count="20" data-suffix="+">0</div>
+          <div class="cred-label">Years Combined Experience</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-number" data-count="500" data-suffix="+">0</div>
+          <div class="cred-label">Investors Served</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-number" data-count="85" data-suffix="+">0</div>
+          <div class="cred-label">Projects Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT
+       ============================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <span class="label">Who We Are</span>
+          <span class="gold-rule"></span>
+          <h2 class="display-lg">Your Gateway to the Private Investment Ecosystem</h2>
+          <div class="about-image" style="margin-top: 2.5rem; border-radius: 8px; overflow: hidden; position: relative;">
+            <img src="images/team-office.jpg" alt="StableRock team in boardroom" style="width: 100%; height: 320px; object-fit: cover; display: block; border-radius: 8px;">
+            <div style="position: absolute; inset: 0; border: 1px solid rgba(180, 155, 87, 0.2); border-radius: 8px; pointer-events: none;"></div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p class="body-lg">StableRock Collective is a family office that provides services to other families and accredited investors through its private investment funds, real estate ventures, business lending and consulting, and multi-family office services.</p>
+          <p class="body-lg">The relationship we have with you is what drives us. Our commitment is to create value and wealth for our clients every step of their journey and to confidently, and consistently, deliver positive outcomes.</p>
+          <p class="body-lg" style="color: var(--gold); font-weight: 400;">We are your rock.</p>
+          <div class="about-values">
+            <div class="value-item"><span class="value-dot"></span> Integrity</div>
+            <div class="value-item"><span class="value-dot"></span> Excellence</div>
+            <div class="value-item"><span class="value-dot"></span> Innovation</div>
+            <div class="value-item"><span class="value-dot"></span> Collaboration</div>
+            <div class="value-item"><span class="value-dot"></span> Client-Centricity</div>
+            <div class="value-item"><span class="value-dot"></span> Legacy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICES
+       ============================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Our Services</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Comprehensive Wealth Solutions</h2>
+        <p class="body-lg">Four integrated pillars designed to protect, grow, and transfer your wealth across generations.</p>
+      </div>
+      <div class="services-grid">
+        <a href="services-investments.html" class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4M5 21V10.85M19 21V10.85M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg>
+          </div>
+          <h3>Private Real Estate &amp; Alternative Investments</h3>
+          <p>Access institutional-quality real estate deals and alternative investment vehicles typically reserved for ultra-high-net-worth portfolios.</p>
+          <span class="learn-more">Learn More &rarr;</span>
+        </a>
+        <a href="services-lending.html" class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Real Estate &amp; Business Lending</h3>
+          <p>Flexible lending solutions for real estate acquisitions, development projects, and business growth — structured with speed and precision.</p>
+          <span class="learn-more">Learn More &rarr;</span>
+        </a>
+        <a href="services-consulting.html" class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Real Estate &amp; Business Consulting</h3>
+          <p>Strategic advisory for operators and investors navigating complex real estate transactions, fund structures, and business scaling.</p>
+          <span class="learn-more">Learn More &rarr;</span>
+        </a>
+        <a href="services-mfo.html" class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Multifamily Office Services</h3>
+          <p>Holistic wealth management coordination — investment oversight, estate planning integration, and concierge financial services for families.</p>
+          <span class="learn-more">Learn More &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FUND FEATURE
+       ============================================ -->
+  <section class="fund" id="fund">
+    <div class="fund-bg"></div>
+    <div class="container">
+      <div class="fund-inner">
+        <div class="fund-content">
+          <span class="label">Featured Investment</span>
+          <span class="gold-rule"></span>
+          <h2 class="display-lg">High Income Real Estate Fund</h2>
+          <p class="body-lg">Our flagship lending fund generates consistent monthly income through short-duration real estate loans, backed by tangible property assets. Designed for accredited investors seeking yield with downside protection.</p>
+          <div class="fund-highlights">
+            <div class="fund-stat">
+              <div class="fund-stat-number">15%</div>
+              <div class="fund-stat-label">Target Annual Return</div>
+            </div>
+            <div class="fund-stat">
+              <div class="fund-stat-number">~6 Mo</div>
+              <div class="fund-stat-label">Avg Loan Duration</div>
+            </div>
+            <div class="fund-stat">
+              <div class="fund-stat-number">Monthly</div>
+              <div class="fund-stat-label">Distribution Frequency</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Request Fund Details &rarr;</a>
+        </div>
+        <div class="fund-card">
+          <div class="fund-card-header">
+            <span class="label">Accredited Investors</span>
+            <h3>Fund Overview</h3>
+          </div>
+          <div class="fund-card-stats">
+            <div class="fund-card-stat">
+              <span class="fund-card-stat-label">Minimum Investment</span>
+              <span class="fund-card-stat-value">$50,000</span>
+            </div>
+            <div class="fund-card-stat">
+              <span class="fund-card-stat-label">Target Annual Return</span>
+              <span class="fund-card-stat-value highlight">Up to 15%</span>
+            </div>
+            <div class="fund-card-stat">
+              <span class="fund-card-stat-label">Average Loan Duration</span>
+              <span class="fund-card-stat-value">~6 Months</span>
+            </div>
+            <div class="fund-card-stat">
+              <span class="fund-card-stat-label">Collateral</span>
+              <span class="fund-card-stat-value">Real Property</span>
+            </div>
+            <div class="fund-card-stat">
+              <span class="fund-card-stat-label">Distributions</span>
+              <span class="fund-card-stat-value">Monthly</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">Request Information &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TEAM / TESTIMONIALS
+       ============================================ -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="team-layout">
+        <div class="team-left">
+          <span class="label">Leadership</span>
+          <span class="gold-rule"></span>
+          <h2 class="display-lg">Innovators in Strategy. Leaders in Change.</h2>
+          <p class="body-lg" style="margin-top: 1.5rem;">At StableRock Collective, our team brings together decades of experience in real estate investments, lending, and multifamily office services. We combine institutional expertise with a hands-on, relationship-first approach.</p>
+        </div>
+        <div class="team-right">
+          <div class="team-quote">
+            "I have gotten to know Tim professionally first and then personally and we share core values on customer service and personal responsibility. His dedication to his clients and community is evident in everything he does."
+          </div>
+          <div class="team-attribution">
+            <div class="team-attribution-avatar">EW</div>
+            <div>
+              <div class="team-attribution-name">Eric Warfel</div>
+              <div class="team-attribution-role">Real Estate Investor</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <p class="testimonial-text">"Their strategic approach to real estate investment management has been exceptional. The team at StableRock consistently delivers results while maintaining the highest level of professionalism."</p>
+            <div class="team-attribution">
+              <div class="team-attribution-avatar">SR</div>
+              <div>
+                <div class="team-attribution-name">Sophia R.</div>
+                <div class="team-attribution-role">Real Estate Investment Fund Investor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       RESOURCES
+       ============================================ -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Insights &amp; Resources</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Institutional Insights</h2>
+        <p class="body-lg">Research, analysis, and perspectives from our investment team.</p>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-card">
+          <div class="resource-img">
+            <img src="images/blog-wealth.jpg" alt="Wealth management">
+            <span class="resource-tag">Report</span>
+          </div>
+          <div class="resource-body">
+            <h3>Top Private Wealth Management Tips for High-Net-Worth Individuals</h3>
+            <p>Key strategies for preserving and growing wealth across market cycles.</p>
+          </div>
+          <div class="resource-footer">
+            <span class="resource-date">Latest</span>
+            <span class="resource-link">Read &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="resource-card">
+          <div class="resource-img">
+            <img src="images/blog-portfolio.jpg" alt="Portfolio diversification">
+            <span class="resource-tag">Guide</span>
+          </div>
+          <div class="resource-body">
+            <h3>Why and How to Diversify Your Portfolio with Alternative Investments</h3>
+            <p>Understanding the role of alternatives in a modern, resilient portfolio.</p>
+          </div>
+          <div class="resource-footer">
+            <span class="resource-date">Latest</span>
+            <span class="resource-link">Read &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="resource-card">
+          <div class="resource-img">
+            <img src="images/blog-consulting.jpg" alt="Real estate consulting">
+            <span class="resource-tag">eBook</span>
+          </div>
+          <div class="resource-body">
+            <h3>Why Real Estate &amp; Business Consulting are Essential for Sustainable Growth</h3>
+            <p>The strategic advantage of expert advisory in real estate and business.</p>
+          </div>
+          <div class="resource-footer">
+            <span class="resource-date">Latest</span>
+            <span class="resource-link">Read &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       NEWSLETTER
+       ============================================ -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <span class="label">Stay Informed</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-md">Market Intelligence,<br>Delivered.</h2>
+        <p class="body-lg">Subscribe for quarterly investment insights, market analysis, and exclusive opportunities from our team.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email address" aria-label="Email address">
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="nav-logo-mark">SR</div>
+            <span class="nav-logo-text">StableRock Collective</span>
+          </a>
+          <p>Expert guidance to grow assets, preserve wealth, and craft enduring legacies. We are your rock.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Private Investments</a></li>
+            <li><a href="#services">Business Lending</a></li>
+            <li><a href="#services">Consulting</a></li>
+            <li><a href="#services">Family Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Debt Fund eBook</a></li>
+            <li><a href="#">Wealth eBook</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:717-659-1188">717-659-1188</a></li>
+            <li><a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a></li>
+            <li><a href="#">PO Box 338<br>Saddle River, NJ 07458</a></li>
+            <li><a href="#" class="btn-secondary" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.7rem;">Investor Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StableRock Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>StableRock Collective offers a broad range of real estate and wealth management services but does not directly provide legal, tax, or insurance advice. All investments involve risk. Past performance is not indicative of future results. Offerings are available to accredited investors only. Please review all offering documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT — ANIMATIONS
+       ============================================ -->
+  <script>
+    // ============================================
+    // Lenis Smooth Scroll
+    // ============================================
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect Lenis to GSAP
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // ============================================
+    // Navigation
+    // ============================================
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ============================================
+    // GSAP ScrollTrigger Registration
+    // ============================================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================
+    // Hero Animations
+    // ============================================
+    const heroTl = gsap.timeline({ delay: 0.3 });
+
+    heroTl
+      .to('.hero-label', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        from: { y: 20 }
+      })
+      .fromTo('.hero-title', {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .fromTo('.hero-subtitle', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.6')
+      .fromTo('.hero-ctas', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .fromTo('.hero-scroll', {
+        opacity: 0,
+      }, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.3');
+
+    // ============================================
+    // Credibility Counter Animation
+    // ============================================
+    const credItems = document.querySelectorAll('.cred-item');
+
+    credItems.forEach((item, i) => {
+      const numEl = item.querySelector('.cred-number');
+      const targetCount = parseInt(numEl.dataset.count);
+      const suffix = numEl.dataset.suffix || '';
+
+      gsap.fromTo(item, {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.credibility',
+          start: 'top 80%',
+        }
+      });
+
+      // Counter animation
+      const counter = { val: 0 };
+      gsap.to(counter, {
+        val: targetCount,
+        duration: 2,
+        delay: i * 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.credibility',
+          start: 'top 80%',
+        },
+        onUpdate: () => {
+          const prefix = numEl.textContent.startsWith('$') || suffix.includes('M') ? '$' : '';
+          numEl.textContent = prefix + Math.floor(counter.val).toLocaleString() + suffix;
+        }
+      });
+    });
+
+    // ============================================
+    // About Section
+    // ============================================
+    gsap.fromTo('.about-left', {
+      opacity: 0,
+      x: -40
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top 70%',
+      }
+    });
+
+    gsap.fromTo('.about-right', {
+      opacity: 0,
+      x: 40
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top 70%',
+      }
+    });
+
+    // ============================================
+    // Service Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.service-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.services-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Fund Section
+    // ============================================
+    gsap.fromTo('.fund-content', {
+      opacity: 0,
+      x: -40
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.fund',
+        start: 'top 65%',
+      }
+    });
+
+    gsap.fromTo('.fund-card', {
+      opacity: 0,
+      x: 40,
+      y: 20
+    }, {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.fund',
+        start: 'top 65%',
+      }
+    });
+
+    // ============================================
+    // Team Section
+    // ============================================
+    gsap.fromTo('.team-left', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.team',
+        start: 'top 70%',
+      }
+    });
+
+    gsap.fromTo('.team-right', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.team',
+        start: 'top 70%',
+      }
+    });
+
+    // ============================================
+    // Resource Cards
+    // ============================================
+    gsap.fromTo('.resource-card', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.resources-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Newsletter
+    // ============================================
+    gsap.fromTo('.newsletter-inner', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.newsletter',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Parallax on hero background
+    // ============================================
+    gsap.to('.hero-bg', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+
+    // ============================================
+    // Gold rule animations
+    // ============================================
+    gsap.utils.toArray('.gold-rule').forEach(rule => {
+      gsap.fromTo(rule, {
+        scaleX: 0,
+        transformOrigin: 'left center'
+      }, {
+        scaleX: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: rule,
+          start: 'top 85%',
+        }
+      });
+    });
+  </script>
+</body>
+</html>

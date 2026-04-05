@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions — Fund Flow OS</title>
+  <meta name="description" content="Fund Flow OS solutions for every stage of your journey — from your first flip to managing a fund. Find capital, automate outreach, stay compliant.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/solutions.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/solutions.html">
+  <meta property="og:title" content="Solutions - Fund Flow OS">
+  <meta property="og:description" content="Fund Flow OS solutions for flippers, syndicators, private lenders, and fund managers.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:title" content="Solutions - Fund Flow OS">
+  <meta name="twitter:description" content="Fund Flow OS solutions for flippers, syndicators, private lenders, and fund managers.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       SOLUTIONS PAGE — Page-specific styles
+       ============================================ */
+
+    /* Hero */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background: var(--cream);
+    }
+    .page-hero h1 {
+      font-family: var(--sans);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero > .container > p:not(.overline) {
+      font-size: 1.125rem;
+      color: var(--ink-60);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Tab bar */
+    .tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.375rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.625rem 1.375rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: var(--serif);
+      color: var(--ink-60);
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+
+    .tab-btn:hover {
+      border-color: var(--ink-20);
+      color: var(--ink);
+    }
+
+    .tab-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* Tab panels */
+    .tab-panel { display: none; animation: fadeUp 0.35s ease; }
+    .tab-panel.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Solution layout — two columns */
+    .solution-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .solution-layout h3 {
+      font-family: var(--sans);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .solution-layout > div > p {
+      font-size: 1rem;
+      color: var(--ink-60);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* Concern / solution cards */
+    .concern-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .concern-card h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 0.5rem;
+      font-family: var(--serif);
+    }
+
+    .concern-card p {
+      font-size: 0.9375rem;
+      margin: 0;
+      color: var(--ink-80);
+      line-height: 1.6;
+    }
+
+    .concern-card.solution {
+      border-color: var(--green-border);
+      background: var(--green-light);
+    }
+
+    .concern-card.solution h4 {
+      color: var(--green-dark);
+    }
+
+    /* Use cases section */
+    .use-case-section {
+      background: var(--white);
+      padding: 6rem 0;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .use-case {
+      background: var(--cream);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: all 0.3s var(--ease);
+    }
+
+    .use-case:hover {
+      border-color: var(--ink-20);
+      box-shadow: var(--shadow-md);
+    }
+
+    .use-case h3 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .use-case p {
+      font-size: 0.9375rem;
+      color: var(--ink-60);
+      line-height: 1.6;
+    }
+
+    .use-case-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-40);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      font-family: var(--serif);
+    }
+
+    /* CTA section */
+    .cta-dark {
+      background: var(--navy);
+      border-radius: var(--r-xl);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-dark h2 {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-dark p {
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    .cta-dark .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-dark .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-dark .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Section spacing */
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section-lg {
+      padding: 6rem 0 8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .solution-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .use-case-grid { grid-template-columns: 1fr; }
+      .tab-bar { flex-wrap: wrap; }
+      .page-hero { padding: 8rem 0 3rem; }
+      .cta-dark { padding: 3.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#audience">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">Solutions</p>
+    <h1 class="reveal">From your first flip<br>to your final fund.</h1>
+    <p class="reveal">Fund Flow OS meets you where you are and grows with you. Every stage has different needs. We built for all of them.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     TAB SECTIONS
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="tab-bar reveal">
+      <button class="tab-btn active" data-tab="first">First deal</button>
+      <button class="tab-btn" data-tab="growing">Growing</button>
+      <button class="tab-btn" data-tab="fund">Managing a fund</button>
+    </div>
+
+    <!-- First Deal -->
+    <div class="tab-panel active" id="first">
+      <div class="solution-layout">
+        <div>
+          <h3>You found a deal. Now you need capital.</h3>
+          <p>You don't have a team, a CRM, or a process. You have a deal under contract and a deadline. Fund Flow gives you the entire infrastructure on day one -- private lender data, outreach automation, compliance tracking, and fund formation.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free <span class="arrow">&rarr;</span></a>
+        </div>
+        <div>
+          <div class="concern-card">
+            <h4>Common concern</h4>
+            <p>"I need $800K in 14 days. I've called everyone I know. Now what?"</p>
+          </div>
+          <div class="concern-card solution">
+            <h4>How Fund Flow helps</h4>
+            <p>Open Fund Flow. Search the private lender database by state, loan amount, and property type. Enrich contacts. Flow AI drafts outreach. Send. Track responses. Close capital you didn't know existed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Growing -->
+    <div class="tab-panel" id="growing">
+      <div class="solution-layout">
+        <div>
+          <h3>Scale capital raising without scaling your team.</h3>
+          <p>You've done a few deals. Your investor list is growing. But so are the spreadsheets and the missed follow-ups. You're leaving $50K-$200K on the table every raise because interested investors never got the second call.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free <span class="arrow">&rarr;</span></a>
+        </div>
+        <div>
+          <div class="concern-card">
+            <h4>Common concern</h4>
+            <p>"I'm spending more time managing investors than finding deals. And I know I'm losing committed capital to follow-up gaps."</p>
+          </div>
+          <div class="concern-card solution">
+            <h4>How Fund Flow helps</h4>
+            <p>Flow AI tells you who to contact today, drafts messages in your voice, sends them, and follows up automatically. Smart matching connects the right investors to the right deals. Zero missed follow-ups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Managing a Fund -->
+    <div class="tab-panel" id="fund">
+      <div class="solution-layout">
+        <div>
+          <h3>Institutional tools at operator prices.</h3>
+          <p>Multiple deals, dozens or hundreds of investors, complex waterfalls, SEC compliance. Juniper Square wants $40K-$100K/year. You need infrastructure that matches your ambition without the seven-figure budget.</p>
+          <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free <span class="arrow">&rarr;</span></a>
+        </div>
+        <div>
+          <div class="concern-card">
+            <h4>Common concern</h4>
+            <p>"Enterprise tools cost $80K+ and generic CRMs can't handle fund complexity. I'm stuck between overpriced and underbuilt."</p>
+          </div>
+          <div class="concern-card solution">
+            <h4>How Fund Flow helps</h4>
+            <p>Full fund management with distribution waterfalls, automated K-1s, compliance audit trails, investor portal, and 5x AI capacity. Fund administration at $500/mo Year 1. All for $297/mo platform fee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     USE CASES
+     ============================================ -->
+<section class="use-case-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Use cases</p>
+      <h2>One platform. Every workflow.</h2>
+    </div>
+    <div class="use-case-grid">
+      <div class="use-case reveal">
+        <div class="use-case-number">01</div>
+        <h3>Finding private capital</h3>
+        <p>Search 9M verified lender records. Enrich with contact data. Reach out with AI-drafted messages. Track responses.</p>
+      </div>
+      <div class="use-case reveal">
+        <div class="use-case-number">02</div>
+        <h3>Investor outreach campaigns</h3>
+        <p>Multi-channel sequences across email, SMS, and WhatsApp. AI handles follow-ups. Zero commitments fall through.</p>
+      </div>
+      <div class="use-case reveal">
+        <div class="use-case-number">03</div>
+        <h3>Fund formation</h3>
+        <p>Launch a syndication in 7 days for $6,500. SEC-attorney-reviewed. PPM, operating agreement, and platform integration.</p>
+      </div>
+      <div class="use-case reveal">
+        <div class="use-case-number">04</div>
+        <h3>Investor relations</h3>
+        <p>White-labeled portal. Performance dashboards. Document vault. Tax documents. Transparent, automated, trust-building.</p>
+      </div>
+      <div class="use-case reveal">
+        <div class="use-case-number">05</div>
+        <h3>Fund administration</h3>
+        <p>Distributions, waterfall calculations, investor reporting. Flat fee Year 1. AUM-based Year 2+. Back office on autopilot.</p>
+      </div>
+      <div class="use-case reveal">
+        <div class="use-case-number">06</div>
+        <h3>SEC compliance</h3>
+        <p>506(b) relationship tracking, substantive proof logging, compliance guard. Every interaction timestamped and audit-ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA
+     ============================================ -->
+<section class="section-lg">
+  <div class="container">
+    <div class="cta-dark reveal">
+      <h2>Find your solution.</h2>
+      <p>Start free. See how Fund Flow fits your workflow.</p>
+      <div class="cta-buttons">
+        <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Free <span class="arrow">&rarr;</span></a>
+        <a href="#" class="btn btn-outline btn-lg">Book a demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html#platform">Private Lender Database</a>
+        <a href="index.html#platform">Flow AI Employee</a>
+        <a href="index.html#platform">Flow Guard Compliance</a>
+        <a href="index.html#platform">Investor CRM</a>
+        <a href="index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="index.html#audience">Flippers & Builders</a>
+        <a href="index.html#audience">Syndicators</a>
+        <a href="index.html#audience">Private Lenders</a>
+        <a href="index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="syndications.html">7-Day Syndications</a>
+        <a href="fund-admin.html">Fund Administration</a>
+        <a href="flow-launch.html">Flow Launch (DFY)</a>
+        <a href="fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate & Business Lending — StableRock Collective</title>
+  <meta name="description" content="Flexible lending solutions for real estate acquisitions, development projects, and business growth — structured with speed and precision by StableRock Collective.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0B0E11;
+      --bg-secondary: #111518;
+      --bg-tertiary: #181D22;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --text-primary: #F5F1EB;
+      --text-secondary: #9A9590;
+      --text-muted: #6B6560;
+      --gold: #B49B57;
+      --gold-light: #D4BA7A;
+      --gold-dark: #8A7640;
+      --gold-glow: rgba(180, 155, 87, 0.15);
+      --border: rgba(180, 155, 87, 0.12);
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container: 1200px;
+      --section-pad: clamp(5rem, 12vh, 9rem);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Typography */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: block;
+      margin: 1.5rem 0;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      padding: 0.75rem 0;
+      background: rgba(11, 14, 17, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold) !important;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--bg-primary) !important;
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px; height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 6rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(180, 155, 87, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 60%, rgba(180, 155, 87, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 100% at 50% 0%, rgba(180, 155, 87, 0.03) 0%, transparent 40%);
+      animation: heroGlow 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(180, 155, 87, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(180, 155, 87, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 20%, transparent 70%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+
+    .hero-label { margin-bottom: 2rem; opacity: 0; }
+    .hero-title { margin-bottom: 1.5rem; opacity: 0; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-subtitle { max-width: 580px; margin: 0 auto 3rem; opacity: 0; }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(180, 155, 87, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Section header */
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header .label {
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .section-header .display-lg {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Service cards */
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      color: var(--gold);
+      font-size: 1.2rem;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      border-color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .icon-svg {
+      width: 22px; height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Key benefits */
+    .key-benefits {
+      padding: var(--section-pad) 0;
+      background: var(--bg-secondary);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Lending products */
+    .lending-products {
+      padding: var(--section-pad) 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .products-grid.five-col {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    /* Process */
+    .process {
+      padding: var(--section-pad) 0;
+      background: var(--bg-secondary);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      opacity: 0;
+    }
+
+    .process-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .process-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .process-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .process-connector::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -1rem;
+      right: -1rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: var(--section-pad) 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2.5rem;
+      opacity: 0;
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-attribution {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .testimonial-name { font-weight: 500; font-size: 0.95rem; }
+    .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* CTA */
+    .cta-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-secondary);
+    }
+
+    .cta-inner {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .cta-inner .display-md { margin-bottom: 1.25rem; }
+    .cta-inner .body-lg { margin-bottom: 2.5rem; }
+
+    /* Footer */
+    .footer {
+      padding: 5rem 0 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social a:hover { color: var(--gold); }
+
+    .footer-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .benefits-grid,
+      .products-grid.five-col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(11, 14, 17, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+      }
+
+      .nav-links.active { display: flex; }
+      .nav-links a { font-size: 1.1rem; }
+      .nav-toggle { display: flex; z-index: 1001; }
+
+      .benefits-grid,
+      .products-grid,
+      .products-grid.five-col,
+      .process-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">SR</div>
+        <span class="nav-logo-text">StableRock Collective</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="investments.html">Investments</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="label hero-label">Lending</span>
+      <h1 class="display-xl hero-title">Real Estate &amp;<br>Business <em>Lending</em></h1>
+      <p class="body-lg hero-subtitle">Flexible Lending Solutions structured with speed and precision to fuel your real estate acquisitions, developments, and business growth.</p>
+    </div>
+  </section>
+
+  <!-- KEY BENEFITS -->
+  <section class="key-benefits">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Key Benefits</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Why Choose StableRock Lending</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 5H2v7l6.29 6.29a1 1 0 0 0 1.42 0l5.58-5.58a1 1 0 0 0 0-1.42L9 5zM6 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+          </div>
+          <h3>Tailored Financial Solution</h3>
+          <p>Custom lending solutions designed for acquisition, development, and property management needs unique to your project.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Competitive Terms</h3>
+          <p>Flexible lending rates and terms tailored to your project lifecycle, ensuring optimal financial structuring at every stage.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Speed and Agility</h3>
+          <p>Quick loan processing and approval timelines designed to meet critical deadlines and capitalize on time-sensitive opportunities.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Experienced Support</h3>
+          <p>Dedicated financial experts who understand real estate and business lending, providing guidance from application through funding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL ESTATE LENDING PRODUCTS -->
+  <section class="lending-products">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Real Estate Lending</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Real Estate Lending Products</h2>
+        <p class="body-lg">Comprehensive lending solutions for every phase of your real estate investment journey.</p>
+      </div>
+      <div class="products-grid five-col">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4"/></svg>
+          </div>
+          <h3>Hard Money Financing</h3>
+          <p>Short-term, asset-based lending with flexible terms for quick property acquisitions and investments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>
+          </div>
+          <h3>Bridge Loans</h3>
+          <p>Interim financing solutions to bridge the gap during property transitions, renovations, or refinancing periods.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6"/></svg>
+          </div>
+          <h3>Development &amp; Construction</h3>
+          <p>Comprehensive financing from planning through completion for ground-up development and major renovation projects.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <h3>DSCR Loans</h3>
+          <p>Debt Service Coverage Ratio loans for income-producing properties, qualified by property cash flow rather than personal income.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+          </div>
+          <h3>Mezzanine Loans</h3>
+          <p>Hybrid debt and equity financing solutions that provide additional capital beyond senior debt for larger projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS LENDING PRODUCTS -->
+  <section class="lending-products" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Business Lending</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Business Lending Products</h2>
+        <p class="body-lg">Strategic financing solutions to fuel business operations, growth, and strategic acquisitions.</p>
+      </div>
+      <div class="products-grid five-col">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>Asset Based Financing</h3>
+          <p>Leverage your tangible business assets to unlock liquidity and fuel operations without diluting ownership.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <h3>Debt Restructuring</h3>
+          <p>Improve existing debt terms, reduce interest burdens, and optimize your capital structure for long-term sustainability.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Working &amp; Growth Capital</h3>
+          <p>Operational and expansion funding to support daily business needs and strategic growth initiatives.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Mergers &amp; Acquisitions</h3>
+          <p>Strategic financing for business combinations, enabling growth through acquisition of complementary companies.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Leveraged Buyouts</h3>
+          <p>Acquisition financing structured with minimal initial capital outlay, leveraging the target company's assets and cash flows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Our Process</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Three Steps to Funding</h2>
+        <p class="body-lg">A streamlined process designed for speed and transparency.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <h3>Submit Application</h3>
+          <p>Complete our streamlined application with your project details, financial information, and funding requirements.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <h3>Application Review</h3>
+          <p>Our team conducts a thorough review of your application, performs due diligence, and structures optimal terms.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <h3>Receive Funding</h3>
+          <p>Upon approval, funds are disbursed quickly so you can move forward with confidence on your project timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Client Testimonials</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Trusted by Investors &amp; Operators</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p class="testimonial-text">"I have gotten to know Tim professionally first and then personally and we share core values on customer service and personal responsibility. His dedication to his clients and community is evident in everything he does."</p>
+          <div class="testimonial-attribution">
+            <div class="testimonial-avatar">EW</div>
+            <div>
+              <div class="testimonial-name">Eric Warfel</div>
+              <div class="testimonial-role">Real Estate Investor</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p class="testimonial-text">"Their strategic approach to real estate investment management has been exceptional. The team at StableRock consistently delivers results while maintaining the highest level of professionalism."</p>
+          <div class="testimonial-attribution">
+            <div class="testimonial-avatar">SR</div>
+            <div>
+              <div class="testimonial-name">Sophia R.</div>
+              <div class="testimonial-role">Real Estate Investment Fund Investor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="label">Get Started</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-md">Explore Our Lending Services</h2>
+        <p class="body-lg">Connect with our lending team to discuss your project and explore flexible financing solutions tailored to your needs.</p>
+        <a href="index.html#contact" class="btn-primary">Schedule a Consultation &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">SR</div>
+            <span class="nav-logo-text">StableRock Collective</span>
+          </a>
+          <p>Expert guidance to grow assets, preserve wealth, and craft enduring legacies. We are your rock.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services-investments.html">Private Investments</a></li>
+            <li><a href="services-lending.html">Business Lending</a></li>
+            <li><a href="services-consulting.html">Consulting</a></li>
+            <li><a href="services-mfo.html">Family Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="investments.html">Investments</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:717-659-1188">717-659-1188</a></li>
+            <li><a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a></li>
+            <li><a href="#">PO Box 338<br>Saddle River, NJ 07458</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StableRock Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>StableRock Collective offers a broad range of real estate and wealth management services but does not directly provide legal, tax, or insurance advice. All investments involve risk. Past performance is not indicative of future results. Offerings are available to accredited investors only. Please review all offering documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero
+    const heroTl = gsap.timeline({ delay: 0.3 });
+    heroTl
+      .fromTo('.hero-label', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+      .fromTo('.hero-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.5')
+      .fromTo('.hero-subtitle', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6');
+
+    // Benefits cards
+    gsap.fromTo('.benefits-grid .service-card', {
+      opacity: 0, y: 50
+    }, {
+      opacity: 1, y: 0, stagger: 0.12, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.benefits-grid', start: 'top 75%' }
+    });
+
+    // Product cards (all sections)
+    document.querySelectorAll('.products-grid').forEach(grid => {
+      gsap.fromTo(grid.querySelectorAll('.service-card'), {
+        opacity: 0, y: 50
+      }, {
+        opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: grid, start: 'top 75%' }
+      });
+    });
+
+    // Process steps
+    gsap.fromTo('.process-step', {
+      opacity: 0, y: 40
+    }, {
+      opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.process-grid', start: 'top 75%' }
+    });
+
+    // Testimonials
+    gsap.fromTo('.testimonial-card', {
+      opacity: 0, y: 40
+    }, {
+      opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.testimonials-grid', start: 'top 75%' }
+    });
+
+    // CTA
+    gsap.fromTo('.cta-inner', {
+      opacity: 0, y: 30
+    }, {
+      opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.cta-section', start: 'top 75%' }
+    });
+  </script>
+</body>
+</html>

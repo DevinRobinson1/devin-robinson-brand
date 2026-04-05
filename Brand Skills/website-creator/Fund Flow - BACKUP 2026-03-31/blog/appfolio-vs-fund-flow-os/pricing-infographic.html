@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>AppFolio Investment Manager vs Fund Flow OS — Pricing Comparison</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: #F0F4F8;
+    width: 100%;
+    min-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    width: 100%;
+    padding: 48px 56px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  .top-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: #132036;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #64748B;
+    margin-bottom: 40px;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* APPFOLIO */
+  .col-left {
+    background: #1E3A5F;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .col-left .col-header {
+    background: #132036;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .col-left .platform-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 6px;
+  }
+
+  .col-left h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .col-left .tagline {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+
+  /* FUND FLOW OS */
+  .col-right {
+    background: #FFF8E8;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #6CDA9A;
+  }
+
+  .col-right .col-header {
+    background: #6CDA9A;
+    padding: 24px 28px 20px;
+  }
+
+  .col-right .platform-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(15,29,54,0.6);
+    margin-bottom: 6px;
+  }
+
+  .col-right h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #132036;
+  }
+
+  .col-right .tagline {
+    font-size: 13px;
+    color: rgba(15,29,54,0.65);
+    margin-top: 4px;
+  }
+
+  .tiers {
+    padding: 20px 28px 28px;
+  }
+
+  .tier {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .col-right .tier {
+    border-bottom: 1px solid rgba(15,29,54,0.08);
+  }
+
+  .tier:last-child { border-bottom: none; }
+
+  .tier-info { flex: 1; }
+
+  .tier-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .col-right .tier-name { color: #132036; }
+
+  .tier-desc {
+    font-size: 11px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+
+  .col-right .tier-desc { color: #64748B; }
+
+  .tier-price {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .price-amount {
+    font-size: 20px;
+    font-weight: 900;
+    color: #6CDA9A;
+    line-height: 1;
+  }
+
+  .col-right .price-amount { color: #132036; }
+
+  .price-period {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-warning {
+    background: rgba(239,68,68,0.15);
+    color: #F87171;
+  }
+
+  .badge-free {
+    background: rgba(34,197,94,0.15);
+    color: #22C55E;
+  }
+
+  .badge-popular {
+    background: #6CDA9A;
+    color: #132036;
+  }
+
+  .badge-custom {
+    background: rgba(120,135,234,0.2);
+    color: #7887EA;
+  }
+
+  .extras {
+    padding: 16px 28px;
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .col-right .extras {
+    background: rgba(15,29,54,0.04);
+    border-top: 1px solid rgba(15,29,54,0.08);
+  }
+
+  .extra-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #94A3B8;
+    padding: 4px 0;
+  }
+
+  .col-right .extra-item { color: #64748B; }
+
+  .icon-warn { color: #F87171; font-size: 13px; }
+  .icon-ok { color: #22C55E; font-size: 13px; }
+
+  .bottom-note {
+    margin-top: 28px;
+    background: #E8F7F0;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bottom-note .note-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .bottom-note p {
+    font-size: 13px;
+    color: #132036;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .bottom-note strong { font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <p class="top-label">Platform Comparison</p>
+  <h1>AppFolio Investment Manager vs Fund Flow OS — Pricing</h1>
+  <p class="subtitle">What you actually pay at every stage of your capital raising journey</p>
+
+  <div class="columns">
+
+    <!-- APPFOLIO INVESTMENT MANAGER -->
+    <div class="col-left">
+      <div class="col-header">
+        <p class="platform-name">Property Management Ecosystem</p>
+        <h2>AppFolio Investment Manager</h2>
+        <p class="tagline">Annual contract required at all tiers</p>
+      </div>
+      <div class="tiers">
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Free Trial <span class="badge badge-warning">Demo Only</span></p>
+            <p class="tier-desc">Limited demo access. No permanent free tier available.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$0</p>
+            <p class="price-period">demo/trial</p>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Core <span class="badge badge-warning">Annual</span></p>
+            <p class="tier-desc">Investor CRM, fundraising workflows, investor portal, financial tracking, asset and pipeline management, ACH payments.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$650</p>
+            <p class="price-period">/month</p>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Premier <span class="badge badge-custom">Custom</span></p>
+            <p class="tier-desc">Full API access, Zapier, SQL exports, custom fields, advanced reporting, Google Tag Manager.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">Custom</p>
+            <p class="price-period">contact sales</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="extras">
+        <div class="extra-item"><span class="icon-warn">✕</span> Annual contract required</div>
+        <div class="extra-item"><span class="icon-warn">✕</span> No free tier</div>
+        <div class="extra-item"><span class="icon-warn">✕</span> No AI outreach at any tier</div>
+        <div class="extra-item"><span class="icon-warn">✕</span> Zapier locked to Premier (custom pricing)</div>
+      </div>
+    </div>
+
+    <!-- FUND FLOW OS -->
+    <div class="col-right">
+      <div class="col-header">
+        <p class="platform-name">AI-Native Operating System</p>
+        <h2>Fund Flow OS</h2>
+        <p class="tagline">Scales from first lender to $100M AUM, no lock-in</p>
+      </div>
+      <div class="tiers">
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Free <span class="badge badge-free">Forever</span></p>
+            <p class="tier-desc">100 contacts, 5 deals, 5 loans, 10 lender search credits. No card required.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$0</p>
+            <p class="price-period">/month</p>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Starter</p>
+            <p class="tier-desc">Flow AI, Flow Guard compliance, email sync, doc signing, automations.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$97</p>
+            <p class="price-period">/month</p>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Pro <span class="badge badge-popular">Most Popular</span></p>
+            <p class="tier-desc">Investor portal, API/Zapier, 500 data credits, priority support.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$297</p>
+            <p class="price-period">/month</p>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-info">
+            <p class="tier-name">Fund Admin</p>
+            <p class="tier-desc">Full distributions, waterfalls, reporting. Year 2+: 0.25% AUM.</p>
+          </div>
+          <div class="tier-price">
+            <p class="price-amount">$497</p>
+            <p class="price-period">/month Y1</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="extras">
+        <div class="extra-item"><span class="icon-ok">✓</span> No annual contract, cancel anytime</div>
+        <div class="extra-item"><span class="icon-ok">✓</span> Permanent free tier, no credit card</div>
+        <div class="extra-item"><span class="icon-ok">✓</span> Flow AI included at Starter and above</div>
+        <div class="extra-item"><span class="icon-ok">✓</span> Flow Guard compliance included at Starter+</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-note">
+    <span class="note-icon">💡</span>
+    <p><strong>The math:</strong> AppFolio Investment Manager Core costs <strong>$7,800/year</strong>. Fund Flow OS Pro costs <strong>$3,564/year</strong> with no lock-in and includes AI-powered outreach and compliance tracking that AppFolio doesn't offer at any tier.</p>
+  </div>
+
+</div>
+</body>
+</html>

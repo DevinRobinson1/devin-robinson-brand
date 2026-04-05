@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund Founders — Community for Aspiring Fund Managers</title>
+  <meta name="description" content="The community for aspiring fund managers. Education, community, and a podcast for real estate operators who want to raise capital and manage funds.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/fund-founders.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/fund-founders.html">
+  <meta property="og:title" content="Fund Founders - Fund Flow OS">
+  <meta property="og:description" content="Education, community, and podcast for aspiring fund managers.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:title" content="Fund Founders - Fund Flow OS">
+  <meta name="twitter:description" content="Education, community, and podcast for aspiring fund managers.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .page-hero { padding: 10rem 0 5rem; text-align: center; background: var(--cream); }
+    .page-hero h1 { font-family: var(--sans); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
+    .page-hero .hero-sub { font-size: 1.125rem; color: var(--ink-60); max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+    .section { padding: 6rem 0; }
+    .section-alt { background: var(--white); }
+
+    /* Mission */
+    .mission-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    .mission-block .stat { font-family: var(--sans); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--green-dark); margin-bottom: 0.5rem; }
+    .mission-block .stat-label { font-size: 1.0625rem; color: var(--ink-60); margin-bottom: 2rem; line-height: 1.7; }
+    .mission-block .mission-text { font-size: 1.125rem; color: var(--ink-80); line-height: 1.8; max-width: 600px; margin: 0 auto; }
+
+    /* Pillars */
+    .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .pillar-card { background: var(--white); border: 1px solid var(--ink-10); border-radius: var(--r-lg); padding: 2.5rem; transition: all 0.3s var(--ease); }
+    .pillar-card:hover { border-color: var(--ink-20); box-shadow: var(--shadow-md); }
+    .pillar-icon { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--green-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.5rem; }
+    .pillar-card h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .pillar-card p { font-size: 0.9375rem; color: var(--ink-60); line-height: 1.7; }
+
+    /* Links / channels */
+    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .channel-card { background: var(--navy); border-radius: var(--r-lg); padding: 2.5rem; text-align: center; transition: all 0.3s var(--ease); }
+    .channel-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .channel-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+    .channel-icon svg { width: 24px; height: 24px; fill: var(--green); }
+    .channel-card h3 { font-family: var(--sans); font-size: 1.125rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .channel-card p { font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 1.25rem; }
+    .channel-card a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--green); }
+    .channel-card a:hover { text-decoration: underline; }
+
+    /* Testimonial / quote */
+    .quote-block { max-width: 720px; margin: 0 auto; text-align: center; }
+    .quote-block blockquote { font-family: var(--sans); font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 1.5rem; }
+    .quote-block cite { font-size: 0.9375rem; color: var(--ink-60); font-style: normal; }
+
+    /* CTA */
+    .cta-dark { background: var(--navy); border-radius: var(--r-xl); padding: 5rem 2rem; text-align: center; }
+    .cta-dark h2 { font-family: var(--sans); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    .cta-dark p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 2rem; font-size: 1.0625rem; line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 8rem 0 3rem; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .channels-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#audience">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">Fund Founders</p>
+    <h1 class="reveal">The Community for<br>Aspiring Fund Managers.</h1>
+    <p class="hero-sub reveal">Education, community, and a podcast for real estate operators who want to raise capital and manage funds.</p>
+    <div style="margin-top: 2rem;" class="reveal">
+      <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Join Fund Founders <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="mission-block reveal">
+      <div class="stat">1.4%</div>
+      <div class="stat-label">of $82 trillion in US assets under management is managed by minorities and women.</div>
+      <p class="mission-text">Fund Founders exists to change that number. We are building the education, community, and tools to democratize access to Wall Street — so the next generation of fund managers looks like America.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">What's included</p>
+      <h2>Everything you need to launch your fund.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-icon">&#127897;</div>
+        <h3>Fund Founders Podcast</h3>
+        <p>Deep dives with real operators who have launched funds, raised capital, and built portfolios. No theory — just the playbook from people who have done it.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon">&#129309;</div>
+        <h3>Community</h3>
+        <p>Connect with other aspiring and active fund managers. Share deals, ask questions, find partners, and build relationships with people on the same path.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon">&#128218;</div>
+        <h3>Education</h3>
+        <p>Courses, templates, and playbooks that teach you how to structure a fund, raise capital, manage investors, and stay compliant. Built by operators, not professors.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-icon">&#128249;</div>
+        <h3>Weekly Office Hours</h3>
+        <p>Live sessions where you bring your questions and get answers from Devin and guest operators. Fund structure, legal questions, capital raising strategy — all on the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="quote-block reveal">
+      <blockquote>"Only 1.4% of assets are managed by minorities and women. That is not a diversity problem — that is an access problem. Fund Founders is the access."</blockquote>
+      <cite>Devin Robinson, Founder</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Connect with us</p>
+      <h2>Find Fund Founders everywhere.</h2>
+    </div>
+    <div class="channels-grid reveal">
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <h3>YouTube</h3>
+        <p>Full episodes, tutorials, and behind-the-scenes of building Fund Flow and raising capital.</p>
+        <a href="https://youtube.com/@devin.robinson1">Watch now &rarr;</a>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <h3>Podcast</h3>
+        <p>Deep dives on fund management, capital raising, and real operator stories. New episodes weekly.</p>
+        <a href="#">Listen now &rarr;</a>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 8c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z"/></svg>
+        </div>
+        <h3>Community</h3>
+        <p>Join the Fund Founders community. Connect with operators, share wins, and learn from people who are building.</p>
+        <a href="#">Join free &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-dark reveal">
+      <h2>Join Fund Founders.</h2>
+      <p>Education, community, and the tools to launch your fund. The next generation of fund managers starts here.</p>
+      <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Join Fund Founders <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html#platform">Private Lender Database</a>
+        <a href="index.html#platform">Flow AI Employee</a>
+        <a href="index.html#platform">Flow Guard Compliance</a>
+        <a href="index.html#platform">Investor CRM</a>
+        <a href="index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="index.html#audience">Flippers & Builders</a>
+        <a href="index.html#audience">Syndicators</a>
+        <a href="index.html#audience">Private Lenders</a>
+        <a href="index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="syndications.html">7-Day Syndications</a>
+        <a href="fund-admin.html">Fund Administration</a>
+        <a href="flow-launch.html">Flow Launch (DFY)</a>
+        <a href="fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — StableRock Collective | Insights & Resources</title>
+  <meta name="description" content="Research, analysis, and perspectives from the StableRock Collective investment team. Wealth management, alternative investments, and real estate insights.">
+  <meta property="og:title" content="Blog — StableRock Collective">
+  <meta property="og:description" content="Research, analysis, and perspectives from our investment team.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #2C3830;
+      --bg-secondary: #F8F5F0;
+      --bg-tertiary: #344038;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-cream: #F8F5F0;
+      --bg-cream-dark: #EDE8E0;
+      --bg-white: #FFFFFF;
+      --text-primary: #F5F1EB;
+      --text-dark: #2A2A2A;
+      --text-dark-secondary: #5A5550;
+      --text-secondary: #B0AAA2;
+      --text-muted: #7A756E;
+      --gold: #B49B57;
+      --gold-light: #D4BA7A;
+      --gold-dark: #8A7640;
+      --gold-glow: rgba(180, 155, 87, 0.15);
+      --border: rgba(180, 155, 87, 0.15);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(44, 56, 48, 0.1);
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --container: 1200px;
+      --section-pad: clamp(5rem, 12vh, 9rem);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Film grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .display-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text-dark-secondary);
+      font-weight: 300;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: block;
+      margin: 1.5rem 0;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      padding: 0.75rem 0;
+      background: rgba(248, 245, 240, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav.scrolled .nav-logo-text {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-toggle span {
+      background: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a {
+      color: var(--text-dark-secondary);
+    }
+
+    .nav.scrolled .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .nav.scrolled .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold) !important;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--bg-primary) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(180, 155, 87, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: transparent;
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .footer .btn-secondary {
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       PAGE HERO (Interior)
+       ============================================ */
+    .page-hero {
+      position: relative;
+      padding: 12rem 0 6rem;
+      text-align: center;
+      overflow: hidden;
+      background: url('images/hero-mountain.jpg') center center / cover no-repeat;
+      color: var(--text-primary);
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(44, 56, 48, 0.82);
+    }
+
+    .page-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(180, 155, 87, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 60%, rgba(180, 155, 87, 0.06) 0%, transparent 60%);
+      animation: heroGlow 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(180, 155, 87, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(180, 155, 87, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 20%, transparent 70%);
+    }
+
+    .page-hero .label,
+    .page-hero .display-lg,
+    .page-hero .body-lg {
+      color: var(--text-primary);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero-label {
+      margin-bottom: 1.5rem;
+      display: block;
+      opacity: 0;
+    }
+
+    .page-hero-title {
+      margin-bottom: 1.25rem;
+      opacity: 0;
+    }
+
+    .page-hero-subtitle {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    /* ============================================
+       FEATURED POST
+       ============================================ */
+    .featured-post {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--gold);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-light);
+      border-left-color: var(--gold);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .featured-img {
+      background: var(--bg-cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(180, 155, 87, 0.06));
+    }
+
+    .featured-body {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(180, 155, 87, 0.12);
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      border: 1px solid rgba(180, 155, 87, 0.25);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+
+    .featured-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .featured-card:hover .featured-body h2 {
+      color: var(--gold);
+    }
+
+    .featured-body p {
+      font-size: 0.95rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .featured-meta span {
+      font-size: 0.8rem;
+      color: var(--text-dark-secondary);
+    }
+
+    .featured-meta .meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-dark-secondary);
+    }
+
+    .featured-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      transition: gap 0.3s ease;
+    }
+
+    .featured-card:hover .featured-read {
+      gap: 0.75rem;
+    }
+
+    /* ============================================
+       BLOG GRID
+       ============================================ */
+    .blog-grid-section {
+      padding: var(--section-pad) 0;
+      background: var(--bg-white);
+    }
+
+    .blog-grid-header {
+      margin-bottom: 3rem;
+      opacity: 0;
+      color: var(--text-dark);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .blog-card-img {
+      height: 180px;
+      background: var(--bg-cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(248, 245, 240, 0.3));
+    }
+
+    .blog-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(44, 56, 48, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-card-body {
+      padding: 1.75rem;
+    }
+
+    .blog-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .blog-card:hover .blog-card-body h3 {
+      color: var(--gold-dark);
+    }
+
+    .blog-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+    }
+
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.75rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .blog-card-date {
+      font-size: 0.75rem;
+      color: var(--text-dark-secondary);
+    }
+
+    .blog-card-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.3s ease;
+    }
+
+    .blog-card:hover .blog-card-link {
+      gap: 0.6rem;
+    }
+
+    /* ============================================
+       RESOURCE DOWNLOADS
+       ============================================ */
+    .downloads {
+      padding: var(--section-pad) 0;
+      background: var(--bg-cream);
+    }
+
+    .downloads-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .downloads-header .label {
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .downloads-header .display-lg {
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .downloads-header .body-lg {
+      color: var(--text-dark-secondary);
+    }
+
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .download-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.5s var(--ease-out);
+      opacity: 0;
+    }
+
+    .download-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .download-icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+      transition: all 0.4s ease;
+    }
+
+    .download-card:hover .download-icon {
+      border-color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    .download-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      color: var(--text-dark);
+    }
+
+    .download-card p {
+      font-size: 0.85rem;
+      color: var(--text-dark-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .download-cta:hover {
+      background: var(--gold);
+      color: var(--bg-white);
+    }
+
+    /* ============================================
+       NEWSLETTER
+       ============================================ */
+    .newsletter {
+      padding: var(--section-pad) 0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .newsletter .label {
+      color: var(--gold);
+    }
+
+    .newsletter .display-md {
+      color: var(--text-primary);
+    }
+
+    .newsletter .body-lg {
+      color: var(--text-secondary);
+    }
+
+    .newsletter-inner {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.9rem 1.25rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--gold);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 5rem 0 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer .nav-logo-text {
+      color: var(--text-primary);
+    }
+
+    .footer-brand p {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-social a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       SVG ICONS
+       ============================================ */
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .downloads-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(44, 56, 48, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-img {
+        min-height: 200px;
+      }
+
+      .featured-body {
+        padding: 2rem;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .downloads-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">SR</div>
+        <span class="nav-logo-text">StableRock Collective</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="investments.html">Investments</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container page-hero-content">
+      <span class="label page-hero-label">Blog</span>
+      <h1 class="display-lg page-hero-title">Insights &amp; Resources</h1>
+      <p class="body-lg page-hero-subtitle">Research, analysis, and perspectives from our investment team.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURED POST
+       ============================================ -->
+  <section class="featured-post">
+    <div class="container">
+      <a href="#" class="featured-card">
+        <div class="featured-img">
+          <img src="images/blog-wealth.jpg" alt="Private wealth management strategies" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="featured-body">
+          <span class="featured-tag">Report</span>
+          <h2>Top Private Wealth Management Tips for High-Net-Worth Individuals</h2>
+          <p>Key strategies for preserving and growing wealth across market cycles, with insights from our advisory team on portfolio optimization and risk management.</p>
+          <div class="featured-meta">
+            <span>June 11, 2025</span>
+            <span class="meta-dot"></span>
+            <span>By StableRock Team</span>
+          </div>
+          <span class="featured-read">Read Article &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG GRID
+       ============================================ -->
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid-header">
+        <span class="label">All Articles</span>
+        <span class="gold-rule"></span>
+      </div>
+      <div class="blog-grid">
+
+        <!-- Post 1 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/blog-portfolio.jpg" alt="Diversify your portfolio" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Guide</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Why and How to Diversify Your Portfolio with Alternative Investments</h3>
+            <p>Understanding the role of alternatives in a modern, resilient portfolio.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">June 11, 2025</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 2 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/blog-consulting.jpg" alt="Real estate and business consulting" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Guide</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Why Real Estate and Business Consulting are Essential for Sustainable Growth</h3>
+            <p>The strategic advantage of expert advisory in real estate and business operations.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">May 15, 2025</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 3 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/aerial-realestate.jpg" alt="Strategic wealth management" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Wealth</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Unlocking Long-Term Financial Success: How Strategic Wealth Management Helps You Grow</h3>
+            <p>A comprehensive look at how proactive wealth strategies compound over time.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 4 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/handshake-partnership.jpg" alt="Strategic wealth management vs traditional planning" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Strategy</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Strategic Wealth Management vs. Traditional Financial Planning: What's the Difference?</h3>
+            <p>Breaking down the key distinctions that impact your long-term outcomes.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 5 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/team-office.jpg" alt="Private real estate investments" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Real Estate</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Private Real Estate: A Powerful Asset in Your Alternative Investment Strategy</h3>
+            <p>Why institutional investors allocate to private real estate and how you can too.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 6 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/blog-wealth.jpg" alt="Alternative investments guide" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Education</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Alternative Investments 101: A Beginner's Guide to Diversifying Beyond Stocks</h3>
+            <p>Everything you need to know to start building a diversified alternative portfolio.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 7 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/blog-consulting.jpg" alt="Private wealth advisory" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Advisory</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Navigating Wealth: How a Private Wealth Advisory Firm Elevates Your Strategy</h3>
+            <p>The advantages of working with a dedicated private advisory team.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 8 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/handshake-partnership.jpg" alt="Multifamily offices for wealth preservation" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">MFO</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Why Multifamily Offices Are Key to Long-Term Wealth Preservation</h3>
+            <p>How shared family office infrastructure creates compounding advantages.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 9 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/aerial-realestate.jpg" alt="Multifamily office real estate services" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">MFO</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>How Multifamily Office Services Can Simplify and Enhance Your Real Estate Investments</h3>
+            <p>Streamlining complex real estate portfolios through coordinated family office services.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 10 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/blog-portfolio.jpg" alt="Strategic wealth management roadmap" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Wealth</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Strategic Wealth Management: A Roadmap to Financial Security</h3>
+            <p>Building a clear, actionable framework for lasting financial resilience.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Post 11 -->
+        <a href="#" class="blog-card">
+          <div class="blog-card-img">
+            <img src="images/team-office.jpg" alt="Alternative investments for future success" style="width:100%;height:100%;object-fit:cover;">
+            <span class="blog-tag">Education</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Alternative Investments: What You Need to Know for Future Success</h3>
+            <p>Preparing your portfolio for the next decade of alternative asset growth.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">Latest</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       RESOURCE DOWNLOADS
+       ============================================ -->
+  <section class="downloads">
+    <div class="container">
+      <div class="downloads-header">
+        <span class="label">Free Resources</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-lg">Downloadable Resources</h2>
+        <p class="body-lg">In-depth guides and reports to support your investment decisions.</p>
+      </div>
+      <div class="downloads-grid">
+
+        <div class="download-card">
+          <div class="download-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+          </div>
+          <h3>Debt Fund eBook</h3>
+          <p>A comprehensive guide to understanding real estate debt funds and how they generate consistent returns.</p>
+          <a href="#" class="download-cta">Download &rarr;</a>
+        </div>
+
+        <div class="download-card">
+          <div class="download-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+          </div>
+          <h3>Secret To Wealth eBook</h3>
+          <p>Discover the principles and strategies that high-net-worth individuals use to build and preserve wealth.</p>
+          <a href="#" class="download-cta">Download &rarr;</a>
+        </div>
+
+        <div class="download-card">
+          <div class="download-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Annual Report</h3>
+          <p>Our latest annual report with fund performance, market outlook, and strategic priorities for the year ahead.</p>
+          <a href="#" class="download-cta">Download &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       NEWSLETTER
+       ============================================ -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <span class="label">Stay Informed</span>
+        <span class="gold-rule" style="margin: 1.25rem auto;"></span>
+        <h2 class="display-md">Market Intelligence,<br>Delivered.</h2>
+        <p class="body-lg">Subscribe for quarterly investment insights, market analysis, and exclusive opportunities from our team.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email address" aria-label="Email address">
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">SR</div>
+            <span class="nav-logo-text">StableRock Collective</span>
+          </a>
+          <p>Expert guidance to grow assets, preserve wealth, and craft enduring legacies. We are your rock.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Private Investments</a></li>
+            <li><a href="index.html#services">Business Lending</a></li>
+            <li><a href="index.html#services">Consulting</a></li>
+            <li><a href="index.html#services">Family Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Debt Fund eBook</a></li>
+            <li><a href="#">Wealth eBook</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:717-659-1188">717-659-1188</a></li>
+            <li><a href="mailto:tim@stablerockcollective.com">tim@stablerockcollective.com</a></li>
+            <li><a href="#">PO Box 338<br>Saddle River, NJ 07458</a></li>
+            <li><a href="#" class="btn-secondary" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.7rem;">Investor Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 StableRock Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>StableRock Collective offers a broad range of real estate and wealth management services but does not directly provide legal, tax, or insurance advice. All investments involve risk. Past performance is not indicative of future results. Offerings are available to accredited investors only. Please review all offering documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT — ANIMATIONS
+       ============================================ -->
+  <script>
+    // ============================================
+    // Lenis Smooth Scroll
+    // ============================================
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect Lenis to GSAP
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // ============================================
+    // Navigation
+    // ============================================
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ============================================
+    // GSAP ScrollTrigger Registration
+    // ============================================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================
+    // Page Hero Animations
+    // ============================================
+    const heroTl = gsap.timeline({ delay: 0.3 });
+
+    heroTl
+      .fromTo('.page-hero-label', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      })
+      .fromTo('.page-hero-title', {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .fromTo('.page-hero-subtitle', {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.6');
+
+    // ============================================
+    // Featured Post
+    // ============================================
+    gsap.fromTo('.featured-card', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.featured-post',
+        start: 'top 80%',
+      }
+    });
+
+    // ============================================
+    // Blog Grid Header
+    // ============================================
+    gsap.fromTo('.blog-grid-header', {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.blog-grid-header',
+        start: 'top 85%',
+      }
+    });
+
+    // ============================================
+    // Blog Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.blog-card', {
+      opacity: 0,
+      y: 50
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.08,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.blog-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Download Cards — Staggered Reveal
+    // ============================================
+    gsap.fromTo('.download-card', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.downloads-grid',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Newsletter
+    // ============================================
+    gsap.fromTo('.newsletter-inner', {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.newsletter',
+        start: 'top 75%',
+      }
+    });
+
+    // ============================================
+    // Gold rule animations
+    // ============================================
+    gsap.utils.toArray('.gold-rule').forEach(rule => {
+      gsap.fromTo(rule, {
+        scaleX: 0,
+        transformOrigin: 'left center'
+      }, {
+        scaleX: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: rule,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // ============================================
+    // Parallax on page hero background
+    // ============================================
+    gsap.to('.page-hero-bg', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.page-hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+  </script>
+</body>
+</html>

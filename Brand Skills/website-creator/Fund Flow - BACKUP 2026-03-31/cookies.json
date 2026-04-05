@@ -1,0 +1,12 @@
+Found cookies at: C:\Users\drrob\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies
+Traceback (most recent call last):
+  File "C:\Users\drrob\OneDrive\Desktop\Claude\Skills\Website creator\Fund Flow\extract-cookies.py", line 127, in <module>
+    main()
+  File "C:\Users\drrob\OneDrive\Desktop\Claude\Skills\Website creator\Fund Flow\extract-cookies.py", line 84, in main
+    shutil.copy2(source_db, tmp_db)
+  File "C:\Users\drrob\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 475, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\drrob\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\drrob\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies'

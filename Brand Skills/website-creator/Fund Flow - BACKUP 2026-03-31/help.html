@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — Fund Flow OS</title>
+  <meta name="description" content="Find answers, guides, and support for Fund Flow OS. Get help with the Private Lender Database, Flow AI, compliance, funds, and more.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .page-hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+    }
+    .page-hero h1 { margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1.0625rem; color: var(--ink-60); max-width: 520px; margin: 0 auto; }
+
+    /* Search */
+    .help-search {
+      max-width: 560px;
+      margin: 2rem auto 0;
+      position: relative;
+    }
+    .help-search input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3rem;
+      background: var(--white);
+      border: 1px solid var(--ink-20);
+      border-radius: var(--r-lg);
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .help-search input::placeholder { color: var(--ink-40); }
+    .help-search input:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
+    .help-search svg {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-40);
+    }
+
+    /* Categories */
+    .categories-section { padding: 4rem 0 6rem; }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .category-card {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .category-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--r-md);
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .category-icon svg { width: 22px; height: 22px; color: var(--green); }
+    .category-card h3 { font-size: 1.125rem; margin-bottom: 1rem; }
+    .category-card ul { list-style: none; padding: 0; }
+    .category-card li { margin-bottom: 0.5rem; }
+    .category-card a {
+      font-size: 0.875rem;
+      color: var(--ink-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .category-card a:hover { color: var(--green); }
+
+    /* Popular articles */
+    .popular-section {
+      padding: 6rem 0;
+      background: var(--ink-05);
+    }
+    .popular-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem 2rem;
+      margin-top: 2rem;
+    }
+    .popular-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-md);
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.9375rem;
+      font-weight: 450;
+      transition: box-shadow 0.2s var(--ease), border-color 0.2s;
+    }
+    .popular-link:hover { border-color: var(--green-border); box-shadow: var(--shadow-sm); }
+    .popular-link svg { flex-shrink: 0; color: var(--green); }
+
+    /* Contact support */
+    .support-section {
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .support-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+    .support-card {
+      flex: 1;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      text-align: center;
+    }
+    .support-card h4 { margin-bottom: 0.5rem; }
+    .support-card p { font-size: 0.875rem; color: var(--ink-60); margin-bottom: 0; }
+    .support-card a { color: var(--green); font-weight: 550; text-decoration: none; }
+    .support-card a:hover { text-decoration: underline; }
+
+    @media (max-width: 1024px) {
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 7rem 0 3rem; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .popular-list { grid-template-columns: 1fr; }
+      .support-cards { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#audience">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">Help Center</p>
+    <h1 class="reveal">How Can We Help?</h1>
+    <p class="reveal">Search our knowledge base or browse by category to find the answers you need.</p>
+    <div class="help-search reveal">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search articles, guides, and FAQs...">
+    </div>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Browse Topics</p>
+      <h2>Help by category</h2>
+    </div>
+    <div class="categories-grid reveal">
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Getting Started</h3>
+        <ul>
+          <li><a href="#">Setting up your Fund Flow account</a></li>
+          <li><a href="#">Importing your existing investors</a></li>
+          <li><a href="#">Configuring your first fund</a></li>
+          <li><a href="#">Navigating the dashboard</a></li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Private Lender Database</h3>
+        <ul>
+          <li><a href="#">Searching 9M+ verified lenders</a></li>
+          <li><a href="#">Filtering by deal type and location</a></li>
+          <li><a href="#">Enriching lender profiles</a></li>
+          <li><a href="#">Exporting lender lists</a></li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Flow AI</h3>
+        <ul>
+          <li><a href="#">How Flow AI agents work</a></li>
+          <li><a href="#">Automating investor communications</a></li>
+          <li><a href="#">AI-generated distribution reports</a></li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Compliance & Flow Guard</h3>
+        <ul>
+          <li><a href="#">Understanding Flow Guard alerts</a></li>
+          <li><a href="#">506(b) vs. 506(c) compliance rules</a></li>
+          <li><a href="#">Accredited investor verification</a></li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Funds & Syndications</h3>
+        <ul>
+          <li><a href="#">Creating a new fund</a></li>
+          <li><a href="#">Managing waterfall distributions</a></li>
+          <li><a href="#">Setting up capital calls</a></li>
+          <li><a href="#">Investor portal walkthrough</a></li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3>Billing & Account</h3>
+        <ul>
+          <li><a href="#">Managing your subscription</a></li>
+          <li><a href="#">Updating payment methods</a></li>
+          <li><a href="#">Upgrading or downgrading plans</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="popular-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Popular</p>
+      <h2>Most-read articles</h2>
+    </div>
+    <div class="popular-list reveal">
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>How to set up your first fund in 10 minutes</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Understanding accredited vs. non-accredited investors</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>How Flow Guard prevents compliance violations</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Searching the Private Lender Database like a pro</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Connecting your bank account for distributions</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Customizing your investor portal branding</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>How AI agents draft investor updates automatically</a>
+      <a href="#" class="popular-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Importing investors from a CSV or spreadsheet</a>
+    </div>
+  </div>
+</section>
+
+<section class="support-section">
+  <div class="container">
+    <p class="overline reveal">Still stuck?</p>
+    <h2 class="reveal">Can't find what you need?</h2>
+    <p class="reveal" style="max-width: 460px; margin: 0.5rem auto 0; color: var(--ink-60);">Our support team responds in under 4 hours. We're here to help you raise capital faster.</p>
+    <div class="support-cards reveal">
+      <div class="support-card">
+        <h4>Email Support</h4>
+        <p><a href="mailto:support@fundflowos.com">support@fundflowos.com</a></p>
+        <p style="margin-top: 0.5rem;">Response time: &lt; 4 hours</p>
+      </div>
+      <div class="support-card">
+        <h4>Book a Demo</h4>
+        <p>Walk through the platform live with our team.</p>
+        <p style="margin-top: 0.75rem;"><a href="https://fundflowos.com/register">Schedule a call &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Platform</h4><a href="index.html#platform">Private Lender Database</a><a href="index.html#platform">Flow AI Employee</a><a href="index.html#platform">Flow Guard Compliance</a><a href="index.html#platform">Investor CRM</a></div>
+      <div class="footer-col"><h4>Solutions</h4><a href="index.html#audience">Flippers & Builders</a><a href="index.html#audience">Syndicators</a><a href="index.html#audience">Fund Managers</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="#">7-Day Syndications</a><a href="#">Fund Administration</a><a href="#">Flow Launch (DFY)</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="blog.html">Blog</a><a href="podcast.html">Fund Founders Podcast</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

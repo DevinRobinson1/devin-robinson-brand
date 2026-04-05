@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Day Syndications — Fund Flow OS</title>
+  <meta name="description" content="Launch your syndication in 7 days for $6,500. SEC attorney-reviewed PPM, Operating Agreement, and Subscription Agreements — guided by AI.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/syndications.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/syndications.html">
+  <meta property="og:title" content="7-Day Syndication - Fund Flow OS">
+  <meta property="og:description" content="SEC attorney-reviewed PPM, Operating Agreement, and Subscription Agreements. $6,500 flat. 7 days.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:title" content="7-Day Syndication - Fund Flow OS">
+  <meta name="twitter:description" content="SEC attorney-reviewed PPM, Operating Agreement, and Subscription Agreements. $6,500 flat. 7 days.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .page-hero { padding: 10rem 0 5rem; text-align: center; background: var(--cream); }
+    .page-hero h1 { font-family: var(--sans); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
+    .page-hero .hero-sub { font-size: 1.125rem; color: var(--ink-60); max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+    .section { padding: 6rem 0; }
+    .section-alt { background: var(--white); }
+
+    /* Comparison */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 0 auto; }
+    .compare-card { border-radius: var(--r-lg); padding: 2.5rem; border: 1px solid var(--ink-10); }
+    .compare-card.old { background: var(--cream); }
+    .compare-card.new { background: var(--green-light); border-color: var(--green-border); }
+    .compare-card h3 { font-family: var(--sans); font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--ink); }
+    .compare-card .price { font-family: var(--sans); font-size: 2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+    .compare-card .timeline { font-size: 0.9375rem; color: var(--ink-60); margin-bottom: 1.5rem; }
+    .compare-card ul { list-style: none; }
+    .compare-card li { font-size: 0.9375rem; color: var(--ink-60); padding: 0.5rem 0; border-top: 1px solid var(--ink-05); display: flex; align-items: center; gap: 0.5rem; }
+    .compare-card li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .compare-card.old li::before { background: var(--ink-20); }
+    .compare-card.new li::before { background: var(--green); }
+
+    /* Included */
+    .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .included-item { background: var(--white); border: 1px solid var(--ink-10); border-radius: var(--r-lg); padding: 2rem; transition: all 0.3s var(--ease); }
+    .included-item:hover { border-color: var(--ink-20); box-shadow: var(--shadow-md); }
+    .included-icon { width: 40px; height: 40px; border-radius: var(--r-md); background: var(--green-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--green-dark); font-size: 1.25rem; }
+    .included-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .included-item p { font-size: 0.9375rem; color: var(--ink-60); line-height: 1.6; }
+
+    /* Process */
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; counter-reset: step; }
+    .process-step { text-align: center; position: relative; }
+    .process-step::before { counter-increment: step; content: counter(step); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--white); font-family: var(--sans); font-weight: 700; font-size: 1.125rem; margin: 0 auto 1.25rem; }
+    .process-step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.875rem; color: var(--ink-60); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--ink-10); }
+    .faq-q { padding: 1.5rem 0; font-family: var(--sans); font-weight: 600; font-size: 1rem; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q::after { content: "+"; font-size: 1.25rem; color: var(--ink-40); transition: transform 0.3s var(--ease); }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
+    .faq-a p { padding: 0 0 1.5rem; font-size: 0.9375rem; color: var(--ink-60); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* CTA */
+    .cta-dark { background: var(--navy); border-radius: var(--r-xl); padding: 5rem 2rem; text-align: center; }
+    .cta-dark h2 { font-family: var(--sans); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    .cta-dark p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 2rem; font-size: 1.0625rem; line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 8rem 0 3rem; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="index.html#audience">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">7-Day Syndications</p>
+    <h1 class="reveal">$6,500. 7 Days.<br>SEC Attorney-Reviewed.</h1>
+    <p class="hero-sub reveal">PPM, Operating Agreement, and Subscription Agreements — guided by AI, reviewed by our embedded securities attorney.</p>
+    <div style="margin-top: 2rem;" class="reveal">
+      <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Your Syndication <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">The difference</p>
+      <h2>Stop overpaying for fund formation.</h2>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-card old">
+        <h3>Traditional Route</h3>
+        <div class="price">$15,000 - $30,000</div>
+        <div class="timeline">2 - 6 months average</div>
+        <ul>
+          <li>Manual attorney drafting</li>
+          <li>Endless revision cycles</li>
+          <li>No platform integration</li>
+          <li>Additional fees for changes</li>
+          <li>You manage the entire process</li>
+        </ul>
+      </div>
+      <div class="compare-card new">
+        <h3>Fund Flow</h3>
+        <div class="price">$6,500</div>
+        <div class="timeline">7 days, start to finish</div>
+        <ul>
+          <li>AI-guided questionnaire</li>
+          <li>SEC attorney review included</li>
+          <li>Platform integration built in</li>
+          <li>Investor portal ready on day one</li>
+          <li>We manage the process for you</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">What's included</p>
+      <h2>Everything you need to launch.</h2>
+    </div>
+    <div class="included-grid">
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>Private Placement Memorandum</h3>
+        <p>Comprehensive PPM that discloses risks, terms, and structure to your investors. SEC-compliant and attorney-reviewed.</p>
+      </div>
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>Operating Agreement</h3>
+        <p>Defines the legal relationship between manager and investors. Waterfall structure, fees, governance — all covered.</p>
+      </div>
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>Subscription Agreement</h3>
+        <p>Investor onboarding document with accreditation verification, suitability questionnaire, and capital commitment terms.</p>
+      </div>
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>SEC Attorney Review</h3>
+        <p>Every document reviewed by our embedded securities attorney. Not a template shop — real legal oversight.</p>
+      </div>
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>Platform Integration</h3>
+        <p>Documents connect directly to your Fund Flow investor portal. Investors sign, fund, and track — all in one place.</p>
+      </div>
+      <div class="included-item reveal">
+        <div class="included-icon">&#9830;</div>
+        <h3>Investor Portal Setup</h3>
+        <p>White-labeled portal where investors view documents, track performance, and receive distributions. Ready at launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">How it works</p>
+      <h2>Four steps. Seven days. You launch.</h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <h3>Answer Questions</h3>
+        <p>Our guided wizard walks you through deal structure, fees, terms, and investor criteria. Takes about 30 minutes.</p>
+      </div>
+      <div class="process-step">
+        <h3>AI Generates Docs</h3>
+        <p>Fund Flow AI drafts your PPM, Operating Agreement, and Subscription Agreement based on your answers.</p>
+      </div>
+      <div class="process-step">
+        <h3>Attorney Reviews</h3>
+        <p>Our embedded SEC attorney reviews every document for compliance, risk disclosure, and legal accuracy.</p>
+      </div>
+      <div class="process-step">
+        <h3>You Launch</h3>
+        <p>Documents are integrated into your investor portal. Start accepting commitments and raising capital immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">FAQ</p>
+      <h2>Common questions about syndications.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">Is this a template or custom legal work?</div>
+        <div class="faq-a"><p>Custom. Our AI generates documents tailored to your specific deal structure, fees, and terms. Then a licensed SEC attorney reviews every page. This is not a DIY template.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What type of offerings does this cover?</div>
+        <div class="faq-a"><p>We support 506(b) and 506(c) Regulation D offerings — the two most common exemptions for real estate syndications and funds.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I use this for a fund, not just a single deal?</div>
+        <div class="faq-a"><p>Yes. Whether you are syndicating a single asset or launching a blind pool fund, the 7-Day Syndication service covers your formation documents.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I need revisions after the documents are delivered?</div>
+        <div class="faq-a"><p>One round of revisions is included. Additional revisions or material structural changes are handled at a reduced hourly rate with our attorney.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need my own attorney too?</div>
+        <div class="faq-a"><p>Our service covers the formation documents. We always recommend operators consult their own counsel for state-specific blue sky filings and ongoing compliance questions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-dark reveal">
+      <h2>Start your syndication.</h2>
+      <p>$6,500. 7 days. SEC attorney-reviewed. Stop waiting months and spending tens of thousands.</p>
+      <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Your Syndication <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html#platform">Private Lender Database</a>
+        <a href="index.html#platform">Flow AI Employee</a>
+        <a href="index.html#platform">Flow Guard Compliance</a>
+        <a href="index.html#platform">Investor CRM</a>
+        <a href="index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="index.html#audience">Flippers & Builders</a>
+        <a href="index.html#audience">Syndicators</a>
+        <a href="index.html#audience">Private Lenders</a>
+        <a href="index.html#audience">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="syndications.html">7-Day Syndications</a>
+        <a href="fund-admin.html">Fund Administration</a>
+        <a href="flow-launch.html">Flow Launch (DFY)</a>
+        <a href="fund-founders.html">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

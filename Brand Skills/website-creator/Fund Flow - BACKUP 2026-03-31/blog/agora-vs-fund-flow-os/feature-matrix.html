@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Agora vs Fund Flow OS — Feature Comparison</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background: #F0F4F8;
+    width: 100%;
+    min-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    width: 100%;
+    padding: 48px 56px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  .top-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: #132036;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #64748B;
+    margin-bottom: 36px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead tr {
+    background: transparent;
+  }
+
+  thead th {
+    padding: 0 20px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94A3B8;
+  }
+
+  thead th.platform-col {
+    text-align: center;
+  }
+
+  .platform-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+
+  .platform-header.agora {
+    background: #132036;
+  }
+
+  .platform-header.fundflow {
+    background: #6CDA9A;
+  }
+
+  .platform-header .name {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .agora .name { color: #fff; }
+  .fundflow .name { color: #132036; }
+
+  .platform-header .starting {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .agora .starting { color: #94A3B8; }
+  .fundflow .starting { color: rgba(15,29,54,0.6); }
+
+  tbody tr {
+    border-bottom: 1px solid #F1F5F9;
+    transition: background 0.15s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody tr:nth-child(odd) { background: #FAFBFC; }
+  tbody tr:nth-child(even) { background: #fff; }
+
+  tbody tr:hover { background: #F0F7FF; }
+
+  td {
+    padding: 14px 20px;
+  }
+
+  .feature-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .feature-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #132036;
+  }
+
+  .feature-desc {
+    font-size: 12px;
+    color: #94A3B8;
+    line-height: 1.4;
+  }
+
+  .check-cell {
+    text-align: center;
+    width: 180px;
+  }
+
+  .check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .check.yes {
+    background: rgba(34,197,94,0.12);
+    color: #16A34A;
+  }
+
+  .check.no {
+    background: rgba(239,68,68,0.10);
+    color: #DC2626;
+  }
+
+  .check.partial {
+    background: rgba(251,191,36,0.15);
+    color: #D97706;
+    font-size: 11px;
+    font-weight: 700;
+    width: auto;
+    border-radius: 20px;
+    padding: 4px 10px;
+  }
+
+  .winner-badge {
+    display: inline-block;
+    background: #6CDA9A;
+    color: #132036;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .section-divider td {
+    padding: 6px 20px;
+    background: #E8F7F0 !important;
+  }
+
+  .section-divider .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7887EA;
+  }
+
+  .bottom-strip {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .strip-item {
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .strip-left { background: #EFF6FF; border: 1px solid #BFDBFE; }
+  .strip-right { background: #FFFBEB; border: 1px solid #FDE68A; }
+
+  .strip-icon { font-size: 24px; flex-shrink: 0; }
+
+  .strip-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #374151;
+  }
+
+  .strip-text strong { font-weight: 700; color: #132036; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <p class="top-label">Feature Comparison</p>
+  <h1>Agora vs Fund Flow OS</h1>
+  <p class="subtitle">Head-to-head on every feature that matters to real estate fund managers</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 55%">Feature</th>
+        <th class="platform-col" style="width: 22.5%">
+          <div class="platform-header agora">
+            <span class="name">Agora</span>
+            <span class="starting">from $749/mo</span>
+          </div>
+        </th>
+        <th class="platform-col" style="width: 22.5%">
+          <div class="platform-header fundflow">
+            <span class="name">Fund Flow OS</span>
+            <span class="starting">starts free</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="section-divider">
+        <td colspan="3"><span class="section-label">Core Platform</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Investor Portal</span>
+            <span class="feature-desc">White-label portal for LP self-service access</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Investor CRM</span>
+            <span class="feature-desc">Contact management and relationship tracking</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Automated Distributions</span>
+            <span class="feature-desc">One-click distribution processing to investors</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Waterfall Calculations</span>
+            <span class="feature-desc">IRR, equity multiples, preferred returns</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Document Signing</span>
+            <span class="feature-desc">E-sign for subscription agreements, PPMs, etc.</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">K-1 / Tax Documents</span>
+            <span class="feature-desc">Generate and distribute tax documents at year-end</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check partial">Fund Admin tier</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Institutional Data Room</span>
+            <span class="feature-desc">Secure LP due diligence document repository</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check partial">Pro+</span></td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Open-End Fund Accounting</span>
+            <span class="feature-desc">NAV calculations for open-end fund structures</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check partial">Pro+</span></td>
+        <td class="check-cell"><span class="check partial">Partial</span></td>
+      </tr>
+
+      <tr class="section-divider">
+        <td colspan="3"><span class="section-label">AI &amp; Automation</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">AI Autonomous Outreach <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Flow AI drafts, sends, and tracks investor outreach automatically</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Workflow Automations <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Conditional logic, follow-up sequences, pipeline automation</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">API / Zapier Integration <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Connect to external tools and workflows</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check partial">Pro+</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr class="section-divider">
+        <td colspan="3"><span class="section-label">Compliance &amp; Capital Sourcing</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">506(b) &amp; 506(c) Compliance Tracking <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Flow Guard tracks every investor touchpoint as legal evidence</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">KYC / AML Verification</span>
+            <span class="feature-desc">Accredited investor verification built-in</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Private Lender Database <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">9M county-verified lender records to find new capital sources</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr class="section-divider">
+        <td colspan="3"><span class="section-label">Pricing &amp; Commitment</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">Permanent Free Tier <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Start with no credit card, no time limit</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="feature-cell">
+            <span class="feature-name">No Annual Contract Required <span class="winner-badge">Fund Flow OS</span></span>
+            <span class="feature-desc">Month-to-month pricing at every tier</span>
+          </div>
+        </td>
+        <td class="check-cell"><span class="check no">✕</span></td>
+        <td class="check-cell"><span class="check yes">✓</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="bottom-strip">
+    <div class="strip-item strip-left">
+      <span class="strip-icon">🏛️</span>
+      <div class="strip-text">
+        <p><strong>Choose Agora if</strong> you are an established firm with $20M+ AUM that needs institutional reporting, open-end fund accounting, and a best-in-class LP data room.</p>
+      </div>
+    </div>
+    <div class="strip-item strip-right">
+      <span class="strip-icon">⚡</span>
+      <div class="strip-text">
+        <p><strong>Choose Fund Flow OS if</strong> you are building your capital base, want AI doing outreach, need compliance built in from day one, and cannot commit to $9K/year.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

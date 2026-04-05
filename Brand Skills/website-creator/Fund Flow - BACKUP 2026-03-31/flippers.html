@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flippers & Builders — Fund Flow OS</title>
+  <meta name="description" content="Find private lenders, fund your deals, and scale your flipping business. Search 9M+ lender records, automate outreach, and stay compliant — starting at $97/mo.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://fundflowos.com/flippers.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fundflowos.com/flippers.html">
+  <meta property="og:title" content="For Flippers and Builders - Fund Flow OS">
+  <meta property="og:description" content="Find private lenders, manage loans, and raise capital for your next flip or build project.">
+  <meta property="og:image" content="https://fundflowos.com/og-image.png">
+  <meta property="og:site_name" content="Fund Flow OS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@devinrobinson">
+  <meta name="twitter:title" content="For Flippers and Builders - Fund Flow OS">
+  <meta name="twitter:description" content="Find private lenders, manage loans, and raise capital for your next flip or build project.">
+  <meta name="twitter:image" content="https://fundflowos.com/og-image.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       FLIPPERS PAGE — Page-specific styles
+       ============================================ */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background: var(--cream);
+    }
+    .page-hero h1 {
+      font-family: var(--sans);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero .hero-sub {
+      font-size: 1.125rem;
+      color: var(--ink-60);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    /* Pain section */
+    .pain-section { background: var(--white); padding: 6rem 0; }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pain-card {
+      background: var(--cream);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+    }
+    .pain-card .icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .pain-card h3 {
+      font-family: var(--sans); font-weight: 700; font-size: 1.125rem;
+      color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .pain-card p { font-size: 0.9375rem; color: var(--ink-60); line-height: 1.6; }
+
+    /* Solution section */
+    .solution-section { padding: 6rem 0; background: var(--cream); }
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .solution-card {
+      background: var(--white);
+      border: 1px solid var(--green-border);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: all 0.3s var(--ease);
+    }
+    .solution-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .solution-card .step {
+      font-size: 0.75rem; font-weight: 600; color: var(--green-dark);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 1rem; font-family: var(--serif);
+    }
+    .solution-card h3 {
+      font-family: var(--sans); font-weight: 700; font-size: 1.125rem;
+      color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .solution-card p { font-size: 0.9375rem; color: var(--ink-60); line-height: 1.6; }
+
+    /* Ideal for section */
+    .ideal-section { padding: 6rem 0; background: var(--white); }
+    .ideal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .ideal-card {
+      background: var(--cream);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      text-align: center;
+    }
+    .ideal-card .icon { font-size: 2rem; margin-bottom: 1rem; }
+    .ideal-card h3 {
+      font-family: var(--sans); font-weight: 700; font-size: 1.0625rem;
+      color: var(--ink); margin-bottom: 0.375rem;
+    }
+    .ideal-card p { font-size: 0.9375rem; color: var(--ink-60); line-height: 1.6; }
+
+    /* Pricing anchor */
+    .pricing-anchor {
+      padding: 5rem 0;
+      background: var(--cream);
+      text-align: center;
+    }
+    .pricing-anchor .price-compare {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .price-box {
+      background: var(--white);
+      border: 1px solid var(--ink-10);
+      border-radius: var(--r-lg);
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+    .price-box.highlight {
+      border-color: var(--green-border);
+      box-shadow: var(--shadow-md);
+    }
+    .price-box .label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--ink-40);
+      font-family: var(--serif); margin-bottom: 0.5rem;
+    }
+    .price-box .amount {
+      font-family: var(--sans); font-size: 2.25rem; font-weight: 700; color: var(--ink);
+    }
+    .price-box .period { font-size: 0.875rem; color: var(--ink-40); }
+    .price-box .strike {
+      text-decoration: line-through; color: var(--ink-40); font-size: 1.5rem;
+    }
+    .vs { font-size: 0.875rem; font-weight: 600; color: var(--ink-40); font-family: var(--serif); }
+
+    /* CTA */
+    .cta-dark {
+      background: var(--navy); border-radius: var(--r-xl);
+      padding: 5rem 2rem; text-align: center;
+    }
+    .cta-dark h2 {
+      font-family: var(--sans); font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700; color: var(--white); margin-bottom: 1rem;
+    }
+    .cta-dark p {
+      color: rgba(255,255,255,0.7); max-width: 480px;
+      margin: 0 auto 2rem; font-size: 1.0625rem; line-height: 1.7;
+    }
+    .cta-dark .cta-buttons { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .cta-dark .btn-outline { color: var(--white); border-color: rgba(255,255,255,0.2); }
+    .cta-dark .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+    .section-header { text-align: center; margin-bottom: 0.5rem; }
+    .section-header h2 {
+      font-family: var(--sans); font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700; color: var(--ink); margin-bottom: 0.75rem;
+    }
+    .section-header p:not(.overline) {
+      font-size: 1.0625rem; color: var(--ink-60); max-width: 540px;
+      margin: 0 auto; line-height: 1.7;
+    }
+    .section-lg { padding: 6rem 0 8rem; }
+
+    @media (max-width: 768px) {
+      .pain-grid, .solution-grid, .ideal-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 8rem 0 3rem; }
+      .cta-dark { padding: 3.5rem 1.5rem; }
+      .price-compare { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog &amp; Resources</a></li>
+      <li><a href="demo.html" style="color: var(--green); font-weight: 600;">Live Demo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://fundflowos.com/login" class="nav-signin">Sign In</a>
+      <a href="https://fundflowos.com/register" class="btn btn-coral">Start Free</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="overline reveal">Flippers & Builders</p>
+    <h1 class="reveal">Find Private Lenders.<br>Fund Your Deals.<br>Scale Your Business.</h1>
+    <p class="hero-sub reveal">You have the deal. You have the skill. You just need the capital. Fund Flow connects you with 9M+ private lenders and automates the entire outreach process.</p>
+    <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg reveal">Start Finding Capital <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">The problem</p>
+      <h2>Sound familiar?</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="icon">&#128242;</div>
+        <h3>Tapped-out network</h3>
+        <p>You've called everyone you know twice. Your uncle, your dentist, your old college roommate. Nobody's picking up anymore.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="icon">&#128683;</div>
+        <h3>Lenders ghosting you</h3>
+        <p>Hard money lenders take three days to respond, then quote rates that eat your entire margin. You need capital today, not next quarter.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="icon">&#128220;</div>
+        <h3>Compliance confusion</h3>
+        <p>You know you need to raise capital the right way but SEC rules feel like a foreign language. One wrong move and you're in legal trouble.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW FUND FLOW HELPS -->
+<section class="solution-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">The solution</p>
+      <h2>How Fund Flow helps</h2>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card reveal">
+        <div class="step">Step 1</div>
+        <h3>Search 9M+ lender records</h3>
+        <p>Filter by state, loan type, property type, and loan amount. Find lenders who actually fund your deal type. Enrich with verified contact data in one click.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="step">Step 2</div>
+        <h3>Flow AI drafts your outreach</h3>
+        <p>Tell Flow AI about your deal. It writes personalized emails, texts, and follow-ups in your voice. Send sequences across email, SMS, and WhatsApp automatically.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="step">Step 3</div>
+        <h3>Track deals and loans</h3>
+        <p>Every conversation, commitment, and closing tracked in one place. Know exactly where every dollar is coming from and when it lands. No more spreadsheet chaos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<section class="ideal-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">Built for you</p>
+      <h2>Ideal for</h2>
+    </div>
+    <div class="ideal-grid">
+      <div class="ideal-card reveal">
+        <div class="icon">&#127960;</div>
+        <h3>Fix & flip operators</h3>
+        <p>Fund rehabs faster with direct access to private lenders who close in days, not weeks.</p>
+      </div>
+      <div class="ideal-card reveal">
+        <div class="icon">&#127959;</div>
+        <h3>New construction builders</h3>
+        <p>Secure construction financing from private capital sources. Scale from one build to ten.</p>
+      </div>
+      <div class="ideal-card reveal">
+        <div class="icon">&#128257;</div>
+        <h3>Wholesale-to-flip operators</h3>
+        <p>Stop assigning contracts for $10K. Find the capital to close the deal yourself and keep the full spread.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING ANCHOR -->
+<section class="pricing-anchor">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="overline">The math</p>
+      <h2>Stop overpaying for capital access</h2>
+      <p>A capital raiser costs $60K+/year. Fund Flow starts at a fraction of that.</p>
+    </div>
+    <div class="price-compare reveal">
+      <div class="price-box">
+        <div class="label">Hiring a capital raiser</div>
+        <div class="strike">$60,000</div>
+        <div class="period">/year + commissions</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="price-box highlight">
+        <div class="label">Fund Flow OS</div>
+        <div class="amount">$97</div>
+        <div class="period">/month &middot; cancel anytime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-lg">
+  <div class="container">
+    <div class="cta-dark reveal">
+      <h2>Start finding capital today.</h2>
+      <p>Your next lender is already in the database. You just haven't searched yet.</p>
+      <div class="cta-buttons">
+        <a href="https://fundflowos.com/register" class="btn btn-coral btn-lg">Start Finding Capital <span class="arrow">&rarr;</span></a>
+        <a href="#" class="btn btn-outline btn-lg">Book a demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><img src="logo-color.png" alt="Fund Flow OS" /></a>
+        <p>The autonomous operating system for real estate private capital. From your first flip to your final fund.</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/devinrobinson" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://youtube.com/@devin.robinson1" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html#platform">Private Lender Database</a>
+        <a href="index.html#platform">Flow AI Employee</a>
+        <a href="index.html#platform">Flow Guard Compliance</a>
+        <a href="index.html#platform">Investor CRM</a>
+        <a href="index.html#platform">Deals & Funds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="flippers.html">Flippers & Builders</a>
+        <a href="syndicators.html">Syndicators</a>
+        <a href="private-lenders.html">Private Lenders</a>
+        <a href="fund-managers.html">Fund Managers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">7-Day Syndications</a>
+        <a href="#">Fund Administration</a>
+        <a href="#">Flow Launch (DFY)</a>
+        <a href="#">Fund Founders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Fund Founders Podcast</a>
+        <a href="https://youtube.com/@devin.robinson1">YouTube</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fund Flow OS. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

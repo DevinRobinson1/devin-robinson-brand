@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Pilots Fund — One Signature Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --dark:#1a1210;--cream:#FFF8ED;--cream-muted:rgba(255,248,237,0.55);--cream-subtle:rgba(255,248,237,0.10);
+      --gold:#c9913a;--gold-light:#daa54d;--gold-dim:rgba(201,145,58,0.2);
+      --font-display:'Playfair Display',Georgia,serif;--font-heading:'Space Grotesk',sans-serif;
+      --font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;--ease:cubic-bezier(0.16,1,0.3,1);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{font-size:16px}
+    body{font-family:var(--font-body);background:var(--dark);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+
+    /* GRAIN */
+    .grain{position:fixed;inset:0;z-index:10000;pointer-events:none;opacity:0.018;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size:256px;animation:grain .4s steps(1) infinite}
+    @keyframes grain{0%,100%{transform:translate(0)}20%{transform:translate(-5%,-10%)}40%{transform:translate(3%,-15%)}60%{transform:translate(12%,9%)}80%{transform:translate(-1%,7%)}}
+
+    /* SINGLE FIXED CANVAS */
+    #cinema{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0}
+
+    /* PRELOADER */
+    .preloader{position:fixed;inset:0;z-index:99999;background:var(--dark);display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .pre-eyebrow{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:0}
+    .pre-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;color:var(--cream);margin-top:.75rem;opacity:0;transform:translateY(15px)}
+    .pre-line{width:0;height:1px;background:var(--gold);margin-top:1.5rem}
+    .pre-counter{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-muted);margin-top:1rem;opacity:0}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;opacity:0;transform:translateY(-15px)}
+    .nav-brand{font-family:var(--font-heading);font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+    .nav-brand span{color:var(--gold);margin:0 .5rem}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-muted);transition:color .3s ease}
+    .nav-links a:hover{color:var(--cream)}
+    .nav-cta{font-family:var(--font-mono);font-size:.55rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--dark);background:var(--gold);padding:.6rem 1.4rem;border:none;transition:all .4s var(--ease)}
+    .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+    /* SCENE DOTS */
+    .scene-indicator{position:fixed;right:2.5rem;top:50%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:.75rem;opacity:0}
+    .scene-dot{width:8px;height:8px;border:1px solid var(--cream-muted);border-radius:50%;cursor:pointer;transition:all .4s var(--ease);position:relative}
+    .scene-dot.active{background:var(--gold);border-color:var(--gold);box-shadow:0 0 12px var(--gold-dim)}
+    .scene-dot::after{content:attr(data-label);position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-muted);white-space:nowrap;opacity:0;transition:opacity .3s ease}
+    .scene-dot:hover::after{opacity:1}
+
+    .scene-counter{position:fixed;bottom:2rem;left:2.5rem;z-index:999;display:flex;align-items:center;gap:1rem;opacity:0}
+    .scene-counter-num{font-family:var(--font-mono);font-size:.55rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-muted)}
+    .scene-counter-name{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+    .coordinates{position:fixed;bottom:2rem;right:2.5rem;z-index:999;font-family:var(--font-mono);font-size:.65rem;font-weight:300;letter-spacing:.05em;color:rgba(255,248,237,0.15);opacity:0}
+
+    /* SCROLL SPACER — one continuous scroll */
+    .scroll-track{position:relative;z-index:1}
+    .scene-panel{position:relative;height:250vh;display:flex;align-items:center;justify-content:center}
+    .scene-panel:first-child{height:200vh}
+    .scene-panel:last-child{height:180vh}
+
+    /* CONTENT OVERLAYS — positioned within each panel */
+    .panel-content{position:sticky;top:0;height:100vh;width:100%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .panel-content > *{pointer-events:auto}
+
+    /* Shared text styles */
+    .s-eyebrow{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+    .s-title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.15;color:var(--cream);margin-bottom:1.25rem}
+    .s-title em{font-style:italic;color:var(--gold)}
+    .s-desc{font-size:.85rem;font-weight:300;line-height:1.8;color:var(--cream-muted);max-width:500px}
+
+    /* HERO */
+    .hero-inner{text-align:center;max-width:1000px;padding:0 2rem;opacity:0}
+    .hero-eyebrow{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+    .hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,6.5vw,5.5rem);font-weight:400;line-height:1.1;color:var(--cream);margin-top:1.5rem}
+    .hero-title .line{display:block;overflow:hidden}
+    .hero-title .line-inner{display:block;transform:translateY(110%)}
+    .hero-title em{font-family:var(--font-display);font-style:italic;color:var(--gold);font-weight:500}
+    .hero-deal{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-muted);margin-top:2rem}
+    .hero-deal span{margin:0 .75rem;color:var(--gold)}
+    .hero-scroll{position:fixed;bottom:3rem;left:50%;transform:translateX(-50%);z-index:999;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0}
+    .hero-scroll-text{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-muted)}
+    .hero-scroll-line{width:1px;height:35px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+    @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+    /* DEAL — Scene 02 has text baked in video, so minimal overlay */
+    .deal-inner{width:100%;max-width:1200px;padding:0 3rem;opacity:0}
+
+    /* STRATEGY */
+    .strategy-inner{width:100%;max-width:1200px;padding:0 3rem;opacity:0}
+    .strategy-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3.5rem}
+    .strategy-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .strategy-card{padding:2rem 1.5rem;background:rgba(26,18,16,0.65);border:1px solid var(--cream-subtle);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;transform:translateY(25px);transition:border-color .4s ease}
+    .strategy-card:hover{border-color:rgba(255,248,237,0.25)}
+    .strategy-card-num{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;color:var(--gold);margin-bottom:1rem}
+    .strategy-card-title{font-family:var(--font-heading);font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.6rem}
+    .strategy-card-text{font-size:.78rem;font-weight:300;line-height:1.7;color:var(--cream-muted)}
+
+    /* PILOTS */
+    .pilots-inner{width:100%;max-width:1200px;padding:0 3rem;opacity:0}
+    .pilots-header{margin-bottom:3rem}
+    .pilots-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .pilot-feature{padding:2rem;background:rgba(26,18,16,0.6);border:1px solid var(--cream-subtle);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;transform:translateY(20px)}
+    .pilot-feature-num{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;color:var(--gold);margin-bottom:1rem}
+    .pilot-feature-title{font-family:var(--font-display);font-size:1.15rem;font-weight:500;color:var(--cream);margin-bottom:.6rem;line-height:1.3}
+    .pilot-feature-text{font-size:.78rem;font-weight:300;line-height:1.7;color:var(--cream-muted)}
+
+    /* CTA */
+    .cta-inner{text-align:center;max-width:700px;padding:0 2rem;opacity:0}
+    .cta-title{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,4rem);font-weight:400;line-height:1.1;color:var(--cream);margin-bottom:1.25rem}
+    .cta-title em{font-style:italic;color:var(--gold)}
+    .cta-desc{font-size:.9rem;font-weight:300;line-height:1.7;color:var(--cream-muted);max-width:450px;margin:0 auto 2.5rem}
+    .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-gold{font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--dark);background:var(--gold);padding:.9rem 2.2rem;border:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .4s var(--ease)}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 15px 40px var(--gold-dim)}
+    .btn-gold svg{width:12px;height:12px}
+    .btn-outline{font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--cream);background:transparent;padding:.9rem 2.2rem;border:1px solid var(--cream-subtle);transition:all .4s var(--ease)}
+    .btn-outline:hover{border-color:var(--cream);transform:translateY(-2px)}
+
+    /* FOOTER */
+    .footer{position:relative;z-index:5;padding:3rem 0 1.5rem;border-top:1px solid var(--cream-subtle);background:var(--dark)}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+    .footer-logo{font-family:var(--font-heading);font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-bottom:.75rem}
+    .footer-tagline{font-size:.8rem;font-weight:300;line-height:1.7;color:var(--cream-muted);max-width:280px}
+    .footer-col-title{font-family:var(--font-mono);font-size:.5rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);margin-bottom:1rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+    .footer-links a{font-size:.75rem;font-weight:300;color:var(--cream-muted);transition:color .3s ease}
+    .footer-links a:hover{color:var(--cream)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--cream-subtle);flex-wrap:wrap;gap:1rem}
+    .footer-legal{font-size:.6rem;color:var(--cream-muted);font-weight:300}
+    .footer-disclaimer{font-size:.55rem;color:rgba(255,248,237,0.2);max-width:550px;line-height:1.6;text-align:right}
+
+    @media(max-width:1024px){.strategy-header{grid-template-columns:1fr;gap:2rem}.strategy-cards{grid-template-columns:1fr 1fr}.pilots-features{grid-template-columns:1fr}}
+    @media(max-width:768px){.nav{padding:1rem 1.5rem}.nav-links{display:none}.strategy-cards{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:1.5rem}.footer-bottom{flex-direction:column;text-align:center}.footer-disclaimer{text-align:center}.scene-indicator{display:none}.coordinates{display:none}.scene-counter{left:1.5rem}.cta-buttons{flex-direction:column;align-items:center}.strategy-inner,.pilots-inner{padding:0 1.5rem}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <canvas id="cinema"></canvas>
+
+  <div class="preloader" id="preloader">
+    <div class="pre-eyebrow" id="preEye">One Signature Capital</div>
+    <div class="pre-title" id="preTitle">The Pilots Fund</div>
+    <div class="pre-line" id="preLine"></div>
+    <div class="pre-counter" id="preCtr">Loading 0%</div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-brand">The Pilots Fund<span>&mdash;</span>One Signature Capital</div>
+    <ul class="nav-links"><li><a href="#p2">The Deal</a></li><li><a href="#p3">Strategy</a></li><li><a href="#p4">Why Pilots</a></li><li><a href="#p5">Invest</a></li></ul>
+    <button class="nav-cta" onclick="document.getElementById('p5').scrollIntoView({behavior:'smooth'})">Request Clearance</button>
+  </nav>
+
+  <div class="scene-indicator" id="sceneDots">
+    <div class="scene-dot active" data-label="The Runway" data-idx="0"></div>
+    <div class="scene-dot" data-label="The Deal" data-idx="1"></div>
+    <div class="scene-dot" data-label="Strategy" data-idx="2"></div>
+    <div class="scene-dot" data-label="Why Pilots" data-idx="3"></div>
+    <div class="scene-dot" data-label="Cleared" data-idx="4"></div>
+  </div>
+  <div class="scene-counter" id="sceneCounter"><span class="scene-counter-num" id="sceneNum">Scene 01 / 05</span><span class="scene-counter-name" id="sceneName">The Runway</span></div>
+  <div class="coordinates" id="coords">35.2271&deg;N &nbsp; 80.8431&deg;W</div>
+
+  <div class="hero-scroll" id="heroScroll"><span class="hero-scroll-text">Scroll to Board</span><div class="hero-scroll-line"></div></div>
+
+  <!-- ONE CONTINUOUS SCROLL TRACK -->
+  <div class="scroll-track">
+
+    <!-- SCENE 01: THE RUNWAY -->
+    <div class="scene-panel" id="p1">
+      <div class="panel-content">
+        <div class="hero-inner" id="heroContent">
+          <div class="hero-eyebrow">One Signature Capital &bull; The Pilots Fund &bull; Deal 001</div>
+          <h1 class="hero-title"><span class="line"><span class="line-inner" id="hl1">Your investment is cleared</span></span><span class="line"><span class="line-inner" id="hl2"><em>for takeoff.</em></span></span></h1>
+          <div class="hero-deal">4627 Addison Drive<span>&bull;</span>Cotswold, Charlotte<span>&bull;</span>Luxury Infill<span>&bull;</span>$300K Raise</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 02: THE DEAL (video has baked-in text) -->
+    <div class="scene-panel" id="p2">
+      <div class="panel-content">
+        <div class="deal-inner" id="dealContent">
+          <!-- Video already shows "You don't fly alone" + Captain/First Officer -->
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 03: STRATEGY -->
+    <div class="scene-panel" id="p3">
+      <div class="panel-content">
+        <div class="strategy-inner" id="stratContent">
+          <div class="strategy-header"><div><div class="s-eyebrow">Scene 03 &mdash; Flight Plan</div><h2 class="s-title">Precision-Engineered<br><em>Investment Strategy</em></h2></div><div><p class="s-desc" style="margin-top:2rem">Every flight requires a plan filed before departure. Our investment thesis follows the same discipline &mdash; rigorous analysis, conservative underwriting, and a clear path to profitable exit.</p></div></div>
+          <div class="strategy-cards">
+            <div class="strategy-card"><div class="strategy-card-num">01</div><div class="strategy-card-title">Ground-Up Luxury Infill</div><p class="strategy-card-text">New construction in established, high-demand neighborhoods with proven appreciation and limited lot inventory.</p></div>
+            <div class="strategy-card"><div class="strategy-card-num">02</div><div class="strategy-card-title">Conservative Underwriting</div><p class="strategy-card-text">20%+ margin of safety on every deal. We model the downside first and only move when the risk-reward is asymmetric.</p></div>
+            <div class="strategy-card"><div class="strategy-card-num">03</div><div class="strategy-card-title">Proven Builder Partnerships</div><p class="strategy-card-text">Established relationships with licensed builders who've delivered dozens of luxury homes on time and on budget.</p></div>
+            <div class="strategy-card"><div class="strategy-card-num">04</div><div class="strategy-card-title">12-Month Exit Windows</div><p class="strategy-card-text">Short hold periods mean your capital isn't locked up for years. Build, sell, return capital, repeat.</p></div>
+            <div class="strategy-card"><div class="strategy-card-num">05</div><div class="strategy-card-title">Tax-Advantaged Structures</div><p class="strategy-card-text">Depreciation strategies and entity structures designed to protect high W-2 pilot income from excess taxation.</p></div>
+            <div class="strategy-card"><div class="strategy-card-num">06</div><div class="strategy-card-title">Full Transparency</div><p class="strategy-card-text">Monthly investor updates, real-time construction photos, and direct access to the GP. No black boxes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 04: WHY PILOTS -->
+    <div class="scene-panel" id="p4">
+      <div class="panel-content">
+        <div class="pilots-inner" id="pilotsContent">
+          <div class="pilots-header"><div class="s-eyebrow">Scene 04 &mdash; Crew Briefing</div><h2 class="s-title">Built for Pilots<br><em>by Design</em></h2><p class="s-desc" style="margin-top:1rem">Commercial pilots understand precision, checklists, and calculated risk better than anyone. This fund is designed to match that mindset.</p></div>
+          <div class="pilots-features">
+            <div class="pilot-feature"><div class="pilot-feature-num">01</div><h3 class="pilot-feature-title">Predictable Income,<br>Predictable Returns</h3><p class="pilot-feature-text">Your W-2 is stable and strong. Our short-hold luxury infill strategy delivers predictable exit timelines that complement your income cycle.</p></div>
+            <div class="pilot-feature"><div class="pilot-feature-num">02</div><h3 class="pilot-feature-title">Truly Passive &mdash;<br>Built for Your Schedule</h3><p class="pilot-feature-text">Between rotations and layovers, you need investments that work without you. We handle everything from acquisition to exit.</p></div>
+            <div class="pilot-feature"><div class="pilot-feature-num">03</div><h3 class="pilot-feature-title">Tax Strategies That<br>Protect Pilot Income</h3><p class="pilot-feature-text">High W-2 earners get hit hardest. Our deal structures leverage real estate tax benefits to create legal shelters that offset your active income.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 05: CLEARED -->
+    <div class="scene-panel" id="p5">
+      <div class="panel-content">
+        <div class="cta-inner" id="ctaContent">
+          <div class="s-eyebrow" style="margin-bottom:1.5rem">Scene 05 &mdash; Cleared for Takeoff</div>
+          <h2 class="cta-title">Your next chapter<br>starts <em>at altitude.</em></h2>
+          <p class="cta-desc">The Pilots Fund is accepting accredited investors for Deal 001. $25,000 minimum investment. Limited allocations remain.</p>
+          <div class="cta-buttons"><button class="btn-gold">Request Clearance <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button><button class="btn-outline">Schedule Briefing</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"><div class="footer-inner">
+    <div class="footer-grid">
+      <div><div class="footer-logo">The Pilots Fund</div><p class="footer-tagline">Precision-engineered real estate investments for commercial pilots who demand excellence in every asset class.</p></div>
+      <div><div class="footer-col-title">Fund</div><ul class="footer-links"><li><a href="#p2">Current Deal</a></li><li><a href="#p3">Strategy</a></li><li><a href="#p4">Why Pilots</a></li></ul></div>
+      <div><div class="footer-col-title">Investors</div><ul class="footer-links"><li><a href="#">Portal</a></li><li><a href="#">Documents</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">LinkedIn</a></li><li><a href="#">Email</a></li><li><a href="#">Podcast</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-legal">&copy; 2026 One Signature Capital. All rights reserved.</span><span class="footer-disclaimer">This is not an offer to sell securities. Securities are offered only to accredited investors via Private Placement Memorandum. Past performance does not guarantee future results. All investments carry risk including loss of principal.</span></div>
+  </div></footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ===== FRAME LOADER ===== */
+    const FC = 24, SC = 5;
+    const frames = [[],[],[],[],[]];
+    let loaded = 0, total = FC * SC;
+    const canvas = document.getElementById('cinema');
+    const ctx = canvas.getContext('2d');
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let s = 0; s < SC; s++) {
+      for (let f = 0; f < FC; f++) {
+        const img = new Image();
+        img.src = 'frames/scene-' + String(s+1).padStart(2,'0') + '/frame_' + String(f+1).padStart(3,'0') + '.jpg';
+        img.onload = img.onerror = () => {
+          loaded++;
+          document.getElementById('preCtr').textContent = 'Loading ' + Math.round(loaded/total*100) + '%';
+          if (loaded === total) boot();
+        };
+        frames[s].push(img);
+      }
+    }
+
+    /* ===== DRAW (cover-fit) ===== */
+    function draw(img, alpha) {
+      if (!img || !img.naturalWidth) return;
+      const cw = canvas.width, ch = canvas.height;
+      const sc = Math.max(cw/img.naturalWidth, ch/img.naturalHeight);
+      const w = img.naturalWidth*sc, h = img.naturalHeight*sc;
+      if (alpha !== undefined && alpha < 1) ctx.globalAlpha = alpha;
+      ctx.drawImage(img, (cw-w)/2, (ch-h)/2, w, h);
+      ctx.globalAlpha = 1;
+    }
+
+    /* ===== SEAMLESS RENDERER ===== */
+    // Total 120 frames across 5 scenes. We map the entire scroll to a global 0-119 index
+    // with crossfade zones at scene boundaries.
+    const CROSSFADE = 4; // frames of overlap
+
+    function renderAtScroll() {
+      const scrollTop = window.scrollY;
+      const panels = document.querySelectorAll('.scene-panel');
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const globalProgress = Math.max(0, Math.min(1, scrollTop / docH));
+
+      // Map global progress to global frame index (0 to totalFrames-1)
+      const totalFrames = FC * SC;
+      const gf = globalProgress * (totalFrames - 1);
+      const sceneFloat = gf / FC; // which scene (0-4.x)
+      const sceneIdx = Math.min(Math.floor(sceneFloat), SC - 1);
+      const localFrame = gf - sceneIdx * FC;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Check if we're in crossfade zone (last CROSSFADE frames of a scene)
+      if (localFrame >= FC - CROSSFADE && sceneIdx < SC - 1) {
+        // Crossfade between current scene's end and next scene's start
+        const fadeProgress = (localFrame - (FC - CROSSFADE)) / CROSSFADE;
+        const fi1 = Math.min(Math.floor(localFrame), FC - 1);
+        const fi2 = Math.min(Math.floor(fadeProgress * CROSSFADE), FC - 1);
+        draw(frames[sceneIdx][fi1], 1);
+        draw(frames[sceneIdx + 1][fi2], fadeProgress);
+      } else {
+        const fi = Math.min(Math.floor(localFrame), FC - 1);
+        draw(frames[sceneIdx][fi], 1);
+      }
+
+      // Update scene indicator
+      updateScene(sceneIdx);
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(() => { renderAtScroll(); ticking = false; }); ticking = true; }
+    });
+
+    /* ===== SCENE TRACKER ===== */
+    const sceneNames = ['The Runway','The Deal','Flight Plan','Crew Briefing','Cleared'];
+    const dots = document.querySelectorAll('.scene-dot');
+    let currentScene = -1;
+
+    function updateScene(i) {
+      if (i === currentScene) return;
+      currentScene = i;
+      dots.forEach(d => d.classList.remove('active'));
+      if (dots[i]) dots[i].classList.add('active');
+      document.getElementById('sceneNum').textContent = 'Scene ' + String(i+1).padStart(2,'0') + ' / 05';
+      document.getElementById('sceneName').textContent = sceneNames[i];
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const panels = document.querySelectorAll('.scene-panel');
+        const t = panels[dot.dataset.idx];
+        if (t) t.scrollIntoView({ behavior:'smooth' });
+      });
+    });
+
+    /* ===== CONTENT FADE IN/OUT ===== */
+    function setupContentAnimations() {
+      // Hero: fade in at start, fade out as you scroll
+      gsap.to('#heroContent', { opacity:1, duration:0.01 }); // show immediately after preloader
+      gsap.to('#heroContent', { opacity:0, y:-60, scrollTrigger:{ trigger:'#p1', start:'25% top', end:'50% top', scrub:true }});
+      gsap.to('#heroScroll', { opacity:0, scrollTrigger:{ trigger:'#p1', start:'10% top', end:'20% top', scrub:true }});
+
+      // Scene 02: video has baked text, just let it play (no overlay needed)
+
+      // Scene 03: Strategy — fade in, hold, fade out
+      gsap.to('#stratContent', { opacity:1, scrollTrigger:{ trigger:'#p3', start:'top 70%', end:'top 40%', scrub:true }});
+      gsap.to('#stratContent', { opacity:0, scrollTrigger:{ trigger:'#p3', start:'70% top', end:'90% top', scrub:true }});
+      gsap.utils.toArray('.strategy-card').forEach((c, i) => {
+        gsap.to(c, { opacity:1, y:0, duration:.6, delay:i*.06, ease:'power3.out',
+          scrollTrigger:{ trigger:'#p3', start:'15% top', toggleActions:'play none none none' }});
+      });
+
+      // Scene 04: Pilots — fade in, hold, fade out
+      gsap.to('#pilotsContent', { opacity:1, scrollTrigger:{ trigger:'#p4', start:'top 70%', end:'top 40%', scrub:true }});
+      gsap.to('#pilotsContent', { opacity:0, scrollTrigger:{ trigger:'#p4', start:'70% top', end:'90% top', scrub:true }});
+      gsap.utils.toArray('.pilot-feature').forEach((f, i) => {
+        gsap.to(f, { opacity:1, y:0, duration:.6, delay:.2+i*.12, ease:'power3.out',
+          scrollTrigger:{ trigger:'#p4', start:'15% top', toggleActions:'play none none none' }});
+      });
+
+      // Scene 05: CTA — fade in and stay
+      gsap.to('#ctaContent', { opacity:1, scrollTrigger:{ trigger:'#p5', start:'top 70%', end:'top 40%', scrub:true }});
+    }
+
+    /* ===== BOOT ===== */
+    function boot() {
+      draw(frames[0][0]); // first frame
+
+      gsap.timeline()
+        .to('#preloader', { opacity:0, duration:.8, ease:'power2.inOut', delay:.4,
+          onComplete: () => {
+            document.getElementById('preloader').style.display = 'none';
+            heroEntrance();
+            setupContentAnimations();
+          }
+        });
+    }
+
+    function heroEntrance() {
+      gsap.timeline({ defaults:{ease:'power3.out'} })
+        .to('#nav', { opacity:1, y:0, duration:.8 })
+        .to('#sceneDots', { opacity:1, duration:.6 }, '-=.4')
+        .to('#sceneCounter', { opacity:1, duration:.6 }, '-=.4')
+        .to('#coords', { opacity:1, duration:.6 }, '-=.4')
+        .to('#heroContent', { opacity:1, duration:.01 }, '-=.4')
+        .to('#hl1', { y:'0%', duration:1.2, ease:'power4.out' }, '-=.3')
+        .to('#hl2', { y:'0%', duration:1.2, ease:'power4.out' }, '-=.9')
+        .to('#heroScroll', { opacity:.6, duration:.8 }, '-=.3');
+    }
+
+    // Preloader animation
+    gsap.timeline()
+      .to('#preEye', { opacity:1, duration:.6, ease:'power2.out', delay:.2 })
+      .to('#preTitle', { opacity:1, y:0, duration:.8, ease:'power3.out' }, '-=.3')
+      .to('#preCtr', { opacity:1, duration:.4 }, '-=.3')
+      .to('#preLine', { width:120, duration:2, ease:'power2.inOut' }, '-=.5');
+  </script>
+</body>
+</html>
