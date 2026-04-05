@@ -937,6 +937,11 @@
     el.classList.add('selected');
     answers[parseInt(parent.dataset.step)] = el.dataset.value;
     parent.querySelector('.quiz-next').classList.add('ready');
+    // Auto-advance after short delay
+    const step = parseInt(parent.dataset.step);
+    setTimeout(() => {
+      if (step < 4) { nextQuestion(); } else { showResult(); }
+    }, 400);
   }
 
   function nextQuestion() {
