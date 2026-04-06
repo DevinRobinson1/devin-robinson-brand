@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devin Robinson - Entrepreneur, Educator, AI Strategist</title>
-  <meta name="description" content="Devin Robinson helps real estate operators raise capital, scale funds, and deploy AI. Host of Funds on Fire. Founder of Fund Founders and Fund Flow OS.">
+  <meta name="description"
+    content="Devin Robinson helps real estate operators raise capital, scale funds, and deploy AI. Host of Funds on Fire. Founder of Fund Founders and Fund Flow OS.">
   <meta property="og:title" content="Devin Robinson - Entrepreneur, Educator, AI Strategist">
-  <meta property="og:description" content="I help real estate operators raise capital, scale funds, and deploy AI across their business.">
-  <meta property="og:image" content="images/db937bf8-9fef-414c-9065-8bba7bc37378.png">
+  <meta property="og:description"
+    content="I help real estate operators raise capital, scale funds, and deploy AI across their business.">
+  <meta property="og:image" content="images/youtube-banner.png">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -32,8 +37,17 @@
       --accent-light: #e8785c;
       --accent-glow: rgba(196, 90, 60, 0.08);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: auto; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--cream);
@@ -41,6 +55,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+
     body::after {
       content: '';
       position: fixed;
@@ -53,422 +68,1389 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
       background: rgba(248, 247, 245, 0.95);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       transition: box-shadow 0.3s ease;
     }
+
     .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0.9rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
-    .logo span { color: var(--accent); }
-    nav ul { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
     nav ul a {
-      text-decoration: none; color: var(--mid); font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    nav ul a:hover { color: var(--ink); }
+
+    nav ul a:hover {
+      color: var(--ink);
+    }
+
     .nav-cta {
-      padding: 0.5rem 1.2rem; background: var(--accent); color: var(--white) !important;
-      border-radius: 6px; font-weight: 600; transition: background 0.2s, transform 0.2s;
+      padding: 0.5rem 1.2rem;
+      background: var(--accent);
+      color: var(--white) !important;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
     }
-    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--ink); }
+
+    .nav-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--ink);
+    }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 7rem 2rem 4rem; max-width: 1200px; margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; width: 100%; }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
     .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
     }
-    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .hero-eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
     .hero-text h1 {
-      font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.05;
-      letter-spacing: -0.03em; margin-bottom: 1.5rem; color: var(--ink);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
     }
+
     .hero-text h1 .accent {
-      font-family: 'Playfair Display', serif; font-style: italic;
-      color: var(--accent); font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
     }
+
     .hero-text .subtitle {
-      font-size: 1.1rem; color: var(--mid); line-height: 1.7;
-      margin-bottom: 2rem; max-width: 520px;
+      font-size: 1.1rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 520px;
     }
+
     .hero-email {
-      display: flex; gap: 0; margin-bottom: 1.5rem; max-width: 440px;
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5rem;
+      max-width: 440px;
     }
+
     .hero-email input {
-      flex: 1; padding: 0.85rem 1.25rem; border: 1px solid var(--light);
-      border-right: none; border-radius: 6px 0 0 6px; font-size: 0.9rem;
-      font-family: inherit; background: var(--white); outline: none;
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      border: 1px solid var(--light);
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: var(--white);
+      outline: none;
       transition: border-color 0.2s;
     }
-    .hero-email input:focus { border-color: var(--accent); }
-    .hero-email input::placeholder { color: var(--soft); }
+
+    .hero-email input:focus {
+      border-color: var(--accent);
+    }
+
+    .hero-email input::placeholder {
+      color: var(--soft);
+    }
+
     .hero-email button {
-      padding: 0.85rem 1.5rem; background: var(--accent); color: var(--white);
-      border: none; border-radius: 0 6px 6px 0; font-size: 0.82rem; font-weight: 700;
-      font-family: inherit; cursor: pointer; letter-spacing: 0.02em;
+      padding: 0.85rem 1.5rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.02em;
       white-space: nowrap;
       transition: background 0.2s;
     }
-    .hero-email button:hover { background: var(--accent-dark); }
-    .hero-email-note { font-size: 0.72rem; color: var(--soft); margin-bottom: 2rem; }
-    .hero-ctas { display: flex; gap: 1rem; align-items: center; }
+
+    .hero-email button:hover {
+      background: var(--accent-dark);
+    }
+
+    .hero-email-note {
+      font-size: 0.72rem;
+      color: var(--soft);
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem;
-      background: var(--ink); color: var(--white); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600; border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.2s;
     }
-    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 90, 60, 0.25); }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem;
-      background: transparent; color: var(--ink); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600; border-radius: 6px;
-      border: 1px solid var(--light); transition: all 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--ink); }
 
-    .hero-visual { position: relative; display: flex; justify-content: center; }
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 90, 60, 0.25);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--light);
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
     .hero-image-wrapper {
-      width: 100%; max-width: 440px; aspect-ratio: 3/4;
-      border-radius: 16px; overflow: hidden; position: relative;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 3/4;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
     }
+
     .hero-image-wrapper img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center top;
-      display: block; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .hero-image-wrapper:hover img { transform: scale(1.03); }
+
+    .hero-image-wrapper:hover img {
+      transform: scale(1.03);
+    }
+
     .hero-floating-card {
-      position: absolute; bottom: 1.5rem; left: -1.5rem;
-      background: var(--white); padding: 1rem 1.5rem; border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1); display: flex; gap: 1.5rem;
+      position: absolute;
+      bottom: 1.5rem;
+      left: -1.5rem;
+      background: var(--white);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 1.5rem;
     }
-    .hero-floating-card .stat { text-align: center; }
-    .hero-floating-card .stat .number { font-size: 1.3rem; font-weight: 800; color: var(--ink); }
-    .hero-floating-card .stat .label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
+
+    .hero-floating-card .stat {
+      text-align: center;
+    }
+
+    .hero-floating-card .stat .number {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .hero-floating-card .stat .label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--soft);
+      font-weight: 500;
+    }
 
     /* ── SOCIAL PROOF BAR ── */
     .proof-bar {
-      max-width: none; margin: 0; padding: 2.5rem 2rem;
-      background: var(--ink); text-align: center;
+      max-width: none;
+      margin: 0;
+      padding: 2.5rem 2rem;
+      background: var(--ink);
+      text-align: center;
     }
-    .proof-bar-inner { max-width: 1000px; margin: 0 auto; }
-    .proof-bar-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.35); font-weight: 500; margin-bottom: 1.5rem; }
+
+    .proof-bar-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .proof-bar-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.35);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
     .proof-logos {
-      display: flex; justify-content: center; align-items: center;
-      gap: 2.5rem; flex-wrap: wrap; opacity: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      opacity: 0.5;
     }
-    .proof-logos img { height: 28px; filter: brightness(0) invert(1); opacity: 0.7; }
+
+    .proof-logos img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+
     .proof-logos span {
-      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.6);
-      letter-spacing: 0.02em; white-space: nowrap;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
     /* ── 3 PILLARS ── */
-    .pillars { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .pillars-header { text-align: center; margin-bottom: 3.5rem; }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pillars {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
     .pillar-card {
-      background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px;
-      overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
     }
-    .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
-    .pillar-card-image { width: 100%; aspect-ratio: 16/10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .pillar-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .pillar-card-image img.contain { object-fit: contain; padding: 2rem; }
-    .pillar-card:hover .pillar-card-image img { transform: scale(1.05); }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
-    .pillar-card { display: flex; flex-direction: column; }
-    .pillar-card-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    }
+
+    .pillar-card-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pillar-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pillar-card-image img.contain {
+      object-fit: contain;
+      padding: 2rem;
+    }
+
+    .pillar-card:hover .pillar-card-image img {
+      transform: scale(1.05);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .pillar-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card-body {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
     .pillar-tag {
-      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--accent); font-weight: 700; margin-bottom: 0.75rem;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
     }
-    .pillar-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
-    .pillar-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.65; flex: 1; }
+
+    .pillar-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+
     .pillar-card .pillar-link {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.82rem; font-weight: 600; color: var(--accent);
-      margin-top: 1.25rem; transition: gap 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 1.25rem;
+      transition: gap 0.2s;
     }
-    .pillar-card:hover .pillar-link { gap: 0.6rem; }
+
+    .pillar-card:hover .pillar-link {
+      gap: 0.6rem;
+    }
 
     /* ── SECTION UTILITIES ── */
-    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-    .section-title { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; color: var(--ink); }
-    .section-subtitle { font-size: 1.05rem; color: var(--mid); max-width: 560px; line-height: 1.7; }
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 560px;
+      line-height: 1.7;
+    }
 
     /* ── PODCAST ── */
     .podcast-section {
-      max-width: none; margin: 0; padding: 6rem 2rem;
-      background: var(--charcoal); color: var(--white);
+      max-width: none;
+      margin: 0;
+      padding: 6rem 2rem;
+      background: var(--charcoal);
+      color: var(--white);
     }
-    .podcast-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .podcast-text .section-label { color: var(--accent); }
-    .podcast-text h2 { font-size: 2.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .podcast-text p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2rem; max-width: 460px; }
-    .podcast-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    .podcast-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .podcast-text .section-label {
+      color: var(--accent);
+    }
+
+    .podcast-text h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .podcast-text p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 460px;
+    }
+
+    .podcast-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
     .podcast-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
-      color: var(--white); font-size: 0.78rem; font-weight: 600;
-      text-decoration: none; transition: background 0.2s, border-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
     }
-    .podcast-badge:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
-    .podcast-badge svg { width: 18px; height: 18px; fill: currentColor; }
-    .podcast-appearances { margin-top: 2rem; }
-    .podcast-appearances h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
-    .appearance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+
+    .podcast-badge:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .podcast-badge svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .podcast-appearances {
+      margin-top: 2rem;
+    }
+
+    .podcast-appearances h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1rem;
+    }
+
+    .appearance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
     .appearance-card {
-      border-radius: 10px; overflow: hidden; aspect-ratio: 16/9;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
       position: relative;
     }
-    .appearance-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); filter: brightness(0.9); }
-    .appearance-card:hover img { transform: scale(1.05); filter: brightness(1); }
-    .podcast-visual { display: flex; flex-direction: column; gap: 1rem; }
-    .podcast-hero-img { border-radius: 14px; overflow: hidden; aspect-ratio: 16/10; }
-    .podcast-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .appearance-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: brightness(0.9);
+    }
+
+    .appearance-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    .podcast-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .podcast-hero-img {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+    }
+
+    .podcast-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     /* ── PHOTO MOSAIC ── */
     .photo-mosaic {
-      max-width: none; margin: 0; padding: 0; overflow: hidden;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
+
     .mosaic-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
     }
+
     .mosaic-item {
-      aspect-ratio: 1; overflow: hidden; position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
     }
+
     .mosaic-item img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       filter: grayscale(15%);
     }
-    .mosaic-item:hover img { transform: scale(1.08); filter: grayscale(0%); }
-    .mosaic-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+    .mosaic-item:hover img {
+      transform: scale(1.08);
+      filter: grayscale(0%);
+    }
+
+    .mosaic-item.wide {
+      grid-column: span 2;
+      aspect-ratio: 2/1;
+    }
 
     /* ── ABOUT ── */
-    .about-section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
-    .about-image { border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .about-image:hover img { transform: scale(1.03); }
-    .about-text h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15; }
-    .about-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .about-text p { font-size: 1rem; color: var(--mid); line-height: 1.8; margin-bottom: 1rem; }
-    .about-text .emphasis {
-      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic;
-      color: var(--ink); line-height: 1.5; border-left: 3px solid var(--accent);
-      padding-left: 1.25rem; margin: 1.5rem 0;
+    .about-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .about-stats { display: flex; gap: 2.5rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.08); }
-    .about-stat .num { font-size: 1.5rem; font-weight: 900; color: var(--ink); }
-    .about-stat .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); font-weight: 500; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.03);
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .about-text h2 .accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text .emphasis {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .about-stat .num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .about-stat .lbl {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--soft);
+      font-weight: 500;
+    }
 
     /* ── TIMELINE ── */
     .timeline-section {
-      max-width: none; margin: 0; padding: 6rem 2rem;
-      background: var(--charcoal); color: var(--white);
+      max-width: none;
+      margin: 0;
+      padding: 6rem 2rem;
+      background: var(--charcoal);
+      color: var(--white);
     }
-    .timeline-inner { max-width: 1200px; margin: 0 auto; }
-    .timeline-section .section-label { color: var(--accent); }
-    .timeline-section .section-title { color: var(--white); margin-bottom: 0.5rem; }
-    .timeline-section .section-subtitle { color: rgba(255,255,255,0.45); margin-bottom: 3rem; }
+
+    .timeline-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline-section .section-label {
+      color: var(--accent);
+    }
+
+    .timeline-section .section-title {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 3rem;
+    }
+
     .timeline-counter {
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 2.5rem;
-      padding: 0.5rem 1rem; background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 2.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
     }
-    .timeline-counter strong { color: var(--accent); font-weight: 800; font-size: 1rem; }
+
+    .timeline-counter strong {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
     .tl-grid {
-      display: grid; grid-template-columns: 1fr 3px 1fr; gap: 0;
+      display: grid;
+      grid-template-columns: 1fr 3px 1fr;
+      gap: 0;
       position: relative;
     }
+
     .tl-line {
-      background: rgba(255,255,255,0.08); position: relative;
+      background: rgba(255, 255, 255, 0.08);
+      position: relative;
     }
+
     .tl-line::before {
-      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
     }
+
     .tl-line::after {
-      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
     }
-    .tl-left, .tl-right { display: flex; flex-direction: column; gap: 0; }
+
+    .tl-left,
+    .tl-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     .tl-item {
-      padding: 2.5rem 1.5rem; position: relative;
+      padding: 2.5rem 1.5rem;
+      position: relative;
     }
-    .tl-left .tl-item { text-align: right; padding-right: 2.5rem; }
-    .tl-right .tl-item { padding-left: 2.5rem; }
+
+    .tl-left .tl-item {
+      text-align: right;
+      padding-right: 2.5rem;
+    }
+
+    .tl-right .tl-item {
+      padding-left: 2.5rem;
+    }
+
     .tl-item::before {
-      content: ''; position: absolute; top: 2rem;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--charcoal); border: 2px solid rgba(255,255,255,0.15);
+      content: '';
+      position: absolute;
+      top: 2rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      border: 2px solid rgba(255, 255, 255, 0.15);
       z-index: 1;
     }
-    .tl-left .tl-item::before { right: -7px; }
-    .tl-right .tl-item::before { left: -7px; }
+
+    .tl-left .tl-item::before {
+      right: -7px;
+    }
+
+    .tl-right .tl-item::before {
+      left: -7px;
+    }
+
     .tl-item.highlight::before {
-      border-color: var(--accent); background: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent);
       box-shadow: 0 0 0 4px rgba(196, 90, 60, 0.25);
     }
+
     .tl-year {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
     }
-    .tl-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
-    .tl-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.55; }
+
+    .tl-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .tl-desc {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.55;
+    }
+
     .tl-tag {
-      display: inline-block; margin-top: 0.4rem; padding: 0.15rem 0.6rem;
-      border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
     }
-    .tl-tag.success { background: rgba(34,197,94,0.15); color: #4ade80; }
-    .tl-tag.validating { background: rgba(196,90,60,0.2); color: var(--accent-light); }
-    .tl-tag.lesson { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); }
+
+    .tl-tag.success {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+    }
+
+    .tl-tag.validating {
+      background: rgba(196, 90, 60, 0.2);
+      color: var(--accent-light);
+    }
+
+    .tl-tag.lesson {
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.35);
+    }
 
     /* Timeline mobile */
-    .tl-mobile { display: none; }
+    .tl-mobile {
+      display: none;
+    }
+
     .tl-mobile .tl-m-item {
-      padding-left: 2rem; border-left: 2px solid rgba(255,255,255,0.1);
-      margin-bottom: 2rem; position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+      position: relative;
     }
+
     .tl-mobile .tl-m-item::before {
-      content: ''; position: absolute; left: -6px; top: 0.25rem;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--charcoal); border: 2px solid rgba(255,255,255,0.2);
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
+
     .tl-mobile .tl-m-item.highlight::before {
-      border-color: var(--accent); background: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent);
       box-shadow: 0 0 0 3px rgba(196, 90, 60, 0.25);
     }
 
     @media (max-width: 768px) {
-      .tl-grid { display: none; }
-      .tl-mobile { display: block; }
+      .tl-grid {
+        display: none;
+      }
+
+      .tl-mobile {
+        display: block;
+      }
     }
 
     /* ── CAIO SECTION ── */
     .caio-section {
-      max-width: none; margin: 0; padding: 6rem 2rem;
-      background: var(--white); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+      max-width: none;
+      margin: 0;
+      padding: 6rem 2rem;
+      background: var(--white);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
-    .caio-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .caio-text h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15; }
-    .caio-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .caio-text p { font-size: 1rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; max-width: 460px; }
-    .caio-stats-row { display: flex; gap: 1rem; margin-bottom: 2rem; }
+
+    .caio-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .caio-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .caio-text h2 .accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .caio-text p {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 460px;
+    }
+
+    .caio-stats-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
     .caio-stat-pill {
-      padding: 0.6rem 1.25rem; background: var(--cream); border-radius: 8px;
+      padding: 0.6rem 1.25rem;
+      background: var(--cream);
+      border-radius: 8px;
       text-align: center;
     }
-    .caio-stat-pill .num { font-size: 1.2rem; font-weight: 900; color: var(--ink); }
-    .caio-stat-pill .lbl { font-size: 0.62rem; color: var(--soft); text-transform: uppercase; letter-spacing: 0.05em; }
-    .caio-visual { border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; }
-    .caio-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .caio-visual:hover img { transform: scale(1.03); }
+
+    .caio-stat-pill .num {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .caio-stat-pill .lbl {
+      font-size: 0.62rem;
+      color: var(--soft);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .caio-visual {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .caio-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .caio-visual:hover img {
+      transform: scale(1.03);
+    }
 
     /* ── VISION / CTA ── */
     .vision-section {
-      position: relative; padding: 7rem 2rem; max-width: none; margin: 0;
-      text-align: center; overflow: hidden;
+      position: relative;
+      padding: 7rem 2rem;
+      max-width: none;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
     }
-    .vision-bg { position: absolute; inset: 0; }
-    .vision-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .vision-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.88), rgba(10,10,10,0.92)); }
-    .vision-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
-    .vision-section .section-label { color: var(--accent); }
-    .vision-section h2 { font-size: 2.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
-    .vision-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .vision-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .vision-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .vision-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.92));
+    }
+
+    .vision-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .vision-section .section-label {
+      color: var(--accent);
+    }
+
+    .vision-section h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-section p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
     .vision-email {
-      display: flex; gap: 0; max-width: 420px; margin: 0 auto 1rem;
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      margin: 0 auto 1rem;
     }
+
     .vision-email input {
-      flex: 1; padding: 0.85rem 1.25rem; border: 1px solid rgba(255,255,255,0.15);
-      border-right: none; border-radius: 6px 0 0 6px; font-size: 0.9rem;
-      font-family: inherit; background: rgba(255,255,255,0.08); color: var(--white); outline: none;
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      outline: none;
     }
-    .vision-email input::placeholder { color: rgba(255,255,255,0.35); }
+
+    .vision-email input::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
     .vision-email button {
-      padding: 0.85rem 1.5rem; background: var(--accent); color: var(--white);
-      border: none; border-radius: 0 6px 6px 0; font-size: 0.82rem; font-weight: 700;
-      font-family: inherit; cursor: pointer; white-space: nowrap; transition: background 0.2s;
+      padding: 0.85rem 1.5rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
     }
-    .vision-email button:hover { background: var(--accent-light); }
-    .vision-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
-    .vision-section .btn-primary { background: var(--accent); margin-top: 1rem; }
-    .vision-section .btn-primary:hover { background: var(--accent-light); }
+
+    .vision-email button:hover {
+      background: var(--accent-light);
+    }
+
+    .vision-note {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .vision-section .btn-primary {
+      background: var(--accent);
+      margin-top: 1rem;
+    }
+
+    .vision-section .btn-primary:hover {
+      background: var(--accent-light);
+    }
 
     /* ── FOOTER ── */
-    .footer-section { background: var(--ink); padding: 5rem 2rem 3rem; max-width: none; margin: 0; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
-    .footer-brand h3 { font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
-    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 300px; }
-    .footer-signoff { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 0.95rem; margin-top: 1rem; }
-    .footer-col h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); font-weight: 600; margin-bottom: 1rem; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.55rem; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
-    .social-links { display: flex; gap: 0.6rem; }
-    .social-links a {
-      width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
-      border-radius: 50%; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.45);
-      text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    .footer-section {
+      background: var(--ink);
+      padding: 5rem 2rem 3rem;
+      max-width: none;
+      margin: 0;
     }
-    .social-links a:hover { background: var(--accent); color: var(--white); transform: translateY(-2px); }
-    .social-links a svg { width: 15px; height: 15px; fill: currentColor; }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer-signoff {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 0.55rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .social-links a {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .social-links a svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 968px) {
-      .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-visual { order: -1; }
-      .hero-image-wrapper { max-width: 350px; }
-      .hero-floating-card { left: 0; }
-      .pillars-grid { grid-template-columns: 1fr; }
-      .podcast-inner { grid-template-columns: 1fr; }
-      .podcast-visual { order: -1; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-image { max-width: 400px; }
-      .caio-inner { grid-template-columns: 1fr; }
-      .mosaic-grid { grid-template-columns: repeat(3, 1fr); }
-      .mosaic-item.wide { grid-column: span 1; aspect-ratio: 1; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-image-wrapper {
+        max-width: 350px;
+      }
+
+      .hero-floating-card {
+        left: 0;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .podcast-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .podcast-visual {
+        order: -1;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        max-width: 400px;
+      }
+
+      .caio-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaic-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .mosaic-item.wide {
+        grid-column: span 1;
+        aspect-ratio: 1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
     }
+
     @media (max-width: 600px) {
-      .hero-text h1 { font-size: 2.2rem; }
-      nav ul { display: none; }
-      .mobile-menu-btn { display: block; }
-      .hero-email { flex-direction: column; }
-      .hero-email input { border-right: 1px solid var(--light); border-radius: 6px; }
-      .hero-email button { border-radius: 6px; }
-      .hero-ctas { flex-direction: column; align-items: stretch; }
-      .hero-floating-card { position: static; margin-top: 1rem; }
-      .about-stats { flex-direction: column; gap: 1rem; }
-      .caio-stats-row { flex-direction: column; }
-      .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
-      .appearance-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .vision-email { flex-direction: column; }
-      .vision-email input { border-right: 1px solid rgba(255,255,255,0.15); border-radius: 6px; }
-      .vision-email button { border-radius: 6px; }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-email {
+        flex-direction: column;
+      }
+
+      .hero-email input {
+        border-right: 1px solid var(--light);
+        border-radius: 6px;
+      }
+
+      .hero-email button {
+        border-radius: 6px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-floating-card {
+        position: static;
+        margin-top: 1rem;
+      }
+
+      .about-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .caio-stats-row {
+        flex-direction: column;
+      }
+
+      .mosaic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .appearance-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-email {
+        flex-direction: column;
+      }
+
+      .vision-email input {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+      }
+
+      .vision-email button {
+        border-radius: 6px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -483,7 +1465,12 @@
         <li><a href="offerings.html" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
       </button>
     </div>
   </nav>
@@ -494,7 +1481,8 @@
       <div class="hero-text">
         <div class="hero-eyebrow"><span class="dot"></span> Entrepreneur / Educator / AI Strategist</div>
         <h1>I help operators raise capital<br>and scale with <span class="accent">AI.</span></h1>
-        <p class="subtitle">Host of the Funds on Fire podcast. Founder of Fund Founders and Fund Flow OS. Fractional Chief AI Officer. On a mission to diversify Wall Street.</p>
+        <p class="subtitle">Host of the Funds on Fire podcast. Founder of Fund Founders and Fund Flow OS. Fractional
+          Chief AI Officer. On a mission to diversify Wall Street.</p>
         <form class="hero-email" onsubmit="return false;">
           <input type="email" placeholder="Enter your email for free resources">
           <button type="submit">Get Access</button>
@@ -510,9 +1498,18 @@
           <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
         </div>
         <div class="hero-floating-card">
-          <div class="stat"><div class="number">$10M+</div><div class="label">Capital Raised</div></div>
-          <div class="stat"><div class="number">300+</div><div class="label">Properties</div></div>
-          <div class="stat"><div class="number">16+</div><div class="label">Ventures</div></div>
+          <div class="stat">
+            <div class="number">$10M+</div>
+            <div class="label">Capital Raised</div>
+          </div>
+          <div class="stat">
+            <div class="number">300+</div>
+            <div class="label">Properties</div>
+          </div>
+          <div class="stat">
+            <div class="number">16+</div>
+            <div class="label">Ventures</div>
+          </div>
         </div>
       </div>
     </div>
@@ -541,12 +1538,14 @@
     <div class="pillars-grid" data-stagger>
       <a href="offerings.html" class="pillar-card">
         <div class="pillar-card-image">
-          <img src="images/FF - Horizontal Logo - Full Color.png" alt="Fund Founders" loading="lazy" class="contain" style="background: #f0f4f8;">
+          <img src="images/FF - Horizontal Logo - Full Color.png" alt="Fund Founders" loading="lazy" class="contain"
+            style="background: #f0f4f8;">
         </div>
         <div class="pillar-card-body">
           <div class="pillar-tag">Education &amp; Community</div>
           <h3>Fund Founders</h3>
-          <p>Learn to launch and manage investment funds from scratch. Coaching, community, and resources for aspiring fund managers ready to launch and scale.</p>
+          <p>Learn to launch and manage investment funds from scratch. Coaching, community, and resources for aspiring
+            fund managers ready to launch and scale.</p>
           <span class="pillar-link">Learn More <span>&rarr;</span></span>
         </div>
       </a>
@@ -557,7 +1556,8 @@
         <div class="pillar-card-body">
           <div class="pillar-tag">AI-Powered Software</div>
           <h3>Fund Flow OS</h3>
-          <p>The AI platform that helps real estate operators raise capital, manage investors, and automate fund operations. Smart matching, pitch decks, investor portal.</p>
+          <p>The AI platform that helps real estate operators raise capital, manage investors, and automate fund
+            operations. Smart matching, pitch decks, investor portal.</p>
           <span class="pillar-link">Learn More <span>&rarr;</span></span>
         </div>
       </a>
@@ -568,7 +1568,8 @@
         <div class="pillar-card-body">
           <div class="pillar-tag">AI Strategy</div>
           <h3>Fractional CAIO</h3>
-          <p>I embed in your business as your Chief AI Officer. AI systems, tech roadmap, and strategy every month. C-suite function at 10% of the cost.</p>
+          <p>I embed in your business as your Chief AI Officer. AI systems, tech roadmap, and strategy every month.
+            C-suite function at 10% of the cost.</p>
           <span class="pillar-link">Learn More <span>&rarr;</span></span>
         </div>
       </a>
@@ -581,37 +1582,54 @@
       <div class="podcast-text">
         <div class="section-label">The Podcast</div>
         <h2>Funds on Fire</h2>
-        <p>Real conversations about raising capital, managing funds, and building businesses from nothing. No fluff, no gatekeeping -- just the playbook.</p>
+        <p>Real conversations about raising capital, managing funds, and building businesses from nothing. No fluff, no
+          gatekeeping -- just the playbook.</p>
         <div class="podcast-badges">
-          <a href="https://podcasts.apple.com/us/podcast/funds-on-fire/id1801225885" class="podcast-badge" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <a href="https://podcasts.apple.com/us/podcast/funds-on-fire/id1801225885" class="podcast-badge"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+            </svg>
             Apple Podcasts
           </a>
-          <a href="https://open.spotify.com/show/2LiQRSvKGJZZYorjH6RdkS" class="podcast-badge" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          <a href="https://open.spotify.com/show/2LiQRSvKGJZZYorjH6RdkS" class="podcast-badge" target="_blank"
+            rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+            </svg>
             Spotify
           </a>
           <a href="https://www.youtube.com/@FundsonFire" class="podcast-badge" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
             YouTube
           </a>
         </div>
         <div class="podcast-appearances">
           <h4>Recent Guest Appearances</h4>
           <div class="appearance-grid">
-            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (1).jpg" alt="Real Estate Disruptors with Steve Trang" loading="lazy"></div>
-            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final).jpg" alt="DealMachine Podcast" loading="lazy"></div>
-            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (2).jpg" alt="Titanium Vault Podcast" loading="lazy"></div>
-            <div class="appearance-card"><img src="images/wholesale-hotline.png" alt="Wholesale Hotline" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (1).jpg"
+                alt="Real Estate Disruptors with Steve Trang" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final).jpg" alt="DealMachine Podcast"
+                loading="lazy"></div>
+            <div class="appearance-card"><img src="images/BNPL Webby (Webinar Final) (2).jpg"
+                alt="Titanium Vault Podcast" loading="lazy"></div>
+            <div class="appearance-card"><img src="images/wholesale-hotline.png" alt="Wholesale Hotline" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
       <div class="podcast-visual">
-        <div class="podcast-hero-img">
-          <img src="images/New Episode Large copy.jpg" alt="Devin Robinson in the podcast studio" loading="lazy">
+        <div class="podcast-hero-img" style="background:#000;">
+          <img src="images/fonf-full-color.png" alt="Funds on Fire Podcast Logo" loading="lazy" style="object-fit:contain;padding:1.5rem;">
         </div>
         <div class="podcast-hero-img">
-          <img src="images/B4542C7B-B379-4894-A5BC-E11020B4BF09.JPG" alt="Devin on Real Estate Disruptors" loading="lazy">
+          <img src="images/New Episode Large copy.jpg" alt="Devin Robinson in the podcast studio"
+            loading="lazy">
         </div>
       </div>
     </div>
@@ -620,36 +1638,58 @@
   <!-- PHOTO MOSAIC -->
   <div class="photo-mosaic">
     <div class="mosaic-grid">
-      <div class="mosaic-item"><img src="images/IMG_4487_VSCO.JPG" alt="Devin at Deal Champs event" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/CGPremier2024Q4_MainStage_web_629.JPEG" alt="Receiving award on stage" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/IMG_4466_VSCO.JPG" alt="Devin networking at conference" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/IMG_4115_VSCO.JPG" alt="Devin with industry leaders" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/CGPremier2025Q2_MAINSTAGE & CROWD_web_041.jpg" alt="Speaking on main stage" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/E5CCE31E-383B-4ABA-957E-8C7491A1DC84.JPG" alt="Devin networking at conference" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/IMG_4487_VSCO.JPG" alt="Devin at Deal Champs event" loading="lazy">
+      </div>
+      <div class="mosaic-item"><img src="images/CGPremier2024Q4_MainStage_web_629.JPEG" alt="Receiving award on stage"
+          loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/IMG_4466_VSCO.JPG" alt="Devin networking at conference" loading="lazy">
+      </div>
+      <div class="mosaic-item"><img src="images/IMG_4115_VSCO.JPG" alt="Devin with industry leaders" loading="lazy">
+      </div>
+      <div class="mosaic-item"><img src="images/CGPremier2025Q2_MAINSTAGE & CROWD_web_041.jpg"
+          alt="Speaking on main stage" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/E5CCE31E-383B-4ABA-957E-8C7491A1DC84.JPG"
+          alt="Devin networking at conference" loading="lazy"></div>
       <div class="mosaic-item"><img src="images/IMG_4491.JPG" alt="Devin at Deal Champs" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/8F28A5AB-EE26-4B19-808D-6E239916D16D.JPG" alt="Devin with friends at event" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/IMG_4720_VSCO.JPG" alt="Devin outdoors with friends" loading="lazy"></div>
-      <div class="mosaic-item"><img src="images/2A820339-D74C-475C-A0BF-A65B1F66AEEB.JPG" alt="Devin networking" loading="lazy"></div>
-    </div>
+      <div class="mosaic-item"><img src="images/8F28A5AB-EE26-4B19-808D-6E239916D16D.JPG"
+          alt="Devin with friends at event" loading="lazy"></div>
+      <div class="mosaic-item"><img src="images/IMG_4720_VSCO.JPG" alt="Devin outdoors with friends" loading="lazy">
+      </div>
+      <div class="mosaic-item"><img src="images/2A820339-D74C-475C-A0BF-A65B1F66AEEB" alt="Devin networking"
+          loading="lazy"></div>
+    </div>.JPG
   </div>
 
   <!-- ABOUT -->
   <section class="about-section" id="about" data-reveal>
     <div class="about-grid">
       <div class="about-image">
-        <img src="images/IMG_2628_VSCO.JPG" alt="Devin Robinson speaking on Managing Funds and Raising Capital" loading="lazy">
+        <img src="images/IMG_2628_VSCO.JPG" alt="Devin Robinson speaking on Managing Funds and Raising Capital"
+          loading="lazy">
       </div>
       <div class="about-text">
         <div class="section-label">My Story</div>
         <h2>From broke to building<br><span class="accent">the infrastructure.</span></h2>
-        <p>I grew up in Englewood, LA. Single mom, three jobs, gangs on every corner. I've been bankrupt, laid off entire teams, and rebuilt from zero more than once.</p>
+        <p>I grew up in Englewood, LA. Single mom, three jobs, gangs on every corner. I've been bankrupt, laid off
+          entire teams, and rebuilt from zero more than once.</p>
         <div class="emphasis">"Your lived experience is your competitive advantage."</div>
-        <p>Today I run PF Capital (a 506(b) real estate fund), built Fund Flow OS from scratch, host the Funds on Fire podcast, and lead Fund Founders -- a community helping aspiring fund managers launch and scale.</p>
-        <p>I don't teach theory. I teach what I've done, what's working right now, and exactly how you can do it too.</p>
+        <p>Today I run PF Capital (a 506(b) real estate fund), built Fund Flow OS from scratch, host the Funds on Fire
+          podcast, and lead Fund Founders -- a community helping aspiring fund managers launch and scale.</p>
+        <p>I don't teach theory. I teach what I've done, what's working right now, and exactly how you can do it too.
+        </p>
         <div class="about-stats">
-          <div class="about-stat"><div class="num">$10M+</div><div class="lbl">Capital Raised</div></div>
-          <div class="about-stat"><div class="num">300+</div><div class="lbl">Properties</div></div>
-          <div class="about-stat"><div class="num">4 yrs</div><div class="lbl">300+ Houses</div></div>
+          <div class="about-stat">
+            <div class="num">$10M+</div>
+            <div class="lbl">Capital Raised</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">300+</div>
+            <div class="lbl">Properties</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">4 yrs</div>
+            <div class="lbl">300+ Houses</div>
+          </div>
         </div>
       </div>
     </div>
@@ -660,7 +1700,8 @@
     <div class="timeline-inner">
       <div class="section-label">The Journey</div>
       <div class="section-title">Built Different. Built From Nothing.</div>
-      <p class="section-subtitle">From photographing weddings to raising millions and building AI-powered fintech. Here's the arc.</p>
+      <p class="section-subtitle">From photographing weddings to raising millions and building AI-powered fintech.
+        Here's the arc.</p>
 
       <!-- Desktop timeline -->
       <div class="tl-grid">
@@ -668,19 +1709,22 @@
           <div class="tl-item" data-reveal>
             <div class="tl-year">2013 - 2020</div>
             <div class="tl-title">Anchor &amp; Veil Photography</div>
-            <div class="tl-desc">Built a photography &amp; marketing company from nothing into a 7-state operation. $1M/year revenue, team across 7 states, clients in 30+ countries. Sold the company in 2023.</div>
+            <div class="tl-desc">Built a photography &amp; marketing company from nothing into a 7-state operation.
+              $1M/year revenue, team across 7 states, clients in 30+ countries. Sold the company in 2023.</div>
             <span class="tl-tag success">$1M+ Revenue</span>
           </div>
           <div class="tl-item highlight" data-reveal>
             <div class="tl-year">2023</div>
             <div class="tl-title">PF Capital -- The Fund</div>
-            <div class="tl-desc">Launched a 506(b) real estate investment fund. Raised millions in capital to buy, flip, build, and sell properties. 300+ houses in 4 years across multiple strategies.</div>
+            <div class="tl-desc">Launched a 506(b) real estate investment fund. Raised millions in capital to buy, flip,
+              build, and sell properties. 300+ houses in 4 years across multiple strategies.</div>
             <span class="tl-tag validating">$10M+ Raised</span>
           </div>
           <div class="tl-item highlight" data-reveal>
             <div class="tl-year">2025</div>
             <div class="tl-title">Fund Flow OS</div>
-            <div class="tl-desc">Built an AI-powered capital raising platform from scratch. Investor matching, pitch deck builder, investor portal. Found co-founders through YC. This will be the biggest thing I build.</div>
+            <div class="tl-desc">Built an AI-powered capital raising platform from scratch. Investor matching, pitch
+              deck builder, investor portal. Found co-founders through YC. This will be the biggest thing I build.</div>
             <span class="tl-tag validating">Building Now</span>
           </div>
         </div>
@@ -691,19 +1735,22 @@
           <div class="tl-item" data-reveal>
             <div class="tl-year">2021</div>
             <div class="tl-title">Pivoted to Real Estate</div>
-            <div class="tl-desc">COVID crushed the wedding industry. Pivoted to real estate wholesaling and closed 70 deals in the first 6 months. Specialized in foreclosures and creative finance.</div>
+            <div class="tl-desc">COVID crushed the wedding industry. Pivoted to real estate wholesaling and closed 70
+              deals in the first 6 months. Specialized in foreclosures and creative finance.</div>
             <span class="tl-tag success">70 Deals in 6 Months</span>
           </div>
           <div class="tl-item highlight" data-reveal>
             <div class="tl-year">2024</div>
             <div class="tl-title">Fund Founders</div>
-            <div class="tl-desc">Co-founded with SEC attorney Seth. On a mission to help aspiring fund managers launch and scale. Coaching, community, and the Funds on Fire podcast.</div>
+            <div class="tl-desc">Co-founded with SEC attorney Seth. On a mission to help aspiring fund managers launch
+              and scale. Coaching, community, and the Funds on Fire podcast.</div>
             <span class="tl-tag validating">Growing</span>
           </div>
           <div class="tl-item highlight" data-reveal>
             <div class="tl-year">Now</div>
             <div class="tl-title">Fractional CAIO + Content</div>
-            <div class="tl-desc">Embedding as Chief AI Officer in businesses. Hosting Funds on Fire. Father of 3 adopted kids. Building in public, every single day.</div>
+            <div class="tl-desc">Embedding as Chief AI Officer in businesses. Hosting Funds on Fire. Father of 3 adopted
+              kids. Building in public, every single day.</div>
             <span class="tl-tag validating">Right Now</span>
           </div>
         </div>
@@ -711,11 +1758,36 @@
 
       <!-- Mobile timeline -->
       <div class="tl-mobile">
-        <div class="tl-m-item"><div class="tl-year">2013-2020</div><div class="tl-title">Anchor &amp; Veil Photography</div><div class="tl-desc">$1M/year, team across 7 states, 30+ countries. Sold in 2023.</div><span class="tl-tag success">$1M+ Revenue</span></div>
-        <div class="tl-m-item"><div class="tl-year">2021</div><div class="tl-title">Pivoted to Real Estate</div><div class="tl-desc">70 deals in 6 months. Specialized in foreclosures and creative finance.</div><span class="tl-tag success">70 Deals</span></div>
-        <div class="tl-m-item highlight"><div class="tl-year">2023</div><div class="tl-title">PF Capital -- The Fund</div><div class="tl-desc">Raised millions. 300+ houses in 4 years. Buy, flip, build, sell.</div><span class="tl-tag validating">$10M+ Raised</span></div>
-        <div class="tl-m-item highlight"><div class="tl-year">2024</div><div class="tl-title">Fund Founders</div><div class="tl-desc">Helping aspiring fund managers launch and scale.</div><span class="tl-tag validating">Growing</span></div>
-        <div class="tl-m-item highlight"><div class="tl-year">2025</div><div class="tl-title">Fund Flow OS + Fractional CAIO</div><div class="tl-desc">AI platform for capital raising. Chief AI Officer for hire. Funds on Fire podcast.</div><span class="tl-tag validating">Right Now</span></div>
+        <div class="tl-m-item">
+          <div class="tl-year">2013-2020</div>
+          <div class="tl-title">Anchor &amp; Veil Photography</div>
+          <div class="tl-desc">$1M/year, team across 7 states, 30+ countries. Sold in 2023.</div><span
+            class="tl-tag success">$1M+ Revenue</span>
+        </div>
+        <div class="tl-m-item">
+          <div class="tl-year">2021</div>
+          <div class="tl-title">Pivoted to Real Estate</div>
+          <div class="tl-desc">70 deals in 6 months. Specialized in foreclosures and creative finance.</div><span
+            class="tl-tag success">70 Deals</span>
+        </div>
+        <div class="tl-m-item highlight">
+          <div class="tl-year">2023</div>
+          <div class="tl-title">PF Capital -- The Fund</div>
+          <div class="tl-desc">Raised millions. 300+ houses in 4 years. Buy, flip, build, sell.</div><span
+            class="tl-tag validating">$10M+ Raised</span>
+        </div>
+        <div class="tl-m-item highlight">
+          <div class="tl-year">2024</div>
+          <div class="tl-title">Fund Founders</div>
+          <div class="tl-desc">Helping aspiring fund managers launch and scale.</div><span
+            class="tl-tag validating">Growing</span>
+        </div>
+        <div class="tl-m-item highlight">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">Fund Flow OS + Fractional CAIO</div>
+          <div class="tl-desc">AI platform for capital raising. Chief AI Officer for hire. Funds on Fire podcast.</div>
+          <span class="tl-tag validating">Right Now</span>
+        </div>
       </div>
     </div>
   </div>
@@ -726,13 +1798,24 @@
       <div class="caio-text">
         <div class="section-label">AI Strategy</div>
         <h2>Replace <span class="accent">$285K-$507K</span> in payroll<br>with a $2,500/mo AI strategist.</h2>
-        <p>I embed in your business as your Fractional Chief AI Officer. Strategy, systems, and monthly AI builds for real estate operators and fund managers. 7-12x ROI.</p>
+        <p>I embed in your business as your Fractional Chief AI Officer. Strategy, systems, and monthly AI builds for
+          real estate operators and fund managers. 7-12x ROI.</p>
         <div class="caio-stats-row">
-          <div class="caio-stat-pill"><div class="num">7-12x</div><div class="lbl">ROI</div></div>
-          <div class="caio-stat-pill"><div class="num">$2,500</div><div class="lbl">/mo starting</div></div>
-          <div class="caio-stat-pill"><div class="num">24/7</div><div class="lbl">AI never sleeps</div></div>
+          <div class="caio-stat-pill">
+            <div class="num">7-12x</div>
+            <div class="lbl">ROI</div>
+          </div>
+          <div class="caio-stat-pill">
+            <div class="num">$2,500</div>
+            <div class="lbl">/mo starting</div>
+          </div>
+          <div class="caio-stat-pill">
+            <div class="num">24/7</div>
+            <div class="lbl">AI never sleeps</div>
+          </div>
         </div>
-        <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">See If This Is a Fit &rarr;</a>
+        <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">See If This Is a Fit
+          &rarr;</a>
       </div>
       <div class="caio-visual">
         <img src="images/ChatGPT Image Oct 27, 2025, 09_27_51 AM.png" alt="Human meets AI" loading="lazy">
@@ -746,7 +1829,8 @@
     <div class="vision-inner" data-reveal>
       <div class="section-label">#DiversifyWallStreet</div>
       <h2>Only 1.4% of $82 trillion is managed by minorities and women.</h2>
-      <p>I'm building the infrastructure to change that number. Capital, knowledge, community, and opportunity -- compounding for the people who've been locked out.</p>
+      <p>I'm building the infrastructure to change that number. Capital, knowledge, community, and opportunity --
+        compounding for the people who've been locked out.</p>
       <form class="vision-email" onsubmit="return false;">
         <input type="email" placeholder="Your email address">
         <button type="submit">Join the Movement</button>
@@ -780,17 +1864,37 @@
         <div class="footer-col">
           <h4>Connect</h4>
           <a href="mailto:devin@pfpsolutions.us">devin@pfpsolutions.us</a>
-          <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.55rem;">Charlotte, NC</span>
+          <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.55rem;">Charlotte,
+            NC</span>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Devin Robinson. All rights reserved.</p>
         <div class="social-links">
-          <a href="https://www.instagram.com/devin.robinson1/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a href="https://www.youtube.com/@Devin.robinson1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://x.com/Devinrobinson" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://www.linkedin.com/in/devinrobinson1" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="https://www.tiktok.com/@devinrobinson1" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="https://www.instagram.com/devin.robinson1/" target="_blank" rel="noopener"
+            aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg></a>
+          <a href="https://www.youtube.com/@Devin.robinson1" target="_blank" rel="noopener" aria-label="YouTube"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg></a>
+          <a href="https://x.com/Devinrobinson" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg></a>
+          <a href="https://www.linkedin.com/in/devinrobinson1" target="_blank" rel="noopener" aria-label="LinkedIn"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg></a>
+          <a href="https://www.tiktok.com/@devinrobinson1" target="_blank" rel="noopener" aria-label="TikTok"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+            </svg></a>
         </div>
       </div>
     </div>
@@ -824,21 +1928,24 @@
 
       // Scroll reveals
       gsap.utils.toArray('[data-reveal]').forEach(el => {
-        gsap.from(el, { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+        gsap.from(el, {
+          opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
         });
       });
 
       // Stagger
       gsap.utils.toArray('[data-stagger]').forEach(container => {
-        gsap.from(container.children, { opacity: 0, y: 30, stagger: 0.15, duration: 0.6, ease: 'power2.out',
+        gsap.from(container.children, {
+          opacity: 0, y: 30, stagger: 0.15, duration: 0.6, ease: 'power2.out',
           scrollTrigger: { trigger: container, start: 'top 80%' }
         });
       });
 
       // Mosaic parallax
       gsap.utils.toArray('.mosaic-item img').forEach(img => {
-        gsap.fromTo(img, { scale: 1.15 }, { scale: 1, ease: 'none',
+        gsap.fromTo(img, { scale: 1.15 }, {
+          scale: 1, ease: 'none',
           scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.3 }
         });
       });
@@ -851,4 +1958,5 @@
   </script>
 
 </body>
+
 </html>
