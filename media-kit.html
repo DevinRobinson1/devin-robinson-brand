@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Kit - Devin Robinson | Speaker, Podcast Guest, Educator</title>
+  <meta name="description"
+    content="Devin Robinson's media kit. Bio, speaking topics, headshots, and everything you need to book Devin for your podcast, conference, or event.">
+  <meta property="og:title" content="Devin Robinson - Media Kit">
+  <meta property="og:description"
+    content="Bio, speaking topics, headshots, and everything you need to book Devin for your podcast, conference, or event.">
+  <meta property="og:image" content="images/youtube-banner.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --charcoal: #1a1a1a;
+      --slate: #2d2d2d;
+      --mid: #666666;
+      --soft: #999999;
+      --light: #e8e8e8;
+      --cream: #f8f7f5;
+      --offwhite: #faf9f7;
+      --white: #ffffff;
+      --accent: #c45a3c;
+      --accent-dark: #a8432a;
+      --accent-light: #e8785c;
+      --accent-glow: rgba(196, 90, 60, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body::after { content: ''; position: fixed; inset: 0; opacity: 0.018; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(248,247,245,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
+    nav ul a { text-decoration: none; color: var(--mid); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    nav ul a:hover { color: var(--ink); }
+    .nav-cta { padding: 0.5rem 1.2rem; background: var(--accent); color: var(--white) !important; border-radius: 6px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; color: var(--ink); }
+
+    /* Utilities */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+    .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; border-radius: 6px; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, background 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,90,60,0.3); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: transparent; color: var(--ink); text-decoration: none; font-size: 0.85rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--light); transition: all 0.2s; }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    /* Hero */
+    .mk-hero { padding: 9rem 2rem 5rem; position: relative; overflow: hidden; }
+    .mk-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .mk-hero-text .section-label { margin-bottom: 1rem; }
+    .mk-hero-text h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+    .mk-hero-text p { font-size: 1.1rem; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; max-width: 520px; }
+    .mk-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .mk-hero-image { position: relative; }
+    .mk-hero-image img { width: 100%; border-radius: 12px; object-fit: cover; aspect-ratio: 4/5; }
+    .mk-hero-image::after { content: ''; position: absolute; inset: 0; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); pointer-events: none; }
+
+    /* Stats bar */
+    .stats-bar { background: var(--ink); padding: 3rem 2rem; }
+    .stats-bar-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-item .num { font-size: 2.2rem; font-weight: 900; color: var(--accent); }
+    .stat-item .lbl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-top: 0.25rem; }
+
+    /* About / Bio */
+    .mk-about { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
+    .mk-about h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .mk-about .subtitle { font-size: 1rem; color: var(--mid); margin-bottom: 2.5rem; }
+    .bio-card { background: var(--white); border-radius: 12px; padding: 2.5rem; border: 1px solid rgba(0,0,0,0.06); }
+    .bio-card p { font-size: 1rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.25rem; }
+    .bio-card p:last-child { margin-bottom: 0; }
+    .bio-card .emphasis { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin: 1.5rem 0; padding-left: 1.25rem; border-left: 3px solid var(--accent); }
+
+    /* Journey section */
+    .mk-journey { padding: 5rem 2rem; background: var(--ink); color: var(--white); }
+    .mk-journey-inner { max-width: 900px; margin: 0 auto; }
+    .mk-journey h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .mk-journey .subtitle { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
+    .tl-list { position: relative; padding-left: 2rem; }
+    .tl-list::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.1); }
+    .tl-entry { position: relative; margin-bottom: 2.5rem; }
+    .tl-entry:last-child { margin-bottom: 0; }
+    .tl-entry::before { content: ''; position: absolute; left: -2rem; top: 0.6rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--ink); margin-left: -4px; }
+    .tl-entry .year { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.25rem; }
+    .tl-entry h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .tl-entry p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* Speaking Topics */
+    .mk-topics { padding: 6rem 2rem; }
+    .mk-topics-inner { max-width: 1200px; margin: 0 auto; }
+    .mk-topics h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; text-align: center; }
+    .mk-topics .subtitle { font-size: 1rem; color: var(--mid); margin-bottom: 3rem; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .topics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .topic-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 2rem; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+    .topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .topic-num { font-size: 2rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 0.75rem; }
+    .topic-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .topic-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.65; }
+
+    /* Where I've Spoken */
+    .mk-spoken { padding: 5rem 2rem; background: var(--charcoal); }
+    .mk-spoken-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .mk-spoken h2 { font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+    .mk-spoken .subtitle { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
+    .spoken-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; text-align: left; }
+    .spoken-col h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 1.25rem; }
+    .spoken-col ul { list-style: none; }
+    .spoken-col li { font-size: 0.95rem; color: rgba(255,255,255,0.75); padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .spoken-col li:last-child { border-bottom: none; }
+
+    /* Social Platforms */
+    .mk-platforms { padding: 5rem 2rem; text-align: center; }
+    .mk-platforms-inner { max-width: 900px; margin: 0 auto; }
+    .mk-platforms h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .mk-platforms .subtitle { font-size: 1rem; color: var(--mid); margin-bottom: 3rem; }
+    .platforms-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    .platform-link { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; text-decoration: none; padding: 1.5rem 2rem; border-radius: 12px; background: var(--white); border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; min-width: 120px; }
+    .platform-link:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .platform-link svg { width: 32px; height: 32px; fill: var(--ink); }
+    .platform-link span { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); }
+
+    /* Headshots */
+    .mk-headshots { padding: 6rem 2rem; background: var(--ink); }
+    .mk-headshots-inner { max-width: 1200px; margin: 0 auto; }
+    .mk-headshots h2 { font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; text-align: center; }
+    .mk-headshots .subtitle { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 3rem; text-align: center; }
+    .headshots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .headshot-card { position: relative; border-radius: 12px; overflow: hidden; background: var(--charcoal); }
+    .headshot-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+    .headshot-card:hover img { transform: scale(1.03); }
+    .headshot-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; justify-content: space-between; align-items: flex-end; }
+    .headshot-overlay .label { font-size: 0.78rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.75rem; font-weight: 600; border-radius: 6px; transition: background 0.2s; }
+    .dl-btn:hover { background: var(--accent-dark); }
+    .dl-btn svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+    /* Contact CTA */
+    .mk-contact { padding: 6rem 2rem; text-align: center; }
+    .mk-contact-inner { max-width: 600px; margin: 0 auto; }
+    .mk-contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    .mk-contact p { font-size: 1.05rem; color: var(--mid); margin-bottom: 2rem; line-height: 1.7; }
+    .contact-details { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+    .contact-details a { color: var(--ink); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.2s; }
+    .contact-details a:hover { color: var(--accent); }
+
+    /* Footer */
+    .footer-section { background: var(--ink); padding: 4rem 2rem 2rem; color: var(--white); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 1rem; }
+    .footer-signoff { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 0.9rem; }
+    .footer-col h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.55rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .social-links { display: flex; gap: 1rem; }
+    .social-links a { color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .social-links a:hover { color: var(--white); }
+    .social-links svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mk-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mk-hero-image { order: -1; max-width: 400px; margin: 0 auto; }
+      .stats-bar-inner { gap: 2rem; }
+      .topics-grid { grid-template-columns: 1fr; }
+      .headshots-grid { grid-template-columns: 1fr 1fr; }
+      .spoken-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      nav ul { display: none; }
+      .mobile-menu-btn { display: block; }
+      .platforms-grid { gap: 1rem; }
+      .platform-link { min-width: 100px; padding: 1.25rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .headshots-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">DEVIN<span>.</span></a>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#podcast">Podcast</a></li>
+        <li><a href="offerings.html">Services</a></li>
+        <li><a href="fractional-caio.html">AI Strategy</a></li>
+        <li><a href="offerings.html" class="nav-cta">Work With Me</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="mk-hero">
+    <div class="mk-hero-inner">
+      <div class="mk-hero-text" data-reveal>
+        <div class="section-label">Media Kit</div>
+        <h1>Everything you need to <span class="accent">book Devin.</span></h1>
+        <p>Bio, speaking topics, headshots, and history -- all in one place. Whether it's your podcast, conference, or
+          webinar, I'm ready to bring value to your audience.</p>
+        <div class="mk-hero-ctas">
+          <a href="#headshots" class="btn-primary">Download Headshots &darr;</a>
+          <a href="mailto:devin@pfpsolutions.us" class="btn-ghost">Get In Touch</a>
+        </div>
+      </div>
+      <div class="mk-hero-image" data-reveal>
+        <img src="images/IMG_2628_VSCO.JPG" alt="Devin Robinson speaking on Managing Funds and Raising Capital">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar" data-reveal>
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <div class="num">$10M+</div>
+        <div class="lbl">Capital Raised</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">300+</div>
+        <div class="lbl">Properties</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">16+</div>
+        <div class="lbl">Business Ventures</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">27</div>
+        <div class="lbl">Countries</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT / BIO -->
+  <section class="mk-about" data-reveal>
+    <div class="section-label">About Me</div>
+    <h2>The Short Version</h2>
+    <p class="subtitle">Copy-paste ready bios for your show notes, event program, or website.</p>
+    <div class="bio-card">
+      <p>From the streets of Los Angeles to the thriving communities of Charlotte, NC, Devin Robinson's journey has been
+        nothing short of extraordinary. As a serial entrepreneur with a diverse portfolio of 16 ventures since 2013, his
+        career spans a global photography company with projects in 27 countries to spearheading a dynamic real estate
+        investing company and fund in the Southeast United States.</p>
+      <p>At the heart of his real estate endeavors lies a commitment to "Experiential Investing" -- creating unique,
+        meaningful investment experiences backed by tangible real estate assets, offering high returns to investors.</p>
+      <div class="emphasis">"Your lived experience is your competitive advantage."</div>
+      <p>Now settled in Charlotte with his wife and three adopted children, Devin's life is dedicated to more than just
+        business success. His family's journey through fostering and adoption has ignited a strong desire to address the
+        affordable housing and foster care crises in the United States.</p>
+      <p>His Big Hairy Audacious Goal (BHAG) is transformative: to impact the lives of 10,000 families by providing
+        1,000 units of affordable housing across 10 states and wield enough influence to drive significant change in the
+        foster care system and affordable housing programs.</p>
+      <p>Devin's audience is diverse, ranging from individuals interested in passive real estate investing to those eager
+        to learn about the intricacies of the industry. He strikes a balance between professionalism and personal
+        connection, believing that the most profound impacts are made through authentic, meaningful interactions.</p>
+    </div>
+  </section>
+
+  <!-- JOURNEY / TIMELINE -->
+  <section class="mk-journey" data-reveal>
+    <div class="mk-journey-inner">
+      <div class="section-label">The Journey</div>
+      <h2>Real Estate Investing Timeline</h2>
+      <p class="subtitle">From serial entrepreneurship to raising millions and building AI-powered fintech.</p>
+      <div class="tl-list">
+        <div class="tl-entry" data-reveal>
+          <div class="year">2013 - 2022</div>
+          <h3>16 Business Ventures</h3>
+          <p>Started, sold, crashed & burned 8 different businesses & 16 business ventures. Built Anchor & Veil Photography into a 7-state operation with $1M/year revenue and clients in 30+ countries.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">April 2021</div>
+          <h3>Started Wholesale Company</h3>
+          <p>70 deals in the first 6 months of business. Generating over $700,000 in revenue.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">Nov 2021 - May 2022</div>
+          <h3>Crash, Burn, Re-Build</h3>
+          <p>The model didn't work. Had to lay off all staff and re-build the business from the ground up.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">2022</div>
+          <h3>Specialized in Foreclosure</h3>
+          <p>Built out extremely robust SOPs for foreclosures and finished the year averaging 70k per deal and $150k months & $600K on the year.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">July 2023</div>
+          <h3>Started PF Capital</h3>
+          <p>Started a 506(b) Real Estate fund and raised 2 Million in capital into the fund in 6 months without previous capital raised.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">July - Dec 2023</div>
+          <h3>Building a Portfolio</h3>
+          <p>Scaled operations to build a portfolio purchasing 25 properties using creative finance & the Installment Method to flip and hold.</p>
+        </div>
+        <div class="tl-entry" data-reveal>
+          <div class="year">2025</div>
+          <h3>Fund Flow OS & AI Strategy</h3>
+          <p>Built an AI-powered capital raising platform from scratch. Now serving as Fractional Chief AI Officer for real estate operators and fund managers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING TOPICS -->
+  <section class="mk-topics" data-reveal>
+    <div class="mk-topics-inner">
+      <div class="section-label">Speaking Topics</div>
+      <h2>What I Teach On</h2>
+      <p class="subtitle">Practical advice and motivation to help audiences build businesses and create the lifestyle
+        they've always wanted.</p>
+      <div class="topics-grid" data-stagger>
+        <div class="topic-card">
+          <div class="topic-num">01</div>
+          <h3>More Money Than God: Launching & Managing Funds</h3>
+          <p>From Data to Dispo. Learn how to maximize your profits by getting free data that leads to your biggest deals
+            with foreclosures. Learn how we are hitting $100,000 deals by creating massive value, being personal and
+            serving sellers well.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-num">02</div>
+          <h3>How Wholesaling is Changing -- The Installment Method</h3>
+          <p>With regulation, competition and interest rates, wholesaling is under attack. With the Installment Method,
+            this changes everything and allows you to grow your profits by 66% and eliminate the risk of regulations.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-num">03</div>
+          <h3>The Richest Are in the Niches: Finding Foreclosures</h3>
+          <p>From Data to Dispo. Learn how to maximize your profits by getting free data that leads to your biggest deals
+            with foreclosures. Learn how we are hitting $100,000 deals by creating massive value.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-num">04</div>
+          <h3>Raising Capital in the Digital Age</h3>
+          <p>He who holds the Gold controls the deal. In 2024, we have an incredible ability to raise Capital at scale.
+            How can you raise capital with social media? Strategies from going 0-2 million raised into our fund in just 6
+            months with ZERO previous access to capital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE I'VE SPOKEN -->
+  <section class="mk-spoken" data-reveal>
+    <div class="mk-spoken-inner">
+      <div class="section-label">Where I've Been</div>
+      <h2 style="color: var(--white);">Conferences & Podcasts</h2>
+      <p class="subtitle">Stages, studios, and masterminds where I've delivered value.</p>
+      <div class="spoken-grid">
+        <div class="spoken-col">
+          <h3>Conferences</h3>
+          <ul>
+            <li>Showit United (3 Times)</li>
+            <li>The Collective Genius (2 Belts Won)</li>
+            <li>The Kreative Summit</li>
+            <li>RaiseFest</li>
+            <li>Deal Champs</li>
+          </ul>
+        </div>
+        <div class="spoken-col">
+          <h3>Podcasts</h3>
+          <ul>
+            <li>Real Estate Disruptors with Steve Trang</li>
+            <li>Wholesale Hotline with Pace, Jamil & Brent</li>
+            <li>REI Wholesaling Academy with Rafael Cortez</li>
+            <li>The Titanium Vault</li>
+            <li>Funds on Fire (Host)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND ME ON THESE PLATFORMS -->
+  <section class="mk-platforms" data-reveal>
+    <div class="mk-platforms-inner">
+      <h2>Find Me on These Platforms</h2>
+      <p class="subtitle">Click an icon below to go straight there.</p>
+      <div class="platforms-grid">
+        <a href="https://www.instagram.com/devin.robinson1/" target="_blank" rel="noopener" class="platform-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/devinrobinson" target="_blank" rel="noopener" class="platform-link">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.youtube.com/@Devin.robinson1" target="_blank" rel="noopener" class="platform-link">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>YouTube</span>
+        </a>
+        <a href="https://www.tiktok.com/@devinrobinson1" target="_blank" rel="noopener" class="platform-link">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.linkedin.com/in/devinrobinson1" target="_blank" rel="noopener" class="platform-link">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADSHOTS -->
+  <section class="mk-headshots" id="headshots" data-reveal>
+    <div class="mk-headshots-inner">
+      <div class="section-label">Headshots & Photos</div>
+      <h2>Download My Photos</h2>
+      <p class="subtitle">Click any image to download. Use whichever fits your format best.</p>
+      <div class="headshots-grid" data-stagger>
+        <div class="headshot-card">
+          <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson - Studio Headshot" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">Studio Headshot</span>
+            <a href="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" download="Devin-Robinson-Headshot.png" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+        <div class="headshot-card">
+          <img src="images/71E25DD1-4413-488A-9D0D-B97FE4B3F39F.JPG" alt="Devin Robinson - Signing Documents" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">Closing Deals</span>
+            <a href="images/71E25DD1-4413-488A-9D0D-B97FE4B3F39F.JPG" download="Devin-Robinson-Closing.JPG" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+        <div class="headshot-card">
+          <img src="images/IMG_2628_VSCO.JPG" alt="Devin Robinson - Speaking on Stage" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">Speaking on Stage</span>
+            <a href="images/IMG_2628_VSCO.JPG" download="Devin-Robinson-Speaking.JPG" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+        <div class="headshot-card">
+          <img src="images/12CE7A9D-9D3F-4BAE-886A-9446234625EF.JPG" alt="Devin Robinson - Keynote Speaking" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">Keynote Speaking</span>
+            <a href="images/12CE7A9D-9D3F-4BAE-886A-9446234625EF.JPG" download="Devin-Robinson-Keynote.JPG" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+        <div class="headshot-card">
+          <img src="images/315EA40F-9287-4B49-84FA-5E76C0A5AAF8.JPG" alt="Devin Robinson - On Stage at Showit United" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">On Stage</span>
+            <a href="images/315EA40F-9287-4B49-84FA-5E76C0A5AAF8.JPG" download="Devin-Robinson-Stage.JPG" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+        <div class="headshot-card">
+          <img src="images/B4542C7B-B379-4894-A5BC-E11020B4BF09.JPG" alt="Devin Robinson - Podcast Guest" loading="lazy">
+          <div class="headshot-overlay">
+            <span class="label">Podcast Guest</span>
+            <a href="images/B4542C7B-B379-4894-A5BC-E11020B4BF09.JPG" download="Devin-Robinson-Podcast.JPG" class="dl-btn">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="mk-contact" data-reveal>
+    <div class="mk-contact-inner">
+      <div class="section-label">Book Devin</div>
+      <h2>Let's Create Something <span class="accent">Together.</span></h2>
+      <p>Whether it's a keynote, podcast interview, panel discussion, or workshop -- I bring energy, actionable
+        insights, and real-world stories that move audiences.</p>
+      <div class="contact-details">
+        <a href="mailto:devin@pfpsolutions.us">devin@pfpsolutions.us</a>
+        <a href="tel:+17046121041">(704) 612-1041</a>
+        <span style="color: var(--mid); font-size: 0.9rem;">Charlotte, NC 28202</span>
+      </div>
+      <a href="mailto:devin@pfpsolutions.us" class="btn-primary">Send a Booking Request &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-section">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Devin Robinson</h3>
+          <p>Entrepreneur, educator, AI strategist. Based in Charlotte, NC. Building the future of capital raising.</p>
+          <div class="footer-signoff">To great success and greater impact.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Work With Me</h4>
+          <a href="offerings.html">All Services</a>
+          <a href="fractional-caio.html">Fractional CAIO</a>
+          <a href="offerings.html">Fund Founders</a>
+          <a href="offerings.html">Fund Flow OS</a>
+        </div>
+        <div class="footer-col">
+          <h4>Content</h4>
+          <a href="index.html#podcast">Funds on Fire Podcast</a>
+          <a href="https://www.youtube.com/@Devin.robinson1" target="_blank" rel="noopener">YouTube</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:devin@pfpsolutions.us">devin@pfpsolutions.us</a>
+          <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.55rem;">Charlotte,
+            NC</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Devin Robinson. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/devin.robinson1/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.youtube.com/@Devin.robinson1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://x.com/Devinrobinson" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.linkedin.com/in/devinrobinson1" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.tiktok.com/@devinrobinson1" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP + ANIMATIONS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Scroll reveals
+      gsap.utils.toArray('[data-reveal]').forEach(el => {
+        gsap.from(el, {
+          opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+        });
+      });
+
+      // Stagger
+      gsap.utils.toArray('[data-stagger]').forEach(container => {
+        gsap.from(container.children, {
+          opacity: 0, y: 30, stagger: 0.15, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: container, start: 'top 80%' }
+        });
+      });
+
+      // Nav shadow
+      window.addEventListener('scroll', () => {
+        document.querySelector('nav').style.boxShadow = window.scrollY > 50 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+      });
+    });
+  </script>
+</body>
+
+</html>

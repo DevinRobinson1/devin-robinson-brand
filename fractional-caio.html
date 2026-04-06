@@ -30,6 +30,7 @@
     nav ul { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
     nav ul a { text-decoration: none; color: var(--mid); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
     nav ul a:hover { color: var(--ink); }
+
     .nav-cta { padding: 0.5rem 1.2rem; background: var(--accent); color: var(--white) !important; border-radius: 6px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
     .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
@@ -144,6 +145,19 @@
     .final-cta p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
     .final-cta .btn-primary { background: var(--accent); }
 
+    /* Problem */
+    .problem { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+    .problem h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .problem .lead { font-size: 1.15rem; color: var(--mid); line-height: 1.75; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .problem-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 2.5rem; }
+    .problem-point { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.75rem; }
+    .problem-point .icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .problem-point h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .problem-point p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+    .problem .emphasis { font-size: 1.2rem; font-weight: 800; color: var(--ink); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+    .problem .emphasis span { color: var(--accent); }
+    @media (max-width: 768px) { .problem-points { grid-template-columns: 1fr; } }
+
     /* Footer */
     .footer { background: var(--charcoal); padding: 3rem 2rem; text-align: center; }
     .footer p { font-size: 0.78rem; color: rgba(255,255,255,0.2); }
@@ -171,6 +185,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="offerings.html">Services</a></li>
         <li><a href="/#podcast">Podcast</a></li>
+        <li><a href="media-kit.html">Media Kit</a></li>
         <li><a href="#pricing" class="nav-cta">Get Started</a></li>
       </ul>
     </div>
@@ -179,7 +194,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-eyebrow">Fractional Chief AI Officer</div>
-    <h1>Replace <span class="strike">$285K-$507K</span> in payroll with a<br><span class="accent">$2,500/mo AI strategist.</span></h1>
+    <h1>Replace <span class="strike">$321K-$579K</span> in payroll with a<br><span class="accent">$2,500/mo AI strategist.</span></h1>
     <p>I embed in your business as your Chief AI Officer. Strategy, systems, and monthly AI builds -- without the C-suite salary. For real estate operators, fund managers, and syndicators.</p>
     <div class="hero-ctas">
       <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">See If This Is a Fit &rarr;</a>
@@ -193,12 +208,37 @@
       <h2>The Math Is Simple</h2>
       <p>Your CAIO costs a fraction of what it replaces.</p>
       <div class="roi-stats">
-        <div class="roi-stat"><div class="num">7-12x</div><div class="lbl">Return on Investment</div></div>
-        <div class="roi-stat"><div class="num">$240K-$461K</div><div class="lbl">Annual Savings</div></div>
+        <div class="roi-stat"><div class="num">9-15x</div><div class="lbl">Return on Investment</div></div>
+        <div class="roi-stat"><div class="num">$270K-$527K</div><div class="lbl">Annual Savings</div></div>
         <div class="roi-stat"><div class="num">24/7</div><div class="lbl">AI Never Sleeps</div></div>
       </div>
     </div>
   </div>
+
+  <!-- THE PROBLEM -->
+  <section class="problem" data-reveal>
+    <div class="section-label">The Real Problem</div>
+    <h2>AI Is Moving Too Fast. <span class="accent">You Know It.</span></h2>
+    <p class="lead">New models drop every week. New tools launch every day. You want to keep up -- you know AI can transform your business -- but the landscape shifts before you finish your morning coffee. You don't need another course. You need someone in your corner whose entire job is to stay ahead of this.</p>
+    <div class="problem-points" data-stagger>
+      <div class="problem-point">
+        <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>The Pace Is Relentless</h3>
+        <p>GPT-4 is already old news. New models, new capabilities, new integrations -- every single week. What worked last month might already be obsolete.</p>
+      </div>
+      <div class="problem-point">
+        <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+        <h3>You Don't Have the Time</h3>
+        <p>You're running deals, managing investors, and building your business. You can't also spend 10+ hours a week testing AI tools and reading research papers.</p>
+      </div>
+      <div class="problem-point">
+        <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Knowing ≠ Implementing</h3>
+        <p>Even when you find the right tool, building the workflow, training the team, and optimizing the output takes expertise most operators don't have.</p>
+      </div>
+    </div>
+    <p class="emphasis">You need someone whose full-time job is knowing what's next -- and building it <span>before your competition does.</span></p>
+  </section>
 
   <!-- WHAT'S INCLUDED -->
   <section class="included" id="how-it-works" data-reveal>
@@ -214,7 +254,17 @@
       <div class="inc-card">
         <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Monthly AI Builds</h3>
-        <p>1-4 new AI systems built per month. LinkedIn investor outreach, content engines, lead scrapers, deal analyzers -- whatever moves the needle.</p>
+        <p>Up to 4 new AI systems built per month. Content engines, Meta ad optimizers, LinkedIn outreach, lead scrapers, deal analyzers -- whatever moves the needle.</p>
+      </div>
+      <div class="inc-card">
+        <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Content Creation &amp; Planning</h3>
+        <p>AI-powered content calendars, social post generation, video scripts, podcast show notes, and blog articles -- all in your voice, on autopilot.</p>
+      </div>
+      <div class="inc-card">
+        <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/><path d="M12 12v6"/></svg></div>
+        <h3>Meta Ads &amp; Paid Media Efficiency</h3>
+        <p>AI-driven ad copy, audience targeting, creative testing, and budget optimization for Facebook &amp; Instagram. Cut your cost per lead while scaling spend.</p>
       </div>
       <div class="inc-card">
         <div class="inc-card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
@@ -250,20 +300,21 @@
       </thead>
       <tbody>
         <tr><td>Cold Calling VAs (2 FT)</td><td class="cost">$36K-$60K</td><td>AI Cold Caller</td><td class="savings">$30K-$55K</td></tr>
-        <tr><td>Social Media Manager</td><td class="cost">$36K-$60K</td><td>Content Engine</td><td class="savings">$30K-$55K</td></tr>
+        <tr><td>Social Media Manager</td><td class="cost">$36K-$60K</td><td>Content Engine + Calendar AI</td><td class="savings">$30K-$55K</td></tr>
+        <tr><td>Content Creator / Copywriter</td><td class="cost">$36K-$72K</td><td>AI Content Planner + Writer</td><td class="savings">$30K-$66K</td></tr>
         <tr><td>Transaction Coordinator</td><td class="cost">$40K-$55K</td><td>Closing Bot</td><td class="savings">$35K-$50K</td></tr>
-        <tr><td>Marketing Agency</td><td class="cost">$24K-$60K</td><td>Ad + Content AI</td><td class="savings">$20K-$55K</td></tr>
+        <tr><td>Meta Ads / Marketing Agency</td><td class="cost">$24K-$60K</td><td>AI Ad Copy, Targeting &amp; Optimization</td><td class="savings">$20K-$55K</td></tr>
         <tr><td>Executive Assistant</td><td class="cost">$40K-$60K</td><td>Calendar/Email AI</td><td class="savings">$35K-$55K</td></tr>
         <tr><td>Fund Administrator</td><td class="cost">$24K-$48K</td><td>Fund Flow + AI</td><td class="savings">$20K-$44K</td></tr>
         <tr><td>Jr. Analyst (Underwriting)</td><td class="cost">$55K-$80K</td><td>Deal Memo AI</td><td class="savings">$45K-$70K</td></tr>
         <tr><td>SEO / Content Agency</td><td class="cost">$24K-$60K</td><td>SEO Blog Writer</td><td class="savings">$20K-$55K</td></tr>
       </tbody>
       <tfoot>
-        <tr><td><strong>Total</strong></td><td>$285K-$507K</td><td></td><td class="savings">$240K-$461K saved</td></tr>
+        <tr><td><strong>Total</strong></td><td>$321K-$579K</td><td></td><td class="savings">$270K-$527K saved</td></tr>
       </tfoot>
     </table>
     <div class="replace-callout">
-      <p>Your Fractional CAIO costs <strong>$30K-$42K/year</strong>. The roles it replaces cost <strong>$285K-$507K/year</strong>. That's a <strong>7-12x ROI</strong>.</p>
+      <p>Your Fractional CAIO costs <strong>$30K-$42K/year</strong>. The roles it replaces cost <strong>$321K-$579K/year</strong>. That's a <strong>9-15x ROI</strong>.</p>
     </div>
   </section>
 
@@ -284,7 +335,8 @@
           <li>ARV calculator &amp; deal scoring system</li>
           <li>Buyer matching &amp; deal package generator</li>
           <li>SMS/email drip campaigns</li>
-          <li>Social media content engine</li>
+          <li>Social media content engine &amp; calendar</li>
+          <li>Meta ads copy, creative testing &amp; budget optimization</li>
           <li>SEO &amp; local marketing automation</li>
           <li>KPI dashboards &amp; financial reporting</li>
           <li>SOPs, hiring systems &amp; team training</li>
@@ -298,6 +350,8 @@
           <li>Automated LinkedIn outreach to your Ideal Investor Avatar -- books meetings on autopilot using your account</li>
           <li>Investor prospecting &amp; outreach sequences</li>
           <li>Fund marketing &amp; thought leadership content</li>
+          <li>Content calendar, social posts &amp; video scripts in your voice</li>
+          <li>Meta &amp; paid ad campaigns -- copy, targeting &amp; optimization</li>
           <li>Quarterly update drafting in your voice</li>
           <li>Distribution memo generator</li>
           <li>Deal memo &amp; underwriting automation</li>
@@ -349,7 +403,7 @@
 
   <!-- FINAL CTA -->
   <div class="final-cta">
-    <h2>Ready to Replace $285K in Payroll?</h2>
+    <h2>Ready to Replace $321K in Payroll?</h2>
     <p>Apply for a free strategy call. I'll show you which AI systems your operation needs and whether we're a good fit to work together.</p>
     <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">See If This Is a Fit &rarr;</a>
   </div>
