@@ -487,22 +487,55 @@
     }
 
     /* ── RESPONSIVE ── */
+
+    /* Tablet: 2-col bento */
     @media (max-width: 968px) {
       .bento {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-auto-rows: auto;
       }
-      .bento-flagship, .bento-caio, .bento-intensive,
-      .bento-workshop, .bento-community {
+      .bento-flagship, .bento-caio {
+        grid-column: 1 / -1; grid-row: auto;
+      }
+      .bento-intensive, .bento-workshop, .bento-community {
         grid-column: auto; grid-row: auto;
       }
       .card-cols { grid-template-columns: 1fr; }
       .who-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.4rem; }
       .hero-actions { flex-direction: column; align-items: center; }
-      nav ul { display: none; }
       .cta-box { padding: 2.5rem 1.5rem; }
       .trust-bar { gap: 2rem; }
+      nav ul { display: none; }
+    }
+
+    /* Mobile: single column */
+    @media (max-width: 640px) {
+      .bento {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+      .bento-flagship, .bento-caio, .bento-intensive,
+      .bento-workshop, .bento-community {
+        grid-column: auto !important; grid-row: auto;
+      }
+      /* Override inline grid-column: span 12 on quiz callout */
+      .bento > [style*="grid-column"] {
+        grid-column: auto !important;
+      }
+      .card-cols { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .section-title { font-size: 1.6rem; }
+      .section-sub { font-size: 0.95rem; }
+      .bento-card { padding: 1.75rem; }
+      .card-title { font-size: 1.25rem; }
+      .card-tagline { font-size: 0.85rem; }
+      .card-bottom { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+      .cta-box { padding: 2rem 1.25rem; }
+      .trust-bar { gap: 1.5rem; flex-direction: column; align-items: center; }
+      .quiz-question h3 { font-size: 1.2rem; }
     }
 
     /* ── SCROLL ── */
