@@ -10,8 +10,8 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
   <!-- End Google Tag Manager -->
-  <title>You're In - Download Your Prompts | Devin Robinson</title>
-  <meta name="description" content="Download your free AI prompts and skills vault. Explore the full community, Fractional CAIO, and Fund Flow OS.">
+  <title>You're In -- Download Your AI Vault | Devin Robinson</title>
+  <meta name="description" content="Download your free AI prompts and skills vault. Explore the community, Fractional CAIO, and Fund Flow OS.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,63 +31,119 @@
     .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
     .logo span { color: var(--accent); }
 
-    /* Hero - Success */
-    .hero { padding: 4rem 2rem 2rem; text-align: center; max-width: 700px; margin: 0 auto; }
-    .hero-check { width: 64px; height: 64px; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
-    .hero-check svg { width: 32px; height: 32px; stroke: var(--white); stroke-width: 3; fill: none; }
-    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
-    .hero p { font-size: 1rem; color: var(--mid); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+    /* Success Hero */
+    .success-hero {
+      background: var(--ink); padding: 4rem 2rem; text-align: center; position: relative;
+      overflow: hidden;
+    }
+    .success-hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+      background: linear-gradient(to top, var(--cream), transparent);
+    }
+    .success-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+    .success-badge {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--success);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;
+      box-shadow: 0 0 0 8px rgba(34,197,94,0.15);
+    }
+    .success-badge svg { width: 28px; height: 28px; stroke: var(--white); stroke-width: 3; fill: none; }
+    .success-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--white); }
+    .success-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
-    /* Download Box */
-    .download-box { max-width: 520px; margin: 2rem auto 0; background: var(--white); border: 2px solid var(--success); border-radius: 14px; padding: 2rem; text-align: center; }
-    .download-box .step-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--success); margin-bottom: 0.5rem; }
-    .download-box h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .download-box p { font-size: 0.85rem; color: var(--mid); margin-bottom: 1.25rem; line-height: 1.5; }
-    .btn-download { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; background: var(--success); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; }
-    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    /* Download Section */
+    .download {
+      max-width: 560px; margin: -2rem auto 0; position: relative; z-index: 2;
+      padding: 0 2rem;
+    }
+    .download-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 2.5rem; text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+    }
+    .download-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--success); margin-bottom: 0.75rem; }
+    .download-card h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .download-card > p { font-size: 0.85rem; color: var(--mid); margin-bottom: 1.5rem; line-height: 1.55; }
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.9rem 2.25rem; background: var(--ink); color: var(--white);
+      text-decoration: none; font-size: 0.88rem; font-weight: 700;
+      border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
     .btn-download svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.5; fill: none; }
-    .check-email { font-size: 0.78rem; color: var(--soft); margin-top: 1rem; }
+    .download-note { font-size: 0.75rem; color: var(--soft); margin-top: 1rem; }
 
     /* Divider */
-    .divider { max-width: 800px; margin: 3rem auto; padding: 0 2rem; text-align: center; position: relative; }
+    .divider { max-width: 900px; margin: 3.5rem auto; padding: 0 2rem; text-align: center; position: relative; }
     .divider::before { content: ''; position: absolute; top: 50%; left: 2rem; right: 2rem; height: 1px; background: var(--light); }
-    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); }
+    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
 
     /* Next Steps */
-    .next-steps { max-width: 1000px; margin: 0 auto; padding: 0 2rem 5rem; }
-    .next-steps-header { text-align: center; margin-bottom: 2.5rem; }
-    .next-steps-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.35rem; }
-    .next-steps-header p { font-size: 0.9rem; color: var(--mid); }
+    .next-steps { max-width: 1060px; margin: 0 auto; padding: 0 2rem 6rem; }
+    .next-header { text-align: center; margin-bottom: 3rem; }
+    .next-header h2 { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.5rem; line-height: 1.15; }
+    .next-header h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .next-header p { font-size: 0.95rem; color: var(--mid); max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
     .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 
-    .step-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s; }
-    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .step-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 2.25rem 2rem; display: flex;
+      flex-direction: column; transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .step-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; transform: scaleX(0); transition: transform 0.35s ease;
+      transform-origin: left;
+    }
+    .step-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+    .step-card:hover::after { transform: scaleX(1); }
 
-    .step-tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; align-self: flex-start; }
-    .step-tag.free { background: rgba(34,197,94,0.1); color: var(--success); }
-    .step-tag.popular { background: var(--accent-glow); color: var(--accent); }
-    .step-tag.platform { background: rgba(99,102,241,0.1); color: #6366f1; }
+    .step-card:nth-child(1)::after { background: var(--success); }
+    .step-card:nth-child(2)::after { background: var(--accent); }
+    .step-card:nth-child(3)::after { background: #6366f1; }
 
-    .step-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.01em; }
-    .step-card .card-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.25rem; }
-    .step-card .card-features { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; }
-    .step-card .card-features li { font-size: 0.8rem; color: var(--slate); padding: 0.3rem 0 0.3rem 1.1rem; position: relative; line-height: 1.45; }
-    .step-card .card-features li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 5px; height: 5px; border-radius: 50%; }
+    .step-tag {
+      display: inline-block; font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.65rem;
+      border-radius: 4px; margin-bottom: 1.25rem; align-self: flex-start;
+    }
+    .tag-community { background: rgba(34,197,94,0.08); color: var(--success); }
+    .tag-caio { background: var(--accent-glow); color: var(--accent); }
+    .tag-platform { background: rgba(99,102,241,0.08); color: #6366f1; }
 
-    .step-card:nth-child(1) .card-features li::before { background: var(--success); }
-    .step-card:nth-child(2) .card-features li::before { background: var(--accent); }
-    .step-card:nth-child(3) .card-features li::before { background: #6366f1; }
+    .step-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .step-card .card-hook { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.88rem; color: var(--soft); line-height: 1.5; margin-bottom: 1.25rem; }
+    .step-card .card-benefits { list-style: none; margin-bottom: 1.75rem; flex-grow: 1; }
+    .step-card .card-benefits li {
+      font-size: 0.82rem; color: var(--slate); padding: 0.35rem 0 0.35rem 1.15rem;
+      position: relative; line-height: 1.5;
+    }
+    .step-card .card-benefits li::before {
+      content: ''; position: absolute; left: 0; top: 0.6rem;
+      width: 5px; height: 5px; border-radius: 50%;
+    }
+    .step-card:nth-child(1) .card-benefits li::before { background: var(--success); }
+    .step-card:nth-child(2) .card-benefits li::before { background: var(--accent); }
+    .step-card:nth-child(3) .card-benefits li::before { background: #6366f1; }
 
-    .step-card .card-price { font-size: 0.78rem; color: var(--soft); margin-bottom: 1rem; }
-    .step-card .card-price strong { color: var(--ink); font-size: 1.1rem; font-weight: 800; }
-
-    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1.75rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.82rem; font-weight: 700; border-radius: 6px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; width: 100%; }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,90,60,0.3); }
+    .btn-step {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.8rem 1.5rem; color: var(--white); text-decoration: none;
+      font-size: 0.82rem; font-weight: 700; border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s; width: 100%;
+      letter-spacing: -0.01em;
+    }
+    .btn-step:hover { transform: translateY(-2px); }
     .btn-community { background: var(--success); }
-    .btn-community:hover { background: #16a34a; box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
-    .btn-platform { background: #6366f1; }
-    .btn-platform:hover { background: #4f46e5; box-shadow: 0 6px 20px rgba(99,102,241,0.3); }
+    .btn-community:hover { box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    .btn-caio { background: var(--accent); }
+    .btn-caio:hover { box-shadow: 0 6px 20px rgba(196,90,60,0.3); }
+    .btn-ff { background: #6366f1; }
+    .btn-ff:hover { box-shadow: 0 6px 20px rgba(99,102,241,0.3); }
 
     /* Footer */
     .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
@@ -96,10 +152,12 @@
 
     @media (max-width: 768px) {
       .steps-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-      .hero { padding: 3rem 1.25rem 1.5rem; }
-      .hero h1 { font-size: 1.6rem; }
-      .download-box { margin: 1.5rem 1.25rem 0; }
-      .next-steps { padding: 0 1.25rem 3.5rem; }
+      .success-hero { padding: 3rem 1.25rem; }
+      .success-hero h1 { font-size: 1.5rem; }
+      .download { padding: 0 1.25rem; }
+      .download-card { padding: 2rem 1.5rem; }
+      .next-steps { padding: 0 1.25rem 4rem; }
+      .next-header h2 { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -113,85 +171,86 @@
     <a href="/" class="logo">DEVIN<span>.</span></a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-check">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <!-- SUCCESS HERO -->
+  <section class="success-hero">
+    <div class="success-inner">
+      <div class="success-badge">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>You're In. The Vault Is Yours.</h1>
+      <p>Your prompts and skills are ready. I also sent a copy to your inbox with a few bonus resources I think you'll find useful over the next few days.</p>
     </div>
-    <h1>You're In. The Vault Is Yours.</h1>
-    <p>Your AI prompts and skills are ready to download. Check your email too -- I'll send you everything plus a few bonus resources over the next few days.</p>
   </section>
 
-  <!-- DOWNLOAD BOX -->
-  <div class="download-box">
-    <div class="step-label">Step 1</div>
-    <h2>Download Your Prompts & Skills</h2>
-    <p>Click below to grab the full vault. Save it, bookmark it, share it with your team.</p>
-    <a href="#" class="btn-download">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Access the Vault
-    </a>
-    <p class="check-email">Also check your inbox -- a copy is on its way to your email.</p>
+  <!-- DOWNLOAD -->
+  <div class="download">
+    <div class="download-card">
+      <div class="download-label">Step 1 -- Grab Your Prompts</div>
+      <h2>Download the Full Vault</h2>
+      <p>Six categories of battle-tested prompts and automation skills. Save them, share them with your team, and start replacing busywork today.</p>
+      <a href="#" class="btn-download">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Access the Vault Now
+      </a>
+      <p class="download-note">A copy is also on its way to your email.</p>
+    </div>
   </div>
 
   <!-- DIVIDER -->
-  <div class="divider"><span>Want to go further?</span></div>
+  <div class="divider"><span>Most people stop here. The ones who win don't.</span></div>
 
   <!-- NEXT STEPS -->
   <div class="next-steps">
-    <div class="next-steps-header">
-      <h2>Three Ways to Level Up</h2>
-      <p>You've got the prompts. Here's how to turn them into a real competitive advantage.</p>
+    <div class="next-header">
+      <h2>You Have the Playbook.<br><span class="accent">Now Build the Machine.</span></h2>
+      <p>The vault gives you the prompts. These three paths give you the systems, the strategy, and the community to actually execute on them.</p>
     </div>
 
     <div class="steps-grid">
 
-      <!-- SKOOL COMMUNITY -->
+      <!-- COMMUNITY -->
       <div class="step-card">
-        <span class="step-tag free">Community</span>
+        <span class="step-tag tag-community">Community</span>
         <h3>AI in REI Community</h3>
-        <p class="card-desc">Want all the skills -- plus weekly training, live Q&As, and a network of operators building with AI?</p>
-        <ul class="card-features">
-          <li>Full prompt & skills library (updated weekly)</li>
-          <li>Video tutorials & walkthroughs</li>
-          <li>Weekly live Q&A sessions with me</li>
-          <li>Private community of REI operators</li>
-          <li>New skills dropped from real client builds</li>
+        <div class="card-hook">"Every skill I build for clients ends up here. You get the full library -- updated weekly."</div>
+        <ul class="card-benefits">
+          <li>Full prompt and skills library, updated with every client build</li>
+          <li>Video walkthroughs showing exactly how to implement each system</li>
+          <li>Weekly live Q&A sessions -- bring your business, I'll build with you</li>
+          <li>Private network of operators, fund managers, and founders using AI</li>
+          <li>New skills dropped weekly from real, revenue-generating projects</li>
         </ul>
-        <div class="card-price"><strong>$97 - $197</strong> /mo</div>
-        <a href="#" class="btn-primary btn-community">Join the Community &rarr;</a>
+        <a href="#" class="btn-step btn-community">Join the Community</a>
       </div>
 
       <!-- FRACTIONAL CAIO -->
       <div class="step-card">
-        <span class="step-tag popular">Most Popular</span>
+        <span class="step-tag tag-caio">Done For You</span>
         <h3>Fractional CAIO</h3>
-        <p class="card-desc">Want me to actually build and run your AI systems? I embed in your business as your Chief AI Officer.</p>
-        <ul class="card-features">
-          <li>Custom AI strategy & roadmap</li>
-          <li>1-4 new AI systems built per month</li>
-          <li>Content, ads, outreach -- all automated</li>
-          <li>Strategy calls + async Slack/Voxer access</li>
-          <li>Replaces $285K-$507K in annual payroll</li>
+        <div class="card-hook">"Stop building it yourself. I embed in your business and build the AI systems for you -- every month."</div>
+        <ul class="card-benefits">
+          <li>A Chief AI Officer in your corner without the C-suite salary</li>
+          <li>Up to 4 new AI systems built and deployed every single month</li>
+          <li>Content, ads, outreach, underwriting -- automated in your voice</li>
+          <li>Replace the work of entire roles: VAs, marketers, analysts, agencies</li>
+          <li>Strategy calls and async access so nothing stalls waiting on AI</li>
         </ul>
-        <div class="card-price">Starting at <strong>$2,500</strong> /mo</div>
-        <a href="fractional-caio.html" class="btn-primary">Learn About CAIO &rarr;</a>
+        <a href="fractional-caio.html" class="btn-step btn-caio">See If This Is a Fit</a>
       </div>
 
       <!-- FUND FLOW OS -->
       <div class="step-card">
-        <span class="step-tag platform">Platform</span>
+        <span class="step-tag tag-platform">Platform</span>
         <h3>Fund Flow OS</h3>
-        <p class="card-desc">Raising capital? Fund Flow is the AI-powered platform for investor CRM, smart matching, and fund management.</p>
-        <ul class="card-features">
-          <li>AI-powered investor CRM</li>
-          <li>Smart investor-deal matching</li>
-          <li>Investor portal & reporting</li>
-          <li>Distribution & waterfall tracking</li>
-          <li>Built for syndicators & fund managers</li>
+        <div class="card-hook">"If you're raising capital, this is the operating system your fund has been missing."</div>
+        <ul class="card-benefits">
+          <li>AI-powered investor CRM that tells you who to talk to and when</li>
+          <li>Smart matching that pairs the right investors to the right deals</li>
+          <li>Investor portal with real-time reporting your LPs will actually use</li>
+          <li>Distribution tracking, waterfall calculations, and compliance tools</li>
+          <li>Built specifically for syndicators and emerging fund managers</li>
         </ul>
-        <div class="card-price">Starting at <strong>$97</strong> /mo</div>
-        <a href="https://fundflowos.com" class="btn-primary btn-platform">Explore Fund Flow &rarr;</a>
+        <a href="https://fundflowos.com" class="btn-step btn-ff">Explore Fund Flow OS</a>
       </div>
 
     </div>

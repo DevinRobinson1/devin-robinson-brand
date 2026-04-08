@@ -10,8 +10,8 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
   <!-- End Google Tag Manager -->
-  <title>Free AI Prompts & Skills - Devin Robinson</title>
-  <meta name="description" content="Battle-tested AI prompts and skills that replace a $5K/mo team. Write scripts, close sales, craft ads, grow your podcast, and run your business with AI.">
+  <title>Free AI Prompts & Skills That Replace a $5K/mo Team - Devin Robinson</title>
+  <meta name="description" content="Get the exact AI prompts and automation skills I use to run multiple businesses. Six categories. Zero fluff. Built for real estate operators and founders.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,55 +31,74 @@
     .logo span { color: var(--accent); }
 
     /* Hero */
-    .hero { padding: 5rem 2rem 3rem; text-align: center; max-width: 800px; margin: 0 auto; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; padding: 0.4rem 1rem; background: var(--accent-glow); border-radius: 100px; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .hero {
+      background: var(--ink); padding: 5rem 2rem 0; position: relative; overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end;
+    }
+    .hero-text { padding-bottom: 5rem; }
+    .hero-eyebrow { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; padding: 0.4rem 1rem; background: rgba(196,90,60,0.12); border-radius: 100px; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--white); }
     .hero h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .hero p { font-size: 1.05rem; color: var(--mid); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 480px; }
+    .hero-visual {
+      position: relative; align-self: end;
+    }
+    .hero-visual img {
+      display: block; width: 100%; max-width: 420px; margin: 0 auto;
+      border-radius: 16px 16px 0 0; object-fit: cover;
+    }
 
     /* Main Content */
-    .main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .main { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 5rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
 
     /* Form Side */
-    .form-side { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
-    .form-side h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.01em; }
-    .form-side .sub { font-size: 0.88rem; color: var(--mid); margin-bottom: 1.5rem; line-height: 1.5; }
+    .form-side { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 40px rgba(0,0,0,0.06); position: relative; }
+    .form-side::before { content: ''; position: absolute; top: 0; left: 2rem; right: 2rem; height: 3px; background: var(--accent); border-radius: 0 0 3px 3px; }
+    .form-side h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .form-side .sub { font-size: 0.88rem; color: var(--mid); margin-bottom: 1.5rem; line-height: 1.6; }
     .form-wrapper { min-height: 300px; }
     .form-wrapper iframe { min-height: 291px; }
+    .form-trust { display: flex; gap: 1.5rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.05); }
+    .form-trust span { font-size: 0.72rem; color: var(--soft); line-height: 1.4; }
 
     /* Categories Side */
-    .info-side {}
-    .info-side h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-    .info-side h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .info-side > p { font-size: 0.9rem; color: var(--mid); margin-bottom: 2rem; line-height: 1.6; }
+    .info-side h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.15rem; }
+    .info-side .info-sub { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .info-side .info-sub .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .info-side > p { font-size: 0.9rem; color: var(--mid); margin-bottom: 2rem; line-height: 1.65; }
 
     .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
-    .cat-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.25rem; transition: transform 0.3s ease, box-shadow 0.3s; }
+    .cat-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.25rem 1.15rem; transition: transform 0.3s ease, box-shadow 0.3s; }
     .cat-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-    .cat-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .cat-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
     .cat-card h3 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.25rem; }
     .cat-card p { font-size: 0.75rem; color: var(--mid); line-height: 1.45; }
-
-    /* Social Proof */
-    .proof { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(0,0,0,0.06); }
-    .proof p { font-size: 0.82rem; color: var(--soft); max-width: 500px; margin: 0 auto; }
-    .proof strong { color: var(--ink); font-weight: 700; }
 
     /* Footer */
     .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
     .footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
     .footer a { color: var(--accent); text-decoration: none; }
 
+    @media (max-width: 968px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-text { padding-bottom: 2.5rem; text-align: center; }
+      .hero p { margin: 0 auto; }
+      .hero-visual img { max-width: 320px; }
+    }
     @media (max-width: 768px) {
       .main { grid-template-columns: 1fr; gap: 2.5rem; }
       .info-side { order: -1; }
-      .cat-grid { grid-template-columns: 1fr 1fr; }
-      .hero { padding: 3.5rem 1.25rem 2rem; }
+      .hero { padding: 3rem 1.25rem 0; }
       .hero h1 { font-size: 1.8rem; }
-      .main { padding: 2rem 1.25rem 3rem; }
+      .hero-visual img { max-width: 280px; }
+      .main { padding: 2.5rem 1.25rem 3rem; }
     }
     @media (max-width: 480px) {
       .cat-grid { grid-template-columns: 1fr; }
+      .form-trust { flex-direction: column; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -93,16 +112,27 @@
     <a href="/" class="logo">DEVIN<span>.</span></a>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Free Download</div>
-    <h1>AI Prompts & Skills That<br><span class="accent">Replace a $5K/mo Team</span></h1>
-    <p>Battle-tested prompts for founders who build fast. Write scripts, close sales, craft ads, grow your podcast, and run your business -- with AI doing the heavy lifting.</p>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Free Download -- Instant Access</div>
+        <h1>The AI Prompts & Skills I Use to Run <span class="accent">My Entire Business</span></h1>
+        <p>Not theory. Not a course. These are the exact prompts, scripts, and automation frameworks I use across six categories to replace entire departments. Yours free.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
+      </div>
+    </div>
   </section>
 
+  <!-- MAIN -->
   <div class="main">
+
+    <!-- FORM -->
     <div class="form-side">
-      <h2>Grab the Vault -- Free</h2>
-      <p class="sub">Drop your name and email. I'll send you the exact AI prompts and skills I use to run my entire business.</p>
+      <h2>Get Instant Access to the Vault</h2>
+      <p class="sub">Enter your name and email below. You'll get the full prompt library delivered immediately -- the same systems that power my content, sales, marketing, and operations.</p>
       <div class="form-wrapper">
         <iframe
           src="https://fundfounders.mycoursecreator360.com/widget/form/wefjEGEcqTrGSW6rHrOD"
@@ -123,52 +153,54 @@
         ></iframe>
         <script src="https://fundfounders.mycoursecreator360.com/js/form_embed.js"></script>
       </div>
+      <div class="form-trust">
+        <span>No spam. Ever. Unsubscribe anytime.</span>
+        <span>Trusted by real estate operators, fund managers, and founders nationwide.</span>
+      </div>
     </div>
 
+    <!-- CATEGORIES -->
     <div class="info-side">
-      <h2>What's Inside the Vault</h2>
-      <h2>Six categories. <span class="accent">One unfair advantage.</span></h2>
-      <p>These aren't generic ChatGPT prompts. These are the exact systems I use across my businesses every single day.</p>
+      <h2>What's Inside</h2>
+      <div class="info-sub">Six categories. <span class="accent">One unfair advantage.</span></div>
+      <p>These aren't recycled ChatGPT tricks from Twitter. These are production-grade prompts built from real businesses doing real revenue. I use every single one of them.</p>
 
       <div class="cat-grid">
         <div class="cat-card">
-          <div class="cat-icon">&#9981;</div>
+          <div class="cat-num">01</div>
           <h3>Faith & Personal</h3>
-          <p>Morning routines, journaling prompts, and decision-making frameworks powered by AI.</p>
+          <p>Morning clarity, journaling frameworks, and decision-making systems that keep you grounded while you scale.</p>
         </div>
         <div class="cat-card">
-          <div class="cat-icon">&#9889;</div>
+          <div class="cat-num">02</div>
           <h3>Productivity</h3>
-          <p>Task prioritization, meeting prep, email drafting, and calendar management prompts.</p>
+          <p>Reclaim 10+ hours a week. Meeting prep, inbox triage, task prioritization, and daily operating rhythms.</p>
         </div>
         <div class="cat-card">
-          <div class="cat-icon">&#9878;</div>
+          <div class="cat-num">03</div>
           <h3>Business Strategy</h3>
-          <p>Competitive analysis, market research, business plans, and investor deck builders.</p>
+          <p>Competitive intel, market analysis, investor pitch builders, and strategic planning -- in minutes, not weeks.</p>
         </div>
         <div class="cat-card">
-          <div class="cat-icon">&#128176;</div>
+          <div class="cat-num">04</div>
           <h3>Sales & Closing</h3>
-          <p>Cold call scripts, objection handlers, follow-up sequences, and negotiation frameworks.</p>
+          <p>Cold call scripts that actually convert, objection handlers, follow-up sequences, and negotiation playbooks.</p>
         </div>
         <div class="cat-card">
-          <div class="cat-icon">&#127916;</div>
+          <div class="cat-num">05</div>
           <h3>Content Creation</h3>
-          <p>Podcast show notes, YouTube scripts, social captions, and content calendar generators.</p>
+          <p>Podcast show notes, YouTube scripts, 30-day content calendars, and social posts -- all in your voice.</p>
         </div>
         <div class="cat-card">
-          <div class="cat-icon">&#128640;</div>
+          <div class="cat-num">06</div>
           <h3>Marketing & Copy</h3>
-          <p>Ad copy, landing pages, email campaigns, and brand voice builders that convert.</p>
+          <p>High-converting ad copy, landing pages, email campaigns, and brand voice systems that sell while you sleep.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="proof">
-    <p>Used by <strong>real estate operators, fund managers, and founders</strong> who want AI working for them -- not the other way around.</p>
-  </div>
-
+  <!-- FOOTER -->
   <div class="footer">
     <p>&copy; 2026 Devin Robinson. <a href="/">devinrobinsonrei.com</a></p>
   </div>
