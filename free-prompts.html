@@ -46,15 +46,13 @@
     .atf-left h1 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--white); }
     .atf-left h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
     .atf-left > p { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1.75rem; max-width: 440px; }
-    .atf-photo {
-      margin-top: 2rem;
-    }
+    .atf-photo { display: flex; align-items: center; gap: 1.5rem; }
     .atf-photo img {
-      width: 100%; max-width: 360px; border-radius: 16px; object-fit: cover;
+      width: 180px; height: 180px; border-radius: 16px; object-fit: cover;
       border: 3px solid rgba(255,255,255,0.08);
-      box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
-    .atf-photo-text { margin-top: 1rem; font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .atf-photo-text { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
     .atf-photo-text strong { color: rgba(255,255,255,0.85); font-weight: 700; font-size: 0.95rem; display: block; margin-bottom: 0.15rem; }
 
     /* Right: form */
@@ -104,8 +102,8 @@
       .atf-inner { grid-template-columns: 1fr; gap: 2rem; }
       .atf-left { text-align: center; }
       .atf-left > p { margin: 0 auto 1.5rem; }
-      .atf-photo { text-align: center; }
-      .atf-photo img { max-width: 260px; }
+      .atf-photo { justify-content: center; }
+      .atf-photo img { width: 140px; height: 140px; }
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
