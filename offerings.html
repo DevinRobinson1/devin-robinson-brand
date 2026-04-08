@@ -191,6 +191,7 @@
     .bento-flagship { grid-column: span 12; grid-row: span 3; }
     .bento-caio { grid-column: span 4; grid-row: span 3; display: none; }
     .bento-intensive { grid-column: span 4; grid-row: span 2; }
+    .bento-aiteam { grid-column: span 12; grid-row: span 3; }
     .bento-workshop { grid-column: span 4; grid-row: span 2; }
     .bento-community { grid-column: span 4; grid-row: span 2; }
 
@@ -212,6 +213,30 @@
     .bento-flagship .card-arrow { color: rgba(255,255,255,0.3); }
     .bento-flagship:hover .card-arrow { color: var(--accent); }
     .bento-flagship .card-col-label { color: rgba(255,255,255,0.3); }
+
+    /* AI Team Build card */
+    .bento-aiteam {
+      background: linear-gradient(165deg, #0f172a 0%, #1e293b 60%, #1a1a2e 100%);
+      color: var(--white);
+      border-color: rgba(99,102,241,0.3);
+    }
+    .bento-aiteam::after { background: #818cf8; }
+    .bento-aiteam .card-tag { color: #a5b4fc; background: rgba(99,102,241,0.2); }
+    .bento-aiteam .card-title { color: var(--white); }
+    .bento-aiteam .card-tagline { color: rgba(255,255,255,0.5); }
+    .bento-aiteam .card-list li { color: rgba(255,255,255,0.65); }
+    .bento-aiteam .card-list li::before { background: #818cf8; }
+    .bento-aiteam .card-bottom { border-top-color: rgba(255,255,255,0.08); }
+    .bento-aiteam .card-meta { color: rgba(255,255,255,0.35); }
+    .bento-aiteam .card-price { color: var(--white); }
+    .bento-aiteam .card-arrow { color: rgba(255,255,255,0.3); }
+    .bento-aiteam:hover .card-arrow { color: #818cf8; }
+    .bento-aiteam .card-col-label { color: rgba(255,255,255,0.3); }
+    .bento-aiteam .agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+    .bento-aiteam .agent-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem 1.15rem; }
+    .bento-aiteam .agent-card h4 { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 0.15rem; }
+    .bento-aiteam .agent-card .agent-role { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; }
+    .bento-aiteam .agent-badge { display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 4px; }
 
     /* CAIO accent border */
     .bento-caio {
@@ -501,9 +526,10 @@
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: auto;
       }
-      .bento-flagship, .bento-caio {
+      .bento-flagship, .bento-caio, .bento-aiteam {
         grid-column: 1 / -1; grid-row: auto;
       }
+      .bento-aiteam .agent-grid { grid-template-columns: repeat(2, 1fr); }
       .bento-intensive, .bento-workshop, .bento-community {
         grid-column: auto; grid-row: auto;
       }
@@ -522,10 +548,11 @@
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
       }
-      .bento-flagship, .bento-caio, .bento-intensive,
+      .bento-flagship, .bento-caio, .bento-aiteam, .bento-intensive,
       .bento-workshop, .bento-community {
         grid-column: auto !important; grid-row: auto;
       }
+      .bento-aiteam .agent-grid { grid-template-columns: 1fr; }
       /* Override inline grid-column: span 12 on quiz callout */
       .bento > [style*="grid-column"] {
         grid-column: auto !important;
@@ -660,6 +687,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;">Not sure which service is right for you?</p>
       <a href="#quiz" class="btn-primary" style="background: var(--accent);">Take the 60-Second Quiz &rarr;</a>
     </div>
+
+    <!-- AI OPERATIONS TEAM -->
+    <a href="https://calendly.com/devinrobinson1/fractional-caio" class="bento-card bento-aiteam fade-up">
+      <span class="card-arrow">&nearr;</span>
+      <span class="card-tag">New &mdash; AI Workforce</span>
+      <div class="card-title">AI Operations Team</div>
+      <div class="card-tagline">"I build you an entire AI team -- agents that run SEO, content, ads, sales, deals, and systems while you close."</div>
+
+      <div class="card-cols">
+        <div>
+          <div class="card-col-label">Your AI Employees</div>
+          <div class="agent-grid">
+            <div class="agent-card">
+              <h4>SEO Analyst</h4>
+              <div class="agent-role">Keyword research, blog writing, local SEO, rank tracking</div>
+              <span class="agent-badge" style="background:rgba(34,197,94,0.2);color:#4ade80;">SEO</span>
+            </div>
+            <div class="agent-card">
+              <h4>Content Strategist</h4>
+              <div class="agent-role">Social posts, video scripts, email sequences, brand voice</div>
+              <span class="agent-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;">CONTENT</span>
+            </div>
+            <div class="agent-card">
+              <h4>Media &amp; Ads Analyst</h4>
+              <div class="agent-role">Meta ads, copy testing, audience targeting, budget optimization</div>
+              <span class="agent-badge" style="background:rgba(244,114,182,0.2);color:#f472b6;">MEDIA / ADS</span>
+            </div>
+            <div class="agent-card">
+              <h4>Sales &amp; Outreach Coach</h4>
+              <div class="agent-role">Cold calling scripts, lead qualification, follow-up sequences, training</div>
+              <span class="agent-badge" style="background:rgba(56,189,248,0.2);color:#38bdf8;">SALES</span>
+            </div>
+            <div class="agent-card">
+              <h4>Deal &amp; Compliance Analyst</h4>
+              <div class="agent-role">Underwriting, deal memos, due diligence, regulatory tracking</div>
+              <span class="agent-badge" style="background:rgba(168,85,247,0.2);color:#a855f7;">DEALS / LEGAL</span>
+            </div>
+            <div class="agent-card">
+              <h4>Systems Architect</h4>
+              <div class="agent-role">CRM automations, data pipelines, integrations, dashboards</div>
+              <span class="agent-badge" style="background:rgba(239,68,68,0.2);color:#ef4444;">SYSTEMS</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card-col-label">How It Works</div>
+          <ul class="card-list">
+            <li>I audit your operation and identify which AI roles you need</li>
+            <li>Each "employee" is a custom AI agent scoped to your business</li>
+            <li>Agents run on scheduled tasks -- content, outreach, reports, alerts</li>
+            <li>One AI Chief of Staff coordinates everything</li>
+            <li>You manage the whole team from a single dashboard</li>
+            <li>Full SOPs &amp; training so your human team can oversee it</li>
+          </ul>
+          <div style="margin-top: 1.25rem; padding: 0.85rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;">
+            <div style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); margin-bottom: 0.35rem;">Built For</div>
+            <div style="font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.5;">Wholesalers, flippers, builders, and fund managers doing 5+ deals/year who want AI running ops while they focus on revenue.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <span class="card-meta">Custom scoped &middot; 4-6 week buildout &middot; Ongoing optimization available</span>
+        <span class="card-price">Starting at $7,500</span>
+      </div>
+    </a>
 
     <!-- BUILD ANYTHING -->
     <a href="https://calendly.com/devinrobinson1/fractional-caio" class="bento-card bento-intensive fade-up">
@@ -947,6 +1040,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="result-actions"><a href="#contact" class="btn-primary">Join the Community &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
     </div>
 
+    <div class="quiz-result" id="result-aiteam">
+      <div class="result-icon">&#129302;</div>
+      <div class="result-match">Best Match</div>
+      <h3>AI Operations Team</h3>
+      <p>You need a full AI workforce -- SEO, content, ads, sales, deals, and systems agents running your operation while you focus on revenue.</p>
+      <div class="result-features"><span class="result-feat">6+ AI agents</span><span class="result-feat">Custom scoped</span><span class="result-feat">Scheduled tasks</span><span class="result-feat">Dashboard</span></div>
+      <div class="result-price">Starting at $7,500</div>
+      <div class="result-actions"><a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">Book a Strategy Call &rarr;</a><button class="quiz-restart" onclick="restartQuiz()">Retake Quiz</button></div>
+    </div>
+
     <div class="quiz-result" id="result-workshop">
       <div class="result-icon">&#128640;</div>
       <div class="result-match">Best Match</div>
@@ -1034,6 +1137,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const [role, pain, pref, revenue, timeline] = answers;
     const isHighRev = revenue === '1m-5m' || revenue === '5m-plus';
     const isMidRev = revenue === '500k-1m';
+
+    // AI Operations Team -- high-rev operators who want done-for-me now
+    if (isHighRev && pref === 'done-for-me' && timeline === 'asap') return 'result-aiteam';
+    if (isHighRev && pref === 'done-for-me' && (pain === 'marketing' || pain === 'operations')) return 'result-aiteam';
 
     // CAIO routes
     if (isHighRev && pref === 'ongoing') return 'result-caio';
