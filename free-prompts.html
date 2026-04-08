@@ -26,56 +26,70 @@
     body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
     /* Nav */
-    nav { background: var(--ink); padding: 0.9rem 2rem; text-align: center; }
+    nav { background: var(--ink); padding: 0.75rem 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
     .logo span { color: var(--accent); }
 
-    /* Hero */
-    .hero {
-      background: var(--ink); padding: 5rem 2rem 0; position: relative; overflow: hidden;
+    /* ─── ABOVE THE FOLD ─── */
+    .atf {
+      background: var(--ink); min-height: calc(100vh - 49px);
+      display: flex; align-items: center; padding: 3rem 2rem;
     }
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto; display: grid;
-      grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end;
-    }
-    .hero-text { padding-bottom: 5rem; }
-    .hero-eyebrow { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; padding: 0.4rem 1rem; background: rgba(196,90,60,0.12); border-radius: 100px; }
-    .hero h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--white); }
-    .hero h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 480px; }
-    .hero-visual {
-      position: relative; align-self: end;
-    }
-    .hero-visual img {
-      display: block; width: 100%; max-width: 420px; margin: 0 auto;
-      border-radius: 16px 16px 0 0; object-fit: cover;
+    .atf-inner {
+      max-width: 1140px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;
     }
 
-    /* Main Content */
-    .main { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 5rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+    /* Left: headline + photo */
+    .atf-left {}
+    .atf-eyebrow { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; padding: 0.35rem 0.9rem; background: rgba(196,90,60,0.12); border-radius: 100px; }
+    .atf-left h1 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--white); }
+    .atf-left h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .atf-left > p { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1.75rem; max-width: 440px; }
+    .atf-photo { display: flex; align-items: flex-end; gap: 1.25rem; }
+    .atf-photo img {
+      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+    .atf-photo-text { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.45; }
+    .atf-photo-text strong { color: rgba(255,255,255,0.8); font-weight: 700; display: block; }
 
-    /* Form Side */
-    .form-side { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 40px rgba(0,0,0,0.06); position: relative; }
-    .form-side::before { content: ''; position: absolute; top: 0; left: 2rem; right: 2rem; height: 3px; background: var(--accent); border-radius: 0 0 3px 3px; }
-    .form-side h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-    .form-side .sub { font-size: 0.88rem; color: var(--mid); margin-bottom: 1.5rem; line-height: 1.6; }
-    .form-wrapper { min-height: 300px; }
-    .form-wrapper iframe { min-height: 291px; }
-    .form-trust { display: flex; gap: 1.5rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.05); }
-    .form-trust span { font-size: 0.72rem; color: var(--soft); line-height: 1.4; }
+    /* Right: form */
+    .atf-form {
+      background: var(--white); border-radius: 16px; padding: 2.25rem;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.25); position: relative;
+    }
+    .atf-form::before { content: ''; position: absolute; top: 0; left: 2rem; right: 2rem; height: 3px; background: var(--accent); border-radius: 0 0 3px 3px; }
+    .atf-form h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.4rem; letter-spacing: -0.01em; color: var(--ink); }
+    .atf-form .form-sub { font-size: 0.85rem; color: var(--mid); margin-bottom: 1.25rem; line-height: 1.55; }
+    .form-wrapper iframe { min-height: 291px; width: 100%; border: none; border-radius: 4px; }
+    .form-trust { display: flex; gap: 1.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05); }
+    .form-trust span { font-size: 0.7rem; color: var(--soft); line-height: 1.4; }
 
-    /* Categories Side */
-    .info-side h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.15rem; }
-    .info-side .info-sub { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
-    .info-side .info-sub .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
-    .info-side > p { font-size: 0.9rem; color: var(--mid); margin-bottom: 2rem; line-height: 1.65; }
+    /* ─── BELOW FOLD: CATEGORIES ─── */
+    .categories { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; }
+    .cat-header { text-align: center; margin-bottom: 2.5rem; }
+    .cat-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.2rem; }
+    .cat-header .cat-sub { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+    .cat-header .cat-sub .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .cat-header p { font-size: 0.9rem; color: var(--mid); margin-top: 0.75rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-    .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
-    .cat-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.25rem 1.15rem; transition: transform 0.3s ease, box-shadow 0.3s; }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .cat-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s; }
     .cat-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-    .cat-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-    .cat-card h3 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .cat-card p { font-size: 0.75rem; color: var(--mid); line-height: 1.45; }
+    .cat-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .cat-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .cat-card p { font-size: 0.78rem; color: var(--mid); line-height: 1.5; }
+
+    /* Scroll CTA */
+    .scroll-cta { text-align: center; margin-top: 2.5rem; }
+    .scroll-cta a {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; background: var(--accent); color: var(--white);
+      text-decoration: none; font-size: 0.85rem; font-weight: 700; border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .scroll-cta a:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,90,60,0.3); }
 
     /* Footer */
     .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
@@ -83,22 +97,20 @@
     .footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 968px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-text { padding-bottom: 2.5rem; text-align: center; }
-      .hero p { margin: 0 auto; }
-      .hero-visual img { max-width: 320px; }
+      .atf { padding: 2.5rem 1.5rem; min-height: auto; }
+      .atf-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .atf-left { text-align: center; }
+      .atf-left > p { margin: 0 auto 1.5rem; }
+      .atf-photo { justify-content: center; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 768px) {
-      .main { grid-template-columns: 1fr; gap: 2.5rem; }
-      .info-side { order: -1; }
-      .hero { padding: 3rem 1.25rem 0; }
-      .hero h1 { font-size: 1.8rem; }
-      .hero-visual img { max-width: 280px; }
-      .main { padding: 2.5rem 1.25rem 3rem; }
-    }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
+      .atf { padding: 2rem 1.25rem; }
+      .atf-left h1 { font-size: 1.6rem; }
+      .atf-form { padding: 1.75rem; }
+      .categories { padding: 3.5rem 1.25rem; }
       .cat-grid { grid-template-columns: 1fr; }
-      .form-trust { flex-direction: column; gap: 0.5rem; }
+      .form-trust { flex-direction: column; gap: 0.4rem; }
     }
   </style>
 </head>
@@ -112,93 +124,100 @@
     <a href="/" class="logo">DEVIN<span>.</span></a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-eyebrow">Free Download -- Instant Access</div>
+  <!-- ─── ABOVE THE FOLD: HEADLINE + FORM ─── -->
+  <section class="atf">
+    <div class="atf-inner">
+
+      <div class="atf-left">
+        <div class="atf-eyebrow">Free Download -- Instant Access</div>
         <h1>The AI Prompts & Skills I Use to Run <span class="accent">My Entire Business</span></h1>
         <p>Not theory. Not a course. These are the exact prompts, scripts, and automation frameworks I use across six categories to replace entire departments. Yours free.</p>
+        <div class="atf-photo">
+          <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
+          <div class="atf-photo-text">
+            <strong>Devin Robinson</strong>
+            Host of Funds on Fire. Founder of Fund Founders &amp; Fund Flow OS. Fractional Chief AI Officer.
+          </div>
+        </div>
       </div>
-      <div class="hero-visual">
-        <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
+
+      <div class="atf-form">
+        <h2>Get Instant Access to the Vault</h2>
+        <p class="form-sub">Enter your name and email. You'll get the full prompt library delivered immediately -- the same systems that power my content, sales, marketing, and operations.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://fundfounders.mycoursecreator360.com/widget/form/wefjEGEcqTrGSW6rHrOD"
+            style="width:100%;height:100%;border:none;border-radius:4px"
+            id="inline-wefjEGEcqTrGSW6rHrOD"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Scripts and Prompts"
+            data-height="291"
+            data-layout-iframe-id="inline-wefjEGEcqTrGSW6rHrOD"
+            data-form-id="wefjEGEcqTrGSW6rHrOD"
+            title="Scripts and Prompts"
+          ></iframe>
+          <script src="https://fundfounders.mycoursecreator360.com/js/form_embed.js"></script>
+        </div>
+        <div class="form-trust">
+          <span>No spam. Ever. Unsubscribe anytime.</span>
+          <span>Trusted by real estate operators and founders nationwide.</span>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- MAIN -->
-  <div class="main">
+  <!-- ─── BELOW FOLD: WHAT'S INSIDE ─── -->
+  <section class="categories">
+    <div class="cat-header">
+      <h2>What's Inside the Vault</h2>
+      <div class="cat-sub">Six categories. <span class="accent">One unfair advantage.</span></div>
+      <p>These aren't recycled ChatGPT tricks. These are production-grade prompts built from real businesses doing real revenue. I use every single one of them.</p>
+    </div>
 
-    <!-- FORM -->
-    <div class="form-side">
-      <h2>Get Instant Access to the Vault</h2>
-      <p class="sub">Enter your name and email below. You'll get the full prompt library delivered immediately -- the same systems that power my content, sales, marketing, and operations.</p>
-      <div class="form-wrapper">
-        <iframe
-          src="https://fundfounders.mycoursecreator360.com/widget/form/wefjEGEcqTrGSW6rHrOD"
-          style="width:100%;height:100%;border:none;border-radius:4px"
-          id="inline-wefjEGEcqTrGSW6rHrOD"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Scripts and Prompts"
-          data-height="291"
-          data-layout-iframe-id="inline-wefjEGEcqTrGSW6rHrOD"
-          data-form-id="wefjEGEcqTrGSW6rHrOD"
-          title="Scripts and Prompts"
-        ></iframe>
-        <script src="https://fundfounders.mycoursecreator360.com/js/form_embed.js"></script>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-num">01</div>
+        <h3>Faith & Personal</h3>
+        <p>Morning clarity, journaling frameworks, and decision-making systems that keep you grounded while you scale.</p>
       </div>
-      <div class="form-trust">
-        <span>No spam. Ever. Unsubscribe anytime.</span>
-        <span>Trusted by real estate operators, fund managers, and founders nationwide.</span>
+      <div class="cat-card">
+        <div class="cat-num">02</div>
+        <h3>Productivity</h3>
+        <p>Reclaim 10+ hours a week. Meeting prep, inbox triage, task prioritization, and daily operating rhythms.</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">03</div>
+        <h3>Business Strategy</h3>
+        <p>Competitive intel, market analysis, investor pitch builders, and strategic planning -- in minutes, not weeks.</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">04</div>
+        <h3>Sales & Closing</h3>
+        <p>Cold call scripts that actually convert, objection handlers, follow-up sequences, and negotiation playbooks.</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">05</div>
+        <h3>Content Creation</h3>
+        <p>Podcast show notes, YouTube scripts, 30-day content calendars, and social posts -- all in your voice.</p>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">06</div>
+        <h3>Marketing & Copy</h3>
+        <p>High-converting ad copy, landing pages, email campaigns, and brand voice systems that sell while you sleep.</p>
       </div>
     </div>
 
-    <!-- CATEGORIES -->
-    <div class="info-side">
-      <h2>What's Inside</h2>
-      <div class="info-sub">Six categories. <span class="accent">One unfair advantage.</span></div>
-      <p>These aren't recycled ChatGPT tricks from Twitter. These are production-grade prompts built from real businesses doing real revenue. I use every single one of them.</p>
-
-      <div class="cat-grid">
-        <div class="cat-card">
-          <div class="cat-num">01</div>
-          <h3>Faith & Personal</h3>
-          <p>Morning clarity, journaling frameworks, and decision-making systems that keep you grounded while you scale.</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-num">02</div>
-          <h3>Productivity</h3>
-          <p>Reclaim 10+ hours a week. Meeting prep, inbox triage, task prioritization, and daily operating rhythms.</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-num">03</div>
-          <h3>Business Strategy</h3>
-          <p>Competitive intel, market analysis, investor pitch builders, and strategic planning -- in minutes, not weeks.</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-num">04</div>
-          <h3>Sales & Closing</h3>
-          <p>Cold call scripts that actually convert, objection handlers, follow-up sequences, and negotiation playbooks.</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-num">05</div>
-          <h3>Content Creation</h3>
-          <p>Podcast show notes, YouTube scripts, 30-day content calendars, and social posts -- all in your voice.</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-num">06</div>
-          <h3>Marketing & Copy</h3>
-          <p>High-converting ad copy, landing pages, email campaigns, and brand voice systems that sell while you sleep.</p>
-        </div>
-      </div>
+    <div class="scroll-cta">
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Grab the Vault -- It's Free</a>
     </div>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <div class="footer">
