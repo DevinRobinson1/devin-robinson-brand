@@ -71,10 +71,36 @@
     .btn-download svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.5; fill: none; }
     .download-note { font-size: 0.75rem; color: var(--soft); margin-top: 1rem; }
 
+    /* Scroll Prompt */
+    .scroll-prompt {
+      text-align: center; padding: 2.5rem 2rem 1rem; cursor: pointer;
+    }
+    .scroll-prompt a {
+      display: inline-flex; flex-direction: column; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: var(--accent); transition: transform 0.2s;
+    }
+    .scroll-prompt a:hover { transform: translateY(3px); }
+    .scroll-prompt .scroll-text {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink);
+    }
+    .scroll-prompt .scroll-sub {
+      font-size: 0.75rem; color: var(--soft); font-weight: 400; margin-top: -0.25rem;
+    }
+    .scroll-arrow {
+      width: 36px; height: 36px; border: 2px solid var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      animation: bounce 2s ease infinite;
+    }
+    .scroll-arrow svg { width: 16px; height: 16px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
     /* Divider */
-    .divider { max-width: 900px; margin: 3.5rem auto; padding: 0 2rem; text-align: center; position: relative; }
-    .divider::before { content: ''; position: absolute; top: 50%; left: 2rem; right: 2rem; height: 1px; background: var(--light); }
-    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
+    .divider { max-width: 900px; margin: 1.5rem auto 3.5rem; padding: 0 2rem; text-align: center; position: relative; }
+    .divider::before { content: ''; position: absolute; top: 50%; left: 2rem; right: 2rem; height: 1px; background: var(--accent); opacity: 0.2; }
+    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
 
     /* Next Steps */
     .next-steps { max-width: 1060px; margin: 0 auto; padding: 0 2rem 6rem; }
@@ -193,8 +219,19 @@
     </div>
   </div>
 
+  <!-- SCROLL PROMPT -->
+  <div class="scroll-prompt">
+    <a href="#next-steps" onclick="document.getElementById('next-steps').scrollIntoView({behavior:'smooth'});return false;">
+      <div class="scroll-text">Before you go -- there's more below</div>
+      <div class="scroll-sub">Three ways to turn these prompts into a real competitive advantage</div>
+      <div class="scroll-arrow">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </a>
+  </div>
+
   <!-- DIVIDER -->
-  <div class="divider"><span>Most people stop here. The ones who win don't.</span></div>
+  <div class="divider" id="next-steps"><span>Most people stop here. The ones who win don't.</span></div>
 
   <!-- NEXT STEPS -->
   <div class="next-steps">
