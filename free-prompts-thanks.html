@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
+  <!-- End Google Tag Manager -->
+  <title>You're In - Download Your Prompts | Devin Robinson</title>
+  <meta name="description" content="Download your free AI prompts and skills vault. Explore the full community, Fractional CAIO, and Fund Flow OS.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a; --charcoal: #1a1a1a; --slate: #2d2d2d; --mid: #666;
+      --soft: #999; --light: #e8e8e8; --cream: #f8f7f5; --white: #fff;
+      --accent: #c45a3c; --accent-dark: #a8432a; --accent-glow: rgba(196,90,60,0.08);
+      --success: #22c55e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* Nav */
+    nav { background: var(--ink); padding: 0.9rem 2rem; text-align: center; }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    /* Hero - Success */
+    .hero { padding: 4rem 2rem 2rem; text-align: center; max-width: 700px; margin: 0 auto; }
+    .hero-check { width: 64px; height: 64px; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+    .hero-check svg { width: 32px; height: 32px; stroke: var(--white); stroke-width: 3; fill: none; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .hero p { font-size: 1rem; color: var(--mid); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+
+    /* Download Box */
+    .download-box { max-width: 520px; margin: 2rem auto 0; background: var(--white); border: 2px solid var(--success); border-radius: 14px; padding: 2rem; text-align: center; }
+    .download-box .step-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--success); margin-bottom: 0.5rem; }
+    .download-box h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .download-box p { font-size: 0.85rem; color: var(--mid); margin-bottom: 1.25rem; line-height: 1.5; }
+    .btn-download { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; background: var(--success); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    .btn-download svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+    .check-email { font-size: 0.78rem; color: var(--soft); margin-top: 1rem; }
+
+    /* Divider */
+    .divider { max-width: 800px; margin: 3rem auto; padding: 0 2rem; text-align: center; position: relative; }
+    .divider::before { content: ''; position: absolute; top: 50%; left: 2rem; right: 2rem; height: 1px; background: var(--light); }
+    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); }
+
+    /* Next Steps */
+    .next-steps { max-width: 1000px; margin: 0 auto; padding: 0 2rem 5rem; }
+    .next-steps-header { text-align: center; margin-bottom: 2.5rem; }
+    .next-steps-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.35rem; }
+    .next-steps-header p { font-size: 0.9rem; color: var(--mid); }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .step-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s; }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+    .step-tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; align-self: flex-start; }
+    .step-tag.free { background: rgba(34,197,94,0.1); color: var(--success); }
+    .step-tag.popular { background: var(--accent-glow); color: var(--accent); }
+    .step-tag.platform { background: rgba(99,102,241,0.1); color: #6366f1; }
+
+    .step-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.01em; }
+    .step-card .card-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.25rem; }
+    .step-card .card-features { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; }
+    .step-card .card-features li { font-size: 0.8rem; color: var(--slate); padding: 0.3rem 0 0.3rem 1.1rem; position: relative; line-height: 1.45; }
+    .step-card .card-features li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 5px; height: 5px; border-radius: 50%; }
+
+    .step-card:nth-child(1) .card-features li::before { background: var(--success); }
+    .step-card:nth-child(2) .card-features li::before { background: var(--accent); }
+    .step-card:nth-child(3) .card-features li::before { background: #6366f1; }
+
+    .step-card .card-price { font-size: 0.78rem; color: var(--soft); margin-bottom: 1rem; }
+    .step-card .card-price strong { color: var(--ink); font-size: 1.1rem; font-weight: 800; }
+
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1.75rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.82rem; font-weight: 700; border-radius: 6px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; width: 100%; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,90,60,0.3); }
+    .btn-community { background: var(--success); }
+    .btn-community:hover { background: #16a34a; box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    .btn-platform { background: #6366f1; }
+    .btn-platform:hover { background: #4f46e5; box-shadow: 0 6px 20px rgba(99,102,241,0.3); }
+
+    /* Footer */
+    .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
+    .footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .hero { padding: 3rem 1.25rem 1.5rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .download-box { margin: 1.5rem 1.25rem 0; }
+      .next-steps { padding: 0 1.25rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTNRQXBH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <a href="/" class="logo">DEVIN<span>.</span></a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-check">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>You're In. The Vault Is Yours.</h1>
+    <p>Your AI prompts and skills are ready to download. Check your email too -- I'll send you everything plus a few bonus resources over the next few days.</p>
+  </section>
+
+  <!-- DOWNLOAD BOX -->
+  <div class="download-box">
+    <div class="step-label">Step 1</div>
+    <h2>Download Your Prompts & Skills</h2>
+    <p>Click below to grab the full vault. Save it, bookmark it, share it with your team.</p>
+    <a href="#" class="btn-download">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Access the Vault
+    </a>
+    <p class="check-email">Also check your inbox -- a copy is on its way to your email.</p>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider"><span>Want to go further?</span></div>
+
+  <!-- NEXT STEPS -->
+  <div class="next-steps">
+    <div class="next-steps-header">
+      <h2>Three Ways to Level Up</h2>
+      <p>You've got the prompts. Here's how to turn them into a real competitive advantage.</p>
+    </div>
+
+    <div class="steps-grid">
+
+      <!-- SKOOL COMMUNITY -->
+      <div class="step-card">
+        <span class="step-tag free">Community</span>
+        <h3>AI in REI Community</h3>
+        <p class="card-desc">Want all the skills -- plus weekly training, live Q&As, and a network of operators building with AI?</p>
+        <ul class="card-features">
+          <li>Full prompt & skills library (updated weekly)</li>
+          <li>Video tutorials & walkthroughs</li>
+          <li>Weekly live Q&A sessions with me</li>
+          <li>Private community of REI operators</li>
+          <li>New skills dropped from real client builds</li>
+        </ul>
+        <div class="card-price"><strong>$97 - $197</strong> /mo</div>
+        <a href="#" class="btn-primary btn-community">Join the Community &rarr;</a>
+      </div>
+
+      <!-- FRACTIONAL CAIO -->
+      <div class="step-card">
+        <span class="step-tag popular">Most Popular</span>
+        <h3>Fractional CAIO</h3>
+        <p class="card-desc">Want me to actually build and run your AI systems? I embed in your business as your Chief AI Officer.</p>
+        <ul class="card-features">
+          <li>Custom AI strategy & roadmap</li>
+          <li>1-4 new AI systems built per month</li>
+          <li>Content, ads, outreach -- all automated</li>
+          <li>Strategy calls + async Slack/Voxer access</li>
+          <li>Replaces $285K-$507K in annual payroll</li>
+        </ul>
+        <div class="card-price">Starting at <strong>$2,500</strong> /mo</div>
+        <a href="fractional-caio.html" class="btn-primary">Learn About CAIO &rarr;</a>
+      </div>
+
+      <!-- FUND FLOW OS -->
+      <div class="step-card">
+        <span class="step-tag platform">Platform</span>
+        <h3>Fund Flow OS</h3>
+        <p class="card-desc">Raising capital? Fund Flow is the AI-powered platform for investor CRM, smart matching, and fund management.</p>
+        <ul class="card-features">
+          <li>AI-powered investor CRM</li>
+          <li>Smart investor-deal matching</li>
+          <li>Investor portal & reporting</li>
+          <li>Distribution & waterfall tracking</li>
+          <li>Built for syndicators & fund managers</li>
+        </ul>
+        <div class="card-price">Starting at <strong>$97</strong> /mo</div>
+        <a href="https://fundflowos.com" class="btn-primary btn-platform">Explore Fund Flow &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>&copy; 2026 Devin Robinson. <a href="/">devinrobinsonrei.com</a></p>
+  </div>
+
+</body>
+</html>
