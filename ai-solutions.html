@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
+  <!-- End Google Tag Manager -->
+  <title>What Your CAIO Builds | Devin Robinson</title>
+  <meta name="description" content="The full menu of AI systems your Fractional Chief AI Officer builds for your real estate business. Lead generation, deal analysis, investor relations, content, and operations.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --charcoal: #1a1a1a;
+      --slate: #2d2d2d;
+      --mid: #666;
+      --soft: #999;
+      --light: #e8e8e8;
+      --cream: #f8f7f5;
+      --white: #fff;
+      --accent: #c45a3c;
+      --accent-dark: #a8432a;
+      --accent-glow: rgba(196,90,60,0.08);
+      --success: #22c55e;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after { content: ''; position: fixed; inset: 0; opacity: 0.018; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(248,247,245,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
+    nav ul a { text-decoration: none; color: var(--mid); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    nav ul a:hover { color: var(--ink); }
+    .nav-cta { padding: 0.5rem 1.2rem; background: var(--accent); color: var(--white) !important; border-radius: 6px; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    /* Utilities */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+
+    /* Hero */
+    .hero { padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto; text-align: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; padding: 0.4rem 1rem; background: var(--accent-glow); border-radius: 100px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+    .hero h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .hero p { font-size: 1.1rem; color: var(--mid); line-height: 1.7; max-width: 640px; margin: 0 auto 2.5rem; }
+
+    /* Stats bar */
+    .stats-bar { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2rem; font-weight: 900; color: var(--ink); letter-spacing: -0.02em; }
+    .stat .num em { font-style: normal; color: var(--accent); }
+    .stat .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--soft); margin-top: 0.15rem; }
+
+    /* Controls */
+    .controls { position: sticky; top: 58px; z-index: 90; background: rgba(248,247,245,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; margin-bottom: 3rem; }
+    .controls-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .search-box { flex: 1; min-width: 220px; position: relative; }
+    .search-box input { width: 100%; padding: 0.65rem 1rem 0.65rem 2.5rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 0.85rem; font-family: inherit; background: var(--white); outline: none; transition: border-color 0.2s; }
+    .search-box input:focus { border-color: var(--accent); }
+    .search-box svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--soft); width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+    .filter-btn { padding: 0.55rem 1rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 0.78rem; font-weight: 600; font-family: inherit; background: var(--white); color: var(--mid); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .result-count { font-size: 0.75rem; color: var(--soft); font-weight: 500; white-space: nowrap; }
+
+    /* Category sections */
+    .category-section { margin-bottom: 3.5rem; }
+    .category-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--ink); }
+    .category-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .category-header h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
+    .category-count { font-size: 0.7rem; font-weight: 600; color: var(--soft); background: rgba(0,0,0,0.04); padding: 0.2rem 0.6rem; border-radius: 100px; }
+
+    /* Cards grid */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+
+    /* Solution card */
+    .card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 1.5rem; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; gap: 0.5rem; }
+    .card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.3; flex: 1; }
+    .card-difficulty { font-size: 0.62rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+    .card-difficulty.simple { background: #dcfce7; color: #166534; }
+    .card-difficulty.medium { background: #fef3c7; color: #92400e; }
+    .card-difficulty.complex { background: #fee2e2; color: #991b1b; }
+    .card p { font-size: 0.82rem; color: var(--mid); line-height: 1.55; flex: 1; margin-bottom: 0.85rem; }
+    .card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .card-tag { font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .tag-type { background: var(--accent-glow); color: var(--accent); }
+    .tag-audience { background: rgba(59,130,246,0.08); color: var(--blue); }
+    .tag-audience.syndicator { background: rgba(139,92,246,0.08); color: var(--purple); }
+
+    /* Featured card */
+    .card.featured { border: 2px solid var(--accent); position: relative; }
+    .card.featured::before { content: 'NEW'; position: absolute; top: -0.55rem; right: 1.25rem; background: var(--accent); color: var(--white); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.15rem 0.6rem; border-radius: 100px; }
+
+    /* Final CTA */
+    .final-cta { padding: 5rem 2rem; background: var(--ink); text-align: center; }
+    .final-cta-inner { max-width: 600px; margin: 0 auto; }
+    .final-cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: var(--white); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .final-cta p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; border-radius: 6px; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, background 0.2s; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,90,60,0.3); }
+    .final-cta-sub { font-size: 0.78rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
+
+    /* Empty state */
+    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--soft); }
+    .empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--mid); margin-bottom: 0.5rem; }
+    .empty-state p { font-size: 0.9rem; }
+    .hidden { display: none !important; }
+
+    /* Footer */
+    .footer { background: var(--charcoal); padding: 3rem 2rem; text-align: center; }
+    .footer p { font-size: 0.78rem; color: rgba(255,255,255,0.2); }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { padding: 6.5rem 1.25rem 3rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .stats-bar { gap: 1.5rem; }
+      .stat .num { font-size: 1.5rem; }
+      .controls-inner { gap: 0.5rem; }
+      .search-box { min-width: 100%; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .category-header h2 { font-size: 1rem; }
+      .final-cta { padding: 3.5rem 1.25rem; }
+      nav ul { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTNRQXBH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">DEVIN<span>.</span></a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="offerings.html">Services</a></li>
+        <li><a href="fractional-caio.html">Fractional CAIO</a></li>
+        <li><a href="/#podcast">Podcast</a></li>
+        <li><a href="https://calendly.com/devinrobinson1/fractional-caio" class="nav-cta">Book Strategy Call &rarr;</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Fractional Chief AI Officer</div>
+    <h1>Every AI System Your<br><span class="accent">CAIO Builds for You</span></h1>
+    <p>Lead generation, deal analysis, investor relations, content, operations &mdash; this is the full menu of AI systems your Fractional CAIO identifies, builds, and optimizes inside your business.</p>
+    <div class="stats-bar">
+      <div class="stat"><div class="num" id="total-count">0</div><div class="lbl">AI Solutions</div></div>
+      <div class="stat"><div class="num"><em>19</em></div><div class="lbl">Categories</div></div>
+      <div class="stat"><div class="num"><em>3</em></div><div class="lbl">Difficulty Levels</div></div>
+      <div class="stat"><div class="num"><em>$5,000</em></div><div class="lbl">/mo Starting</div></div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search" placeholder="Search AI solutions...">
+      </div>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="flipper">Flippers &amp; Wholesalers</button>
+      <button class="filter-btn" data-filter="fund">Fund Managers &amp; Syndicators</button>
+      <button class="filter-btn" data-filter="both">Both</button>
+      <span class="result-count" id="result-count"></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="solutions-container"></div>
+    <div class="empty-state hidden" id="empty-state">
+      <h3>No solutions match your search</h3>
+      <p>Try broadening your search or changing the filter.</p>
+    </div>
+  </div>
+
+  <div class="final-cta">
+    <div class="final-cta-inner" data-reveal>
+      <h2>Ready to See Which Systems You Need?</h2>
+      <p>Book a free strategy call. I'll audit your operation and tell you the 5&ndash;10 highest-ROI AI systems to build first.</p>
+      <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-primary">Book Your Strategy Call &rarr;</a>
+      <div class="final-cta-sub">devin@pfpsolutions.us &middot; No commitment. Honest fit assessment.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Devin Robinson. <a href="fractional-caio.html">Fractional CAIO</a> &middot; <a href="/">Home</a></p>
+  </div>
+
+<script>
+const solutions = [
+  // LEAD GENERATION & PROSPECTING
+  { name: "Skip Trace Auto-Enrichment", desc: "Automatically enriches property owner records with phone numbers, emails, and mailing addresses using multi-source skip trace APIs.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Daily Distressed Property Scraper", desc: "Scrapes county records and public data daily to identify newly distressed properties and feed them into your acquisition pipeline.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "complex", aud: "flipper" },
+  { name: "Probate Lead Scraper", desc: "Monitors probate court filings and extracts property-owning estate records for targeted outreach to motivated sellers.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "complex", aud: "flipper" },
+  { name: "Inbound Lead Auto-Qualifier", desc: "Scores and qualifies inbound leads based on property details, seller motivation signals, and deal criteria before routing to your team.", cat: "Lead Generation & Prospecting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Craigslist / FB Marketplace Monitor", desc: "Continuously monitors Craigslist and Facebook Marketplace for FSBO listings, motivated seller posts, and off-market deal indicators.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Expired MLS Listing Outreach", desc: "Identifies expired MLS listings and auto-generates personalized outreach sequences to engage frustrated sellers.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "FSBO Lead Finder", desc: "Scans multiple online sources to find For Sale By Owner listings and aggregates them into a single actionable lead list.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Tax Delinquency Monitor", desc: "Tracks tax delinquency records across target counties and alerts you when properties hit key thresholds for acquisition outreach.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Vacant Property Detector", desc: "Identifies vacant properties by cross-referencing utility disconnect data, mail forwarding records, and occupancy indicators.", cat: "Lead Generation & Prospecting", type: "Integration", diff: "complex", aud: "flipper" },
+  { name: "Driving for Dollars Route Optimizer", desc: "Optimizes driving routes for property scouting by clustering target addresses and minimizing drive time between distressed properties.", cat: "Lead Generation & Prospecting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Code Violation Lead Scraper", desc: "Scrapes municipal code violation records to identify distressed properties with unresolved violations, signaling motivated sellers.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "complex", aud: "flipper" },
+  { name: "Pre-Foreclosure Lead Pipeline", desc: "Monitors pre-foreclosure filings (lis pendens, NODs) across target markets and automates initial outreach sequences.", cat: "Lead Generation & Prospecting", type: "System", diff: "complex", aud: "flipper" },
+  { name: "Wholesale Lead Stacker", desc: "Stacks and deduplicates leads from multiple list sources (tax delinquent, absentee, probate, etc.), scoring by overlap frequency.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Lead Scorer & Qualifier", desc: "Multi-factor lead scoring system that qualifies prospects based on property data, owner demographics, and behavioral signals.", cat: "Lead Generation & Prospecting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Absentee Owner List Builder", desc: "Builds targeted absentee owner lists by cross-referencing tax records with mailing addresses to identify out-of-area property owners.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "HOA Violation Lead Scraper", desc: "Scrapes HOA violation records to find properties with unresolved issues, indicating potential motivated sellers.", cat: "Lead Generation & Prospecting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Lead Forge Investigator (Scout)", desc: "AI scout that researches and enriches lead data by pulling property details, owner info, and market context from multiple sources.", cat: "Lead Generation & Prospecting", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Real Estate Lead Machine", desc: "End-to-end lead generation system combining multiple data sources, scoring algorithms, and outreach automation for consistent deal flow.", cat: "Lead Generation & Prospecting", type: "System", diff: "complex", aud: "flipper" },
+
+  // DEAL ANALYSIS & UNDERWRITING
+  { name: "Market Rent Research Bot", desc: "Researches current market rents for any address by analyzing comparable rentals, Zillow data, and local rental trends.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Daily MLS Deal Feed", desc: "Filters and delivers a daily digest of MLS listings matching your buy criteria, with quick-underwrite numbers attached.", cat: "Deal Analysis & Underwriting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Deal Analyzer (3-Min Underwrite)", desc: "Underwrite any deal in under 3 minutes by chatting with an AI that pulls comps, estimates rehab, and calculates your all-in numbers.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "ARV Drift Alert (Active Portfolio)", desc: "Monitors after-repair values on your active portfolio and alerts you when ARV shifts could impact your exit strategy.", cat: "Deal Analysis & Underwriting", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Photo-Based Condition Estimator", desc: "Analyzes property photos to estimate condition, identify needed repairs, and generate preliminary rehab cost ranges.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "AI Comping Agent (Wholesale)", desc: "Pulls and analyzes comparable sales optimized for wholesale deal analysis, factoring in as-is condition and investor buyer criteria.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Wholesale Deal Analyzer", desc: "Underwrite wholesale deals in minutes with automated ARV estimation, repair costs, MAO calculation, and assignment fee modeling.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Deal Scoring System", desc: "Scores incoming deals on a 1-100 scale based on customizable criteria: motivation, equity, condition, location, and timeline.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Sell Probability Estimator", desc: "Predicts the likelihood a property owner will sell based on ownership duration, equity position, life events, and market conditions.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Flip Deal Analyzer (3-Min Underwrite)", desc: "Full flip underwriting in 3 minutes: ARV, rehab estimate, holding costs, financing costs, and net profit projection.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Comparable Sales Report Generator", desc: "Generates detailed comparable sales reports with AI-adjusted valuations accounting for condition, features, and market timing.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Short-Term Rental Revenue Analyzer", desc: "Analyzes STR revenue potential using AirDNA data, occupancy rates, and seasonal demand patterns.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Land Deal Analyzer", desc: "Underwrites raw land deals with development potential analysis, zoning verification, and comparable land sales.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Rent Comp Analyzer", desc: "Analyzes rental comparables from multiple data sources to optimize pricing strategy for maximum occupancy and revenue.", cat: "Deal Analysis & Underwriting", type: "Skill", diff: "simple", aud: "both" },
+
+  // COMMUNICATION & FOLLOW-UP
+  { name: "7-Touch Email Drip Sequence", desc: "Automated 7-email nurture sequence designed for motivated seller engagement with personalized property and situation details.", cat: "Communication & Follow-Up", type: "Automation", diff: "simple", aud: "flipper" },
+  { name: "SMS Follow-Up Bot", desc: "Sends timed, personalized SMS follow-ups to leads who haven't responded, with smart escalation and opt-out compliance.", cat: "Communication & Follow-Up", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Adaptive Follow-Up Sequencer", desc: "Adaptive system that adjusts messaging, timing, and channel based on lead engagement signals and behavior patterns.", cat: "Communication & Follow-Up", type: "System", diff: "complex", aud: "both" },
+  { name: "AI SMS Responder for Seller Leads", desc: "Intelligent SMS chatbot that handles initial seller conversations, qualifies interest, and books appointments with your team.", cat: "Communication & Follow-Up", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "AI Voice Agent for Inbound Calls", desc: "AI voice agent that handles inbound seller calls, qualifies leads through natural conversation, and books appointments.", cat: "Communication & Follow-Up", type: "System", diff: "complex", aud: "flipper" },
+  { name: "AI Outbound Dialer", desc: "AI-powered outbound calling agent that dials seller leads, delivers natural conversation, qualifies motivation and property details, and books appointments with your acquisitions team.", cat: "Communication & Follow-Up", type: "System", diff: "complex", aud: "flipper", featured: true },
+  { name: "Voicemail Drop Scheduler", desc: "Schedules and delivers ringless voicemail drops to segmented seller lead lists with personalized messages and tracking.", cat: "Communication & Follow-Up", type: "Automation", diff: "simple", aud: "flipper" },
+  { name: "Appointment No-Show Prevention", desc: "Reduces no-shows with multi-channel reminders, confirmation requests, and rescheduling automation.", cat: "Communication & Follow-Up", type: "Automation", diff: "simple", aud: "both" },
+  { name: "Seller Lead Re-Engagement Campaign", desc: "Identifies cold leads untouched for 60+ days and generates personalized re-engagement sequences based on original motivation.", cat: "Communication & Follow-Up", type: "Automation", diff: "medium", aud: "flipper" },
+
+  // MARKETING & CONTENT CREATION
+  { name: "Social Media Content Engine", desc: "Creates platform-specific social media posts optimized for Instagram, Facebook, and LinkedIn engagement. On-brand, on autopilot.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Monthly Market Update Newsletter", desc: "Generates a branded monthly newsletter with market data, portfolio updates, and thought leadership for your investor lists.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Investor Newsletter Builder", desc: "Builds weekly investor newsletters from deal activity, portfolio performance, and market insights for your private investor network.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "YouTube SEO Optimizer", desc: "Optimizes video content for YouTube search with data-driven titles, descriptions, tags, and thumbnail recommendations.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Podcast Show Notes Generator", desc: "Creates structured show notes from podcast recordings, including timestamps, key takeaways, and resource links.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "both" },
+  { name: "SEO Blog Writer", desc: "Writes SEO-optimized blog articles that rank on Google and get cited by AI search engines. In your voice, on your topics.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Content Atomizer", desc: "Takes long-form content (videos, blogs, podcasts) and atomizes it into platform-specific social posts, emails, and short clips.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Direct Response Copy Engine", desc: "Generates high-converting direct response copy for landing pages, sales letters, and marketing funnels.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Email Sequence Builder", desc: "Builds multi-step email nurture sequences for any audience: sellers, buyers, investors, or tenants with AI-optimized copy.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Content Ideation Engine", desc: "Generates content ideas based on trending RE topics, audience questions, competitor gaps, and your expertise areas.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Seller Outreach Copywriter", desc: "Creates personalized seller outreach copy for letters, postcards, emails, and texts tailored to specific seller situations.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "flipper" },
+  { name: "Motivated Seller Landing Page Builder", desc: "Generates high-converting landing pages for motivated seller campaigns with AI-optimized copy and trust-building elements.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Positioning & Angles Finder", desc: "Identifies unique positioning angles and market differentiation strategies based on competitive analysis.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Brand Voice Analyzer", desc: "Analyzes your existing content to define and codify your brand voice, ensuring consistency across all marketing.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "AI Talking Head Video", desc: "Creates AI-generated talking head videos for market updates, property announcements, and educational content.", cat: "Marketing & Content Creation", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Postcard Mailer Generator", desc: "Designs direct mail postcard copy targeting specific seller situations: pre-foreclosure, probate, absentee, and more.", cat: "Marketing & Content Creation", type: "Skill", diff: "simple", aud: "flipper" },
+
+  // ACQUISITIONS & OFFERS
+  { name: "Seller Motivation Sentiment Analyzer", desc: "Analyzes seller communications for motivation signals, urgency indicators, and negotiation readiness.", cat: "Acquisitions & Offers", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Cash Offer Analyzer", desc: "Analyzes cash offers against market data, seller situation, and competition to recommend optimal pricing and terms.", cat: "Acquisitions & Offers", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Creative Offers Generator", desc: "Generates multiple creative offer structures for any deal: cash, sub-to, seller finance, lease-option, and hybrid combos.", cat: "Acquisitions & Offers", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Verbal Offer & Negotiation Scripts", desc: "Generates phone and in-person scripts for presenting offers with objection handlers and negotiation frameworks.", cat: "Acquisitions & Offers", type: "Skill", diff: "simple", aud: "flipper" },
+  { name: "Offer Blast Email Generator", desc: "Generates bulk offer emails personalized by seller name, property details, and proposed terms.", cat: "Acquisitions & Offers", type: "Skill", diff: "simple", aud: "flipper" },
+  { name: "Appointment Route Optimizer", desc: "Intelligently schedules and routes acquisition appointments by geographic proximity so reps aren't crisscrossing the city. Handles same-day scheduling with real-time optimization as new appointments come in.", cat: "Acquisitions & Offers", type: "System", diff: "complex", aud: "flipper", featured: true },
+  { name: "Sales Appointment Quality Scorer", desc: "Scores and ranks upcoming sales appointments based on lead quality, motivation signals, property data, and likelihood to close \u2014 so your team prioritizes the highest-value appointments first.", cat: "Acquisitions & Offers", type: "Skill", diff: "medium", aud: "flipper", featured: true },
+
+  // CONSTRUCTION & REHAB
+  { name: "Inspection Report to Scope Converter", desc: "Converts home inspection PDFs into structured scopes of work with line-item repair estimates and contractor-ready formatting.", cat: "Construction & Rehab", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "AI Scope of Work Generator", desc: "Generates detailed scopes of work from property condition descriptions or photos with trade-specific line items.", cat: "Construction & Rehab", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Contractor Bid Comparison Tool", desc: "Compares contractor bids side by side, checking scope alignment, pricing variances, and value scoring.", cat: "Construction & Rehab", type: "Dashboard", diff: "medium", aud: "flipper" },
+  { name: "Daily Flip Intelligence Briefing", desc: "Morning briefing covering project status, budget vs. actuals, upcoming milestones, and items needing attention.", cat: "Construction & Rehab", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Draw Schedule Automator", desc: "Automates construction draw schedules by tracking completion milestones and generating draw requests for lender submission.", cat: "Construction & Rehab", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Rehab Over-Budget Early Warning", desc: "Monitors rehab spending against budget in real-time and triggers early warnings when line items trend toward overrun.", cat: "Construction & Rehab", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Contractor Check-In Automation", desc: "Sends automated check-in messages to contractors, collects progress updates, and flags delays.", cat: "Construction & Rehab", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Rehab Estimate from Description", desc: "Generates preliminary rehab cost estimates from property descriptions or listing notes, with line-item breakdowns.", cat: "Construction & Rehab", type: "Skill", diff: "simple", aud: "flipper" },
+  { name: "Multi-Flip Oversight Dashboard", desc: "Centralized dashboard for managing multiple simultaneous flips with budget tracking, timeline status, and alerts.", cat: "Construction & Rehab", type: "Dashboard", diff: "complex", aud: "flipper" },
+
+  // DISPOSITIONS & SALES
+  { name: "Disposition Smart Match", desc: "Instantly matches cash buyers to new contracts the moment you go under contract. Uses historical purchase data, buyer preferences, property type, and location to rank your buyers list and auto-blast the highest-probability matches first.", cat: "Dispositions & Sales", type: "System", diff: "complex", aud: "flipper", featured: true },
+  { name: "AI Disposition Matchmaker", desc: "Matches wholesale deals to the most likely cash buyers based on purchase history, preferred areas, and property type.", cat: "Dispositions & Sales", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Foreclosure Bidder-to-Buyer Pipeline", desc: "Scrapes foreclosure auction records to identify who bid on properties, captures their contact info, and automatically adds them to your cash buyers list with purchase criteria and bidding history.", cat: "Dispositions & Sales", type: "System", diff: "complex", aud: "flipper", featured: true },
+  { name: "Active Cash Buyer Identifier", desc: "Identifies active cash buyers by analyzing recent cash transactions, LLC purchases, and repeat buyer patterns.", cat: "Dispositions & Sales", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Buyers List Builder & Manager", desc: "Builds and maintains a segmented cash buyers list with purchase criteria, communication preferences, and deal match scoring.", cat: "Dispositions & Sales", type: "System", diff: "medium", aud: "flipper" },
+  { name: "Dispo Marketing Template Engine", desc: "Generates marketing emails and blast templates for wholesale deals with property highlights and financials.", cat: "Dispositions & Sales", type: "Skill", diff: "simple", aud: "flipper" },
+  { name: "Assignment Fee Optimizer", desc: "Recommends optimal assignment fees based on market data, comparable wholesale transactions, and buyer demand.", cat: "Dispositions & Sales", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Price Reduction Advisor", desc: "Recommends price reduction timing and amounts based on showing activity, absorption rates, and days-on-market data.", cat: "Dispositions & Sales", type: "Skill", diff: "medium", aud: "flipper" },
+
+  // DOCUMENT GENERATION & LEGAL
+  { name: "Contract Auto-Generator", desc: "Generates purchase agreements, assignment contracts, and offer letters from deal data with state-specific clauses.", cat: "Document Generation & Legal", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Closing Document Checklist", desc: "Auto-generates a complete closing document checklist based on deal type, state requirements, and lender specs.", cat: "Document Generation & Legal", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Compliance Checklist Generator", desc: "Generates compliance checklists specific to your deal type, state, and entity structure.", cat: "Document Generation & Legal", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Title Search Summary Generator", desc: "Summarizes title search results, flags liens, encumbrances, and chain-of-title issues requiring resolution.", cat: "Document Generation & Legal", type: "Skill", diff: "medium", aud: "both" },
+  { name: "TCPA Compliance Monitor", desc: "Monitors outbound communication for TCPA compliance, checking consent records, time restrictions, and DNC list status.", cat: "Document Generation & Legal", type: "System", diff: "medium", aud: "flipper" },
+  { name: "Fair Housing Compliance Guardian", desc: "Monitors listings, communications, and screening criteria for Fair Housing Act compliance, flagging potential violations.", cat: "Document Generation & Legal", type: "System", diff: "medium", aud: "both" },
+  { name: "PPM & Offering Doc Review", desc: "Reviews private placement memorandums and offering documents for completeness, compliance red flags, and investor clarity.", cat: "Document Generation & Legal", type: "Skill", diff: "complex", aud: "fund" },
+
+  // FINANCIAL OPERATIONS
+  { name: "Monthly P&L Generator", desc: "Generates monthly profit and loss statements across your portfolio or by entity from your accounting data.", cat: "Financial Operations", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Closing Cost Calculator", desc: "Calculates accurate closing costs by state and deal type, including transfer taxes, title fees, and prorations.", cat: "Financial Operations", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Net Worth Tracker", desc: "Tracks net worth across all real estate holdings, liquid assets, liabilities, and entity ownership with monthly snapshots.", cat: "Financial Operations", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Cash Flow Forecast Dashboard", desc: "Projects cash flow across all properties with scenario modeling for vacancy, rate changes, and capex timing.", cat: "Financial Operations", type: "Dashboard", diff: "complex", aud: "both" },
+  { name: "Investor Capital Call Manager", desc: "Manages capital calls for JV and fund deals, tracking committed amounts, call schedules, and contribution status.", cat: "Financial Operations", type: "Dashboard", diff: "medium", aud: "fund" },
+  { name: "Holding Cost Optimizer", desc: "Analyzes holding costs across active projects, identifying opportunities to reduce timeline, financing costs, and overhead.", cat: "Financial Operations", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Hard Money Lender Package Generator", desc: "Assembles professional lender packages with deal analysis, borrower profile, and property details for hard money apps.", cat: "Financial Operations", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Lender Loan Tracker", desc: "Tracks all active loans with payment schedules, maturity dates, rate details, and refinance opportunity alerts.", cat: "Financial Operations", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "1031 Exchange Timeline Manager", desc: "Manages 1031 exchange timelines with identification period tracking, replacement property deadlines, and QI coordination.", cat: "Financial Operations", type: "System", diff: "medium", aud: "both" },
+
+  // PORTFOLIO & INVESTMENT MGMT
+  { name: "Portfolio Performance Dashboard", desc: "Visual dashboard tracking occupancy, NOI, cash-on-cash returns, equity growth, and property-by-property performance.", cat: "Portfolio & Investment Mgmt", type: "Dashboard", diff: "complex", aud: "both" },
+  { name: "Portfolio Health Monitor (Daily)", desc: "Daily digest summarizing occupancy, delinquencies, maintenance issues, lease expirations, and financial alerts.", cat: "Portfolio & Investment Mgmt", type: "System", diff: "complex", aud: "both" },
+  { name: "Investor Report Generator", desc: "Generates professional investor reports with portfolio performance, distributions, market updates, and projections.", cat: "Portfolio & Investment Mgmt", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Investor Update Report", desc: "Creates professional investor update reports with deal-by-deal performance, distribution summaries, and analytics.", cat: "Portfolio & Investment Mgmt", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Investor Pitch Deck Generator", desc: "Generates professional investor pitch decks with market analysis, deal pipeline, track record, and fund structure.", cat: "Portfolio & Investment Mgmt", type: "Skill", diff: "complex", aud: "fund" },
+  { name: "Portfolio Acquisition Analyzer", desc: "Analyzes potential portfolio acquisitions by underwriting each property individually and modeling aggregate returns.", cat: "Portfolio & Investment Mgmt", type: "Skill", diff: "complex", aud: "fund" },
+  { name: "Multi-Market Portfolio Comparison", desc: "Compares portfolio performance across different markets, identifying top-performing areas and rebalancing opportunities.", cat: "Portfolio & Investment Mgmt", type: "Dashboard", diff: "complex", aud: "fund" },
+
+  // INVESTOR RELATIONS
+  { name: "Automated LinkedIn Outreach", desc: "Engages your Ideal Investor Avatar and books meetings on autopilot using your LinkedIn account. The #1 CAIO build for fund managers.", cat: "Investor Relations", type: "System", diff: "complex", aud: "fund" },
+  { name: "Investor Prospecting & Outreach Sequences", desc: "Multi-channel outreach sequences for investor prospecting across email, LinkedIn, and direct messaging.", cat: "Investor Relations", type: "System", diff: "medium", aud: "fund" },
+  { name: "Quarterly Update Drafting", desc: "Drafts quarterly investor updates in your voice with portfolio performance, market context, and forward-looking strategy.", cat: "Investor Relations", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Distribution Memo Generator", desc: "Generates distribution memos with waterfall calculations, investor allocations, and tax-relevant details.", cat: "Investor Relations", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Fund Marketing & Thought Leadership", desc: "Creates thought leadership content for capital raising: articles, posts, and market commentary that positions you as an authority.", cat: "Investor Relations", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Investor Sentiment Tracking", desc: "Tracks investor sentiment across communications to identify satisfaction trends, concerns, and re-up likelihood.", cat: "Investor Relations", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Regulatory Filing Tracker", desc: "Tracks regulatory filing deadlines, compliance requirements, and submission status across all fund entities.", cat: "Investor Relations", type: "Dashboard", diff: "medium", aud: "fund" },
+  { name: "Broker Relationship Management", desc: "Manages broker relationships, tracks deal flow by broker, and automates follow-up to maintain acquisition pipeline.", cat: "Investor Relations", type: "System", diff: "medium", aud: "fund" },
+
+  // CREATIVE FINANCE
+  { name: "Creative Finance Deal Structurer", desc: "Structures creative deals (sub-to, wraps, seller finance, lease-options) by analyzing property details and seller situations.", cat: "Creative Finance", type: "Skill", diff: "complex", aud: "flipper" },
+  { name: "Due-On-Sale Risk Scorer", desc: "Scores due-on-sale clause risk for subject-to deals based on lender type, loan balance, and payment history.", cat: "Creative Finance", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Sub-To Portfolio Monitor", desc: "Monitors your subject-to portfolio for payment status, insurance coverage, loan balance changes, and escrow health.", cat: "Creative Finance", type: "Dashboard", diff: "complex", aud: "flipper" },
+  { name: "Wrap Payment Manager", desc: "Manages wrap mortgage payment collection from buyers and outgoing payments to underlying lenders.", cat: "Creative Finance", type: "System", diff: "complex", aud: "flipper" },
+  { name: "Seller Finance Note Creator", desc: "Creates seller finance notes with customizable terms, amortization schedules, and compliant documentation.", cat: "Creative Finance", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Note Portfolio Tracker", desc: "Tracks note portfolio performance including payment status, yield calculations, collateral values, and default risk.", cat: "Creative Finance", type: "Dashboard", diff: "medium", aud: "flipper" },
+  { name: "Lease-Option Deal Calculator", desc: "Calculates lease-option terms including option consideration, monthly credits, strike price, and tenant-buyer thresholds.", cat: "Creative Finance", type: "Skill", diff: "medium", aud: "flipper" },
+  { name: "Creative Finance Portfolio Dashboard", desc: "Full dashboard showing portfolio health across all creative strategies: sub-to, wraps, notes, and lease-options.", cat: "Creative Finance", type: "Dashboard", diff: "complex", aud: "flipper" },
+  { name: "Waterfall Distribution Calculator", desc: "Calculates distributions across complex waterfall structures with preferred returns and promotes.", cat: "Creative Finance", type: "Skill", diff: "medium", aud: "fund" },
+
+  // PROPERTY MANAGEMENT
+  { name: "AI Tenant Screener", desc: "Screens tenant applications using AI to analyze credit, income, rental history, and public records for full risk assessment.", cat: "Property Management", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Lease Renewal Automation", desc: "Automates lease renewal workflows with market-rate adjustments, tenant retention scoring, and renewal offer generation.", cat: "Property Management", type: "Automation", diff: "medium", aud: "both" },
+  { name: "AI Maintenance Triage Engine", desc: "Triages incoming maintenance requests by urgency, routes to appropriate contractors, and provides tenants with immediate guidance.", cat: "Property Management", type: "System", diff: "complex", aud: "both" },
+  { name: "Late Payment Notification System", desc: "Sends escalating late payment notices automatically, from friendly reminders through formal demand letters.", cat: "Property Management", type: "Automation", diff: "simple", aud: "both" },
+  { name: "Vacancy Marketing Syndicator", desc: "Syndicates listings across Zillow, Apartments.com, Facebook, and Craigslist with optimized descriptions and photos.", cat: "Property Management", type: "Automation", diff: "medium", aud: "both" },
+  { name: "Eviction Process Assistant", desc: "Guides you through state-specific eviction procedures with proper notice generation and timeline tracking.", cat: "Property Management", type: "System", diff: "medium", aud: "both" },
+
+  // TRANSACTION COORDINATION
+  { name: "TC Workflow Dashboard", desc: "Central dashboard for managing multiple deals simultaneously with stage tracking and deadline visibility.", cat: "Transaction Coordination", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Wholesale TC Automation System", desc: "Automates wholesale transaction coordination from contract to close, managing timelines, documents, and communication.", cat: "Transaction Coordination", type: "System", diff: "complex", aud: "flipper" },
+  { name: "Closing Deadline Manager", desc: "Manages closing deadlines and contingency dates across all active transactions with automated reminders.", cat: "Transaction Coordination", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Transaction Coordinator Agent", desc: "Master AI transaction coordinator that oversees the entire deal lifecycle from contract to close.", cat: "Transaction Coordination", type: "System", diff: "complex", aud: "both" },
+
+  // MARKET INTELLIGENCE
+  { name: "Competitor Flip Tracker", desc: "Tracks competitor flippers in your market: purchase prices, rehab timelines, sale prices, and profit margins.", cat: "Market Intelligence", type: "Dashboard", diff: "medium", aud: "flipper" },
+  { name: "Market Trend Report", desc: "Produces market trend reports analyzing price movements, inventory levels, days on market, and absorption rates.", cat: "Market Intelligence", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Market Intelligence Weekly Brief", desc: "Compiles weekly intelligence covering market shifts, regulatory changes, competitor activity, and emerging opportunities.", cat: "Market Intelligence", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Market Snapshot Report", desc: "Generates quick market snapshots for any zip code with pricing trends, inventory, and key indicators.", cat: "Market Intelligence", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Zoning Change Alert Monitor", desc: "Monitors zoning changes, rezoning applications, and land use updates that could affect property values.", cat: "Market Intelligence", type: "Automation", diff: "complex", aud: "both" },
+  { name: "Rent-to-Price Ratio Heat Map", desc: "Visual heat maps showing rent-to-price ratios across target markets to identify the best cash flow zones.", cat: "Market Intelligence", type: "Dashboard", diff: "medium", aud: "both" },
+
+  // REPORTING & DASHBOARDS
+  { name: "Weekly Deal Pipeline Report", desc: "Weekly pipeline report showing deal flow by stage, conversion rates, projected closings, and bottleneck identification.", cat: "Reporting & Dashboards", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "KPI Tracker & Trend Report", desc: "Tracks KPIs across your business with trend analysis, goal progress, and automated weekly reporting.", cat: "Reporting & Dashboards", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Lead Source ROI Tracker", desc: "Tracks ROI across all lead sources with cost-per-lead and cost-per-deal analysis.", cat: "Reporting & Dashboards", type: "Dashboard", diff: "medium", aud: "flipper" },
+  { name: "Marketing Spend Analyzer & Scenario Modeler", desc: "Analyzes marketing spend across all channels with AI-powered scenario modeling. Run projections on budget changes to see predicted impact on lead volume, cost-per-deal, and revenue before you commit.", cat: "Reporting & Dashboards", type: "Dashboard", diff: "complex", aud: "both", featured: true },
+  { name: "Deal Flow Dashboard (Multi-Strategy)", desc: "Unified dashboard tracking deal flow across all strategies: wholesale, flip, creative finance, and buy-and-hold.", cat: "Reporting & Dashboards", type: "Dashboard", diff: "complex", aud: "both" },
+  { name: "Weekly Team Status Report", desc: "Compiles weekly status reports from team task completions, project progress, and key metrics into an executive summary.", cat: "Reporting & Dashboards", type: "Automation", diff: "simple", aud: "both" },
+
+  // PERSONAL PRODUCTIVITY
+  { name: "Morning Command Briefing", desc: "Daily executive briefing covering deal pipeline status, team tasks, calendar, financials, and action items.", cat: "Personal Productivity", type: "System", diff: "medium", aud: "both" },
+  { name: "Meeting Prep Briefing", desc: "Generates a full briefing document before any meeting with contact history, deal context, and talking points.", cat: "Personal Productivity", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Inbox Zero Helper", desc: "Triages email by urgency, categorizes messages, suggests responses, and routes action items to appropriate systems.", cat: "Personal Productivity", type: "Skill", diff: "medium", aud: "both" },
+  { name: "Daily Operations Command Center", desc: "Central automated operations hub that coordinates tasks, communications, and workflows across your entire business.", cat: "Personal Productivity", type: "System", diff: "complex", aud: "both" },
+  { name: "Task Capture Bot", desc: "Captures tasks from voice notes, emails, and messages, then organizes them into your task management system.", cat: "Personal Productivity", type: "Automation", diff: "medium", aud: "both" },
+  { name: "AI Meeting Transcription & Actions", desc: "Transcribes meetings in real-time and extracts action items, decisions, and follow-up tasks with assignee suggestions.", cat: "Personal Productivity", type: "Skill", diff: "medium", aud: "both" },
+  { name: "AI Executive Assistant", desc: "Unified personal AI assistant for leadership that manages your calendar, triages email, captures and routes tasks, preps you for meetings, and handles scheduling coordination \u2014 so you stay in your zone of genius.", cat: "Personal Productivity", type: "System", diff: "complex", aud: "both", featured: true },
+  { name: "Drive Folder Auto-Structure", desc: "Automatically creates and organizes Google Drive folder structures for new deals using standardized templates.", cat: "Personal Productivity", type: "Automation", diff: "simple", aud: "both" },
+
+  // TEAM & VENDOR MANAGEMENT
+  { name: "VA Task Assignment & Tracking", desc: "Assigns tasks to VAs based on skill match and workload, tracks completion, and escalates overdue items automatically.", cat: "Team & Vendor Management", type: "System", diff: "medium", aud: "both" },
+  { name: "Contractor Onboarding Automation", desc: "Automates contractor onboarding with W-9 collection, insurance verification, agreement signing, and system access.", cat: "Team & Vendor Management", type: "Automation", diff: "medium", aud: "flipper" },
+  { name: "Hiring Scorecard for RE Roles", desc: "Scores job candidates against real estate-specific criteria including deal experience, market knowledge, and role competencies.", cat: "Team & Vendor Management", type: "Skill", diff: "simple", aud: "both" },
+  { name: "Vendor Performance Tracker", desc: "Tracks vendor and contractor performance: response time, completion quality, pricing, and satisfaction scores.", cat: "Team & Vendor Management", type: "Dashboard", diff: "medium", aud: "both" },
+  { name: "Contractor Finder & Scorer", desc: "Finds and scores contractors in your market based on reviews, license status, insurance verification, and specialty matching.", cat: "Team & Vendor Management", type: "Skill", diff: "medium", aud: "flipper" },
+
+  // COMMERCIAL & MULTIFAMILY
+  { name: "Multi-Family Underwriting Model", desc: "Full multifamily underwriting with unit-level analysis, pro forma projections, and value-add scenario modeling.", cat: "Commercial & Multifamily", type: "Dashboard", diff: "complex", aud: "fund" },
+  { name: "Commercial Lease Analyzer", desc: "Analyzes commercial lease terms including NNN structures, escalation clauses, CAM charges, and TI allowances.", cat: "Commercial & Multifamily", type: "Skill", diff: "complex", aud: "fund" },
+  { name: "Commercial Property NOI Optimizer", desc: "Identifies NOI improvement opportunities through expense reduction and revenue enhancement strategies.", cat: "Commercial & Multifamily", type: "Skill", diff: "complex", aud: "fund" },
+  { name: "Value-Add Business Plan Builder", desc: "Builds detailed value-add business plans with renovation scope, timeline, and return projections.", cat: "Commercial & Multifamily", type: "Skill", diff: "complex", aud: "fund" },
+  { name: "Cap Rate Comp Tool", desc: "Analyzes capitalization rate comparables by submarket, property type, and deal vintage.", cat: "Commercial & Multifamily", type: "Skill", diff: "medium", aud: "fund" },
+  { name: "Commercial Lender Package Builder", desc: "Builds professional commercial lending packages with trailing financials, rent rolls, pro formas, and condition reports.", cat: "Commercial & Multifamily", type: "Skill", diff: "medium", aud: "fund" },
+];
+
+const catMeta = {
+  "Lead Generation & Prospecting": { icon: "\u{1F3AF}", bg: "#fef3c7" },
+  "Deal Analysis & Underwriting": { icon: "\u{1F4CA}", bg: "#dbeafe" },
+  "Communication & Follow-Up": { icon: "\u{1F4AC}", bg: "#fce7f3" },
+  "Marketing & Content Creation": { icon: "\u270F\uFE0F", bg: "#e0e7ff" },
+  "Acquisitions & Offers": { icon: "\u{1F91D}", bg: "#d1fae5" },
+  "Construction & Rehab": { icon: "\u{1F528}", bg: "#fed7aa" },
+  "Dispositions & Sales": { icon: "\u{1F4B0}", bg: "#fef9c3" },
+  "Document Generation & Legal": { icon: "\u{1F4C4}", bg: "#e8e8e8" },
+  "Financial Operations": { icon: "\u{1F4B5}", bg: "#d1fae5" },
+  "Portfolio & Investment Mgmt": { icon: "\u{1F4C8}", bg: "#dbeafe" },
+  "Investor Relations": { icon: "\u{1F91D}", bg: "#ede9fe" },
+  "Creative Finance": { icon: "\u{1F9E9}", bg: "#fce7f3" },
+  "Property Management": { icon: "\u{1F3E0}", bg: "#ccfbf1" },
+  "Transaction Coordination": { icon: "\u{1F4CB}", bg: "#fef3c7" },
+  "Market Intelligence": { icon: "\u{1F50D}", bg: "#cffafe" },
+  "Reporting & Dashboards": { icon: "\u{1F4CA}", bg: "#e0e7ff" },
+  "Personal Productivity": { icon: "\u26A1", bg: "#fef9c3" },
+  "Team & Vendor Management": { icon: "\u{1F465}", bg: "#fce7f3" },
+  "Commercial & Multifamily": { icon: "\u{1F3E2}", bg: "#dbeafe" },
+};
+
+const typeLabels = {
+  "Automation": "\u26A1 Automation",
+  "Skill": "\u{1F916} Skill",
+  "System": "\u{1F310} System",
+  "Dashboard": "\u{1F4CA} Dashboard",
+  "Integration": "\u{1F517} Integration",
+};
+
+document.getElementById('total-count').textContent = solutions.length;
+
+let currentFilter = 'all';
+let currentSearch = '';
+
+function render() {
+  const container = document.getElementById('solutions-container');
+  const emptyState = document.getElementById('empty-state');
+
+  let filtered = solutions.filter(s => {
+    const matchFilter = currentFilter === 'all' || s.aud === currentFilter || (currentFilter === 'both' && s.aud === 'both');
+    const matchSearch = !currentSearch || s.name.toLowerCase().includes(currentSearch) || s.desc.toLowerCase().includes(currentSearch) || s.cat.toLowerCase().includes(currentSearch);
+    return matchFilter && matchSearch;
+  });
+
+  document.getElementById('result-count').textContent = filtered.length + ' solution' + (filtered.length !== 1 ? 's' : '');
+
+  if (filtered.length === 0) {
+    container.innerHTML = '';
+    emptyState.classList.remove('hidden');
+    return;
+  }
+  emptyState.classList.add('hidden');
+
+  const groups = {};
+  filtered.forEach(s => {
+    if (!groups[s.cat]) groups[s.cat] = [];
+    groups[s.cat].push(s);
+  });
+
+  const catOrder = [
+    "Lead Generation & Prospecting", "Deal Analysis & Underwriting", "Communication & Follow-Up",
+    "Marketing & Content Creation", "Investor Relations", "Acquisitions & Offers",
+    "Construction & Rehab", "Dispositions & Sales", "Creative Finance",
+    "Financial Operations", "Portfolio & Investment Mgmt", "Property Management",
+    "Transaction Coordination", "Document Generation & Legal", "Market Intelligence",
+    "Reporting & Dashboards", "Personal Productivity", "Team & Vendor Management",
+    "Commercial & Multifamily"
+  ];
+
+  let html = '';
+  catOrder.forEach(cat => {
+    if (!groups[cat]) return;
+    const meta = catMeta[cat] || { icon: "\u{1F4E6}", bg: "#e8e8e8" };
+    html += `<div class="category-section" data-reveal>
+      <div class="category-header">
+        <div class="category-icon" style="background:${meta.bg}">${meta.icon}</div>
+        <h2>${cat}</h2>
+        <span class="category-count">${groups[cat].length}</span>
+      </div>
+      <div class="cards-grid" data-stagger>`;
+
+    groups[cat].forEach(s => {
+      const diffLabel = s.diff === 'simple' ? 'Simple' : s.diff === 'medium' ? 'Medium' : 'Complex';
+      const audLabel = s.aud === 'fund' ? 'Fund Managers' : s.aud === 'flipper' ? 'Flippers & Wholesalers' : 'All Operators';
+      const audClass = s.aud === 'fund' ? 'syndicator' : '';
+      const featuredClass = s.featured ? ' featured' : '';
+      html += `<div class="card${featuredClass}">
+        <div class="card-top">
+          <h3>${s.name}</h3>
+          <span class="card-difficulty ${s.diff}">${diffLabel}</span>
+        </div>
+        <p>${s.desc}</p>
+        <div class="card-tags">
+          <span class="card-tag tag-type">${typeLabels[s.type] || s.type}</span>
+          <span class="card-tag tag-audience ${audClass}">${audLabel}</span>
+        </div>
+      </div>`;
+    });
+
+    html += `</div></div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// Event listeners
+document.getElementById('search').addEventListener('input', (e) => {
+  currentSearch = e.target.value.toLowerCase().trim();
+  render();
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+// Initial render
+render();
+
+// GSAP animations
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero-eyebrow', { opacity: 0, y: 20, duration: 0.5, delay: 0.1 });
+  gsap.from('.hero h1', { opacity: 0, y: 40, duration: 0.7, delay: 0.2 });
+  gsap.from('.hero p', { opacity: 0, y: 25, duration: 0.5, delay: 0.35 });
+  gsap.from('.stats-bar', { opacity: 0, y: 20, duration: 0.5, delay: 0.45 });
+});
+</script>
+
+</body>
+</html>
