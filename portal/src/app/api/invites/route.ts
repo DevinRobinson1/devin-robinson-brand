@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { canAddSeat } from '@/lib/seats';
 import { sendInviteEmail } from '@/lib/resend';
+import { limit } from '@/lib/rate-limit';
 
 export const runtime = 'nodejs';
 
@@ -16,6 +17,10 @@ export async function POST(request: NextRequest) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+
+  const ip = request.headers.get('x-forwarded-for') ?? 'unknown';
+  const rl = await limit(`invites:${ip}`);
+  if (!rl.success) return NextResponse.json({ error: 'rate limited' }, { status: 429 });
 
   const parsed = InviteBody.safeParse(await request.json());
   if (!parsed.success) return NextResponse.json({ error: 'invalid body' }, { status: 400 });
