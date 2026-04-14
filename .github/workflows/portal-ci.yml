@@ -1,0 +1,61 @@
+name: portal-ci
+on:
+  push:
+    paths: ['portal/**', '.github/workflows/portal-ci.yml']
+  pull_request:
+    paths: ['portal/**']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portal
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: portal/package-lock.json
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Start Supabase
+        run: supabase start
+      - name: Install deps
+        run: npm ci
+      - name: Unit + integration
+        run: npm test
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          STRIPE_WEBHOOK_SECRET: whsec_test_fixture_secret
+          STRIPE_SECRET_KEY: sk_test_fake
+          STRIPE_PRICE_ENTRY: price_test_entry
+          STRIPE_PRICE_GROWTH: price_test_growth
+          STRIPE_PRICE_SCALE: price_test_scale
+          STRIPE_PRICE_ENTERPRISE: price_test_enterprise
+          STRIPE_WEBHOOK_TEST_MODE: '1'
+          RESEND_API_KEY: re_fake
+          ALERT_EMAIL_TO: test@fchiefaio.com
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+      - name: E2E
+        run: npm run test:e2e
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          STRIPE_WEBHOOK_SECRET: whsec_test_fixture_secret
+          STRIPE_SECRET_KEY: sk_test_fake
+          STRIPE_PRICE_ENTRY: price_test_entry
+          STRIPE_PRICE_GROWTH: price_test_growth
+          STRIPE_PRICE_SCALE: price_test_scale
+          STRIPE_PRICE_ENTERPRISE: price_test_enterprise
+          STRIPE_WEBHOOK_TEST_MODE: '1'
+          RESEND_API_KEY: re_fake
+          ALERT_EMAIL_TO: test@fchiefaio.com
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
