@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Beehiiv attribution tracking -->
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+  <title>The AI + REI Newsletter by Devin Robinson</title>
+  <meta name="description" content="The weekly newsletter for real estate operators who want to deploy AI before their competition does. Tools, prompts, automations, and deal-side tactics -- straight from Devin Robinson.">
+  <meta property="og:title" content="The AI + REI Newsletter by Devin Robinson">
+  <meta property="og:description" content="Weekly: the AI tools, prompts, and workflows I'm using across real estate, capital raising, and operations. Free.">
+  <meta property="og:image" content="images/youtube-banner.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a; --charcoal: #1a1a1a; --slate: #2d2d2d; --mid: #666;
+      --soft: #999; --light: #e8e8e8; --cream: #f8f7f5; --white: #fff;
+      --accent: #c45a3c; --accent-dark: #a8432a; --accent-light: #e8785c;
+      --accent-glow: rgba(196,90,60,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* Nav */
+    nav { background: var(--ink); padding: 0.85rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-back { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+
+    /* ─── HERO ─── */
+    .atf { background: var(--ink); padding: 3.5rem 2rem 4rem; position: relative; overflow: hidden; }
+    .atf::before {
+      content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(196,90,60,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .atf-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1.05fr 1fr; gap: 4rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+
+    /* Left: photo card */
+    .atf-photo-wrap { position: relative; }
+    .atf-photo-card {
+      position: relative; border-radius: 24px; overflow: hidden;
+      background: var(--charcoal);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      aspect-ratio: 4 / 5;
+    }
+    .atf-photo-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .atf-photo-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.85) 100%);
+      pointer-events: none;
+    }
+    .atf-photo-overlay {
+      position: absolute; bottom: 1.75rem; left: 1.75rem; right: 1.75rem; z-index: 2;
+      color: var(--white);
+    }
+    .atf-photo-overlay .name { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 0.15rem; }
+    .atf-photo-overlay .title { font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.45; }
+    .atf-photo-overlay .title .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-light); }
+
+    .atf-badge {
+      position: absolute; top: -14px; left: 1.5rem; z-index: 3;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.5rem 1rem; background: var(--accent); color: var(--white);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 100px; box-shadow: 0 6px 20px rgba(196,90,60,0.4);
+    }
+    .atf-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--white); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    /* Right: headline + form */
+    .atf-right {}
+    .atf-eyebrow { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; padding: 0.4rem 0.95rem; background: rgba(196,90,60,0.14); border-radius: 100px; }
+    .atf-right h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 1.1rem; color: var(--white); }
+    .atf-right h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .atf-right > p.lead { font-size: 1.02rem; color: rgba(255,255,255,0.62); line-height: 1.6; margin-bottom: 1.75rem; max-width: 500px; }
+
+    .atf-form {
+      background: var(--white); border-radius: 16px; padding: 1.75rem;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.35); position: relative;
+      max-width: 520px;
+    }
+    .atf-form::before { content: ''; position: absolute; top: 0; left: 1.75rem; right: 1.75rem; height: 3px; background: var(--accent); border-radius: 0 0 3px 3px; }
+    .atf-form h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; letter-spacing: -0.01em; color: var(--ink); }
+    .atf-form .form-sub { font-size: 0.82rem; color: var(--mid); margin-bottom: 1rem; line-height: 1.5; }
+    .form-wrapper iframe { min-height: 291px; width: 100%; border: none; border-radius: 4px; }
+    .form-trust { display: flex; gap: 1.25rem; margin-top: 0.85rem; padding-top: 0.9rem; border-top: 1px solid rgba(0,0,0,0.06); }
+    .form-trust span { font-size: 0.7rem; color: var(--soft); line-height: 1.4; }
+
+    .atf-meta { display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .atf-meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .atf-meta-item svg { width: 14px; height: 14px; stroke: var(--accent); stroke-width: 2.2; fill: none; }
+
+    /* ─── "WHAT YOU GET" STRIP ─── */
+    .strip { background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 2.25rem 2rem; }
+    .strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .strip-item { text-align: center; }
+    .strip-item .num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1; margin-bottom: 0.3rem; }
+    .strip-item .lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); }
+
+    /* ─── WHAT'S INSIDE ─── */
+    .inside { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .sec-header { text-align: center; margin-bottom: 3rem; }
+    .sec-kicker { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.85rem; }
+    .sec-header h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.5rem; }
+    .sec-header h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .sec-header p { font-size: 0.95rem; color: var(--mid); max-width: 560px; margin: 0 auto; line-height: 1.65; }
+
+    .topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    .topic {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 14px;
+      padding: 1.75rem 1.5rem; transition: transform 0.25s ease, box-shadow 0.25s, border-color 0.25s;
+    }
+    .topic:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-color: rgba(196,90,60,0.2); }
+    .topic-icon {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+    .topic-icon svg { width: 20px; height: 20px; stroke: var(--accent); stroke-width: 2; fill: none; }
+    .topic h3 { font-size: 1rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.015em; }
+    .topic p { font-size: 0.85rem; color: var(--mid); line-height: 1.55; }
+
+    /* ─── SAMPLE ISSUE ─── */
+    .sample { background: var(--ink); padding: 5rem 2rem; color: var(--white); }
+    .sample-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 3.5rem; align-items: center; }
+    .sample-left h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; color: var(--white); }
+    .sample-left h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .sample-left p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.65; margin-bottom: 1.25rem; }
+    .sample-left .sec-kicker { color: var(--accent); }
+
+    .sample-card {
+      background: var(--charcoal); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 1.75rem; position: relative;
+    }
+    .sample-card::before {
+      content: 'SAMPLE ISSUE'; position: absolute; top: -10px; left: 1.5rem;
+      background: var(--accent); color: var(--white); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; padding: 0.35rem 0.8rem; border-radius: 100px;
+    }
+    .sample-card .issue-meta { font-size: 0.7rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase; margin: 0.4rem 0 0.9rem; }
+    .sample-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 1.1rem; line-height: 1.3; letter-spacing: -0.015em; }
+    .sample-list { list-style: none; }
+    .sample-list li { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.55; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.75rem; align-items: flex-start; }
+    .sample-list li:last-child { border-bottom: none; }
+    .sample-list li strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 0.15rem; font-size: 0.88rem; }
+    .sample-list li .marker {
+      flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px;
+      background: rgba(196,90,60,0.15); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0; margin-top: 0.1rem;
+    }
+
+    /* ─── WHO IT'S FOR ─── */
+    .who { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .who-col {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 14px;
+      padding: 2rem 1.75rem;
+    }
+    .who-col.yes { border-color: rgba(196,90,60,0.22); background: linear-gradient(180deg, rgba(196,90,60,0.03) 0%, var(--white) 100%); }
+    .who-col h3 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .who-col.yes h3 { color: var(--accent); }
+    .who-col.no h3 { color: var(--soft); }
+    .who-col h3 .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .who-col.yes .dot { background: var(--accent); }
+    .who-col.no .dot { background: var(--soft); }
+    .who-col ul { list-style: none; }
+    .who-col li { font-size: 0.88rem; line-height: 1.55; padding: 0.55rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 0.65rem; align-items: flex-start; }
+    .who-col li:last-child { border-bottom: none; }
+    .who-col li svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.2rem; stroke-width: 2.5; fill: none; }
+    .who-col.yes li svg { stroke: var(--accent); }
+    .who-col.no li svg { stroke: var(--soft); }
+    .who-col.no li { color: var(--mid); }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--white); padding: 5rem 2rem; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--accent); font-weight: 400; transition: transform 0.2s; flex-shrink: 0; }
+    .faq-item[open] .faq-q::after { content: '−'; }
+    .faq-a { font-size: 0.9rem; color: var(--mid); line-height: 1.65; margin-top: 0.75rem; padding-right: 2rem; }
+
+    /* ─── FINAL CTA ─── */
+    .final { background: var(--ink); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .final::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,90,60,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+    .final h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; color: var(--white); }
+    .final h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .final p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 2rem; }
+    .final-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 1rem 2.5rem; background: var(--accent); color: var(--white);
+      text-decoration: none; font-size: 0.92rem; font-weight: 700; border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      letter-spacing: -0.005em;
+    }
+    .final-btn:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,90,60,0.35); }
+    .final-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+
+    /* ─── PODCAST / YOUTUBE ─── */
+    .podcast { background: var(--cream); padding: 5rem 2rem; border-top: 1px solid rgba(0,0,0,0.05); }
+    .podcast-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1fr; gap: 3.5rem; align-items: center; }
+    .podcast-visual {
+      position: relative; aspect-ratio: 1 / 1; border-radius: 20px; overflow: hidden;
+      background: var(--ink); box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .podcast-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .podcast-text .sec-kicker { color: var(--accent); margin-bottom: 0.85rem; }
+    .podcast-text h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
+    .podcast-text h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .podcast-text > p { font-size: 0.95rem; color: var(--mid); line-height: 1.65; margin-bottom: 1.5rem; max-width: 520px; }
+    .podcast-badges { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.25rem; }
+    .podcast-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.7rem 1.15rem; background: var(--ink); color: var(--white);
+      text-decoration: none; font-size: 0.82rem; font-weight: 600; border-radius: 8px;
+      transition: transform 0.2s, background 0.2s;
+      letter-spacing: -0.005em;
+    }
+    .podcast-badge:hover { transform: translateY(-2px); background: var(--accent); }
+    .podcast-badge svg { width: 16px; height: 16px; fill: currentColor; }
+    .podcast-youtube {
+      font-size: 0.82rem; color: var(--mid); display: inline-flex; align-items: center; gap: 0.45rem;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .podcast-youtube:hover { color: var(--accent); }
+    .podcast-youtube strong { color: var(--ink); font-weight: 700; }
+    .podcast-youtube svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.2; fill: none; }
+
+    /* Footer */
+    .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
+    .footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .atf { padding: 2.5rem 1.5rem 3rem; }
+      .atf-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .atf-photo-wrap { max-width: 420px; margin: 0 auto; width: 100%; }
+      .atf-right { text-align: center; }
+      .atf-right > p.lead { margin: 0 auto 1.5rem; }
+      .atf-form { margin: 0 auto; }
+      .atf-meta { justify-content: center; }
+
+      .strip-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .topics { grid-template-columns: repeat(2, 1fr); }
+      .sample-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .who-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .atf-right h1 { font-size: 1.75rem; }
+      .atf-form { padding: 1.5rem; }
+      .inside, .who, .faq, .final { padding: 3.5rem 1.25rem; }
+      .sample { padding: 3.5rem 1.25rem; }
+      .topics { grid-template-columns: 1fr; }
+      .form-trust { flex-direction: column; gap: 0.4rem; }
+    }
+    @media (max-width: 968px) {
+      .podcast-inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .podcast-visual { max-width: 340px; margin: 0 auto; }
+      .podcast-text > p { margin: 0 auto 1.5rem; }
+      .podcast-badges { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTNRQXBH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <a href="/" class="logo">DEVIN<span>.</span></a>
+    <a href="/" class="nav-back">← Back to site</a>
+  </nav>
+
+  <!-- ─── HERO: PHOTO + FORM ─── -->
+  <section class="atf">
+    <div class="atf-inner">
+
+      <div class="atf-photo-wrap">
+        <div class="atf-badge">New issue every Tuesday</div>
+        <div class="atf-photo-card">
+          <img src="images/db937bf8-9fef-414c-9065-8bba7bc37378.png" alt="Devin Robinson">
+          <div class="atf-photo-overlay">
+            <div class="name">Devin Robinson</div>
+            <div class="title">Fractional <span class="accent">Chief AI Officer</span> · Fund Founders · Host of Funds on Fire</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atf-right">
+        <div class="atf-eyebrow">Free Weekly Newsletter</div>
+        <h1>The AI tools changing real estate <span class="accent">before your competition finds them.</span></h1>
+        <p class="lead">Every Tuesday, I send one email with the exact AI tools, prompts, and automations I'm using across deal flow, capital raising, marketing, and operations. Built for operators, not tinkerers.</p>
+
+        <div class="atf-form">
+          <h2>Join the AI + REI Newsletter</h2>
+          <p class="form-sub">Drop your name and email. First issue hits your inbox immediately.</p>
+          <div class="form-wrapper">
+            <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+            <iframe
+              src="https://subscribe-forms.beehiiv.com/193e4fd8-6195-46d2-8c98-a5a35c770afc"
+              class="beehiiv-embed"
+              data-test-id="beehiiv-embed"
+              frameborder="0"
+              scrolling="no"
+              style="width:560px;height:297px;margin:0;border-radius:0;background-color:transparent;box-shadow:0 0 #0000;max-width:100%;"
+              title="AI + REI Newsletter signup"
+            ></iframe>
+          </div>
+          <div class="form-trust">
+            <span>No spam. Unsubscribe anytime.</span>
+            <span>Read in 5 minutes. Actionable in 50.</span>
+          </div>
+        </div>
+
+        <div class="atf-meta">
+          <div class="atf-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            Free forever
+          </div>
+          <div class="atf-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            5-minute read
+          </div>
+          <div class="atf-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Cancel in one click
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── STRIP ─── -->
+  <section class="strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <div class="num">1</div>
+        <div class="lbl">Email per week</div>
+      </div>
+      <div class="strip-item">
+        <div class="num">3</div>
+        <div class="lbl">AI tools reviewed</div>
+      </div>
+      <div class="strip-item">
+        <div class="num">1</div>
+        <div class="lbl">Deal-ready prompt</div>
+      </div>
+      <div class="strip-item">
+        <div class="num">5</div>
+        <div class="lbl">Min to read</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT'S INSIDE ─── -->
+  <section class="inside">
+    <div class="sec-header">
+      <div class="sec-kicker">Every Issue Covers</div>
+      <h2>Built for operators <span class="accent">doing the work.</span></h2>
+      <p>This isn't an AI news roundup. It's a weekly playbook of what I'm actually shipping in my portfolio companies and fund operations -- condensed so you can deploy it before the next Monday meeting.</p>
+    </div>
+
+    <div class="topics">
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>Tool of the Week</h3>
+        <p>One AI tool worth your time -- what it does, the exact REI use case, and whether it's actually worth the price tag.</p>
+      </div>
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Copy-Paste Prompt</h3>
+        <p>A production-grade prompt you can paste straight into ChatGPT or Claude -- for underwriting, investor updates, LOIs, or lead nurture.</p>
+      </div>
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg></div>
+        <h3>Automation Teardown</h3>
+        <p>One workflow from my stack -- Zapier, Make, GHL, n8n -- broken down step by step so you can clone it into your own business.</p>
+      </div>
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h3>Capital Raising Angle</h3>
+        <p>How AI is changing how funds get raised -- investor targeting, deck generation, CRM orchestration, LP reporting, and outbound.</p>
+      </div>
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Deal-Side Tactics</h3>
+        <p>AI applied to acquisition -- skip tracing, seller outreach sequences, rehab estimating, comp pulls, and dispo marketing that actually works.</p>
+      </div>
+      <div class="topic">
+        <div class="topic-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+        <h3>One Bold Take</h3>
+        <p>A short, opinionated read on where AI and real estate are actually heading -- and what most operators are getting wrong right now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SAMPLE ISSUE ─── -->
+  <section class="sample">
+    <div class="sample-inner">
+      <div class="sample-left">
+        <div class="sec-kicker">What a Tuesday looks like</div>
+        <h2>Five minutes in. <span class="accent">A week's edge out.</span></h2>
+        <p>Each issue is built to be skimmable in the driveway and actionable at the desk. No 3,000-word essays. No "top 10 AI tools" filler. Just the signal.</p>
+        <p>This is what last week's issue looked like -- same format, every Tuesday.</p>
+      </div>
+
+      <div class="sample-card">
+        <div class="issue-meta">Issue 028 · Tuesday</div>
+        <h3>The $47/mo tool replacing my acquisitions VA (and the prompt that runs it)</h3>
+        <ul class="sample-list">
+          <li>
+            <span class="marker">01</span>
+            <div><strong>Tool of the Week</strong>Why I'm testing a niche voice-AI platform against my current outbound stack -- and the honest results after 400 calls.</div>
+          </li>
+          <li>
+            <span class="marker">02</span>
+            <div><strong>Prompt Drop</strong>The exact 11-line prompt that turns a raw skip-traced list into personalized, ready-to-send seller outreach.</div>
+          </li>
+          <li>
+            <span class="marker">03</span>
+            <div><strong>Automation Teardown</strong>How I route new LP inquiries from ad → calendar → CRM → nurture sequence without a single human touch.</div>
+          </li>
+          <li>
+            <span class="marker">04</span>
+            <div><strong>Bold Take</strong>Why most "AI for real estate" tools are going to be dead in 18 months -- and which two categories will eat their lunch.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHO IT'S FOR ─── -->
+  <section class="who">
+    <div class="sec-header">
+      <div class="sec-kicker">Is This For You?</div>
+      <h2>Built for a specific <span class="accent">kind of operator.</span></h2>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-col yes">
+        <h3><span class="dot"></span>You'll love this if</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You're running a real estate operation -- fund, flips, rentals, wholesale, or agency -- and know AI is the next leverage point.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You want tactics, not theory. You'll open something, implement it Monday, and see results by Friday.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You'd rather have one email you read than ten you ignore.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>You respect honesty over hype -- including when a tool isn't worth the hype.</li>
+        </ul>
+      </div>
+      <div class="who-col no">
+        <h3><span class="dot"></span>Skip it if</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>You want an AI news aggregator. I don't cover model launches or industry drama.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>You're looking for general productivity tips disconnected from real estate.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>You want someone to tell you AI will solve everything. It won't. I'll tell you where it actually bites.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>You prefer long, theoretical essays over short, applied playbooks.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="faq">
+    <div class="faq-inner">
+      <div class="sec-header">
+        <div class="sec-kicker">FAQ</div>
+        <h2>Quick <span class="accent">answers.</span></h2>
+      </div>
+
+      <details class="faq-item" open>
+        <summary class="faq-q">How much does it cost?</summary>
+        <div class="faq-a">Nothing. The newsletter is free and will stay free. If something paid ever shows up in your inbox from me, it'll be because you asked for it -- not because you subscribed here.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How often do you send?</summary>
+        <div class="faq-a">One email every Tuesday. That's it. No "just checking in" drips, no 4-email launch sequences. One issue, same format, every week.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to be technical to use what's in here?</summary>
+        <div class="faq-a">No. Every prompt is copy-paste. Every tool is evaluated from an operator's seat, not an engineer's. If an automation needs setup, I walk through it step by step.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is this just rebranded AI content?</summary>
+        <div class="faq-a">No. Everything I share is either something I'm personally running in my businesses or something I've tested against the alternative. If it didn't earn its place in my stack, it doesn't earn a mention in the newsletter.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I unsubscribe easily?</summary>
+        <div class="faq-a">One click at the bottom of any email. No guilt, no "are you sure," no reactivation pop-ups.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─── -->
+  <section class="final">
+    <div class="final-inner">
+      <h2>One email. Every Tuesday. <span class="accent">For free.</span></h2>
+      <p>Join the operators already using the exact tools, prompts, and workflows I'm deploying across my portfolio.</p>
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="final-btn">
+        Subscribe at the top
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── PODCAST / YOUTUBE ─── -->
+  <section class="podcast">
+    <div class="podcast-inner">
+      <div class="podcast-visual">
+        <img src="images/fonf-podcast-logo.png" alt="Funds on Fire Podcast with Devin Robinson">
+      </div>
+      <div class="podcast-text">
+        <div class="sec-kicker">The Podcast</div>
+        <h2>New episodes every Monday. <span class="accent">Newsletter lands Tuesday.</span></h2>
+        <p>Between issues, catch <strong>Funds on Fire</strong> -- real conversations about raising capital, running real estate operations, and deploying AI across both. New episodes drop Monday morning, so the Tuesday newsletter often builds on what we covered.</p>
+        <div class="podcast-badges">
+          <a href="https://podcasts.apple.com/us/podcast/funds-on-fire/id1801225885" class="podcast-badge" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Apple Podcasts
+          </a>
+          <a href="https://open.spotify.com/show/2LiQRSvKGJZZYorjH6RdkS" class="podcast-badge" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify
+          </a>
+          <a href="https://www.youtube.com/@FundsonFire" class="podcast-badge" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+        <a href="https://www.youtube.com/@Devin.robinson1" class="podcast-youtube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="m22 8-4-4H6L2 8v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"/><path d="M10 12 15 15 10 18z" fill="currentColor"/></svg>
+          Also find me on my <strong>personal YouTube channel</strong> →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>&copy; 2026 Devin Robinson. <a href="/">devinrobinsonrei.com</a></p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTNRQXBH');</script>
+  <!-- End Google Tag Manager -->
+  <title>You're Subscribed -- Welcome to AI + REI | Devin Robinson</title>
+  <meta name="description" content="You're in. First issue lands Tuesday. While you wait, catch the podcast, browse the YouTube channel, and see how we work together.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a; --charcoal: #1a1a1a; --slate: #2d2d2d; --mid: #666;
+      --soft: #999; --light: #e8e8e8; --cream: #f8f7f5; --white: #fff;
+      --accent: #c45a3c; --accent-dark: #a8432a; --accent-glow: rgba(196,90,60,0.08);
+      --success: #22c55e;
+      --youtube: #ff0000;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* Nav */
+    nav { background: var(--ink); padding: 0.9rem 2rem; text-align: center; }
+    .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    /* Success Hero */
+    .success-hero {
+      background: var(--ink); padding: 4rem 2rem 5rem; text-align: center; position: relative;
+      overflow: hidden;
+    }
+    .success-hero::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(196,90,60,0.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .success-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+    .success-badge {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--success);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;
+      box-shadow: 0 0 0 8px rgba(34,197,94,0.15);
+    }
+    .success-badge svg { width: 28px; height: 28px; stroke: var(--white); stroke-width: 3; fill: none; }
+    .success-hero h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.85rem; color: var(--white); }
+    .success-hero h1 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .success-hero > p { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.65; max-width: 520px; margin: 0 auto; }
+    .success-meta {
+      display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem;
+      padding: 0.5rem 1.1rem; background: rgba(196,90,60,0.15);
+      border: 1px solid rgba(196,90,60,0.3); border-radius: 100px;
+      font-size: 0.75rem; color: var(--white); font-weight: 600;
+    }
+    .success-meta svg { width: 14px; height: 14px; stroke: var(--accent); stroke-width: 2.2; fill: none; }
+
+    /* ─── WHILE YOU WAIT ─── */
+    .wait {
+      max-width: 960px; margin: -3.5rem auto 0; padding: 0 2rem;
+      position: relative; z-index: 2;
+    }
+    .wait-header { text-align: center; margin-bottom: 1.5rem; }
+    .wait-header .kicker {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--white);
+      background: var(--accent); padding: 0.4rem 0.95rem; border-radius: 100px;
+      box-shadow: 0 8px 24px rgba(196,90,60,0.35);
+    }
+    .wait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+
+    .media-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 2rem; display: flex; flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .media-card:hover { transform: translateY(-4px); box-shadow: 0 16px 44px rgba(0,0,0,0.1); }
+
+    .media-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1.15rem;
+    }
+    .media-icon.podcast { background: var(--accent-glow); }
+    .media-icon.podcast svg { width: 24px; height: 24px; stroke: var(--accent); stroke-width: 2; fill: none; }
+    .media-icon.youtube { background: rgba(255,0,0,0.08); }
+    .media-icon.youtube svg { width: 24px; height: 24px; fill: var(--youtube); }
+
+    .media-card .media-tag {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--soft); margin-bottom: 0.35rem;
+    }
+    .media-card h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 0.45rem; }
+    .media-card > p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; flex-grow: 1; margin-bottom: 1.25rem; }
+
+    .media-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .media-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 0.95rem; background: var(--ink); color: var(--white);
+      text-decoration: none; font-size: 0.78rem; font-weight: 600; border-radius: 8px;
+      transition: transform 0.2s, background 0.2s; letter-spacing: -0.005em;
+    }
+    .media-link:hover { transform: translateY(-1px); background: var(--accent); }
+    .media-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .media-link.yt-primary { background: var(--youtube); }
+    .media-link.yt-primary:hover { background: #cc0000; }
+    .media-link.yt-secondary { background: transparent; color: var(--mid); border: 1px solid rgba(0,0,0,0.12); font-weight: 500; }
+    .media-link.yt-secondary:hover { background: var(--cream); color: var(--ink); }
+
+    /* Divider */
+    .divider {
+      max-width: 900px; margin: 5rem auto 3.5rem; padding: 0 2rem;
+      text-align: center; position: relative;
+    }
+    .divider::before { content: ''; position: absolute; top: 50%; left: 2rem; right: 2rem; height: 1px; background: var(--accent); opacity: 0.2; }
+    .divider span { background: var(--cream); padding: 0 1.25rem; position: relative; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+    /* ─── WORK WITH ME ─── */
+    .work { max-width: 1080px; margin: 0 auto; padding: 0 2rem 5rem; }
+    .work-header { text-align: center; margin-bottom: 3rem; }
+    .work-header h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.6rem; }
+    .work-header h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .work-header p { font-size: 0.95rem; color: var(--mid); max-width: 540px; margin: 0 auto; line-height: 1.6; }
+
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .work-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 2.25rem 2rem; display: flex; flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .work-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; transform: scaleX(0); transition: transform 0.35s ease;
+      transform-origin: left;
+    }
+    .work-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+    .work-card:hover::after { transform: scaleX(1); }
+
+    .work-card:nth-child(1)::after { background: var(--success); }
+    .work-card:nth-child(2)::after { background: var(--accent); }
+    .work-card:nth-child(3)::after { background: #6366f1; }
+
+    .work-tag {
+      display: inline-block; font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem;
+      border-radius: 4px; margin-bottom: 1.25rem; align-self: flex-start;
+    }
+    .tag-community { background: rgba(34,197,94,0.08); color: var(--success); }
+    .tag-caio { background: var(--accent-glow); color: var(--accent); }
+    .tag-platform { background: rgba(99,102,241,0.08); color: #6366f1; }
+
+    .work-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .work-card .card-hook { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.88rem; color: var(--soft); line-height: 1.5; margin-bottom: 1.25rem; }
+    .work-card .card-benefits { list-style: none; margin-bottom: 1.75rem; flex-grow: 1; }
+    .work-card .card-benefits li {
+      font-size: 0.82rem; color: var(--slate); padding: 0.35rem 0 0.35rem 1.15rem;
+      position: relative; line-height: 1.5;
+    }
+    .work-card .card-benefits li::before {
+      content: ''; position: absolute; left: 0; top: 0.6rem;
+      width: 5px; height: 5px; border-radius: 50%;
+    }
+    .work-card:nth-child(1) .card-benefits li::before { background: var(--success); }
+    .work-card:nth-child(2) .card-benefits li::before { background: var(--accent); }
+    .work-card:nth-child(3) .card-benefits li::before { background: #6366f1; }
+
+    .btn-work {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.85rem 1.5rem; color: var(--white); text-decoration: none;
+      font-size: 0.82rem; font-weight: 700; border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s; width: 100%;
+      letter-spacing: -0.01em;
+    }
+    .btn-work:hover { transform: translateY(-2px); }
+    .btn-community { background: var(--success); }
+    .btn-community:hover { box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    .btn-caio { background: var(--accent); }
+    .btn-caio:hover { box-shadow: 0 6px 20px rgba(196,90,60,0.3); }
+    .btn-ff { background: #6366f1; }
+    .btn-ff:hover { box-shadow: 0 6px 20px rgba(99,102,241,0.3); }
+
+    /* ─── STRATEGY CALL BANNER ─── */
+    .call-banner { background: var(--ink); padding: 4.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .call-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,90,60,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .call-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+    .call-kicker { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; padding: 0.4rem 0.95rem; background: rgba(196,90,60,0.14); border-radius: 100px; }
+    .call-banner h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; color: var(--white); margin-bottom: 0.85rem; }
+    .call-banner h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-weight: 600; }
+    .call-banner p { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 1.75rem; }
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 1rem 2.25rem; background: var(--accent); color: var(--white);
+      text-decoration: none; font-size: 0.9rem; font-weight: 700; border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      letter-spacing: -0.005em;
+    }
+    .btn-call:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,90,60,0.35); }
+    .btn-call svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+
+    /* Footer */
+    .footer { background: var(--charcoal); padding: 2rem; text-align: center; }
+    .footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .success-hero { padding: 3rem 1.25rem 4rem; }
+      .wait { padding: 0 1.25rem; }
+      .wait-grid { grid-template-columns: 1fr; }
+      .work { padding: 0 1.25rem 3.5rem; }
+      .work-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .divider { margin: 3.5rem auto 2.5rem; }
+      .call-banner { padding: 3.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTNRQXBH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <a href="/" class="logo">DEVIN<span>.</span></a>
+  </nav>
+
+  <!-- ─── SUCCESS HERO ─── -->
+  <section class="success-hero">
+    <div class="success-inner">
+      <div class="success-badge">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>You're subscribed. <span class="accent">Welcome to AI + REI.</span></h1>
+      <p>Your first issue will hit your inbox on the next Tuesday. Check your email now for a quick confirmation -- and while you wait, there's a lot more below worth your time.</p>
+      <div class="success-meta">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Next issue drops Tuesday morning
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHILE YOU WAIT ─── -->
+  <div class="wait">
+    <div class="wait-header">
+      <span class="kicker">While you wait</span>
+    </div>
+    <div class="wait-grid">
+
+      <!-- PODCAST -->
+      <div class="media-card">
+        <div class="media-icon podcast">
+          <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        </div>
+        <div class="media-tag">The Podcast</div>
+        <h3>Funds on Fire</h3>
+        <p>Long-form conversations on raising capital, scaling real estate operations, and deploying AI across both. New episodes drop every Monday -- the Tuesday newsletter often builds on them.</p>
+        <div class="media-links">
+          <a href="https://podcasts.apple.com/us/podcast/funds-on-fire/id1801225885" class="media-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Apple
+          </a>
+          <a href="https://open.spotify.com/show/2LiQRSvKGJZZYorjH6RdkS" class="media-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify
+          </a>
+          <a href="https://www.youtube.com/@FundsonFire" class="media-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="media-card">
+        <div class="media-icon youtube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="media-tag">YouTube</div>
+        <h3>Tutorials, Breakdowns & Builds</h3>
+        <p>Over-the-shoulder AI builds, deep dives on deals I've raised capital for, and tactical walkthroughs of the tools I use. Subscribe and catch everything I post between newsletters.</p>
+        <div class="media-links">
+          <a href="https://www.youtube.com/@Devin.robinson1" class="media-link yt-primary" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Subscribe on YouTube
+          </a>
+          <a href="https://www.youtube.com/@FundsonFire" class="media-link yt-secondary" target="_blank" rel="noopener">
+            Funds on Fire channel
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── DIVIDER ─── -->
+  <div class="divider"><span>Ready to go beyond the newsletter?</span></div>
+
+  <!-- ─── WORK WITH ME ─── -->
+  <div class="work">
+    <div class="work-header">
+      <h2>Three ways to turn AI into <span class="accent">real leverage.</span></h2>
+      <p>The newsletter gives you the signal. These give you the systems, the community, and the platform to act on it.</p>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- COMMUNITY -->
+      <div class="work-card">
+        <span class="work-tag tag-community">Community</span>
+        <h3>AI in REI Community</h3>
+        <div class="card-hook">"Every skill I build for clients ends up here. You get the full library -- updated weekly."</div>
+        <ul class="card-benefits">
+          <li>Full prompt and skills library, updated with every client build</li>
+          <li>Video walkthroughs showing exactly how to implement each system</li>
+          <li>Weekly live Q&amp;A sessions -- bring your business, I'll build with you</li>
+          <li>Private network of operators, fund managers, and founders using AI</li>
+        </ul>
+        <a href="https://www.skool.com/rei-legacy-builders-6440" class="btn-work btn-community" target="_blank" rel="noopener">Join the Community</a>
+      </div>
+
+      <!-- FRACTIONAL CAIO -->
+      <div class="work-card">
+        <span class="work-tag tag-caio">Done For You</span>
+        <h3>Fractional CAIO</h3>
+        <div class="card-hook">"Stop building it yourself. I embed in your business and ship the AI systems for you -- every month."</div>
+        <ul class="card-benefits">
+          <li>A Chief AI Officer in your corner without the C-suite salary</li>
+          <li>Up to 4 new AI systems built and deployed every single month</li>
+          <li>Content, ads, outreach, underwriting -- automated in your voice</li>
+          <li>Replace the work of entire roles: VAs, marketers, analysts, agencies</li>
+        </ul>
+        <a href="fractional-caio.html" class="btn-work btn-caio">See If This Is a Fit</a>
+      </div>
+
+      <!-- FUND FLOW OS -->
+      <div class="work-card">
+        <span class="work-tag tag-platform">Platform</span>
+        <h3>Fund Flow OS</h3>
+        <div class="card-hook">"If you're raising capital, this is the operating system your fund has been missing."</div>
+        <ul class="card-benefits">
+          <li>AI-powered investor CRM that tells you who to talk to and when</li>
+          <li>Smart matching that pairs the right investors to the right deals</li>
+          <li>Investor portal with real-time reporting your LPs will actually use</li>
+          <li>Built specifically for syndicators and emerging fund managers</li>
+        </ul>
+        <a href="https://fundflowos.com" class="btn-work btn-ff" target="_blank" rel="noopener">Explore Fund Flow OS</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── STRATEGY CALL ─── -->
+  <section class="call-banner">
+    <div class="call-inner">
+      <div class="call-kicker">Talk 1:1</div>
+      <h2>Not sure which path is right for you? <span class="accent">Let's talk.</span></h2>
+      <p>Book a free 30-minute strategy call. I'll ask about your business, the leverage points you're missing, and give you a straight answer on where AI will actually move the needle -- whether we end up working together or not.</p>
+      <a href="https://calendly.com/devinrobinson1/fractional-caio" class="btn-call" target="_blank" rel="noopener">
+        Book a Strategy Call
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>&copy; 2026 Devin Robinson. <a href="/">devinrobinsonrei.com</a></p>
+  </div>
+
+</body>
+</html>
